@@ -1,0 +1,10 @@
+{
+    "CARD_GROUP":
+    {
+        "CalibFile": "gun_calib_params_refine.dat",
+        "ModeType": "CONTROLLER",
+        "GroupID": 40,
+        "Markers": [7,13,14,15],
+        "MarkersSize": [0.04, 0.04, 0.04, 0.04]        
+    }
+}

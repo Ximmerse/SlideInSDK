@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e555de9ff3e54d9fa4aa6b8654c0fb7, type: 3}
+  m_Name: LenProfiles
+  m_EditorClassIdentifier: 
+  m_LenProfile:
+    m_ProfileName: Layni
+    m_Description: 'This profile for Len product : Layni'
+    m_hFov: 77.929
+    m_vFov: 77.929
+    m_EyeSeparation: 0.031
+    m_NeckOffset: {x: 0, y: 0.061, z: 0.095}
+    m_MonoEyeSeparation: 0.633
+    m_UndistortionMeshViewDirection: {x: 0, y: 180, z: 0}
+    m_UndistortionMeshScale: {x: 1, y: 1, z: 1}
+    m_UndistortionMeshOffset: {x: 0.002118828, y: -0.001664, z: 0}
+    m_LeftUndistortionMeshOffset: {x: 0, y: 0, z: 0}
+    m_RightUndistortionMeshOffset: {x: 0, y: 0, z: 0}
+    m_UndistortionMesh: {fileID: 4300000, guid: 765cba1dc5673d84490bde03a8a27f93,
+      type: 2}
+    m_Euler_Viewer_Offset1: {x: 0, y: -180, z: 0}
+    m_Euler_Viewer_Offset2: {x: -43.5, y: -180, z: 0}

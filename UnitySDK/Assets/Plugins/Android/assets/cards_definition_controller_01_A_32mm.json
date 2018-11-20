@@ -1,0 +1,10 @@
+{
+    "CARD_GROUP":
+    {
+        "CalibFile": "controller_calib_params_01_A_32mm.dat",
+        "ModeType": "CONTROLLER",
+        "GroupID": 40,
+        "Markers": [0,1,3,4],
+        "MarkersSize": [0.032, 0.032, 0.032, 0.032]        
+    }
+}
