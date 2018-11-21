@@ -83,11 +83,15 @@ namespace Ximmerse.SlideInSDK
             }
         }
 
+        static bool isInitialized = false;
+
         /// <summary>
         /// Initializes the device module.
         /// </summary>
         public static void InitializeDeviceModule ()
         {
+            if (isInitialized)
+                return;
             if (Application.platform == RuntimePlatform.Android)
             {
                 Ximmerse.InputSystem.XDevicePlugin.Init();
@@ -100,6 +104,7 @@ namespace Ximmerse.SlideInSDK
                 DevicerHandle.SlideInContext = XDevicePlugin.NewContext(XDevicePlugin.XContextTypes.kXContextTypeSlideIn);/// 创建SlideIn设备上下文
                 DevicerHandle.HmdHandle = XDevicePlugin.GetDeviceHandle(DevicerHandle.SlideInContext, "XHawk-0");
                 TagTrackingUtil.ApplyDefaultConfig();
+                isInitialized = true;
             }
             else if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer)
             {
@@ -112,6 +117,7 @@ namespace Ximmerse.SlideInSDK
                 DevicerHandle.HmdHandle = XDevicePlugin.GetDeviceHandle(DevicerHandle.SlideInContext, "XHawk-0");
                 Debug.LogFormat("VPU Context: {0}, Hmd handle:{1}", DevicerHandle.SlideInContext.mNativeHandle.ToInt32(), DevicerHandle.HmdHandle.mNativeHandle.ToInt32());
                 TagTrackingUtil.ApplyDefaultConfig();
+                isInitialized = true;
             }
             else
             {
