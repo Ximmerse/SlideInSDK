@@ -111,12 +111,6 @@ namespace Ximmerse.SlideInSDK
                     arCamera.vFov = _vFov;
                 }
 
-                var _fovScale = EditorGUILayout.Slider("Fov Scale", arCamera.fovScale, 0.1f, 5);
-                if(_fovScale != arCamera.fovScale)
-                {
-                    arCamera.fovScale = _fovScale;
-                }
-
             }
             this.serializedObject.ApplyModifiedProperties ();
         }

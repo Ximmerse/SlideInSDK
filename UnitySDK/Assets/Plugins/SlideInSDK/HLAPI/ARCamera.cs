@@ -347,6 +347,10 @@ namespace Ximmerse.SlideInSDK
 
         float m_hFov,m_vFov;
 
+        /// <summary>
+        /// Gets or sets the horizontal fov.
+        /// </summary>
+        /// <value>The h fov.</value>
         public float hFov
         {
             get
@@ -360,6 +364,10 @@ namespace Ximmerse.SlideInSDK
             }
         }
 
+        /// <summary>
+        /// Gets or sets the vertical fov.
+        /// </summary>
+        /// <value>The v fov.</value>
         public float vFov
         {
             get
@@ -369,21 +377,6 @@ namespace Ximmerse.SlideInSDK
             set
             {
                 m_vFov = value;
-                UpdateCameraFov();
-            }
-        }
-
-        float m_FovScale = 1;
-
-        public float fovScale
-        {
-            get
-            {
-                return m_FovScale;
-            }
-            set
-            {
-                m_FovScale = value;
                 UpdateCameraFov();
             }
         }
@@ -492,9 +485,9 @@ namespace Ximmerse.SlideInSDK
 
         void UpdateCameraFov()
         {
-            this.mainCamera.SetCameraFovWithScale(this.hFov, this.vFov, this.fovScale);
-            this.leftEye.SetCameraFovWithScale(this.hFov, this.vFov, this.fovScale);
-            this.rightEye.SetCameraFovWithScale(this.hFov, this.vFov, this.fovScale);
+            this.mainCamera.SetCameraFov(this.hFov, this.vFov);
+            this.leftEye.SetCameraFovWithScale(this.hFov, this.vFov);
+            this.rightEye.SetCameraFovWithScale(this.hFov, this.vFov);
         }
 
         static readonly Vector3 ViewerOrientationPreTilt = new Vector3 (0, -180, 0);
