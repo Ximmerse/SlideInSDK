@@ -486,8 +486,8 @@ namespace Ximmerse.SlideInSDK
         void UpdateCameraFov()
         {
             this.mainCamera.SetCameraFov(this.hFov, this.vFov);
-            this.leftEye.SetCameraFovWithScale(this.hFov, this.vFov);
-            this.rightEye.SetCameraFovWithScale(this.hFov, this.vFov);
+            this.leftEye.SetCameraFov(this.hFov, this.vFov);
+            this.rightEye.SetCameraFov(this.hFov, this.vFov);
         }
 
         static readonly Vector3 ViewerOrientationPreTilt = new Vector3 (0, -180, 0);
