@@ -1032,9 +1032,12 @@ namespace Ximmerse.InputSystem
             return xdev_observe(handle.mNativeHandle, Convert.ToInt32(attr_id), ObserveDelegate, (IntPtr)0);
             //return xdev_observe(handle.mNativeHandle, Convert.ToInt32(attr_id), dlg, (IntPtr) 0);
         }
-        #if UNITY_ANDROID
+//        #if UNITY_ANDROID
         public static int CopyAssetsToPath(string dest_directory_path, string name_regex = ".*\\.(json|dat)$")
         {
+            if (Application.platform != RuntimePlatform.Android)
+                throw new UnityException("Error : CopyAssetsToPath is available in Android platform only.");
+            
             int ret = 0;
             using(AndroidJavaClass jc=new AndroidJavaClass("com.unity3d.player.UnityPlayer")){
                 using(AndroidJavaObject currentActivity = jc.GetStatic<AndroidJavaObject>("currentActivity")){
@@ -1044,7 +1047,7 @@ namespace Ximmerse.InputSystem
             }
             return ret;
         }
-        #endif //
+//        #endif //
         #endregion
 
         #region API Test
