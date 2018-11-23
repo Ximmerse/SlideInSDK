@@ -1,0 +1,356 @@
+\hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour}{}\section{Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour Class Reference}
+\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour}\index{Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour@{Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour}}
+
+
+Base class for marker target behaviour.  
+
+
+Inheritance diagram for Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.989324cm]{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a7dcc532413ef0b35cf9f17dc0ae276bb}{Smooth\+Position\+Method}} \{ \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a7dcc532413ef0b35cf9f17dc0ae276bba412cb411cecf9196f717d6bc9c272c62}{Smooth\+Position\+Method.\+Lerp}} = 0, 
+\mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a7dcc532413ef0b35cf9f17dc0ae276bba88156d46910a2d733443c339a9231d12}{Smooth\+Position\+Method.\+Velocity}} = 1, 
+\mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a7dcc532413ef0b35cf9f17dc0ae276bba2ae4d28d251b2ea2897f7fa9343c51ee}{Smooth\+Position\+Method.\+Lerp\+By\+Distance}} = 2, 
+\mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a7dcc532413ef0b35cf9f17dc0ae276bba54d76827231a55b3a08cfb1eab9f0fbe}{Smooth\+Position\+Method.\+Velocity\+By\+Distance}} = 3
+ \}
+\item 
+enum \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a1b1d93ad85038ec1f7f0b36dbe2b2e2d}{Smooth\+Rotation\+Method}} \{ \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a1b1d93ad85038ec1f7f0b36dbe2b2e2da412cb411cecf9196f717d6bc9c272c62}{Smooth\+Rotation\+Method.\+Lerp}} = 0, 
+\mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a1b1d93ad85038ec1f7f0b36dbe2b2e2dac31c335ef37283c451b18ba0dd317de1}{Smooth\+Rotation\+Method.\+Angular}} = 1, 
+\mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a1b1d93ad85038ec1f7f0b36dbe2b2e2da2ae4d28d251b2ea2897f7fa9343c51ee}{Smooth\+Rotation\+Method.\+Lerp\+By\+Distance}} = 2, 
+\mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a1b1d93ad85038ec1f7f0b36dbe2b2e2da585bb6f17552226d32175628abbd7e34}{Smooth\+Rotation\+Method.\+Angular\+By\+Distance}} = 3
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a6e4f7e4e950e7c8cc96a4dcad51549e6}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a6e4f7e4e950e7c8cc96a4dcad51549e6}} 
+virtual void {\bfseries Start} ()
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_identity}{Marker\+Identity}} \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_aeb1137d3a91792dda621ed8263bf43d4}{Identity}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the identity. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_aeb71a639f06b603ad878907a5611d778}{Marker\+ID}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the marker ID. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_afe903ec9591fc01ce62a4767058ba594}{Has\+Limited\+Tracking\+Distance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em If has limited tracking distance. If true, when tracked distance $>$= Max\+Tracking\+Distance, tracking will be disabled. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a3635fc0c79105d1ab92a2943c8584894}{Max\+Tracking\+Distance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the max allowed tracking distance. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_af7d332a68d0b0b5d4990d8a359c92f97}{Smooth\+Marker\+Position}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets a value indicating whether this \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour}{Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour}} smooth marker position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a7dcc532413ef0b35cf9f17dc0ae276bb}{Smooth\+Position\+Method}} \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a1df1bc0ddda49ca592b0b765a5bf3277}{smooth\+Position\+Method}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the smooth position method. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a0ea6738a55d9d73abac0a787be58cbf5}{Position\+Smooth\+Lerp}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the positional lerp rate. When smooth position method == Lerp, this value is the lerp rate between prev-\/this frame position. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a0472ce602c4078d12a8ad4db8831148c}{Position\+Smooth\+Velocity}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the position smooth velocity. \end{DoxyCompactList}\item 
+Animation\+Curve \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a721ed9dfd9de88781cd8bd2f80e79819}{Smooth\+Position\+Curve\+Control\+\_\+\+Lerp\+By\+Distance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the smooth position curve control \+: lerp by distance \end{DoxyCompactList}\item 
+Animation\+Curve \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a871421f6e07c01117418840c54b1a078}{Smooth\+Position\+Curve\+Control\+\_\+\+Velocity\+By\+Distance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the smooth position curve control \+: move in velocity by distance \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_ac79c6b47733b2a3eae1a65bd27048d85}{Apply\+Algorithm\+Rotation}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets a value indicating whether this \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour}{Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour}} apply marker algorithm rotation. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_ac09ef92989ecda86fbd10fd313983900}{Smooth\+Marker\+Rotation}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets a value indicating whether this \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour}{Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour}} smooth marker rotation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_ab4280bb64f585e55ac9d1207a099bf70}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_ab4280bb64f585e55ac9d1207a099bf70}} 
+\mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a1b1d93ad85038ec1f7f0b36dbe2b2e2d}{Smooth\+Rotation\+Method}} {\bfseries smooth\+Rotation\+Method}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+float \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a7ed30b92b38582d9f2ca7048f00e0cf2}{Smooth\+Rotation\+Lerp\+Rate}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the smooth lerp rate. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a80cbafcd63a1a17a9404b8df039f5c2c}{Smooth\+Rotation\+Anglar\+Speed}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the smooth rotation anglar speed. \end{DoxyCompactList}\item 
+Animation\+Curve \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_af7024490e3546a491a1a97f1352b7823}{Smooth\+Rotation\+Curve\+Control\+\_\+\+Lerp\+By\+Distance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the smooth rotation curve control \+: lerp by distance \end{DoxyCompactList}\item 
+Animation\+Curve \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a8e2674c3368291a1a994d864a886f3cd}{Smooth\+Rotation\+Curve\+Control\+\_\+\+Angular\+By\+Distance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the smooth rotation curve control \+: move in velocity by distance \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_ab61f1b9695362f0e4aa39fb0eb7e4b80}{Position\+Prediction}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets a value indicating whether this \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour}{Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour}} position prediction. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_ad7e7222c2b9ff3b79eaaf3fc298b16a8}{Smooth\+Position\+Prediction}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets a value indicating whether this \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour}{Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour}} smooth position prediction. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_adf57dfdc0553493646eab330d0ca646f}{Smooth\+Position\+Prediciton\+Speed}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the smooth position prediciton speed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_ab8c4b9b3daf70720060bf7c2b7fc6456}{Rotation\+Prediciton}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets a value indicating whether this \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour}{Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour}} rotation prediciton. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_add8ca3e0762fa077416f1f3aaa00b287}{Rotation\+Prediction\+Delay\+Frame}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the rotation prediction delay frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for marker target behaviour. 
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a7dcc532413ef0b35cf9f17dc0ae276bb}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a7dcc532413ef0b35cf9f17dc0ae276bb}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Smooth\+Position\+Method@{Smooth\+Position\+Method}}
+\index{Smooth\+Position\+Method@{Smooth\+Position\+Method}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Smooth\+Position\+Method}{SmoothPositionMethod}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a7dcc532413ef0b35cf9f17dc0ae276bb}{Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Smooth\+Position\+Method}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lerp@{Lerp}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Lerp@{Lerp}}}\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a7dcc532413ef0b35cf9f17dc0ae276bba412cb411cecf9196f717d6bc9c272c62}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a7dcc532413ef0b35cf9f17dc0ae276bba412cb411cecf9196f717d6bc9c272c62}} 
+Lerp&Lerp between frames \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Velocity@{Velocity}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Velocity@{Velocity}}}\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a7dcc532413ef0b35cf9f17dc0ae276bba88156d46910a2d733443c339a9231d12}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a7dcc532413ef0b35cf9f17dc0ae276bba88156d46910a2d733443c339a9231d12}} 
+Velocity&Move in velocity between frames \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lerp\+By\+Distance@{Lerp\+By\+Distance}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Lerp\+By\+Distance@{Lerp\+By\+Distance}}}\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a7dcc532413ef0b35cf9f17dc0ae276bba2ae4d28d251b2ea2897f7fa9343c51ee}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a7dcc532413ef0b35cf9f17dc0ae276bba2ae4d28d251b2ea2897f7fa9343c51ee}} 
+Lerp\+By\+Distance&Lerp between frames by distance. X = distance, Y = lerp rate. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Velocity\+By\+Distance@{Velocity\+By\+Distance}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Velocity\+By\+Distance@{Velocity\+By\+Distance}}}\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a7dcc532413ef0b35cf9f17dc0ae276bba54d76827231a55b3a08cfb1eab9f0fbe}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a7dcc532413ef0b35cf9f17dc0ae276bba54d76827231a55b3a08cfb1eab9f0fbe}} 
+Velocity\+By\+Distance&Move in velocity between frames. X = distance, Y = velocity \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a1b1d93ad85038ec1f7f0b36dbe2b2e2d}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a1b1d93ad85038ec1f7f0b36dbe2b2e2d}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Smooth\+Rotation\+Method@{Smooth\+Rotation\+Method}}
+\index{Smooth\+Rotation\+Method@{Smooth\+Rotation\+Method}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Smooth\+Rotation\+Method}{SmoothRotationMethod}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a1b1d93ad85038ec1f7f0b36dbe2b2e2d}{Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Smooth\+Rotation\+Method}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lerp@{Lerp}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Lerp@{Lerp}}}\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a1b1d93ad85038ec1f7f0b36dbe2b2e2da412cb411cecf9196f717d6bc9c272c62}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a1b1d93ad85038ec1f7f0b36dbe2b2e2da412cb411cecf9196f717d6bc9c272c62}} 
+Lerp&Lerp between frames \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Angular@{Angular}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Angular@{Angular}}}\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a1b1d93ad85038ec1f7f0b36dbe2b2e2dac31c335ef37283c451b18ba0dd317de1}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a1b1d93ad85038ec1f7f0b36dbe2b2e2dac31c335ef37283c451b18ba0dd317de1}} 
+Angular&Angular rotating between frames \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lerp\+By\+Distance@{Lerp\+By\+Distance}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Lerp\+By\+Distance@{Lerp\+By\+Distance}}}\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a1b1d93ad85038ec1f7f0b36dbe2b2e2da2ae4d28d251b2ea2897f7fa9343c51ee}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a1b1d93ad85038ec1f7f0b36dbe2b2e2da2ae4d28d251b2ea2897f7fa9343c51ee}} 
+Lerp\+By\+Distance&Lerp between frames by distance. X = distance, Y = lerp rate. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Angular\+By\+Distance@{Angular\+By\+Distance}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Angular\+By\+Distance@{Angular\+By\+Distance}}}\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a1b1d93ad85038ec1f7f0b36dbe2b2e2da585bb6f17552226d32175628abbd7e34}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a1b1d93ad85038ec1f7f0b36dbe2b2e2da585bb6f17552226d32175628abbd7e34}} 
+Angular\+By\+Distance&Angular rotating between frames. X = distance, Y = angular speed. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_ac79c6b47733b2a3eae1a65bd27048d85}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_ac79c6b47733b2a3eae1a65bd27048d85}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Apply\+Algorithm\+Rotation@{Apply\+Algorithm\+Rotation}}
+\index{Apply\+Algorithm\+Rotation@{Apply\+Algorithm\+Rotation}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Apply\+Algorithm\+Rotation}{ApplyAlgorithmRotation}}
+{\footnotesize\ttfamily bool Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Apply\+Algorithm\+Rotation\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets a value indicating whether this \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour}{Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour}} apply marker algorithm rotation. 
+
+{\ttfamily true} if update marker rotation; otherwise, {\ttfamily false}.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_afe903ec9591fc01ce62a4767058ba594}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_afe903ec9591fc01ce62a4767058ba594}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Has\+Limited\+Tracking\+Distance@{Has\+Limited\+Tracking\+Distance}}
+\index{Has\+Limited\+Tracking\+Distance@{Has\+Limited\+Tracking\+Distance}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Has\+Limited\+Tracking\+Distance}{HasLimitedTrackingDistance}}
+{\footnotesize\ttfamily bool Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Has\+Limited\+Tracking\+Distance\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+If has limited tracking distance. If true, when tracked distance $>$= Max\+Tracking\+Distance, tracking will be disabled. 
+
+{\ttfamily true} if this instance has limited tracking distance; otherwise, {\ttfamily false}.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_aeb1137d3a91792dda621ed8263bf43d4}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_aeb1137d3a91792dda621ed8263bf43d4}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Identity@{Identity}}
+\index{Identity@{Identity}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Identity}{Identity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_identity}{Marker\+Identity}} Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Identity\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the identity. 
+
+The identity.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_aeb71a639f06b603ad878907a5611d778}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_aeb71a639f06b603ad878907a5611d778}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Marker\+ID@{Marker\+ID}}
+\index{Marker\+ID@{Marker\+ID}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Marker\+ID}{MarkerID}}
+{\footnotesize\ttfamily int Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Marker\+ID\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the marker ID. 
+
+The marker I.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a3635fc0c79105d1ab92a2943c8584894}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a3635fc0c79105d1ab92a2943c8584894}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Max\+Tracking\+Distance@{Max\+Tracking\+Distance}}
+\index{Max\+Tracking\+Distance@{Max\+Tracking\+Distance}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Max\+Tracking\+Distance}{MaxTrackingDistance}}
+{\footnotesize\ttfamily float Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Max\+Tracking\+Distance\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the max allowed tracking distance. 
+
+The max tracking distance.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_ab61f1b9695362f0e4aa39fb0eb7e4b80}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_ab61f1b9695362f0e4aa39fb0eb7e4b80}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Position\+Prediction@{Position\+Prediction}}
+\index{Position\+Prediction@{Position\+Prediction}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Position\+Prediction}{PositionPrediction}}
+{\footnotesize\ttfamily bool Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Position\+Prediction\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets a value indicating whether this \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour}{Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour}} position prediction. 
+
+{\ttfamily true} if position prediction; otherwise, {\ttfamily false}.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a0ea6738a55d9d73abac0a787be58cbf5}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a0ea6738a55d9d73abac0a787be58cbf5}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Position\+Smooth\+Lerp@{Position\+Smooth\+Lerp}}
+\index{Position\+Smooth\+Lerp@{Position\+Smooth\+Lerp}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Position\+Smooth\+Lerp}{PositionSmoothLerp}}
+{\footnotesize\ttfamily float Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Position\+Smooth\+Lerp\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the positional lerp rate. When smooth position method == Lerp, this value is the lerp rate between prev-\/this frame position. 
+
+The position lerp.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a0472ce602c4078d12a8ad4db8831148c}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a0472ce602c4078d12a8ad4db8831148c}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Position\+Smooth\+Velocity@{Position\+Smooth\+Velocity}}
+\index{Position\+Smooth\+Velocity@{Position\+Smooth\+Velocity}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Position\+Smooth\+Velocity}{PositionSmoothVelocity}}
+{\footnotesize\ttfamily float Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Position\+Smooth\+Velocity\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the position smooth velocity. 
+
+The position smooth velocity.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_ab8c4b9b3daf70720060bf7c2b7fc6456}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_ab8c4b9b3daf70720060bf7c2b7fc6456}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Rotation\+Prediciton@{Rotation\+Prediciton}}
+\index{Rotation\+Prediciton@{Rotation\+Prediciton}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Rotation\+Prediciton}{RotationPrediciton}}
+{\footnotesize\ttfamily bool Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Rotation\+Prediciton\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets a value indicating whether this \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour}{Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour}} rotation prediciton. 
+
+{\ttfamily true} if rotation prediciton; otherwise, {\ttfamily false}.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_add8ca3e0762fa077416f1f3aaa00b287}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_add8ca3e0762fa077416f1f3aaa00b287}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Rotation\+Prediction\+Delay\+Frame@{Rotation\+Prediction\+Delay\+Frame}}
+\index{Rotation\+Prediction\+Delay\+Frame@{Rotation\+Prediction\+Delay\+Frame}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Rotation\+Prediction\+Delay\+Frame}{RotationPredictionDelayFrame}}
+{\footnotesize\ttfamily int Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Rotation\+Prediction\+Delay\+Frame\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the rotation prediction delay frame. 
+
+The rotation prediction delay frame.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_af7d332a68d0b0b5d4990d8a359c92f97}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_af7d332a68d0b0b5d4990d8a359c92f97}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Smooth\+Marker\+Position@{Smooth\+Marker\+Position}}
+\index{Smooth\+Marker\+Position@{Smooth\+Marker\+Position}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Smooth\+Marker\+Position}{SmoothMarkerPosition}}
+{\footnotesize\ttfamily bool Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Smooth\+Marker\+Position\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets a value indicating whether this \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour}{Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour}} smooth marker position. 
+
+{\ttfamily true} if smooth marker position; otherwise, {\ttfamily false}.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_ac09ef92989ecda86fbd10fd313983900}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_ac09ef92989ecda86fbd10fd313983900}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Smooth\+Marker\+Rotation@{Smooth\+Marker\+Rotation}}
+\index{Smooth\+Marker\+Rotation@{Smooth\+Marker\+Rotation}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Smooth\+Marker\+Rotation}{SmoothMarkerRotation}}
+{\footnotesize\ttfamily bool Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Smooth\+Marker\+Rotation\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets a value indicating whether this \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour}{Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour}} smooth marker rotation. 
+
+{\ttfamily true} if smooth marker rotation; otherwise, {\ttfamily false}.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a721ed9dfd9de88781cd8bd2f80e79819}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a721ed9dfd9de88781cd8bd2f80e79819}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Smooth\+Position\+Curve\+Control\+\_\+\+Lerp\+By\+Distance@{Smooth\+Position\+Curve\+Control\+\_\+\+Lerp\+By\+Distance}}
+\index{Smooth\+Position\+Curve\+Control\+\_\+\+Lerp\+By\+Distance@{Smooth\+Position\+Curve\+Control\+\_\+\+Lerp\+By\+Distance}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Smooth\+Position\+Curve\+Control\+\_\+\+Lerp\+By\+Distance}{SmoothPositionCurveControl\_LerpByDistance}}
+{\footnotesize\ttfamily Animation\+Curve Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Smooth\+Position\+Curve\+Control\+\_\+\+Lerp\+By\+Distance\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the smooth position curve control \+: lerp by distance 
+
+The smooth position curve control.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a871421f6e07c01117418840c54b1a078}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a871421f6e07c01117418840c54b1a078}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Smooth\+Position\+Curve\+Control\+\_\+\+Velocity\+By\+Distance@{Smooth\+Position\+Curve\+Control\+\_\+\+Velocity\+By\+Distance}}
+\index{Smooth\+Position\+Curve\+Control\+\_\+\+Velocity\+By\+Distance@{Smooth\+Position\+Curve\+Control\+\_\+\+Velocity\+By\+Distance}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Smooth\+Position\+Curve\+Control\+\_\+\+Velocity\+By\+Distance}{SmoothPositionCurveControl\_VelocityByDistance}}
+{\footnotesize\ttfamily Animation\+Curve Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Smooth\+Position\+Curve\+Control\+\_\+\+Velocity\+By\+Distance\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the smooth position curve control \+: move in velocity by distance 
+
+The smooth position curve control.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a1df1bc0ddda49ca592b0b765a5bf3277}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a1df1bc0ddda49ca592b0b765a5bf3277}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!smooth\+Position\+Method@{smooth\+Position\+Method}}
+\index{smooth\+Position\+Method@{smooth\+Position\+Method}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{smooth\+Position\+Method}{smoothPositionMethod}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a7dcc532413ef0b35cf9f17dc0ae276bb}{Smooth\+Position\+Method}} Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+smooth\+Position\+Method\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the smooth position method. 
+
+The smooth position method.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_adf57dfdc0553493646eab330d0ca646f}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_adf57dfdc0553493646eab330d0ca646f}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Smooth\+Position\+Prediciton\+Speed@{Smooth\+Position\+Prediciton\+Speed}}
+\index{Smooth\+Position\+Prediciton\+Speed@{Smooth\+Position\+Prediciton\+Speed}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Smooth\+Position\+Prediciton\+Speed}{SmoothPositionPredicitonSpeed}}
+{\footnotesize\ttfamily float Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Smooth\+Position\+Prediciton\+Speed\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the smooth position prediciton speed. 
+
+The smooth position prediciton speed.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_ad7e7222c2b9ff3b79eaaf3fc298b16a8}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_ad7e7222c2b9ff3b79eaaf3fc298b16a8}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Smooth\+Position\+Prediction@{Smooth\+Position\+Prediction}}
+\index{Smooth\+Position\+Prediction@{Smooth\+Position\+Prediction}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Smooth\+Position\+Prediction}{SmoothPositionPrediction}}
+{\footnotesize\ttfamily bool Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Smooth\+Position\+Prediction\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets a value indicating whether this \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour}{Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour}} smooth position prediction. 
+
+{\ttfamily true} if smooth position prediction; otherwise, {\ttfamily false}.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a80cbafcd63a1a17a9404b8df039f5c2c}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a80cbafcd63a1a17a9404b8df039f5c2c}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Smooth\+Rotation\+Anglar\+Speed@{Smooth\+Rotation\+Anglar\+Speed}}
+\index{Smooth\+Rotation\+Anglar\+Speed@{Smooth\+Rotation\+Anglar\+Speed}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Smooth\+Rotation\+Anglar\+Speed}{SmoothRotationAnglarSpeed}}
+{\footnotesize\ttfamily float Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Smooth\+Rotation\+Anglar\+Speed\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the smooth rotation anglar speed. 
+
+The smooth rotation angle.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a8e2674c3368291a1a994d864a886f3cd}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a8e2674c3368291a1a994d864a886f3cd}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Smooth\+Rotation\+Curve\+Control\+\_\+\+Angular\+By\+Distance@{Smooth\+Rotation\+Curve\+Control\+\_\+\+Angular\+By\+Distance}}
+\index{Smooth\+Rotation\+Curve\+Control\+\_\+\+Angular\+By\+Distance@{Smooth\+Rotation\+Curve\+Control\+\_\+\+Angular\+By\+Distance}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Smooth\+Rotation\+Curve\+Control\+\_\+\+Angular\+By\+Distance}{SmoothRotationCurveControl\_AngularByDistance}}
+{\footnotesize\ttfamily Animation\+Curve Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Smooth\+Rotation\+Curve\+Control\+\_\+\+Angular\+By\+Distance\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the smooth rotation curve control \+: move in velocity by distance 
+
+The smooth position curve control.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_af7024490e3546a491a1a97f1352b7823}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_af7024490e3546a491a1a97f1352b7823}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Smooth\+Rotation\+Curve\+Control\+\_\+\+Lerp\+By\+Distance@{Smooth\+Rotation\+Curve\+Control\+\_\+\+Lerp\+By\+Distance}}
+\index{Smooth\+Rotation\+Curve\+Control\+\_\+\+Lerp\+By\+Distance@{Smooth\+Rotation\+Curve\+Control\+\_\+\+Lerp\+By\+Distance}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Smooth\+Rotation\+Curve\+Control\+\_\+\+Lerp\+By\+Distance}{SmoothRotationCurveControl\_LerpByDistance}}
+{\footnotesize\ttfamily Animation\+Curve Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Smooth\+Rotation\+Curve\+Control\+\_\+\+Lerp\+By\+Distance\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the smooth rotation curve control \+: lerp by distance 
+
+The smooth position curve control.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a7ed30b92b38582d9f2ca7048f00e0cf2}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_marker_target_behaviour_a7ed30b92b38582d9f2ca7048f00e0cf2}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}!Smooth\+Rotation\+Lerp\+Rate@{Smooth\+Rotation\+Lerp\+Rate}}
+\index{Smooth\+Rotation\+Lerp\+Rate@{Smooth\+Rotation\+Lerp\+Rate}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+Marker\+Target\+Behaviour}}
+\subsubsection{\texorpdfstring{Smooth\+Rotation\+Lerp\+Rate}{SmoothRotationLerpRate}}
+{\footnotesize\ttfamily float Ximmerse.\+Slide\+In\+S\+D\+K.\+Marker\+Target\+Behaviour.\+Smooth\+Rotation\+Lerp\+Rate\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the smooth lerp rate. 
+
+The smooth lerp rate.
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/yuanqingyin/\+Project/\+Job/\+Slide\+In\+S\+D\+K/\+Unity\+S\+D\+K/\+Assets/\+Plugins/\+Slide\+In\+S\+D\+K/\+H\+L\+A\+P\+I/Marker\+Target\+Behaviour.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,89 @@
+\hypertarget{interface_l_u_console_log_entry_list}{}\section{L\+U\+Console\+Log\+Entry\+List Class Reference}
+\label{interface_l_u_console_log_entry_list}\index{L\+U\+Console\+Log\+Entry\+List@{L\+U\+Console\+Log\+Entry\+List}}
+Inheritance diagram for L\+U\+Console\+Log\+Entry\+List\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_l_u_console_log_entry_list}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_a968c3f2e60de07884183de140d1ab2d4}\label{interface_l_u_console_log_entry_list_a968c3f2e60de07884183de140d1ab2d4}} 
+(instancetype) -\/ {\bfseries init\+With\+Capacity\+:trim\+Count\+:}
+\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_a18d4c08b0275227e12500c0a09172fa3}\label{interface_l_u_console_log_entry_list_a18d4c08b0275227e12500c0a09172fa3}} 
+(N\+S\+Integer) -\/ \mbox{\hyperlink{interface_l_u_console_log_entry_list_a18d4c08b0275227e12500c0a09172fa3}{add\+Entry\+:}}
+\begin{DoxyCompactList}\small\item\em Adds entry to the list. Return the entry index or -\/1 if the entry was filtered out. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_a64fdfc29cb1de16e20e54427f627fd11}\label{interface_l_u_console_log_entry_list_a64fdfc29cb1de16e20e54427f627fd11}} 
+(\mbox{\hyperlink{interface_l_u_console_log_entry}{L\+U\+Console\+Log\+Entry}} $\ast$) -\/ {\bfseries entry\+At\+Index\+:}
+\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_a79833c691f1d5593322220b8330307b2}\label{interface_l_u_console_log_entry_list_a79833c691f1d5593322220b8330307b2}} 
+(void) -\/ {\bfseries clear}
+\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_a8ad1d734a1ca3fe9728f28925a826957}\label{interface_l_u_console_log_entry_list_a8ad1d734a1ca3fe9728f28925a826957}} 
+(B\+O\+OL) -\/ {\bfseries set\+Filter\+By\+Text\+:}
+\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_a38ce7a82497c41ba4aaadb199fd22200}\label{interface_l_u_console_log_entry_list_a38ce7a82497c41ba4aaadb199fd22200}} 
+(B\+O\+OL) -\/ {\bfseries set\+Filter\+By\+Log\+Type\+:disabled\+:}
+\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_a68e4115ba9a0a7f958c0969fdadd280b}\label{interface_l_u_console_log_entry_list_a68e4115ba9a0a7f958c0969fdadd280b}} 
+(B\+O\+OL) -\/ {\bfseries set\+Filter\+By\+Log\+Type\+Mask\+:disabled\+:}
+\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_aa44b65198b229da2f5c87cd2b935d84a}\label{interface_l_u_console_log_entry_list_aa44b65198b229da2f5c87cd2b935d84a}} 
+(B\+O\+OL) -\/ {\bfseries is\+Filter\+Log\+Type\+Enabled\+:}
+\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_a8e2f1b9b08a558515cb5948afe51c1b1}\label{interface_l_u_console_log_entry_list_a8e2f1b9b08a558515cb5948afe51c1b1}} 
+(N\+S\+String $\ast$) -\/ {\bfseries get\+Text}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_a7004edcb9b66573dd3e6ccdc12ec0c31}\label{interface_l_u_console_log_entry_list_a7004edcb9b66573dd3e6ccdc12ec0c31}} 
+(instancetype) + {\bfseries list\+With\+Capacity\+:trim\+Count\+:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_a08451ca9ca7ccf77d938a5ba81aedc17}\label{interface_l_u_console_log_entry_list_a08451ca9ca7ccf77d938a5ba81aedc17}} 
+N\+S\+U\+Integer {\bfseries capacity}
+\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_a6cc87eb37a5105a719c79ae15bb7cdb8}\label{interface_l_u_console_log_entry_list_a6cc87eb37a5105a719c79ae15bb7cdb8}} 
+N\+S\+U\+Integer {\bfseries count}
+\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_af4eeee1c8baef9e856969b6fb7f2d041}\label{interface_l_u_console_log_entry_list_af4eeee1c8baef9e856969b6fb7f2d041}} 
+N\+S\+U\+Integer {\bfseries total\+Count}
+\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_a64dd4adb87992e04d77aa3a9a6341b98}\label{interface_l_u_console_log_entry_list_a64dd4adb87992e04d77aa3a9a6341b98}} 
+N\+S\+U\+Integer {\bfseries trimmed\+Count}
+\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_a5ba45295bc04e5a53d8a50361faeb114}\label{interface_l_u_console_log_entry_list_a5ba45295bc04e5a53d8a50361faeb114}} 
+N\+S\+U\+Integer {\bfseries trim\+Count}
+\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_a94b78e8b4bec82c2a7ca40c41a97bbef}\label{interface_l_u_console_log_entry_list_a94b78e8b4bec82c2a7ca40c41a97bbef}} 
+B\+O\+OL {\bfseries is\+Trimmed}
+\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_abcc09f0bd95dbf58f557f2e4b573ef28}\label{interface_l_u_console_log_entry_list_abcc09f0bd95dbf58f557f2e4b573ef28}} 
+N\+S\+String $\ast$ {\bfseries filter\+Text}
+\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_af06bef87938ce8032eeb37f0d8704f66}\label{interface_l_u_console_log_entry_list_af06bef87938ce8032eeb37f0d8704f66}} 
+B\+O\+OL {\bfseries is\+Filtering}
+\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_a662b624e75b3272b19fbf49f3c4d252e}\label{interface_l_u_console_log_entry_list_a662b624e75b3272b19fbf49f3c4d252e}} 
+N\+S\+U\+Integer {\bfseries log\+Count}
+\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_a0d9fc061cef426585b52833f317a205c}\label{interface_l_u_console_log_entry_list_a0d9fc061cef426585b52833f317a205c}} 
+N\+S\+U\+Integer {\bfseries warning\+Count}
+\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_a8aaac33e30c0e8c1dd59e1f44849c07c}\label{interface_l_u_console_log_entry_list_a8aaac33e30c0e8c1dd59e1f44849c07c}} 
+N\+S\+U\+Integer {\bfseries error\+Count}
+\item 
+\mbox{\Hypertarget{interface_l_u_console_log_entry_list_a5e8015a1b6f6c42b8462a843799e5166}\label{interface_l_u_console_log_entry_list_a5e8015a1b6f6c42b8462a843799e5166}} 
+B\+O\+OL {\bfseries collapsed}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/yuanqingyin/\+Project/\+Job/\+Slide\+In\+S\+D\+K/\+Unity\+S\+D\+K/\+Assets/\+Plugins/\+Lunar\+Console/\+Editor/i\+O\+S/\+Common/\+Console/\+Log/L\+U\+Console\+Log\+Entry\+List.\+h\item 
+/\+Users/yuanqingyin/\+Project/\+Job/\+Slide\+In\+S\+D\+K/\+Unity\+S\+D\+K/\+Assets/\+Plugins/\+Lunar\+Console/\+Editor/i\+O\+S/\+Common/\+Console/\+Log/L\+U\+Console\+Log\+Entry\+List.\+m\end{DoxyCompactItemize}

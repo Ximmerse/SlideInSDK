@@ -1,0 +1,1190 @@
+\hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin}{}\section{Ximmerse.\+Input\+System.\+X\+Device\+Plugin Class Reference}
+\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin}\index{Ximmerse.\+Input\+System.\+X\+Device\+Plugin@{Ximmerse.\+Input\+System.\+X\+Device\+Plugin}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_act_param__6_dof_info}{Act\+Param\+\_\+6\+Dof\+Info}}
+\begin{DoxyCompactList}\small\item\em Structure for gettting 6-\/\+Dof information. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_act_param___controller_state}{Act\+Param\+\_\+\+Controller\+State}}
+\begin{DoxyCompactList}\small\item\em The structure for returning controller state by calling Do\+Action with k\+X\+Act\+\_\+\+Get\+Controller\+State. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_act_param___i_m_u_info}{Act\+Param\+\_\+\+I\+M\+U\+Info}}
+\begin{DoxyCompactList}\small\item\em Structure for getting I\+MU information. ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_act_param___marker_info}{Act\+Param\+\_\+\+Marker\+Info}}
+\begin{DoxyCompactList}\small\item\em The structure is Marker information returned by the calling command of. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_act_param___touchpad_state}{Act\+Param\+\_\+\+Touchpad\+State}}
+\begin{DoxyCompactList}\small\item\em Touchpad State structure for k\+X\+Act\+\_\+\+Get\+\_\+\+Touch\+Pad\+State. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_act_param___vibrate_args}{Act\+Param\+\_\+\+Vibrate\+Args}}
+\begin{DoxyCompactList}\small\item\em The structure that sets the vibration parameters is used by the command of k\+X\+Act\+\_\+\+Get\+\_\+6\+Dof\+Info. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_observe_cb_param}{Observe\+Cb\+Param}}
+\item 
+struct \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_attr6_dof_info}{X\+Attr6\+Dof\+Info}}
+\begin{DoxyCompactList}\small\item\em Structure for gettting 6\+Dof information. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_attr_controller_state}{X\+Attr\+Controller\+State}}
+\begin{DoxyCompactList}\small\item\em Structure for getting controller state informations. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_attr_imu_info}{X\+Attr\+Imu\+Info}}
+\begin{DoxyCompactList}\small\item\em Structure for getting I\+MU information. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_attr_touch_pad_state}{X\+Attr\+Touch\+Pad\+State}}
+\item 
+struct \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_attr_tracking_info}{X\+Attr\+Tracking\+Info}}
+\begin{DoxyCompactList}\small\item\em V\+PU cammera tracking object pose info. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_button_event_param}{X\+Button\+Event\+Param}}
+\begin{DoxyCompactList}\small\item\em Parameters for button event notification. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}}
+\begin{DoxyCompactList}\small\item\em Input device handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a6e7bd1d7c7750fcdeb271defafc86bea}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a6e7bd1d7c7750fcdeb271defafc86bea}} 
+enum {\bfseries X\+Log\+Levels} \{ \newline
+{\bfseries k\+X\+Log\+Level\+\_\+\+Silence}, 
+{\bfseries k\+X\+Log\+Level\+\_\+\+Error}, 
+{\bfseries k\+X\+Log\+Level\+\_\+\+Warn}, 
+{\bfseries k\+X\+Log\+Level\+\_\+\+Info}, 
+\newline
+{\bfseries k\+X\+Log\+Level\+\_\+\+Debug}, 
+{\bfseries k\+X\+Log\+Level\+\_\+\+Verbose}
+ \}
+\item 
+enum \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab11d2f358709ce84ff419eae941f16d6}{X\+Context\+Types}} \{ \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab11d2f358709ce84ff419eae941f16d6a4aad06142d58cf0d02c54672d88f2632}{X\+Context\+Types.\+k\+X\+Context\+Type\+Slide\+In}}
+ \}
+\begin{DoxyCompactList}\small\item\em The parameters of the function, fill in the action\+\_\+id. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aca129c7953e73c8cb1d7500c1ccc4b50}{X\+Controller\+Types}} \{ \newline
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aca129c7953e73c8cb1d7500c1ccc4b50a71eae6030eae97660c86120090eb2db3}{X\+Controller\+Types.\+k\+X\+Controller\+Saber}} = 0x00, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aca129c7953e73c8cb1d7500c1ccc4b50ac03ca1404661c6a6065071e33fb413a6}{X\+Controller\+Types.\+k\+X\+Controller\+Kylo}} = 0x01, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aca129c7953e73c8cb1d7500c1ccc4b50a0abb9c2799237bff7946f70d9fe4dc28}{X\+Controller\+Types.\+k\+X\+Controller\+D\+Type}} = 0x02, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aca129c7953e73c8cb1d7500c1ccc4b50a99d7cd155cd35b2aa20ee40bf7874c74}{X\+Controller\+Types.\+k\+X\+Controller\+Pick\+Up}} = 0x03, 
+\newline
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aca129c7953e73c8cb1d7500c1ccc4b50a33b87d435aea3fa33d2dc0baa2fbc70b}{X\+Controller\+Types.\+k\+X\+Controller3\+Dof}} = 0x20, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aca129c7953e73c8cb1d7500c1ccc4b50a809ed54e1e6ad933ba90ca2f0f27c9de}{X\+Controller\+Types.\+k\+X\+Controller\+Tag}} = 0x10
+ \}
+\item 
+enum \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aebd3ade57fdca1e612d0855fb119e4be}{X\+Tracking\+States}} \{ \newline
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aebd3ade57fdca1e612d0855fb119e4bea66020f5d0617751e9c77b4a5719acd32}{X\+Tracking\+States.\+k\+X\+Tracking\+St\+\_\+\+Not\+Tracked}} = 0, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aebd3ade57fdca1e612d0855fb119e4beab7af3f181e1346670fa7fc732fba69b5}{X\+Tracking\+States.\+k\+X\+Tracking\+St\+\_\+\+Rotation\+Tracked}} = 1$<$$<$0, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aebd3ade57fdca1e612d0855fb119e4beacb1271487bf136938578ec55d0cb351b}{X\+Tracking\+States.\+k\+X\+Tracking\+St\+\_\+\+Position\+Tracked}} = 1$<$$<$1, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aebd3ade57fdca1e612d0855fb119e4bea6e164bd53a5353f0802565aeaa89e7e9}{X\+Tracking\+States.\+k\+X\+Tracking\+St\+\_\+\+Pose\+Tracked}} = (k\+X\+Tracking\+St\+\_\+\+Rotation\+Tracked $\vert$ k\+X\+Tracking\+St\+\_\+\+Position\+Tracked), 
+\newline
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aebd3ade57fdca1e612d0855fb119e4bea8b27ecadc199d2cb213c0678198cb08b}{X\+Tracking\+States.\+k\+X\+Tracking\+St\+\_\+\+Rotation\+Emulated}} = 1$<$$<$2, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aebd3ade57fdca1e612d0855fb119e4bea4c531debe48744e67126b6d18c06661d}{X\+Tracking\+States.\+k\+X\+Tracking\+St\+\_\+\+Position\+Emulated}} = 1$<$$<$3
+ \}
+\item 
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a03c5fc5af0c493fdb0be72d754218cd1}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a03c5fc5af0c493fdb0be72d754218cd1}} 
+enum \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a03c5fc5af0c493fdb0be72d754218cd1}{X\+Controller\+Button\+Masks}} \{ \newline
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Dpap\+Up} = 0x0001, 
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Dpap\+Down} = 0x0002, 
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Dpad\+Left} = 0x0004, 
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Dpad\+Right} = 0x0008, 
+\newline
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Start} = 0x0010, 
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Back} = 0x0020, 
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Left\+Thumb} = 0x0040, 
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Right\+Thumb} = 0x0080, 
+\newline
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Left\+Shoulder} = 0x0100, 
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Right\+Shoulder} = 0x0200, 
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Guide} = 0x0400, 
+{\bfseries k\+X\+Controller\+Button\+\_\+A} = 0x1000, 
+\newline
+{\bfseries k\+X\+Controller\+Button\+\_\+B} = 0x2000, 
+{\bfseries k\+X\+Controller\+Button\+\_\+X} = 0x4000, 
+{\bfseries k\+X\+Controller\+Button\+\_\+Y} = 0x8000, 
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Left\+Thumb\+Move} = 0x10000, 
+\newline
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Right\+Thumb\+Move} = 0x20000, 
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Left\+Trigger} = 0x40000, 
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Right\+Trigger} = 0x80000, 
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Left\+Thumb\+Up} = 0x100000, 
+\newline
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Left\+Thumb\+Down} = 0x200000, 
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Left\+Thumb\+Left} = 0x400000, 
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Left\+Thumb\+Right} = 0x800000, 
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Right\+Thumb\+Up} = 0x1000000, 
+\newline
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Right\+Thumb\+Down} = 0x2000000, 
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Right\+Thumb\+Left} = 0x4000000, 
+{\bfseries k\+X\+Controller\+Button\+\_\+\+Right\+Thumb\+Right} = 0x8000000, 
+{\bfseries k\+X\+Controller\+Button\+\_\+\+None} = 0x0, 
+\newline
+{\bfseries k\+X\+Controller\+Button\+\_\+\+A\+NY} = $\sim$k\+X\+Controller\+Button\+\_\+\+None
+ \}
+\begin{DoxyCompactList}\small\item\em Masks of Controller buttons. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aabfeabd1179f1fa965e3edc6f8b8d415}{X\+Context\+Attributes}} \{ \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aabfeabd1179f1fa965e3edc6f8b8d415afc49054c2c089e77c8e1bb799d5b30d1}{X\+Context\+Attributes.\+k\+X\+Ctx\+Attr\+\_\+\+Int\+\_\+\+Sdk\+Version}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aabfeabd1179f1fa965e3edc6f8b8d415a8040fcb6b1b71175430cc98f134c904b}{X\+Context\+Attributes.\+k\+X\+Ctx\+Attr\+\_\+\+Str\+\_\+\+Sdk\+Version}}, 
+{\bfseries k\+X\+Ctx\+Attr\+\_\+\+Int\+\_\+\+S\+D\+K\+A\+L\+G\+Version}
+ \}
+\begin{DoxyCompactList}\small\item\em Attributes of Context. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6b}{X\+Vpu\+Attributes}} \{ \newline
+{\bfseries k\+X\+Vpu\+Attr\+\_\+\+Str\+\_\+\+Software\+Revision}, 
+{\bfseries k\+X\+Vpu\+Attr\+\_\+\+Str\+\_\+\+Hardware\+Revision}, 
+{\bfseries k\+X\+Vpu\+Attr\+\_\+\+Str\+\_\+\+Serial\+Number}, 
+{\bfseries k\+X\+Vpu\+Attr\+\_\+\+Str\+\_\+\+Device\+Name}, 
+\newline
+{\bfseries k\+X\+Vpu\+Attr\+\_\+\+Str\+\_\+\+Model\+Name}, 
+{\bfseries k\+X\+Vpu\+Attr\+\_\+\+Str\+\_\+\+F\+P\+G\+A\+Version}, 
+{\bfseries k\+X\+Vpu\+Attr\+\_\+\+Str\+\_\+\+A\+L\+G\+Version}, 
+{\bfseries k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Imu\+Fps}, 
+\newline
+{\bfseries k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Fpga\+Fps}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba95f754b9f90e95a8a1365de2fb05054b}{X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Algorithm\+Pose\+Fps}}, 
+{\bfseries k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Error\+Code}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba7290722d24362499d5d1828c86dc94ca}{X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Connection\+State}}, 
+\newline
+{\bfseries k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Power\+Mode}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba42b3e502c60b86bc1efddceb5b213a8b}{X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Battery}}, 
+{\bfseries k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Battery\+Voltage}, 
+{\bfseries k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Battery\+Temperature}, 
+\newline
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6bae5ebad51f6fd55cffb224515779ed2cc}{X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+\+Imu\+Info}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba1d92bcd656b1f529817bf9c0426b4823}{X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+V\+\_\+\+Imu\+Info}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6bae28cacdbd204466c47eab2bacd75f47d}{X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+6\+Dof\+Info}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba332494a2914f93233d8c3e8dc6b858e6}{X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+V\+\_\+6\+Dof\+Info}}, 
+\newline
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba937e342e24ac994ed1ffb99f37fee2d0}{X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Button\+Bits}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba70b64bac812a291402e10067b2dbfd19}{X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Button\+Event}} = k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Button\+Bits, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba3ee49f8c7188ed8152a6c807a1cde6b7}{X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Paired\+Number}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba71f91f7813019129b6a7f32df55ee967}{X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+\+Controller\+State}}, 
+\newline
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6baec86360d15f6bdb485a1f5eb849cb629}{X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+\+Tracking\+Info}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6baaa82108f6eee2518844b9ec2b82c3278}{X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+V\+\_\+\+Tracking\+Info}}
+ \}
+\begin{DoxyCompactList}\small\item\em Attributes of V\+PU Device. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908}{X\+Controller\+Attributes}} \{ \newline
+{\bfseries k\+X\+C\+Attr\+\_\+\+Str\+\_\+\+Firmware\+Revision}, 
+{\bfseries k\+X\+C\+Attr\+\_\+\+Str\+\_\+\+Software\+Revision}, 
+{\bfseries k\+X\+C\+Attr\+\_\+\+Str\+\_\+\+Hardware\+Revision}, 
+{\bfseries k\+X\+C\+Attr\+\_\+\+Str\+\_\+\+Serial\+Number}, 
+\newline
+{\bfseries k\+X\+C\+Attr\+\_\+\+Str\+\_\+\+Device\+Name}, 
+{\bfseries k\+X\+C\+Attr\+\_\+\+Str\+\_\+\+Model\+Name}, 
+{\bfseries k\+X\+C\+Attr\+\_\+\+Str\+\_\+\+Manufacturer\+Name}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908a4e0c5c049d5a4c811e693b8719b82375}{X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Imu\+Fps}}, 
+\newline
+{\bfseries k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Error\+Code}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908aa8a9dbd1f4002d04556a3d881a281a38}{X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Connection\+State}}, 
+{\bfseries k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Power\+Mode}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908adb1b78bfecb66361c9d012d602fe2cb6}{X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Battery}}, 
+\newline
+{\bfseries k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Battery\+Voltage}, 
+{\bfseries k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Battery\+Temperature}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908a2da8cea6f349dec2f63d24577e9a56eb}{X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Obj\+\_\+\+Imu\+Info}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908a54e4c97b9d434779961bcc0077ca1cf4}{X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+V\+\_\+\+Imu\+Info}}, 
+\newline
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908a12ab74f9a821f1c4070263a1d913266d}{X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Obj\+\_\+6\+Dof\+Info}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908a50fff2154ce4c3b38070869c63fe8690}{X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+V\+\_\+6\+Dof\+Info}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908a861c837afd6a6d92c6d41a1a72fdf647}{X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Button\+Bits}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908acc3822f690de3d491338279682a6ab92}{X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Button\+Event}} = k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Button\+Bits, 
+\newline
+{\bfseries k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Trigger}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908ab9f386faf3851896e1a8ac8de9048c88}{X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Obj\+\_\+\+Touch\+Pad\+State}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908a227ff6bde1667720cb05281e5a9e0d6a}{X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Obj\+\_\+\+Controller\+State}}
+ \}
+\begin{DoxyCompactList}\small\item\em Attribute types of controller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a2b1a55b2bd1c82176239be06b2837a36}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a2b1a55b2bd1c82176239be06b2837a36}} 
+enum \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a2b1a55b2bd1c82176239be06b2837a36}{X\+Button\+Events}} \{ {\bfseries k\+X\+Btn\+Evt\+\_\+\+Down}, 
+{\bfseries k\+X\+Btn\+Evt\+\_\+\+Up}, 
+{\bfseries k\+X\+Btn\+Evt\+\_\+\+Long\+Press}
+ \}
+\begin{DoxyCompactList}\small\item\em Button events. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_af604a35c067a396ef099047f2dfa928b}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_af604a35c067a396ef099047f2dfa928b}} 
+enum \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_af604a35c067a396ef099047f2dfa928b}{X\+Connection\+States}} \{ {\bfseries k\+X\+Conn\+St\+\_\+\+Disconnected} = 0, 
+{\bfseries k\+X\+Conn\+St\+\_\+\+Connecting} = 1, 
+{\bfseries k\+X\+Conn\+St\+\_\+\+Connected} = 3
+ \}
+\begin{DoxyCompactList}\small\item\em Connection state of device. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a37806bc0da807552e7738c86ec17dcd9}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a37806bc0da807552e7738c86ec17dcd9}} 
+enum {\bfseries X\+Attr\+Touch\+Pad\+Events} \{ {\bfseries k\+Attr\+Tpad\+Evt\+\_\+\+Idle} = 0x00, 
+{\bfseries k\+Attr\+Tpad\+Evt\+\_\+\+Press} = 0x01, 
+{\bfseries k\+Attr\+Tpad\+Evt\+\_\+\+Release} = 0x02, 
+{\bfseries k\+Attr\+Tpad\+Evt\+\_\+\+Move} = 0x03
+ \}
+\item 
+enum \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3}{X\+Actions}} \{ \newline
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3af843c25531328f5ad4d32ebcfe8e337d}{X\+Actions.\+k\+X\+Act\+\_\+\+Unpair\+Controller}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a7a029c5a3e5c06867e87cfcc60515b87}{X\+Actions.\+k\+X\+Act\+\_\+\+Unpair\+All\+Controllers}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ab61574e072b90ef85c63cc435271a7fc}{X\+Actions.\+k\+X\+Act\+\_\+\+Start\+Pairing\+Controller}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3aa0b8a687ccb08f93ce8d64735f7bc4e2}{X\+Actions.\+k\+X\+Act\+\_\+\+Stop\+Pairing\+Controller}}, 
+\newline
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a8a5246052981148f54ec398c32aee4fe}{X\+Actions.\+k\+X\+Act\+\_\+\+Connect\+Controller\+By\+Bind\+ID}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3afa90890e83a6b7bf0a0f1aed7053da6a}{X\+Actions.\+k\+X\+Act\+\_\+\+Connect\+All\+Paired\+Controllers}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3afa6d95495ae666942399535fc66b1c40}{X\+Actions.\+k\+X\+Act\+\_\+\+Disconnect\+Controller\+By\+Index}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a5fcae4fbba0df29dc4ed7671a51a6f54}{X\+Actions.\+k\+X\+Act\+\_\+\+Disconnect\+Controller\+By\+Bind\+ID}}, 
+\newline
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a5a4ad39aa9d91f40a442cab7448de0d7}{X\+Actions.\+k\+X\+Act\+\_\+\+Disconnect\+All\+Controllers}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a4137389d8de6d5f50b58a0e39166c60a}{X\+Actions.\+k\+X\+Act\+\_\+\+Vibrate}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3acaebf8b71387ebaa2219c26b6939d776}{X\+Actions.\+k\+X\+Act\+\_\+\+Vibrate\+\_\+V}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a61f0049b48a0d6219c7aa63c4fe7c5a2}{X\+Actions.\+k\+X\+Act\+\_\+\+Sleep}}, 
+\newline
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a45ad6f944cf465ce26a6b5d94e14e787}{X\+Actions.\+k\+X\+Act\+\_\+\+Wakeup}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a57c91543e692488a8586ff34d0426590}{X\+Actions.\+k\+X\+Act\+\_\+\+Connect\+Controller\+By\+Mac\+Addr}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ac6d2742c93c86e53e24df51eb3284bcc}{X\+Actions.\+k\+X\+Act\+\_\+\+Custom\+Begin}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3aa6d643fd7b7ddaceb3a32c84a275979d}{X\+Actions.\+k\+X\+Act\+\_\+\+Slide\+In\+Actions\+Begin}} = X\+Actions.\+k\+X\+Act\+\_\+\+Custom\+Begin, 
+\newline
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a0d27a94a2ff6c34d7560ed74c1d85a2e}{X\+Actions.\+k\+X\+Act\+\_\+\+Load\+Marker\+Setting\+File}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a2740806054ff1e7a5f9769c806e02ee1}{X\+Actions.\+k\+X\+Act\+\_\+\+Reset\+Marker\+Settings}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a30cbb63ee7899538fa6b9ff50346c7f5}{X\+Actions.\+k\+X\+Act\+\_\+\+Load\+Camera\+Calibration\+File}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a96e8c702cfabe04d5a39c2e75261a85e}{X\+Actions.\+k\+X\+Act\+\_\+\+Set\+Position\+Smooth}}, 
+\newline
+{\bfseries k\+X\+Act\+\_\+\+Max}, 
+{\bfseries k\+X\+Act\+\_\+\+Deprecated\+Offset} = 10000, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a8900372471206cd79f6ef192558cc1dc}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Ctx\+Device\+Version}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a696f9eee8ccd720795fed59db1fc5c34}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Ctx\+Sdk\+Version}}, 
+\newline
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a841d848bf84742884ef91b5f5b1de65a}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Ctx\+S\+D\+K\+A\+L\+G\+Version}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3aa3ca38d7e2eb48ca8844decfa6cea1c7}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+F\+PS}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a70a9d909ec4d215aa2266baaf7e816aa}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Error\+Code}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a07c0c5dfc2f415fbdaf171e7ca35945a}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Connection\+State}}, 
+\newline
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a156868998068c09a8c795ea03e1bc8be}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Blob\+ID}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a90775e3138598cd014cad7d925d1545a}{X\+Actions.\+k\+X\+Act\+\_\+\+Set\+Blog\+ID}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a9ed8e6b6a8515241b17fb95209e7c75a}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a56b74811e99a4f7a98b7c57d9f8bc27e}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery\+Mode}}, 
+\newline
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a9cbbd8f58c423e1433031eb9ed4dbb94}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery\+Voltage}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a376ad4b439fe36819f0642463bf221fa}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery\+Temperature}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a6f905100ff14cfe78e99cd6941b16943}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Software\+Revision}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3af20beece6504524adbcea8c4ff2e1f15}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Hardware\+Revision}}, 
+\newline
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a05aca0d3a85ffbd8676c1aab8b09e010}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+F\+P\+G\+A\+Version}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a9750285b42fb8a64c8d2b166f0ea88f3}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Model\+Name}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ae799224e5ca05b1b2ed58e459e22d4b5}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Display\+Name}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3aa1329f1a1694b4a9d3965592fd41bfba}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+A\+L\+G\+Version}}, 
+\newline
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ab8d69f4b069e98e7d7013fa609d3e9f6}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Serial\+Number}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ace545d1582bd87cdc08e8aef19e7231d}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Manufacturer\+Name}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a41acdf2079bd9b63d7c4e00cb47b5915}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Firmware\+Revision}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a36934a08a9b02748ea0bf23062ec091b}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Imu\+Info}}, 
+\newline
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a36d3d672e4cc84dd4e937d60397ac38a}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Imu\+Info\+\_\+V}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a8b16f0e3686bd02934286fd2981949e8}{X\+Actions.\+k\+X\+Act\+\_\+\+Get6\+Dof\+Info}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3af7886a71cbe4a4ea23eccc725fbef65a}{X\+Actions.\+k\+X\+Act\+\_\+\+Get6\+Dof\+Info\+\_\+V}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a600d9ed92cf7f133e59cf0f1632a191e}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Button\+Bits}}, 
+\newline
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ad857890d1dfdb1a12eb84ddc0440b982}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+\_\+\+Touch\+Pad\+State}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a6ee7ab4830eb746cbccf5630eeef0053}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Paired\+Number}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ae966e0f26e4ea0a4a6b6b9989616a2ca}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Paired\+List}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ac6672a3fc9904aa78ca8193b4b3dbc63}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Controller\+State}}, 
+\newline
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ab6dd9ac1d2e47d2cc527acc21b0e35a8}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Marker\+Info}}, 
+\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a6e330e368787658e85be837395d488d2}{X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Marker\+Info\+\_\+V}}
+ \}
+\begin{DoxyCompactList}\small\item\em The parameters of the Do\+Action method , fill in the action\+\_\+id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab63dcd3c4df31a722846fa7d5a206274}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab63dcd3c4df31a722846fa7d5a206274}} 
+delegate void {\bfseries X\+Dev\+Attribute\+Observe\+Delegate} (Native\+Handle handle, int attr\+\_\+id, System.\+Int\+Ptr val, int val\+\_\+size, System.\+Int\+Ptr ud)
+\item 
+delegate void \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ad3e594d2625a689603878102ad019899}{X\+Log\+Delegate}} (int level, string tag, string log)
+\begin{DoxyCompactList}\small\item\em Delegate for printing output. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a89daec82446f8b3031fc2eb3a38076bd}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a89daec82446f8b3031fc2eb3a38076bd}} 
+delegate void {\bfseries X\+Attribute\+Observe\+Delegate} (Native\+Handle native\+\_\+handle, int attr\+\_\+id, Int\+Ptr param)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a546097299b4afcab3ca13db187b27f43}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Initialization of the platform support library for input devices. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a3bf78828cba75d4f9ea2a53af67cd13b}{Exit}} ()
+\begin{DoxyCompactList}\small\item\em Exit the platform support library for the input device. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a8388d5a956a6db84681f404a01e82640}{New\+Context}} (\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab11d2f358709ce84ff419eae941f16d6}{X\+Context\+Types}} context\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Create the device context. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a2bc3bfc01379e786800b8280ba34765b}{Release\+Context}} (\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} context\+\_\+handle)
+\begin{DoxyCompactList}\small\item\em Destroy the device context. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a95d719f976001f91b79be34041aaeb43}{Set\+Logger}} (\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ad3e594d2625a689603878102ad019899}{X\+Log\+Delegate}} logger, X\+Log\+Levels lv=X\+Log\+Levels.\+k\+X\+Log\+Level\+\_\+\+Debug)
+\begin{DoxyCompactList}\small\item\em Set up the print listener of X\+Log\+Delegate. \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a86c25965f67c18e3203a86104724dbd0}{Get\+Name}} (\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em Get Name of the provided handle. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a90fa79ef1d8350ae533cece026a0ba6e}{Get\+Device\+Handle}} (\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} context\+\_\+handle, string name)
+\begin{DoxyCompactList}\small\item\em Gets the device handle through the device name. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a35864c46a7e5434e8909a928f62e0ac3}{Get\+Bool$<$ E $>$}} (\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} handle, E attr\+\_\+id, bool default\+\_\+value=false)
+\begin{DoxyCompactList}\small\item\em Gets the Boolean type parameters for the device. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a0e4fb349f5b6215c2e3434a41540f758}{Get\+Int$<$ E $>$}} (\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} handle, E attr\+\_\+id, int default\+\_\+value=0)
+\begin{DoxyCompactList}\small\item\em Gets the Int type parameters for the device. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a1d651426ac147b7982f1861d08484774}{Get\+Float$<$ E $>$}} (\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} handle, E attr\+\_\+id, float default\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Gets the Float type parameters for the device. \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a702aba317928dbf9028591a54a8c91be}{Get\+String$<$ E $>$}} (\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} handle, E attr\+\_\+id, string default\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Gets the String type parameters for the device. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_abdee83621541ceeb6ca0d971eadf1ed6}{Get\+Object$<$ E, T $>$}} (\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} handle, E attr\+\_\+id, ref T arg)
+\item 
+static int \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a40272546ecacaef98c2c013ca1485742}{Do\+Action}} (\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} handle, \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3}{X\+Actions}} action\+\_\+id)
+\begin{DoxyCompactList}\small\item\em function is used to control input device \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aaa4ab5e91e8c12c593430a35a71f8f08}{Do\+Action}} (\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} handle, \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3}{X\+Actions}} action\+\_\+id, string args)
+\begin{DoxyCompactList}\small\item\em function is used to control input device \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a783d80ba255be3580dfbc08ab0e9e327}{Do\+Action}} (\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} handle, \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3}{X\+Actions}} action\+\_\+id, int args)
+\begin{DoxyCompactList}\small\item\em function is used to control input device \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a2989fa4bd61cffedb6a38caca9249652}{Do\+Action$<$ T $>$}} (\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} handle, \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3}{X\+Actions}} action\+\_\+id, ref T arg)
+\begin{DoxyCompactList}\small\item\em function is used to control input device \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a71155bd0478631baa8874309296524a5}{Do\+Action$<$ T $>$}} (\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} handle, \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3}{X\+Actions}} action\+\_\+id, T arg)
+\begin{DoxyCompactList}\small\item\em function is used to control input device \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a1188534e663a3b619d2f9f932504cf4e}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a1188534e663a3b619d2f9f932504cf4e}} 
+static int {\bfseries Observe$<$ E $>$} (\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} handle, E attr\+\_\+id, X\+Attribute\+Observe\+Delegate dlg)
+\item 
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aa12c08d4800a4def681a17f54db7aade}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aa12c08d4800a4def681a17f54db7aade}} 
+static bool {\bfseries Test\+Actions} (\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} xctx\+\_\+hdl, \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} xhmd\+\_\+hdl, \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} xctrl\+\_\+0\+\_\+hdl, \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} xctrl\+\_\+1\+\_\+hdl)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a58a474d463368608ef321694d352dc8c}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a58a474d463368608ef321694d352dc8c}} 
+const bool {\bfseries k\+Support\+Deprecated\+Api} = true
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!X\+Actions@{X\+Actions}}
+\index{X\+Actions@{X\+Actions}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{X\+Actions}{XActions}}
+{\footnotesize\ttfamily enum Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+X\+Actions\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The parameters of the Do\+Action method , fill in the action\+\_\+id. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Unpair\+Controller@{k\+X\+Act\+\_\+\+Unpair\+Controller}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Unpair\+Controller@{k\+X\+Act\+\_\+\+Unpair\+Controller}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3af843c25531328f5ad4d32ebcfe8e337d}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3af843c25531328f5ad4d32ebcfe8e337d}} 
+k\+X\+Act\+\_\+\+Unpair\+Controller&The command to unbind a connected controller. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Unpair\+All\+Controllers@{k\+X\+Act\+\_\+\+Unpair\+All\+Controllers}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Unpair\+All\+Controllers@{k\+X\+Act\+\_\+\+Unpair\+All\+Controllers}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a7a029c5a3e5c06867e87cfcc60515b87}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a7a029c5a3e5c06867e87cfcc60515b87}} 
+k\+X\+Act\+\_\+\+Unpair\+All\+Controllers&The command to unbind all controllers. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Start\+Pairing\+Controller@{k\+X\+Act\+\_\+\+Start\+Pairing\+Controller}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Start\+Pairing\+Controller@{k\+X\+Act\+\_\+\+Start\+Pairing\+Controller}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ab61574e072b90ef85c63cc435271a7fc}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ab61574e072b90ef85c63cc435271a7fc}} 
+k\+X\+Act\+\_\+\+Start\+Pairing\+Controller&The command to start the controller pairing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Stop\+Pairing\+Controller@{k\+X\+Act\+\_\+\+Stop\+Pairing\+Controller}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Stop\+Pairing\+Controller@{k\+X\+Act\+\_\+\+Stop\+Pairing\+Controller}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3aa0b8a687ccb08f93ce8d64735f7bc4e2}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3aa0b8a687ccb08f93ce8d64735f7bc4e2}} 
+k\+X\+Act\+\_\+\+Stop\+Pairing\+Controller&The command to stop the controller pairing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Connect\+Controller\+By\+Bind\+ID@{k\+X\+Act\+\_\+\+Connect\+Controller\+By\+Bind\+ID}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Connect\+Controller\+By\+Bind\+ID@{k\+X\+Act\+\_\+\+Connect\+Controller\+By\+Bind\+ID}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a8a5246052981148f54ec398c32aee4fe}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a8a5246052981148f54ec398c32aee4fe}} 
+k\+X\+Act\+\_\+\+Connect\+Controller\+By\+Bind\+ID&Connect to a paired controller by specifying bind ID. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Connect\+All\+Paired\+Controllers@{k\+X\+Act\+\_\+\+Connect\+All\+Paired\+Controllers}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Connect\+All\+Paired\+Controllers@{k\+X\+Act\+\_\+\+Connect\+All\+Paired\+Controllers}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3afa90890e83a6b7bf0a0f1aed7053da6a}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3afa90890e83a6b7bf0a0f1aed7053da6a}} 
+k\+X\+Act\+\_\+\+Connect\+All\+Paired\+Controllers&Connect to All Paired Controllers. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Disconnect\+Controller\+By\+Index@{k\+X\+Act\+\_\+\+Disconnect\+Controller\+By\+Index}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Disconnect\+Controller\+By\+Index@{k\+X\+Act\+\_\+\+Disconnect\+Controller\+By\+Index}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3afa6d95495ae666942399535fc66b1c40}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3afa6d95495ae666942399535fc66b1c40}} 
+k\+X\+Act\+\_\+\+Disconnect\+Controller\+By\+Index&Disconnect a connected controller by specifying connected index. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Disconnect\+Controller\+By\+Bind\+ID@{k\+X\+Act\+\_\+\+Disconnect\+Controller\+By\+Bind\+ID}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Disconnect\+Controller\+By\+Bind\+ID@{k\+X\+Act\+\_\+\+Disconnect\+Controller\+By\+Bind\+ID}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a5fcae4fbba0df29dc4ed7671a51a6f54}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a5fcae4fbba0df29dc4ed7671a51a6f54}} 
+k\+X\+Act\+\_\+\+Disconnect\+Controller\+By\+Bind\+ID&Disconnect a connected controller by specifying bind ID. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Disconnect\+All\+Controllers@{k\+X\+Act\+\_\+\+Disconnect\+All\+Controllers}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Disconnect\+All\+Controllers@{k\+X\+Act\+\_\+\+Disconnect\+All\+Controllers}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a5a4ad39aa9d91f40a442cab7448de0d7}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a5a4ad39aa9d91f40a442cab7448de0d7}} 
+k\+X\+Act\+\_\+\+Disconnect\+All\+Controllers&Disconnect all connected Controllers. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Vibrate@{k\+X\+Act\+\_\+\+Vibrate}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Vibrate@{k\+X\+Act\+\_\+\+Vibrate}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a4137389d8de6d5f50b58a0e39166c60a}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a4137389d8de6d5f50b58a0e39166c60a}} 
+k\+X\+Act\+\_\+\+Vibrate&Set the motor vibration command, the parameter is the structure of Act\+Param\+\_\+\+Vibration. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Vibrate\+\_\+V@{k\+X\+Act\+\_\+\+Vibrate\+\_\+V}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Vibrate\+\_\+V@{k\+X\+Act\+\_\+\+Vibrate\+\_\+V}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3acaebf8b71387ebaa2219c26b6939d776}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3acaebf8b71387ebaa2219c26b6939d776}} 
+k\+X\+Act\+\_\+\+Vibrate\+\_\+V&Set the motor vibration command with variable parameters , this command is I\+N\+V\+A\+L\+ID in Unity. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Sleep@{k\+X\+Act\+\_\+\+Sleep}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Sleep@{k\+X\+Act\+\_\+\+Sleep}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a61f0049b48a0d6219c7aa63c4fe7c5a2}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a61f0049b48a0d6219c7aa63c4fe7c5a2}} 
+k\+X\+Act\+\_\+\+Sleep&The command to set the device to sleep. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Wakeup@{k\+X\+Act\+\_\+\+Wakeup}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Wakeup@{k\+X\+Act\+\_\+\+Wakeup}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a45ad6f944cf465ce26a6b5d94e14e787}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a45ad6f944cf465ce26a6b5d94e14e787}} 
+k\+X\+Act\+\_\+\+Wakeup&The command to set the device to Wakeup. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Connect\+Controller\+By\+Mac\+Addr@{k\+X\+Act\+\_\+\+Connect\+Controller\+By\+Mac\+Addr}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Connect\+Controller\+By\+Mac\+Addr@{k\+X\+Act\+\_\+\+Connect\+Controller\+By\+Mac\+Addr}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a57c91543e692488a8586ff34d0426590}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a57c91543e692488a8586ff34d0426590}} 
+k\+X\+Act\+\_\+\+Connect\+Controller\+By\+Mac\+Addr&Connect to controller by specified M\+AC address, parameter is a M\+AC address string with hex format. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Custom\+Begin@{k\+X\+Act\+\_\+\+Custom\+Begin}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Custom\+Begin@{k\+X\+Act\+\_\+\+Custom\+Begin}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ac6d2742c93c86e53e24df51eb3284bcc}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ac6d2742c93c86e53e24df51eb3284bcc}} 
+k\+X\+Act\+\_\+\+Custom\+Begin&The separator of the current enum definition. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Slide\+In\+Actions\+Begin@{k\+X\+Act\+\_\+\+Slide\+In\+Actions\+Begin}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Slide\+In\+Actions\+Begin@{k\+X\+Act\+\_\+\+Slide\+In\+Actions\+Begin}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3aa6d643fd7b7ddaceb3a32c84a275979d}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3aa6d643fd7b7ddaceb3a32c84a275979d}} 
+k\+X\+Act\+\_\+\+Slide\+In\+Actions\+Begin&The offset of an enumeration type. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Load\+Marker\+Setting\+File@{k\+X\+Act\+\_\+\+Load\+Marker\+Setting\+File}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Load\+Marker\+Setting\+File@{k\+X\+Act\+\_\+\+Load\+Marker\+Setting\+File}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a0d27a94a2ff6c34d7560ed74c1d85a2e}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a0d27a94a2ff6c34d7560ed74c1d85a2e}} 
+k\+X\+Act\+\_\+\+Load\+Marker\+Setting\+File&Load the configuration file of Tag tracking algorithm. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Reset\+Marker\+Settings@{k\+X\+Act\+\_\+\+Reset\+Marker\+Settings}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Reset\+Marker\+Settings@{k\+X\+Act\+\_\+\+Reset\+Marker\+Settings}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a2740806054ff1e7a5f9769c806e02ee1}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a2740806054ff1e7a5f9769c806e02ee1}} 
+k\+X\+Act\+\_\+\+Reset\+Marker\+Settings&Clear the configuration of the Tag tracking algorithm. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Load\+Camera\+Calibration\+File@{k\+X\+Act\+\_\+\+Load\+Camera\+Calibration\+File}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Load\+Camera\+Calibration\+File@{k\+X\+Act\+\_\+\+Load\+Camera\+Calibration\+File}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a30cbb63ee7899538fa6b9ff50346c7f5}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a30cbb63ee7899538fa6b9ff50346c7f5}} 
+k\+X\+Act\+\_\+\+Load\+Camera\+Calibration\+File&Load camera calibration parameters from the external,used in debugging. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Set\+Position\+Smooth@{k\+X\+Act\+\_\+\+Set\+Position\+Smooth}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Set\+Position\+Smooth@{k\+X\+Act\+\_\+\+Set\+Position\+Smooth}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a96e8c702cfabe04d5a39c2e75261a85e}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a96e8c702cfabe04d5a39c2e75261a85e}} 
+k\+X\+Act\+\_\+\+Set\+Position\+Smooth&Set the smoothing parameters of the Tag tracking algorithm,set -\/1 to close the smoothing of the algorithm, the valid range is 0 to 5. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Ctx\+Device\+Version@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Ctx\+Device\+Version}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Ctx\+Device\+Version@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Ctx\+Device\+Version}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a8900372471206cd79f6ef192558cc1dc}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a8900372471206cd79f6ef192558cc1dc}} 
+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Ctx\+Device\+Version&deprecated \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Ctx\+Sdk\+Version@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Ctx\+Sdk\+Version}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Ctx\+Sdk\+Version@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Ctx\+Sdk\+Version}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a696f9eee8ccd720795fed59db1fc5c34}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a696f9eee8ccd720795fed59db1fc5c34}} 
+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Ctx\+Sdk\+Version&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000005}{Deprecated}}]use X\+Context\+Attributes.\+k\+X\+Ctx\+Attr\+\_\+\+Int\+\_\+\+Sdk\+Version instead. Get the S\+DK platform support library version \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Ctx\+S\+D\+K\+A\+L\+G\+Version@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Ctx\+S\+D\+K\+A\+L\+G\+Version}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Ctx\+S\+D\+K\+A\+L\+G\+Version@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Ctx\+S\+D\+K\+A\+L\+G\+Version}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a841d848bf84742884ef91b5f5b1de65a}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a841d848bf84742884ef91b5f5b1de65a}} 
+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Ctx\+S\+D\+K\+A\+L\+G\+Version&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000006}{Deprecated}}]use X\+Context\+Attributes.\+k\+X\+Ctx\+Attr\+\_\+\+Int\+\_\+\+S\+D\+K\+A\+L\+G\+Version instead. Get the S\+DK algorithm version and the version number returned is hexadecimal \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+F\+PS@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+F\+PS}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+F\+PS@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+F\+PS}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3aa3ca38d7e2eb48ca8844decfa6cea1c7}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3aa3ca38d7e2eb48ca8844decfa6cea1c7}} 
+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+F\+PS&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000007}{Deprecated}}]use X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Imu\+Fps and X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Imu\+Fps instead. Gets the frame rate of the device \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Error\+Code@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Error\+Code}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Error\+Code@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Error\+Code}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a70a9d909ec4d215aa2266baaf7e816aa}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a70a9d909ec4d215aa2266baaf7e816aa}} 
+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Error\+Code&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000008}{Deprecated}}]use X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Error\+Code and X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Error\+Code instead, Get the device error code \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Connection\+State@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Connection\+State}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Connection\+State@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Connection\+State}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a07c0c5dfc2f415fbdaf171e7ca35945a}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a07c0c5dfc2f415fbdaf171e7ca35945a}} 
+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Connection\+State&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000009}{Deprecated}}]use X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Connection\+State and X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Connection\+State instead, Gets the device connection status \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Blob\+ID@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Blob\+ID}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Blob\+ID@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Blob\+ID}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a156868998068c09a8c795ea03e1bc8be}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a156868998068c09a8c795ea03e1bc8be}} 
+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Blob\+ID&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000010}{Deprecated}}]Gets the ID of the controller marker. Reserved. \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Set\+Blog\+ID@{k\+X\+Act\+\_\+\+Set\+Blog\+ID}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Set\+Blog\+ID@{k\+X\+Act\+\_\+\+Set\+Blog\+ID}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a90775e3138598cd014cad7d925d1545a}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a90775e3138598cd014cad7d925d1545a}} 
+k\+X\+Act\+\_\+\+Set\+Blog\+ID&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000011}{Deprecated}}]Sets the ID of the controller marker. Reserved. \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a9ed8e6b6a8515241b17fb95209e7c75a}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a9ed8e6b6a8515241b17fb95209e7c75a}} 
+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000012}{Deprecated}}]use X\+Vpu\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Battery and X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Battery instead, Acquire the battery capacity of the device \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery\+Mode@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery\+Mode}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery\+Mode@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery\+Mode}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a56b74811e99a4f7a98b7c57d9f8bc27e}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a56b74811e99a4f7a98b7c57d9f8bc27e}} 
+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery\+Mode&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000013}{Deprecated}}]use X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Power\+Mode and X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Power\+Mode instead. Gets the power supply mode of the device \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery\+Voltage@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery\+Voltage}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery\+Voltage@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery\+Voltage}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a9cbbd8f58c423e1433031eb9ed4dbb94}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a9cbbd8f58c423e1433031eb9ed4dbb94}} 
+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery\+Voltage&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000014}{Deprecated}}]use X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Battery\+Voltage and X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Battery\+Voltage instead. Gets the battery voltage of the device \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery\+Temperature@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery\+Temperature}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery\+Temperature@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery\+Temperature}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a376ad4b439fe36819f0642463bf221fa}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a376ad4b439fe36819f0642463bf221fa}} 
+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Battery\+Temperature&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000015}{Deprecated}}]use X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Battery\+Temperature and X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Battery\+Templarature instead. Gets the battery temperature of the device \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Software\+Revision@{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Software\+Revision}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Software\+Revision@{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Software\+Revision}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a6f905100ff14cfe78e99cd6941b16943}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a6f905100ff14cfe78e99cd6941b16943}} 
+k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Software\+Revision&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000016}{Deprecated}}]use X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Str\+\_\+\+Software\+Revision and X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Str\+\_\+\+Software\+Revision instead. Gets firmware version and returns a string \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Hardware\+Revision@{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Hardware\+Revision}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Hardware\+Revision@{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Hardware\+Revision}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3af20beece6504524adbcea8c4ff2e1f15}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3af20beece6504524adbcea8c4ff2e1f15}} 
+k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Hardware\+Revision&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000017}{Deprecated}}]use X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Str\+\_\+\+Hardware\+Revision and X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Str\+\_\+\+Hardware\+Revision instead. Gets hardware version and returns a string \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+F\+P\+G\+A\+Version@{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+F\+P\+G\+A\+Version}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+F\+P\+G\+A\+Version@{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+F\+P\+G\+A\+Version}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a05aca0d3a85ffbd8676c1aab8b09e010}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a05aca0d3a85ffbd8676c1aab8b09e010}} 
+k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+F\+P\+G\+A\+Version&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000018}{Deprecated}}]use X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Str\+\_\+\+F\+P\+G\+A\+Version instead Gets F\+P\+GA version and returns a string \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Model\+Name@{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Model\+Name}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Model\+Name@{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Model\+Name}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a9750285b42fb8a64c8d2b166f0ea88f3}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a9750285b42fb8a64c8d2b166f0ea88f3}} 
+k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Model\+Name&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000019}{Deprecated}}]use X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Str\+\_\+\+Model\+Name and X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Str\+\_\+\+Model\+Name instead. Gets model name and returns a string \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Display\+Name@{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Display\+Name}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Display\+Name@{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Display\+Name}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ae799224e5ca05b1b2ed58e459e22d4b5}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ae799224e5ca05b1b2ed58e459e22d4b5}} 
+k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Display\+Name&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000020}{Deprecated}}]use X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Str\+\_\+\+Device\+Name and X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Str\+\_\+\+Device\+Name instead. Gets display name information and returns a string \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+A\+L\+G\+Version@{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+A\+L\+G\+Version}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+A\+L\+G\+Version@{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+A\+L\+G\+Version}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3aa1329f1a1694b4a9d3965592fd41bfba}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3aa1329f1a1694b4a9d3965592fd41bfba}} 
+k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+A\+L\+G\+Version&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000021}{Deprecated}}]use X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Str\+\_\+\+A\+L\+G\+Version instead. Gets the version of the algorithm on the firmware and returns a string \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Serial\+Number@{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Serial\+Number}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Serial\+Number@{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Serial\+Number}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ab8d69f4b069e98e7d7013fa609d3e9f6}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ab8d69f4b069e98e7d7013fa609d3e9f6}} 
+k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Serial\+Number&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000022}{Deprecated}}]use X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Str\+\_\+\+Serial\+Number and X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Str\+\_\+\+Serial\+Number instead. Get the device serial number for production \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Manufacturer\+Name@{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Manufacturer\+Name}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Manufacturer\+Name@{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Manufacturer\+Name}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ace545d1582bd87cdc08e8aef19e7231d}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ace545d1582bd87cdc08e8aef19e7231d}} 
+k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Manufacturer\+Name&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000023}{Deprecated}}]use X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Str\+\_\+\+Manufacturer\+Name instead. Gets the manufacturer of device \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Firmware\+Revision@{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Firmware\+Revision}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Firmware\+Revision@{k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Firmware\+Revision}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a41acdf2079bd9b63d7c4e00cb47b5915}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a41acdf2079bd9b63d7c4e00cb47b5915}} 
+k\+X\+Act\+\_\+\+Get\+Str\+\_\+\+Firmware\+Revision&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000024}{Deprecated}}]use X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Str\+\_\+\+Firmware\+Revision instead. An extended interface to get firmware version information \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Imu\+Info@{k\+X\+Act\+\_\+\+Get\+Imu\+Info}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Imu\+Info@{k\+X\+Act\+\_\+\+Get\+Imu\+Info}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a36934a08a9b02748ea0bf23062ec091b}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a36934a08a9b02748ea0bf23062ec091b}} 
+k\+X\+Act\+\_\+\+Get\+Imu\+Info&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000025}{Deprecated}}]use X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+\+Imu\+Info and X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Obj\+\_\+\+Imu\+Info instead. Command to get the I\+MU information and the argument is the structure of \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_act_param___i_m_u_info}{Act\+Param\+\_\+\+I\+M\+U\+Info}} \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Imu\+Info\+\_\+V@{k\+X\+Act\+\_\+\+Get\+Imu\+Info\+\_\+V}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Imu\+Info\+\_\+V@{k\+X\+Act\+\_\+\+Get\+Imu\+Info\+\_\+V}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a36d3d672e4cc84dd4e937d60397ac38a}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a36d3d672e4cc84dd4e937d60397ac38a}} 
+k\+X\+Act\+\_\+\+Get\+Imu\+Info\+\_\+V&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000026}{Deprecated}}]Command to get I\+MU information with variable parameters. This command is I\+N\+V\+A\+L\+ID in Unity. \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get6\+Dof\+Info@{k\+X\+Act\+\_\+\+Get6\+Dof\+Info}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get6\+Dof\+Info@{k\+X\+Act\+\_\+\+Get6\+Dof\+Info}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a8b16f0e3686bd02934286fd2981949e8}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a8b16f0e3686bd02934286fd2981949e8}} 
+k\+X\+Act\+\_\+\+Get6\+Dof\+Info&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000027}{Deprecated}}]use X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+6\+Dof\+Info and X\+Controller\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Obj\+\_\+6\+Dof\+Info instead. Command to get 6-\/\+Dof information and the argument is the structure of \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_act_param__6_dof_info}{Act\+Param\+\_\+6\+Dof\+Info}} \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get6\+Dof\+Info\+\_\+V@{k\+X\+Act\+\_\+\+Get6\+Dof\+Info\+\_\+V}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get6\+Dof\+Info\+\_\+V@{k\+X\+Act\+\_\+\+Get6\+Dof\+Info\+\_\+V}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3af7886a71cbe4a4ea23eccc725fbef65a}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3af7886a71cbe4a4ea23eccc725fbef65a}} 
+k\+X\+Act\+\_\+\+Get6\+Dof\+Info\+\_\+V&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000028}{Deprecated}}]Command to get 6-\/\+Dof information with variable parameters, this command is I\+N\+V\+A\+L\+ID in Unity. \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Button\+Bits@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Button\+Bits}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Button\+Bits@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Button\+Bits}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a600d9ed92cf7f133e59cf0f1632a191e}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a600d9ed92cf7f133e59cf0f1632a191e}} 
+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Button\+Bits&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000029}{Deprecated}}]use X\+Vpu\+Attributes.\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Button\+Bits and X\+C\+Attributes.\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Button\+Bits instead. Command to get buttons information \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+\_\+\+Touch\+Pad\+State@{k\+X\+Act\+\_\+\+Get\+\_\+\+Touch\+Pad\+State}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+\_\+\+Touch\+Pad\+State@{k\+X\+Act\+\_\+\+Get\+\_\+\+Touch\+Pad\+State}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ad857890d1dfdb1a12eb84ddc0440b982}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ad857890d1dfdb1a12eb84ddc0440b982}} 
+k\+X\+Act\+\_\+\+Get\+\_\+\+Touch\+Pad\+State&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000030}{Deprecated}}]use X\+C\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Obj\+\_\+\+Touch\+Pad\+State instead. Command to get touch\+Pad information. Reserved \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Paired\+Number@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Paired\+Number}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Paired\+Number@{k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Paired\+Number}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a6ee7ab4830eb746cbccf5630eeef0053}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a6ee7ab4830eb746cbccf5630eeef0053}} 
+k\+X\+Act\+\_\+\+Get\+Int\+\_\+\+Paired\+Number&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000031}{Deprecated}}]The command to set the V\+PU reference time. Reserved \end{DoxyRefDesc}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000032}{Deprecated}}]use X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Paired\+Number \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Paired\+List@{k\+X\+Act\+\_\+\+Get\+Paired\+List}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Paired\+List@{k\+X\+Act\+\_\+\+Get\+Paired\+List}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ae966e0f26e4ea0a4a6b6b9989616a2ca}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ae966e0f26e4ea0a4a6b6b9989616a2ca}} 
+k\+X\+Act\+\_\+\+Get\+Paired\+List&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000033}{Deprecated}}]Gets the ID list of controllers that have been paired. Reserved \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Controller\+State@{k\+X\+Act\+\_\+\+Get\+Controller\+State}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Controller\+State@{k\+X\+Act\+\_\+\+Get\+Controller\+State}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ac6672a3fc9904aa78ca8193b4b3dbc63}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ac6672a3fc9904aa78ca8193b4b3dbc63}} 
+k\+X\+Act\+\_\+\+Get\+Controller\+State&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000034}{Deprecated}}]use X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+\+Controller\+State and X\+C\+Attributes.\+k\+X\+C\+Attr\+\_\+\+Obj\+\_\+\+Controller\+State instead. Command to get controller state and the argument is the structure of \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_act_param___controller_state}{Act\+Param\+\_\+\+Controller\+State}} \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Marker\+Info@{k\+X\+Act\+\_\+\+Get\+Marker\+Info}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Marker\+Info@{k\+X\+Act\+\_\+\+Get\+Marker\+Info}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ab6dd9ac1d2e47d2cc527acc21b0e35a8}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3ab6dd9ac1d2e47d2cc527acc21b0e35a8}} 
+k\+X\+Act\+\_\+\+Get\+Marker\+Info&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000035}{Deprecated}}]use X\+Vpu\+Attributes.\+k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+\+Tracking\+Info instead. Get the 6-\/dof information of Marker \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Act\+\_\+\+Get\+Marker\+Info\+\_\+V@{k\+X\+Act\+\_\+\+Get\+Marker\+Info\+\_\+V}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Act\+\_\+\+Get\+Marker\+Info\+\_\+V@{k\+X\+Act\+\_\+\+Get\+Marker\+Info\+\_\+V}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a6e330e368787658e85be837395d488d2}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3a6e330e368787658e85be837395d488d2}} 
+k\+X\+Act\+\_\+\+Get\+Marker\+Info\+\_\+V&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000036}{Deprecated}}]Obtain the 6-\/dof information of Marker with variable parameters. This command is I\+N\+V\+A\+L\+ID in Unity. \end{DoxyRefDesc}
+\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aabfeabd1179f1fa965e3edc6f8b8d415}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aabfeabd1179f1fa965e3edc6f8b8d415}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!X\+Context\+Attributes@{X\+Context\+Attributes}}
+\index{X\+Context\+Attributes@{X\+Context\+Attributes}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{X\+Context\+Attributes}{XContextAttributes}}
+{\footnotesize\ttfamily enum Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+X\+Context\+Attributes\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Attributes of Context. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Ctx\+Attr\+\_\+\+Int\+\_\+\+Sdk\+Version@{k\+X\+Ctx\+Attr\+\_\+\+Int\+\_\+\+Sdk\+Version}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Ctx\+Attr\+\_\+\+Int\+\_\+\+Sdk\+Version@{k\+X\+Ctx\+Attr\+\_\+\+Int\+\_\+\+Sdk\+Version}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aabfeabd1179f1fa965e3edc6f8b8d415afc49054c2c089e77c8e1bb799d5b30d1}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aabfeabd1179f1fa965e3edc6f8b8d415afc49054c2c089e77c8e1bb799d5b30d1}} 
+k\+X\+Ctx\+Attr\+\_\+\+Int\+\_\+\+Sdk\+Version&$<$ Get the S\+DK platform support library version \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Ctx\+Attr\+\_\+\+Str\+\_\+\+Sdk\+Version@{k\+X\+Ctx\+Attr\+\_\+\+Str\+\_\+\+Sdk\+Version}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Ctx\+Attr\+\_\+\+Str\+\_\+\+Sdk\+Version@{k\+X\+Ctx\+Attr\+\_\+\+Str\+\_\+\+Sdk\+Version}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aabfeabd1179f1fa965e3edc6f8b8d415a8040fcb6b1b71175430cc98f134c904b}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aabfeabd1179f1fa965e3edc6f8b8d415a8040fcb6b1b71175430cc98f134c904b}} 
+k\+X\+Ctx\+Attr\+\_\+\+Str\+\_\+\+Sdk\+Version&$<$ Get the S\+DK platform support library version \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab11d2f358709ce84ff419eae941f16d6}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab11d2f358709ce84ff419eae941f16d6}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!X\+Context\+Types@{X\+Context\+Types}}
+\index{X\+Context\+Types@{X\+Context\+Types}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{X\+Context\+Types}{XContextTypes}}
+{\footnotesize\ttfamily enum Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+X\+Context\+Types\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The parameters of the function, fill in the action\+\_\+id. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Context\+Type\+Slide\+In@{k\+X\+Context\+Type\+Slide\+In}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Context\+Type\+Slide\+In@{k\+X\+Context\+Type\+Slide\+In}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab11d2f358709ce84ff419eae941f16d6a4aad06142d58cf0d02c54672d88f2632}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab11d2f358709ce84ff419eae941f16d6a4aad06142d58cf0d02c54672d88f2632}} 
+k\+X\+Context\+Type\+Slide\+In&Slide In product. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!X\+Controller\+Attributes@{X\+Controller\+Attributes}}
+\index{X\+Controller\+Attributes@{X\+Controller\+Attributes}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{X\+Controller\+Attributes}{XControllerAttributes}}
+{\footnotesize\ttfamily enum Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+X\+Controller\+Attributes\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Attribute types of controller. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Imu\+Fps@{k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Imu\+Fps}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Imu\+Fps@{k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Imu\+Fps}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908a4e0c5c049d5a4c811e693b8719b82375}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908a4e0c5c049d5a4c811e693b8719b82375}} 
+k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Imu\+Fps&F\+PS of controller device reporting I\+MU data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Connection\+State@{k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Connection\+State}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Connection\+State@{k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Connection\+State}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908aa8a9dbd1f4002d04556a3d881a281a38}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908aa8a9dbd1f4002d04556a3d881a281a38}} 
+k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Connection\+State&Connection state of Controller, see \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_af604a35c067a396ef099047f2dfa928b}{X\+Connection\+States}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Battery@{k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Battery}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Battery@{k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Battery}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908adb1b78bfecb66361c9d012d602fe2cb6}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908adb1b78bfecb66361c9d012d602fe2cb6}} 
+k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Battery&Battery Level. Invalid if battery mode is external power. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+C\+Attr\+\_\+\+Obj\+\_\+\+Imu\+Info@{k\+X\+C\+Attr\+\_\+\+Obj\+\_\+\+Imu\+Info}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+C\+Attr\+\_\+\+Obj\+\_\+\+Imu\+Info@{k\+X\+C\+Attr\+\_\+\+Obj\+\_\+\+Imu\+Info}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908a2da8cea6f349dec2f63d24577e9a56eb}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908a2da8cea6f349dec2f63d24577e9a56eb}} 
+k\+X\+C\+Attr\+\_\+\+Obj\+\_\+\+Imu\+Info&I\+MU info of device, see \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_attr_imu_info}{X\+Attr\+Imu\+Info}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+C\+Attr\+\_\+\+V\+\_\+\+Imu\+Info@{k\+X\+C\+Attr\+\_\+\+V\+\_\+\+Imu\+Info}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+C\+Attr\+\_\+\+V\+\_\+\+Imu\+Info@{k\+X\+C\+Attr\+\_\+\+V\+\_\+\+Imu\+Info}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908a54e4c97b9d434779961bcc0077ca1cf4}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908a54e4c97b9d434779961bcc0077ca1cf4}} 
+k\+X\+C\+Attr\+\_\+\+V\+\_\+\+Imu\+Info&I\+MU info of device, Output to variable aguments. Invalid for Unity. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+C\+Attr\+\_\+\+Obj\+\_\+6\+Dof\+Info@{k\+X\+C\+Attr\+\_\+\+Obj\+\_\+6\+Dof\+Info}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+C\+Attr\+\_\+\+Obj\+\_\+6\+Dof\+Info@{k\+X\+C\+Attr\+\_\+\+Obj\+\_\+6\+Dof\+Info}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908a12ab74f9a821f1c4070263a1d913266d}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908a12ab74f9a821f1c4070263a1d913266d}} 
+k\+X\+C\+Attr\+\_\+\+Obj\+\_\+6\+Dof\+Info&6\+Dof info of device, see \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_attr6_dof_info}{X\+Attr6\+Dof\+Info}} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+C\+Attr\+\_\+\+V\+\_\+6\+Dof\+Info@{k\+X\+C\+Attr\+\_\+\+V\+\_\+6\+Dof\+Info}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+C\+Attr\+\_\+\+V\+\_\+6\+Dof\+Info@{k\+X\+C\+Attr\+\_\+\+V\+\_\+6\+Dof\+Info}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908a50fff2154ce4c3b38070869c63fe8690}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908a50fff2154ce4c3b38070869c63fe8690}} 
+k\+X\+C\+Attr\+\_\+\+V\+\_\+6\+Dof\+Info&6\+Dof info of device, Output to variable aguments. Invalid for Unity \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Button\+Bits@{k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Button\+Bits}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Button\+Bits@{k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Button\+Bits}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908a861c837afd6a6d92c6d41a1a72fdf647}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908a861c837afd6a6d92c6d41a1a72fdf647}} 
+k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Button\+Bits&Pressed button bits. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Button\+Event@{k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Button\+Event}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Button\+Event@{k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Button\+Event}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908acc3822f690de3d491338279682a6ab92}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908acc3822f690de3d491338279682a6ab92}} 
+k\+X\+C\+Attr\+\_\+\+Int\+\_\+\+Button\+Event&Button events, \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a2b1a55b2bd1c82176239be06b2837a36}{X\+Button\+Events}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+C\+Attr\+\_\+\+Obj\+\_\+\+Touch\+Pad\+State@{k\+X\+C\+Attr\+\_\+\+Obj\+\_\+\+Touch\+Pad\+State}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+C\+Attr\+\_\+\+Obj\+\_\+\+Touch\+Pad\+State@{k\+X\+C\+Attr\+\_\+\+Obj\+\_\+\+Touch\+Pad\+State}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908ab9f386faf3851896e1a8ac8de9048c88}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908ab9f386faf3851896e1a8ac8de9048c88}} 
+k\+X\+C\+Attr\+\_\+\+Obj\+\_\+\+Touch\+Pad\+State&Device touchpad state info. see X\+Attr\+Touch\+Pad\+Info. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+C\+Attr\+\_\+\+Obj\+\_\+\+Controller\+State@{k\+X\+C\+Attr\+\_\+\+Obj\+\_\+\+Controller\+State}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+C\+Attr\+\_\+\+Obj\+\_\+\+Controller\+State@{k\+X\+C\+Attr\+\_\+\+Obj\+\_\+\+Controller\+State}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908a227ff6bde1667720cb05281e5a9e0d6a}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_afcbca328b7e8b25147ddd45c6989d908a227ff6bde1667720cb05281e5a9e0d6a}} 
+k\+X\+C\+Attr\+\_\+\+Obj\+\_\+\+Controller\+State&Device infos, imu, 6dof, buttons ... see \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_attr_controller_state}{X\+Attr\+Controller\+State}}. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aca129c7953e73c8cb1d7500c1ccc4b50}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aca129c7953e73c8cb1d7500c1ccc4b50}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!X\+Controller\+Types@{X\+Controller\+Types}}
+\index{X\+Controller\+Types@{X\+Controller\+Types}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{X\+Controller\+Types}{XControllerTypes}}
+{\footnotesize\ttfamily enum Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+X\+Controller\+Types\hspace{0.3cm}{\ttfamily [strong]}}
+
+/////////////////////////////////////////////////////////////////////
+
+Types defined of \mbox{\hyperlink{namespace_ximmerse}{Ximmerse}} Controllers \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Controller\+Saber@{k\+X\+Controller\+Saber}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Controller\+Saber@{k\+X\+Controller\+Saber}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aca129c7953e73c8cb1d7500c1ccc4b50a71eae6030eae97660c86120090eb2db3}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aca129c7953e73c8cb1d7500c1ccc4b50a71eae6030eae97660c86120090eb2db3}} 
+k\+X\+Controller\+Saber&Mirage Saber. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Controller\+Kylo@{k\+X\+Controller\+Kylo}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Controller\+Kylo@{k\+X\+Controller\+Kylo}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aca129c7953e73c8cb1d7500c1ccc4b50ac03ca1404661c6a6065071e33fb413a6}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aca129c7953e73c8cb1d7500c1ccc4b50ac03ca1404661c6a6065071e33fb413a6}} 
+k\+X\+Controller\+Kylo&Mirage Kylo. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Controller\+D\+Type@{k\+X\+Controller\+D\+Type}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Controller\+D\+Type@{k\+X\+Controller\+D\+Type}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aca129c7953e73c8cb1d7500c1ccc4b50a0abb9c2799237bff7946f70d9fe4dc28}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aca129c7953e73c8cb1d7500c1ccc4b50a0abb9c2799237bff7946f70d9fe4dc28}} 
+k\+X\+Controller\+D\+Type&D Controller. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Controller\+Pick\+Up@{k\+X\+Controller\+Pick\+Up}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Controller\+Pick\+Up@{k\+X\+Controller\+Pick\+Up}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aca129c7953e73c8cb1d7500c1ccc4b50a99d7cd155cd35b2aa20ee40bf7874c74}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aca129c7953e73c8cb1d7500c1ccc4b50a99d7cd155cd35b2aa20ee40bf7874c74}} 
+k\+X\+Controller\+Pick\+Up&Pick Up Controller. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Controller3\+Dof@{k\+X\+Controller3\+Dof}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Controller3\+Dof@{k\+X\+Controller3\+Dof}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aca129c7953e73c8cb1d7500c1ccc4b50a33b87d435aea3fa33d2dc0baa2fbc70b}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aca129c7953e73c8cb1d7500c1ccc4b50a33b87d435aea3fa33d2dc0baa2fbc70b}} 
+k\+X\+Controller3\+Dof&3-\/\+Dof Flip Controller \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Controller\+Tag@{k\+X\+Controller\+Tag}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Controller\+Tag@{k\+X\+Controller\+Tag}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aca129c7953e73c8cb1d7500c1ccc4b50a809ed54e1e6ad933ba90ca2f0f27c9de}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aca129c7953e73c8cb1d7500c1ccc4b50a809ed54e1e6ad933ba90ca2f0f27c9de}} 
+k\+X\+Controller\+Tag&Tag Controller. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aebd3ade57fdca1e612d0855fb119e4be}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aebd3ade57fdca1e612d0855fb119e4be}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!X\+Tracking\+States@{X\+Tracking\+States}}
+\index{X\+Tracking\+States@{X\+Tracking\+States}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{X\+Tracking\+States}{XTrackingStates}}
+{\footnotesize\ttfamily enum Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+X\+Tracking\+States\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Tracking\+St\+\_\+\+Not\+Tracked@{k\+X\+Tracking\+St\+\_\+\+Not\+Tracked}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Tracking\+St\+\_\+\+Not\+Tracked@{k\+X\+Tracking\+St\+\_\+\+Not\+Tracked}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aebd3ade57fdca1e612d0855fb119e4bea66020f5d0617751e9c77b4a5719acd32}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aebd3ade57fdca1e612d0855fb119e4bea66020f5d0617751e9c77b4a5719acd32}} 
+k\+X\+Tracking\+St\+\_\+\+Not\+Tracked&Tracking lost. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Tracking\+St\+\_\+\+Rotation\+Tracked@{k\+X\+Tracking\+St\+\_\+\+Rotation\+Tracked}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Tracking\+St\+\_\+\+Rotation\+Tracked@{k\+X\+Tracking\+St\+\_\+\+Rotation\+Tracked}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aebd3ade57fdca1e612d0855fb119e4beab7af3f181e1346670fa7fc732fba69b5}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aebd3ade57fdca1e612d0855fb119e4beab7af3f181e1346670fa7fc732fba69b5}} 
+k\+X\+Tracking\+St\+\_\+\+Rotation\+Tracked&Only rotation tracking. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Tracking\+St\+\_\+\+Position\+Tracked@{k\+X\+Tracking\+St\+\_\+\+Position\+Tracked}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Tracking\+St\+\_\+\+Position\+Tracked@{k\+X\+Tracking\+St\+\_\+\+Position\+Tracked}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aebd3ade57fdca1e612d0855fb119e4beacb1271487bf136938578ec55d0cb351b}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aebd3ade57fdca1e612d0855fb119e4beacb1271487bf136938578ec55d0cb351b}} 
+k\+X\+Tracking\+St\+\_\+\+Position\+Tracked&Only position tracking. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Tracking\+St\+\_\+\+Pose\+Tracked@{k\+X\+Tracking\+St\+\_\+\+Pose\+Tracked}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Tracking\+St\+\_\+\+Pose\+Tracked@{k\+X\+Tracking\+St\+\_\+\+Pose\+Tracked}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aebd3ade57fdca1e612d0855fb119e4bea6e164bd53a5353f0802565aeaa89e7e9}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aebd3ade57fdca1e612d0855fb119e4bea6e164bd53a5353f0802565aeaa89e7e9}} 
+k\+X\+Tracking\+St\+\_\+\+Pose\+Tracked&Contains position and rotation tracking. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Tracking\+St\+\_\+\+Rotation\+Emulated@{k\+X\+Tracking\+St\+\_\+\+Rotation\+Emulated}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Tracking\+St\+\_\+\+Rotation\+Emulated@{k\+X\+Tracking\+St\+\_\+\+Rotation\+Emulated}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aebd3ade57fdca1e612d0855fb119e4bea8b27ecadc199d2cb213c0678198cb08b}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aebd3ade57fdca1e612d0855fb119e4bea8b27ecadc199d2cb213c0678198cb08b}} 
+k\+X\+Tracking\+St\+\_\+\+Rotation\+Emulated&Simulated rotation data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Tracking\+St\+\_\+\+Position\+Emulated@{k\+X\+Tracking\+St\+\_\+\+Position\+Emulated}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Tracking\+St\+\_\+\+Position\+Emulated@{k\+X\+Tracking\+St\+\_\+\+Position\+Emulated}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aebd3ade57fdca1e612d0855fb119e4bea4c531debe48744e67126b6d18c06661d}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aebd3ade57fdca1e612d0855fb119e4bea4c531debe48744e67126b6d18c06661d}} 
+k\+X\+Tracking\+St\+\_\+\+Position\+Emulated&Simulated position data. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6b}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6b}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!X\+Vpu\+Attributes@{X\+Vpu\+Attributes}}
+\index{X\+Vpu\+Attributes@{X\+Vpu\+Attributes}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{X\+Vpu\+Attributes}{XVpuAttributes}}
+{\footnotesize\ttfamily enum Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+X\+Vpu\+Attributes\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Attributes of V\+PU Device. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Algorithm\+Pose\+Fps@{k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Algorithm\+Pose\+Fps}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Algorithm\+Pose\+Fps@{k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Algorithm\+Pose\+Fps}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba95f754b9f90e95a8a1365de2fb05054b}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba95f754b9f90e95a8a1365de2fb05054b}} 
+k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Algorithm\+Pose\+Fps&Reversed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Connection\+State@{k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Connection\+State}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Connection\+State@{k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Connection\+State}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba7290722d24362499d5d1828c86dc94ca}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba7290722d24362499d5d1828c86dc94ca}} 
+k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Connection\+State&Connection state of Controller, see \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_af604a35c067a396ef099047f2dfa928b}{X\+Connection\+States}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Battery@{k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Battery}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Battery@{k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Battery}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba42b3e502c60b86bc1efddceb5b213a8b}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba42b3e502c60b86bc1efddceb5b213a8b}} 
+k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Battery&Battery Level. Invalid if battery mode is external power. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+\+Imu\+Info@{k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+\+Imu\+Info}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+\+Imu\+Info@{k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+\+Imu\+Info}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6bae5ebad51f6fd55cffb224515779ed2cc}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6bae5ebad51f6fd55cffb224515779ed2cc}} 
+k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+\+Imu\+Info&I\+MU info of device, see \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_attr_imu_info}{X\+Attr\+Imu\+Info}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Vpu\+Attr\+\_\+\+V\+\_\+\+Imu\+Info@{k\+X\+Vpu\+Attr\+\_\+\+V\+\_\+\+Imu\+Info}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Vpu\+Attr\+\_\+\+V\+\_\+\+Imu\+Info@{k\+X\+Vpu\+Attr\+\_\+\+V\+\_\+\+Imu\+Info}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba1d92bcd656b1f529817bf9c0426b4823}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba1d92bcd656b1f529817bf9c0426b4823}} 
+k\+X\+Vpu\+Attr\+\_\+\+V\+\_\+\+Imu\+Info&I\+MU info of device, Output to variable aguments. Invalid for Unity. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+6\+Dof\+Info@{k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+6\+Dof\+Info}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+6\+Dof\+Info@{k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+6\+Dof\+Info}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6bae28cacdbd204466c47eab2bacd75f47d}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6bae28cacdbd204466c47eab2bacd75f47d}} 
+k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+6\+Dof\+Info&6\+Dof info of device, see \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_attr6_dof_info}{X\+Attr6\+Dof\+Info}} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Vpu\+Attr\+\_\+\+V\+\_\+6\+Dof\+Info@{k\+X\+Vpu\+Attr\+\_\+\+V\+\_\+6\+Dof\+Info}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Vpu\+Attr\+\_\+\+V\+\_\+6\+Dof\+Info@{k\+X\+Vpu\+Attr\+\_\+\+V\+\_\+6\+Dof\+Info}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba332494a2914f93233d8c3e8dc6b858e6}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba332494a2914f93233d8c3e8dc6b858e6}} 
+k\+X\+Vpu\+Attr\+\_\+\+V\+\_\+6\+Dof\+Info&6\+Dof info of device, Output to variable aguments. Invalid for Unity \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Button\+Bits@{k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Button\+Bits}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Button\+Bits@{k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Button\+Bits}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba937e342e24ac994ed1ffb99f37fee2d0}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba937e342e24ac994ed1ffb99f37fee2d0}} 
+k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Button\+Bits&Pressed button bits. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Button\+Event@{k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Button\+Event}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Button\+Event@{k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Button\+Event}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba70b64bac812a291402e10067b2dbfd19}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba70b64bac812a291402e10067b2dbfd19}} 
+k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Button\+Event&Button events, \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a2b1a55b2bd1c82176239be06b2837a36}{X\+Button\+Events}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Paired\+Number@{k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Paired\+Number}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Paired\+Number@{k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Paired\+Number}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba3ee49f8c7188ed8152a6c807a1cde6b7}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba3ee49f8c7188ed8152a6c807a1cde6b7}} 
+k\+X\+Vpu\+Attr\+\_\+\+Int\+\_\+\+Paired\+Number&Number of Paired controllers. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+\+Controller\+State@{k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+\+Controller\+State}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+\+Controller\+State@{k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+\+Controller\+State}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba71f91f7813019129b6a7f32df55ee967}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6ba71f91f7813019129b6a7f32df55ee967}} 
+k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+\+Controller\+State&Device infos, imu, 6dof, buttons ... see \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_attr_controller_state}{X\+Attr\+Controller\+State}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+\+Tracking\+Info@{k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+\+Tracking\+Info}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+\+Tracking\+Info@{k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+\+Tracking\+Info}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6baec86360d15f6bdb485a1f5eb849cb629}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6baec86360d15f6bdb485a1f5eb849cb629}} 
+k\+X\+Vpu\+Attr\+\_\+\+Obj\+\_\+\+Tracking\+Info&V\+PU cammera tracking object pose info. see \mbox{\hyperlink{struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_attr_tracking_info}{X\+Attr\+Tracking\+Info}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k\+X\+Vpu\+Attr\+\_\+\+V\+\_\+\+Tracking\+Info@{k\+X\+Vpu\+Attr\+\_\+\+V\+\_\+\+Tracking\+Info}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!k\+X\+Vpu\+Attr\+\_\+\+V\+\_\+\+Tracking\+Info@{k\+X\+Vpu\+Attr\+\_\+\+V\+\_\+\+Tracking\+Info}}}\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6baaa82108f6eee2518844b9ec2b82c3278}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a93f84daf5ee0da44d8346e78df766f6baaa82108f6eee2518844b9ec2b82c3278}} 
+k\+X\+Vpu\+Attr\+\_\+\+V\+\_\+\+Tracking\+Info&V\+PU cammera tracking object pose info. Output to variable aguments. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a40272546ecacaef98c2c013ca1485742}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a40272546ecacaef98c2c013ca1485742}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!Do\+Action@{Do\+Action}}
+\index{Do\+Action@{Do\+Action}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{Do\+Action()}{DoAction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static int Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+Do\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3}{X\+Actions}}}]{action\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+function is used to control input device 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handle} & Handle to the device, \\
+\hline
+\mbox{\tt in}  & {\em action\+\_\+id} & Command name,please see the enum of X\+Actions  of the command, 0 for success. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aaa4ab5e91e8c12c593430a35a71f8f08}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_aaa4ab5e91e8c12c593430a35a71f8f08}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!Do\+Action@{Do\+Action}}
+\index{Do\+Action@{Do\+Action}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{Do\+Action()}{DoAction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static int Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+Do\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3}{X\+Actions}}}]{action\+\_\+id,  }\item[{string}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+function is used to control input device 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handle} & Handle to the device, \\
+\hline
+\mbox{\tt in}  & {\em action\+\_\+id} & Command name,please see the enum of X\+Actions \\
+\hline
+\mbox{\tt in}  & {\em args} & String parameter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of the command, 0 for success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a783d80ba255be3580dfbc08ab0e9e327}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a783d80ba255be3580dfbc08ab0e9e327}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!Do\+Action@{Do\+Action}}
+\index{Do\+Action@{Do\+Action}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{Do\+Action()}{DoAction()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static int Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+Do\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3}{X\+Actions}}}]{action\+\_\+id,  }\item[{int}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+function is used to control input device 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handle} & Handle to the device, \\
+\hline
+\mbox{\tt in}  & {\em action\+\_\+id} & Command name,please see the enum of X\+Actions \\
+\hline
+\mbox{\tt in}  & {\em args} & Int parameter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of the command, 0 for success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a2989fa4bd61cffedb6a38caca9249652}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a2989fa4bd61cffedb6a38caca9249652}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!Do\+Action$<$ T $>$@{Do\+Action$<$ T $>$}}
+\index{Do\+Action$<$ T $>$@{Do\+Action$<$ T $>$}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{Do\+Action$<$ T $>$()}{DoAction< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static int \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a40272546ecacaef98c2c013ca1485742}{Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+Do\+Action}}$<$ T $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3}{X\+Actions}}}]{action\+\_\+id,  }\item[{ref T}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+function is used to control input device 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handle} & Handle to the device, \\
+\hline
+\mbox{\tt in}  & {\em action\+\_\+id} & Command name,please see the enum of X\+Actions \\
+\hline
+\mbox{\tt out}  & {\em arg} & template type parameter reference for returning data from handle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of the command, 0 for success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a71155bd0478631baa8874309296524a5}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a71155bd0478631baa8874309296524a5}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!Do\+Action$<$ T $>$@{Do\+Action$<$ T $>$}}
+\index{Do\+Action$<$ T $>$@{Do\+Action$<$ T $>$}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{Do\+Action$<$ T $>$()}{DoAction< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static int \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a40272546ecacaef98c2c013ca1485742}{Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+Do\+Action}}$<$ T $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab7f817a86e5b3af956089fb089b7d0c3}{X\+Actions}}}]{action\+\_\+id,  }\item[{T}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+function is used to control input device 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handle} & Handle to the device, \\
+\hline
+\mbox{\tt in}  & {\em action\+\_\+id} & Command name,please see the enum of X\+Actions \\
+\hline
+\mbox{\tt in}  & {\em args} & $<$\+T$>$ parameter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of the command, 0 for success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a3bf78828cba75d4f9ea2a53af67cd13b}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a3bf78828cba75d4f9ea2a53af67cd13b}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!Exit@{Exit}}
+\index{Exit@{Exit}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{Exit()}{Exit()}}
+{\footnotesize\ttfamily static int Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+Exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Exit the platform support library for the input device. 
+
+\begin{DoxyReturn}{Returns}
+Return 0 indicates success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a35864c46a7e5434e8909a928f62e0ac3}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a35864c46a7e5434e8909a928f62e0ac3}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!Get\+Bool$<$ E $>$@{Get\+Bool$<$ E $>$}}
+\index{Get\+Bool$<$ E $>$@{Get\+Bool$<$ E $>$}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{Get\+Bool$<$ E $>$()}{GetBool< E >()}}
+{\footnotesize\ttfamily static bool Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+Get\+Bool$<$ E $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}}}]{handle,  }\item[{E}]{attr\+\_\+id,  }\item[{bool}]{default\+\_\+value = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the Boolean type parameters for the device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handle} & The device handle \\
+\hline
+\mbox{\tt in}  & {\em attr\+\_\+id} & The attribute name,defined in the X\+Device\+Constants file, its name is X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Bool\+\_\+xxxx \\
+\hline
+\mbox{\tt in}  & {\em default\+\_\+value} & Get failure returns a default value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the value of the Boolean property if it is valid for handle, otherwise return default\+\_\+value . 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a90fa79ef1d8350ae533cece026a0ba6e}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a90fa79ef1d8350ae533cece026a0ba6e}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!Get\+Device\+Handle@{Get\+Device\+Handle}}
+\index{Get\+Device\+Handle@{Get\+Device\+Handle}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{Get\+Device\+Handle()}{GetDeviceHandle()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+Get\+Device\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}}}]{context\+\_\+handle,  }\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the device handle through the device name. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em context\+\_\+handle} & The device handle \\
+\hline
+\mbox{\tt in}  & {\em name} & device name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return 0 indicates success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a1d651426ac147b7982f1861d08484774}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a1d651426ac147b7982f1861d08484774}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!Get\+Float$<$ E $>$@{Get\+Float$<$ E $>$}}
+\index{Get\+Float$<$ E $>$@{Get\+Float$<$ E $>$}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{Get\+Float$<$ E $>$()}{GetFloat< E >()}}
+{\footnotesize\ttfamily static float Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+Get\+Float$<$ E $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}}}]{handle,  }\item[{E}]{attr\+\_\+id,  }\item[{float}]{default\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the Float type parameters for the device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handle} & The device handle \\
+\hline
+\mbox{\tt in}  & {\em attr\+\_\+id} & The attribute name,defined in the X\+Device\+Constants file, its name is X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Float\+\_\+xxxx \\
+\hline
+\mbox{\tt in}  & {\em default\+\_\+value} & Get failure returns a default value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the value of the Float property if it is valid for handle, otherwise return default\+\_\+value . 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a0e4fb349f5b6215c2e3434a41540f758}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a0e4fb349f5b6215c2e3434a41540f758}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!Get\+Int$<$ E $>$@{Get\+Int$<$ E $>$}}
+\index{Get\+Int$<$ E $>$@{Get\+Int$<$ E $>$}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{Get\+Int$<$ E $>$()}{GetInt< E >()}}
+{\footnotesize\ttfamily static int Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+Get\+Int$<$ E $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}}}]{handle,  }\item[{E}]{attr\+\_\+id,  }\item[{int}]{default\+\_\+value = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the Int type parameters for the device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handle} & The device handle \\
+\hline
+\mbox{\tt in}  & {\em attr\+\_\+id} & The attribute name,defined in the X\+Device\+Constants file, its name is X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Int\+\_\+xxxx \\
+\hline
+\mbox{\tt in}  & {\em default\+\_\+value} & Get failure returns a default value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the value of the Int property if it is valid for handle, otherwise return default\+\_\+value . 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a86c25965f67c18e3203a86104724dbd0}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a86c25965f67c18e3203a86104724dbd0}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!Get\+Name@{Get\+Name}}
+\index{Get\+Name@{Get\+Name}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{Get\+Name()}{GetName()}}
+{\footnotesize\ttfamily static string Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+Get\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}}}]{handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get Name of the provided handle. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return the name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_abdee83621541ceeb6ca0d971eadf1ed6}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_abdee83621541ceeb6ca0d971eadf1ed6}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!Get\+Object$<$ E, T $>$@{Get\+Object$<$ E, T $>$}}
+\index{Get\+Object$<$ E, T $>$@{Get\+Object$<$ E, T $>$}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{Get\+Object$<$ E, T $>$()}{GetObject< E, T >()}}
+{\footnotesize\ttfamily static int Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+Get\+Object$<$ E, T $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}}}]{handle,  }\item[{E}]{attr\+\_\+id,  }\item[{ref T}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]\+: implete Get\+Object \end{DoxyRefDesc}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a702aba317928dbf9028591a54a8c91be}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a702aba317928dbf9028591a54a8c91be}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!Get\+String$<$ E $>$@{Get\+String$<$ E $>$}}
+\index{Get\+String$<$ E $>$@{Get\+String$<$ E $>$}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{Get\+String$<$ E $>$()}{GetString< E >()}}
+{\footnotesize\ttfamily static string Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+Get\+String$<$ E $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}}}]{handle,  }\item[{E}]{attr\+\_\+id,  }\item[{string}]{default\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the String type parameters for the device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handle} & The device handle \\
+\hline
+\mbox{\tt in}  & {\em attr\+\_\+id} & The attribute name,defined in the X\+Device\+Constants file, its name is X\+Actions.\+k\+X\+Act\+\_\+\+Get\+Str\+\_\+xxxx \\
+\hline
+\mbox{\tt in}  & {\em default\+\_\+value} & Get failure returns a default value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the value of the string property if it is valid for handle, otherwise return default\+\_\+value . 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a546097299b4afcab3ca13db187b27f43}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a546097299b4afcab3ca13db187b27f43}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!Init@{Init}}
+\index{Init@{Init}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily static int Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Initialization of the platform support library for input devices. 
+
+\begin{DoxyReturn}{Returns}
+Return 0 indicates success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a8388d5a956a6db84681f404a01e82640}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a8388d5a956a6db84681f404a01e82640}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!New\+Context@{New\+Context}}
+\index{New\+Context@{New\+Context}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{New\+Context()}{NewContext()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+New\+Context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ab11d2f358709ce84ff419eae941f16d6}{X\+Context\+Types}}}]{context\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create the device context. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em context\+\_\+type} & device type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return the \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}} of device 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a2bc3bfc01379e786800b8280ba34765b}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a2bc3bfc01379e786800b8280ba34765b}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!Release\+Context@{Release\+Context}}
+\index{Release\+Context@{Release\+Context}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{Release\+Context()}{ReleaseContext()}}
+{\footnotesize\ttfamily static int Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+Release\+Context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_handle}{X\+Handle}}}]{context\+\_\+handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Destroy the device context. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em context\+\_\+handle} & The device handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return 0 indicates success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a95d719f976001f91b79be34041aaeb43}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_a95d719f976001f91b79be34041aaeb43}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!Set\+Logger@{Set\+Logger}}
+\index{Set\+Logger@{Set\+Logger}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{Set\+Logger()}{SetLogger()}}
+{\footnotesize\ttfamily static void Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+Set\+Logger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ad3e594d2625a689603878102ad019899}{X\+Log\+Delegate}}}]{logger,  }\item[{X\+Log\+Levels}]{lv = {\ttfamily XLogLevels.kXLogLevel\+\_\+Debug} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Set up the print listener of X\+Log\+Delegate. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em logger} & The parameter of X\+Log\+Delegate type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no return value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ad3e594d2625a689603878102ad019899}\label{class_ximmerse_1_1_input_system_1_1_x_device_plugin_ad3e594d2625a689603878102ad019899}} 
+\index{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}!X\+Log\+Delegate@{X\+Log\+Delegate}}
+\index{X\+Log\+Delegate@{X\+Log\+Delegate}!Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin@{Ximmerse\+::\+Input\+System\+::\+X\+Device\+Plugin}}
+\subsubsection{\texorpdfstring{X\+Log\+Delegate()}{XLogDelegate()}}
+{\footnotesize\ttfamily delegate void Ximmerse.\+Input\+System.\+X\+Device\+Plugin.\+X\+Log\+Delegate (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{string}]{tag,  }\item[{string}]{log }\end{DoxyParamCaption})}
+
+
+
+Delegate for printing output. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em level} & Print level \\
+\hline
+\mbox{\tt in}  & {\em tag} & Printed label \\
+\hline
+\mbox{\tt in}  & {\em log} & Printed content ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no return value 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/yuanqingyin/\+Project/\+Job/\+Slide\+In\+S\+D\+K/\+Unity\+S\+D\+K/\+Assets/\+Plugins/\+Slide\+In\+S\+D\+K/\+Native/X\+Device\+Plugin.\+cs\end{DoxyCompactItemize}

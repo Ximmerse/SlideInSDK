@@ -1,0 +1,364 @@
+\hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera}{}\section{Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera Class Reference}
+\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera}\index{Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera@{Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera}}
+
+
+Denoting an AR virutal camera behavior in unity scene.  
+
+
+Inheritance diagram for Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_af5ab911106768696ff764dd86e435d58}{Stereo\+Rendering\+Mode}} \{ \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_af5ab911106768696ff764dd86e435d58abbc45d9b35436f5f0ed9e33499efcea9}{Stereo\+Rendering\+Mode.\+Stereo}} = 0, 
+\mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_af5ab911106768696ff764dd86e435d58a66ba162102bbf6ae31b522aec561735e}{Stereo\+Rendering\+Mode.\+Single}} = 1
+ \}
+\item 
+enum \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a7f787b2284b4693f532a82bb7c4fb694}{Eye\+Node}} \{ {\bfseries Middle} = 0, 
+{\bfseries Left} = 1, 
+{\bfseries Right} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Eye node. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a52b8f8314b24b886c20c6a8f4f7447bf}{Eye\+Covengence\+Rendering\+Mode}} \{ \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a52b8f8314b24b886c20c6a8f4f7447bfaeb2ac5b04180d8d6011a016aeb8f75b3}{Eye\+Covengence\+Rendering\+Mode.\+Infinity}} = 0, 
+\mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a52b8f8314b24b886c20c6a8f4f7447bfab1484fe676467e6493bab0bf759eab26}{Eye\+Covengence\+Rendering\+Mode.\+Cross\+Plane}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Eye covengence rendering mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_ad0d4386e481da240eeb50810ca64566e}{Set\+Undistortion\+Mesh}} (Mesh U\+N\+D\+Mesh)
+\begin{DoxyCompactList}\small\item\em Set the undistortion mesh runtime. This will replace the existsing undistortion mesh with the parameter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a145ca3909076668b5d1e273b4efdbc19}{Recenter}} ()
+\begin{DoxyCompactList}\small\item\em Recenter camera forward to birth oritentation. Note\+: when camera\textquotesingle{}s transform is controlled by a benchmarker, \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a145ca3909076668b5d1e273b4efdbc19}{Recenter()}} would do nothing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_aa249201efe4b3fd48d51e7e66d48b167}{Recenter\+Yaw}} (float yaw)
+\begin{DoxyCompactList}\small\item\em Similiar to \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a145ca3909076668b5d1e273b4efdbc19}{Recenter()}}, by only change\textquotesingle{}s Yaw. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_ae33579df6b8710e4017106c75a14d831}{Recenter\+To\+Euler}} (Vector3 target\+Euler)
+\begin{DoxyCompactList}\small\item\em Recenter this AR camera to target rotation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_ae614f2a21ed79323fcbc91c1c4e38d08}{Revert\+To\+Default\+Setting}} ()
+\begin{DoxyCompactList}\small\item\em Reverts setting to the default setting. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Camera \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a679b916260958168640c6630758b8ab3}{left\+Eye}}
+\begin{DoxyCompactList}\small\item\em left and right eye. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a9c2c5e4b9206f51ab4bbfa5cb79864d5}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a9c2c5e4b9206f51ab4bbfa5cb79864d5}} 
+virtual void {\bfseries Add\+Camera\+Components} ()
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_af5ab911106768696ff764dd86e435d58}{Stereo\+Rendering\+Mode}} \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_aafc2e51fcad4a3afd2d4be6a6beca488}{Rendering\+Mode}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the rendering mode. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera}{A\+R\+Camera}} \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_aa35b0089674333aea7cabb9d9d8cb065}{Singleton}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Singleton of \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera}{A\+R\+Camera}} (readonly) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a52b8f8314b24b886c20c6a8f4f7447bf}{Eye\+Covengence\+Rendering\+Mode}} \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_aa8ea24d9b7f9f1edb8385e5be8b6706c}{Eye\+Covergence\+Mode}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the eye covengence mode. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_acabcae53101b1000d42ca0598b392da9}{Eye\+Covergence\+Distance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the eye covergence distance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a7cbb5c6a9989452db703e8374df30410}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a7cbb5c6a9989452db703e8374df30410}} 
+\mbox{\hyperlink{namespace_ximmerse_1_1_slide_in_s_d_k_afe4bdc1d1705000eb90aaef87e0fa464}{A\+R\+Camera\+Tracking\+Mode}} {\bfseries Head\+Mode}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+Vector3 \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a748884454e278d6c0dd93f80664786f6}{Undistortion\+Mesh\+Scale}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the undistortion mesh scale. \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a541041062fc34fb2037d9bb2d8899b7b}{Eye\+Separation}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the eye separation distance. \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a45c0a12d7fa088abd952e71e6824b5b7}{Undistortion\+Mesh\+Pan\+Offset}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the undistortion mesh pan offset. \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a9843d084846d01979c5b711b3f8e704f}{Left\+Undistortion\+Mesh\+Pan\+Offset}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the left undistortion mesh pan offset. \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a79e2dd7db0f502ab44497a6944b000b9}{Right\+Undistortion\+Mesh\+Pan\+Offset}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the right undistortion mesh pan offset. \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_ac9a1b2ad89ee3def2bc0edd322015be2}{Undistortion\+Mesh\+Euler}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the undistortion mesh euler. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a3c30ba34420646eb9db9c4a67f8bbc13}{h\+Fov}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the horizontal fov. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a7c368022a57cf82fecc66c5484b4820f}{v\+Fov}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the vertical fov. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+static System.\+Action$<$ Camera, Camera $>$ \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a5b56624a86763a503902cf9bba98da01}{On\+Camera\+Is\+Created}} = null
+\begin{DoxyCompactList}\small\item\em Event\+: left-\/right camera is created. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Denoting an AR virutal camera behavior in unity scene. 
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a52b8f8314b24b886c20c6a8f4f7447bf}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a52b8f8314b24b886c20c6a8f4f7447bf}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Eye\+Covengence\+Rendering\+Mode@{Eye\+Covengence\+Rendering\+Mode}}
+\index{Eye\+Covengence\+Rendering\+Mode@{Eye\+Covengence\+Rendering\+Mode}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{Eye\+Covengence\+Rendering\+Mode}{EyeCovengenceRenderingMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a52b8f8314b24b886c20c6a8f4f7447bf}{Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+Eye\+Covengence\+Rendering\+Mode}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Eye covengence rendering mode. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Infinity@{Infinity}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Infinity@{Infinity}}}\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a52b8f8314b24b886c20c6a8f4f7447bfaeb2ac5b04180d8d6011a016aeb8f75b3}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a52b8f8314b24b886c20c6a8f4f7447bfaeb2ac5b04180d8d6011a016aeb8f75b3}} 
+Infinity&Eye covergence in infinity far away. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Cross\+Plane@{Cross\+Plane}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Cross\+Plane@{Cross\+Plane}}}\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a52b8f8314b24b886c20c6a8f4f7447bfab1484fe676467e6493bab0bf759eab26}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a52b8f8314b24b886c20c6a8f4f7447bfab1484fe676467e6493bab0bf759eab26}} 
+Cross\+Plane&eye covergence in a certain distance, but in cross viewport plane \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a7f787b2284b4693f532a82bb7c4fb694}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a7f787b2284b4693f532a82bb7c4fb694}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Eye\+Node@{Eye\+Node}}
+\index{Eye\+Node@{Eye\+Node}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{Eye\+Node}{EyeNode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a7f787b2284b4693f532a82bb7c4fb694}{Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+Eye\+Node}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Eye node. 
+
+\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_af5ab911106768696ff764dd86e435d58}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_af5ab911106768696ff764dd86e435d58}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Stereo\+Rendering\+Mode@{Stereo\+Rendering\+Mode}}
+\index{Stereo\+Rendering\+Mode@{Stereo\+Rendering\+Mode}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{Stereo\+Rendering\+Mode}{StereoRenderingMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_af5ab911106768696ff764dd86e435d58}{Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+Stereo\+Rendering\+Mode}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Stereo@{Stereo}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Stereo@{Stereo}}}\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_af5ab911106768696ff764dd86e435d58abbc45d9b35436f5f0ed9e33499efcea9}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_af5ab911106768696ff764dd86e435d58abbc45d9b35436f5f0ed9e33499efcea9}} 
+Stereo&The default mode, eyes cameras are created. Main camera is disable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Single@{Single}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Single@{Single}}}\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_af5ab911106768696ff764dd86e435d58a66ba162102bbf6ae31b522aec561735e}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_af5ab911106768696ff764dd86e435d58a66ba162102bbf6ae31b522aec561735e}} 
+Single&Common single camera mode, typically usage for desktop/\+TV OS application. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a145ca3909076668b5d1e273b4efdbc19}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a145ca3909076668b5d1e273b4efdbc19}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Recenter@{Recenter}}
+\index{Recenter@{Recenter}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{Recenter()}{Recenter()}}
+{\footnotesize\ttfamily void Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+Recenter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Recenter camera forward to birth oritentation. Note\+: when camera\textquotesingle{}s transform is controlled by a benchmarker, \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a145ca3909076668b5d1e273b4efdbc19}{Recenter()}} would do nothing. 
+
+\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_ae33579df6b8710e4017106c75a14d831}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_ae33579df6b8710e4017106c75a14d831}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Recenter\+To\+Euler@{Recenter\+To\+Euler}}
+\index{Recenter\+To\+Euler@{Recenter\+To\+Euler}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{Recenter\+To\+Euler()}{RecenterToEuler()}}
+{\footnotesize\ttfamily void Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+Recenter\+To\+Euler (\begin{DoxyParamCaption}\item[{Vector3}]{target\+Euler }\end{DoxyParamCaption})}
+
+
+
+Recenter this AR camera to target rotation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target\+Rotation} & Target rotation.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_aa249201efe4b3fd48d51e7e66d48b167}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_aa249201efe4b3fd48d51e7e66d48b167}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Recenter\+Yaw@{Recenter\+Yaw}}
+\index{Recenter\+Yaw@{Recenter\+Yaw}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{Recenter\+Yaw()}{RecenterYaw()}}
+{\footnotesize\ttfamily void Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+Recenter\+Yaw (\begin{DoxyParamCaption}\item[{float}]{yaw }\end{DoxyParamCaption})}
+
+
+
+Similiar to \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a145ca3909076668b5d1e273b4efdbc19}{Recenter()}}, by only change\textquotesingle{}s Yaw. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yaw} & Yaw.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_ae614f2a21ed79323fcbc91c1c4e38d08}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_ae614f2a21ed79323fcbc91c1c4e38d08}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Revert\+To\+Default\+Setting@{Revert\+To\+Default\+Setting}}
+\index{Revert\+To\+Default\+Setting@{Revert\+To\+Default\+Setting}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{Revert\+To\+Default\+Setting()}{RevertToDefaultSetting()}}
+{\footnotesize\ttfamily void Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+Revert\+To\+Default\+Setting (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reverts setting to the default setting. 
+
+\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_ad0d4386e481da240eeb50810ca64566e}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_ad0d4386e481da240eeb50810ca64566e}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Set\+Undistortion\+Mesh@{Set\+Undistortion\+Mesh}}
+\index{Set\+Undistortion\+Mesh@{Set\+Undistortion\+Mesh}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{Set\+Undistortion\+Mesh()}{SetUndistortionMesh()}}
+{\footnotesize\ttfamily void Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+Set\+Undistortion\+Mesh (\begin{DoxyParamCaption}\item[{Mesh}]{U\+N\+D\+Mesh }\end{DoxyParamCaption})}
+
+
+
+Set the undistortion mesh runtime. This will replace the existsing undistortion mesh with the parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Mesh.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a679b916260958168640c6630758b8ab3}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a679b916260958168640c6630758b8ab3}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!left\+Eye@{left\+Eye}}
+\index{left\+Eye@{left\+Eye}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{left\+Eye}{leftEye}}
+{\footnotesize\ttfamily Camera Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+left\+Eye}
+
+
+
+left and right eye. 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_acabcae53101b1000d42ca0598b392da9}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_acabcae53101b1000d42ca0598b392da9}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Eye\+Covergence\+Distance@{Eye\+Covergence\+Distance}}
+\index{Eye\+Covergence\+Distance@{Eye\+Covergence\+Distance}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{Eye\+Covergence\+Distance}{EyeCovergenceDistance}}
+{\footnotesize\ttfamily float Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+Eye\+Covergence\+Distance\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets the eye covergence distance. 
+
+The eye covergence distance.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_aa8ea24d9b7f9f1edb8385e5be8b6706c}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_aa8ea24d9b7f9f1edb8385e5be8b6706c}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Eye\+Covergence\+Mode@{Eye\+Covergence\+Mode}}
+\index{Eye\+Covergence\+Mode@{Eye\+Covergence\+Mode}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{Eye\+Covergence\+Mode}{EyeCovergenceMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a52b8f8314b24b886c20c6a8f4f7447bf}{Eye\+Covengence\+Rendering\+Mode}} Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+Eye\+Covergence\+Mode\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the eye covengence mode. 
+
+The eye covengence mode.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a541041062fc34fb2037d9bb2d8899b7b}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a541041062fc34fb2037d9bb2d8899b7b}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Eye\+Separation@{Eye\+Separation}}
+\index{Eye\+Separation@{Eye\+Separation}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{Eye\+Separation}{EyeSeparation}}
+{\footnotesize\ttfamily Vector3 Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+Eye\+Separation\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the eye separation distance. 
+
+The eye separation.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a3c30ba34420646eb9db9c4a67f8bbc13}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a3c30ba34420646eb9db9c4a67f8bbc13}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!h\+Fov@{h\+Fov}}
+\index{h\+Fov@{h\+Fov}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{h\+Fov}{hFov}}
+{\footnotesize\ttfamily float Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+h\+Fov\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the horizontal fov. 
+
+The h fov.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a9843d084846d01979c5b711b3f8e704f}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a9843d084846d01979c5b711b3f8e704f}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Left\+Undistortion\+Mesh\+Pan\+Offset@{Left\+Undistortion\+Mesh\+Pan\+Offset}}
+\index{Left\+Undistortion\+Mesh\+Pan\+Offset@{Left\+Undistortion\+Mesh\+Pan\+Offset}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{Left\+Undistortion\+Mesh\+Pan\+Offset}{LeftUndistortionMeshPanOffset}}
+{\footnotesize\ttfamily Vector3 Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+Left\+Undistortion\+Mesh\+Pan\+Offset\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the left undistortion mesh pan offset. 
+
+The undistortion mesh pan.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_aafc2e51fcad4a3afd2d4be6a6beca488}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_aafc2e51fcad4a3afd2d4be6a6beca488}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Rendering\+Mode@{Rendering\+Mode}}
+\index{Rendering\+Mode@{Rendering\+Mode}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{Rendering\+Mode}{RenderingMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_af5ab911106768696ff764dd86e435d58}{Stereo\+Rendering\+Mode}} Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+Rendering\+Mode\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the rendering mode. 
+
+The rendering mode.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a79e2dd7db0f502ab44497a6944b000b9}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a79e2dd7db0f502ab44497a6944b000b9}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Right\+Undistortion\+Mesh\+Pan\+Offset@{Right\+Undistortion\+Mesh\+Pan\+Offset}}
+\index{Right\+Undistortion\+Mesh\+Pan\+Offset@{Right\+Undistortion\+Mesh\+Pan\+Offset}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{Right\+Undistortion\+Mesh\+Pan\+Offset}{RightUndistortionMeshPanOffset}}
+{\footnotesize\ttfamily Vector3 Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+Right\+Undistortion\+Mesh\+Pan\+Offset\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the right undistortion mesh pan offset. 
+
+The undistortion mesh pan.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_aa35b0089674333aea7cabb9d9d8cb065}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_aa35b0089674333aea7cabb9d9d8cb065}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Singleton@{Singleton}}
+\index{Singleton@{Singleton}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{Singleton}{Singleton}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera}{A\+R\+Camera}} Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+Singleton\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Singleton of \mbox{\hyperlink{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera}{A\+R\+Camera}} (readonly) 
+
+The singleton.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_ac9a1b2ad89ee3def2bc0edd322015be2}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_ac9a1b2ad89ee3def2bc0edd322015be2}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Undistortion\+Mesh\+Euler@{Undistortion\+Mesh\+Euler}}
+\index{Undistortion\+Mesh\+Euler@{Undistortion\+Mesh\+Euler}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{Undistortion\+Mesh\+Euler}{UndistortionMeshEuler}}
+{\footnotesize\ttfamily Vector3 Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+Undistortion\+Mesh\+Euler\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets the undistortion mesh euler. 
+
+The undistortion mesh euler.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a45c0a12d7fa088abd952e71e6824b5b7}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a45c0a12d7fa088abd952e71e6824b5b7}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Undistortion\+Mesh\+Pan\+Offset@{Undistortion\+Mesh\+Pan\+Offset}}
+\index{Undistortion\+Mesh\+Pan\+Offset@{Undistortion\+Mesh\+Pan\+Offset}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{Undistortion\+Mesh\+Pan\+Offset}{UndistortionMeshPanOffset}}
+{\footnotesize\ttfamily Vector3 Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+Undistortion\+Mesh\+Pan\+Offset\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the undistortion mesh pan offset. 
+
+The undistortion mesh pan.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a748884454e278d6c0dd93f80664786f6}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a748884454e278d6c0dd93f80664786f6}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!Undistortion\+Mesh\+Scale@{Undistortion\+Mesh\+Scale}}
+\index{Undistortion\+Mesh\+Scale@{Undistortion\+Mesh\+Scale}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{Undistortion\+Mesh\+Scale}{UndistortionMeshScale}}
+{\footnotesize\ttfamily Vector3 Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+Undistortion\+Mesh\+Scale\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the undistortion mesh scale. 
+
+The undistortion mesh scale.\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a7c368022a57cf82fecc66c5484b4820f}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a7c368022a57cf82fecc66c5484b4820f}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!v\+Fov@{v\+Fov}}
+\index{v\+Fov@{v\+Fov}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{v\+Fov}{vFov}}
+{\footnotesize\ttfamily float Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+v\+Fov\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the vertical fov. 
+
+The v fov.
+
+\subsection{Event Documentation}
+\mbox{\Hypertarget{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a5b56624a86763a503902cf9bba98da01}\label{class_ximmerse_1_1_slide_in_s_d_k_1_1_a_r_camera_a5b56624a86763a503902cf9bba98da01}} 
+\index{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}!On\+Camera\+Is\+Created@{On\+Camera\+Is\+Created}}
+\index{On\+Camera\+Is\+Created@{On\+Camera\+Is\+Created}!Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera@{Ximmerse\+::\+Slide\+In\+S\+D\+K\+::\+A\+R\+Camera}}
+\subsubsection{\texorpdfstring{On\+Camera\+Is\+Created}{OnCameraIsCreated}}
+{\footnotesize\ttfamily System.\+Action$<$Camera, Camera$>$ Ximmerse.\+Slide\+In\+S\+D\+K.\+A\+R\+Camera.\+On\+Camera\+Is\+Created = null\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Event\+: left-\/right camera is created. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/yuanqingyin/\+Project/\+Job/\+Slide\+In\+S\+D\+K/\+Unity\+S\+D\+K/\+Assets/\+Plugins/\+Slide\+In\+S\+D\+K/\+H\+L\+A\+P\+I/A\+R\+Camera.\+cs\end{DoxyCompactItemize}

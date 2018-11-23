@@ -1,0 +1,173 @@
+\hypertarget{class_lunar_console_plugin_1_1_lunar_console}{}\section{Lunar\+Console\+Plugin.\+Lunar\+Console Class Reference}
+\label{class_lunar_console_plugin_1_1_lunar_console}\index{Lunar\+Console\+Plugin.\+Lunar\+Console@{Lunar\+Console\+Plugin.\+Lunar\+Console}}
+Inheritance diagram for Lunar\+Console\+Plugin.\+Lunar\+Console\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_lunar_console_plugin_1_1_lunar_console}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_lunar_console_plugin_1_1_lunar_console_ae51760319ad0c8d63c50e62e45497395}{Mark\+Variables\+Dirty}} ()
+\begin{DoxyCompactList}\small\item\em Force variables to be written to a file \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_lunar_console_plugin_1_1_lunar_console_a2739ddde546c2989facf03fb0985009d}{Show}} ()
+\begin{DoxyCompactList}\small\item\em Shows the console on top of everything. Does nothing if current platform is not supported or if the plugin is not initialized. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_lunar_console_plugin_1_1_lunar_console_a90d09a226f1abc6ea1d1bd3c3f884127}{Hide}} ()
+\begin{DoxyCompactList}\small\item\em Hides the console. Does nothing if platform is not supported or if plugin is not initialized. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_lunar_console_plugin_1_1_lunar_console_a886f0926aaa4792a3313e2b7bf08e0e4}{Clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears log messages. Does nothing if platform is not supported or if plugin is not initialized. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_lunar_console_plugin_1_1_lunar_console_acef4779357950452589fe76b8a8b4048}{Register\+Action}} (string name, Action action)
+\begin{DoxyCompactList}\small\item\em Registers a user-\/defined action with a specific name and callback. Does nothing if platform is not supported or if plugin is not initialized. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_lunar_console_plugin_1_1_lunar_console_a4466fffbb7a8099d99e835e5fb36b029}{Unregister\+Action}} (Action action)
+\begin{DoxyCompactList}\small\item\em Un-\/registers a user-\/defined action with a specific callback. Does nothing if platform is not supported or if plugin is not initialized. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_lunar_console_plugin_1_1_lunar_console_a6ae8fe8759e61b25508a43cdadca35c4}{Unregister\+Action}} (string name)
+\begin{DoxyCompactList}\small\item\em Un-\/registers a user-\/defined action with a specific name. Does nothing if platform is not supported or if plugin is not initialized. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_lunar_console_plugin_1_1_lunar_console_a27c043192646c8a5b79668e2161db4aa}{Unregister\+All\+Actions}} (object target)
+\begin{DoxyCompactList}\small\item\em Un-\/registers all user-\/defined actions with a specific target (the object of the class which contains callback methods). Does nothing if platform is not supported or if plugin is not initialized. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_lunar_console_plugin_1_1_lunar_console_aba91fb5819fc8059c33076d1b7e96966}{Set\+Console\+Enabled}} (bool enabled)
+\begin{DoxyCompactList}\small\item\em Sets console enabled or disabled. Disabled console cannot be opened by user or A\+PI calls and does not collect logs. Does nothing if platform is not supported or if plugin is not initialized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static Action \mbox{\hyperlink{class_lunar_console_plugin_1_1_lunar_console_ad80d6876172ef84b7a2d4a7439c8ebeb}{on\+Console\+Opened}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Callback method to be called when the console is opened. You can pause your game here. \end{DoxyCompactList}\item 
+static Action \mbox{\hyperlink{class_lunar_console_plugin_1_1_lunar_console_a3ba133206c6a1f45bb1ee19429bcd313}{on\+Console\+Closed}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Callback method to be called when the console is closed. You can un-\/pause your game here. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_lunar_console_plugin_1_1_lunar_console_a1afebc241a2bc3a00a71f1aa69d77c2f}\label{class_lunar_console_plugin_1_1_lunar_console_a1afebc241a2bc3a00a71f1aa69d77c2f}} 
+static \mbox{\hyperlink{class_lunar_console_plugin_1_1_lunar_console}{Lunar\+Console}} {\bfseries instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_lunar_console_plugin_1_1_lunar_console_a21f09fd3f92ef24d596c1dda0a27943b}\label{class_lunar_console_plugin_1_1_lunar_console_a21f09fd3f92ef24d596c1dda0a27943b}} 
+\mbox{\hyperlink{class_lunar_console_plugin_internal_1_1_c_registry}{C\+Registry}} {\bfseries registry}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_lunar_console_plugin_1_1_lunar_console_a886f0926aaa4792a3313e2b7bf08e0e4}\label{class_lunar_console_plugin_1_1_lunar_console_a886f0926aaa4792a3313e2b7bf08e0e4}} 
+\index{Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}!Clear@{Clear}}
+\index{Clear@{Clear}!Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}}
+\subsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily static void Lunar\+Console\+Plugin.\+Lunar\+Console.\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Clears log messages. Does nothing if platform is not supported or if plugin is not initialized. 
+
+\mbox{\Hypertarget{class_lunar_console_plugin_1_1_lunar_console_a90d09a226f1abc6ea1d1bd3c3f884127}\label{class_lunar_console_plugin_1_1_lunar_console_a90d09a226f1abc6ea1d1bd3c3f884127}} 
+\index{Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}!Hide@{Hide}}
+\index{Hide@{Hide}!Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}}
+\subsubsection{\texorpdfstring{Hide()}{Hide()}}
+{\footnotesize\ttfamily static void Lunar\+Console\+Plugin.\+Lunar\+Console.\+Hide (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Hides the console. Does nothing if platform is not supported or if plugin is not initialized. 
+
+\mbox{\Hypertarget{class_lunar_console_plugin_1_1_lunar_console_ae51760319ad0c8d63c50e62e45497395}\label{class_lunar_console_plugin_1_1_lunar_console_ae51760319ad0c8d63c50e62e45497395}} 
+\index{Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}!Mark\+Variables\+Dirty@{Mark\+Variables\+Dirty}}
+\index{Mark\+Variables\+Dirty@{Mark\+Variables\+Dirty}!Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}}
+\subsubsection{\texorpdfstring{Mark\+Variables\+Dirty()}{MarkVariablesDirty()}}
+{\footnotesize\ttfamily void Lunar\+Console\+Plugin.\+Lunar\+Console.\+Mark\+Variables\+Dirty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Force variables to be written to a file 
+
+\mbox{\Hypertarget{class_lunar_console_plugin_1_1_lunar_console_acef4779357950452589fe76b8a8b4048}\label{class_lunar_console_plugin_1_1_lunar_console_acef4779357950452589fe76b8a8b4048}} 
+\index{Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}!Register\+Action@{Register\+Action}}
+\index{Register\+Action@{Register\+Action}!Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}}
+\subsubsection{\texorpdfstring{Register\+Action()}{RegisterAction()}}
+{\footnotesize\ttfamily static void Lunar\+Console\+Plugin.\+Lunar\+Console.\+Register\+Action (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{Action}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Registers a user-\/defined action with a specific name and callback. Does nothing if platform is not supported or if plugin is not initialized. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Display name\\
+\hline
+{\em action} & Callback delegate\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_lunar_console_plugin_1_1_lunar_console_aba91fb5819fc8059c33076d1b7e96966}\label{class_lunar_console_plugin_1_1_lunar_console_aba91fb5819fc8059c33076d1b7e96966}} 
+\index{Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}!Set\+Console\+Enabled@{Set\+Console\+Enabled}}
+\index{Set\+Console\+Enabled@{Set\+Console\+Enabled}!Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}}
+\subsubsection{\texorpdfstring{Set\+Console\+Enabled()}{SetConsoleEnabled()}}
+{\footnotesize\ttfamily static void Lunar\+Console\+Plugin.\+Lunar\+Console.\+Set\+Console\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Sets console enabled or disabled. Disabled console cannot be opened by user or A\+PI calls and does not collect logs. Does nothing if platform is not supported or if plugin is not initialized. 
+
+\mbox{\Hypertarget{class_lunar_console_plugin_1_1_lunar_console_a2739ddde546c2989facf03fb0985009d}\label{class_lunar_console_plugin_1_1_lunar_console_a2739ddde546c2989facf03fb0985009d}} 
+\index{Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}!Show@{Show}}
+\index{Show@{Show}!Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}}
+\subsubsection{\texorpdfstring{Show()}{Show()}}
+{\footnotesize\ttfamily static void Lunar\+Console\+Plugin.\+Lunar\+Console.\+Show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Shows the console on top of everything. Does nothing if current platform is not supported or if the plugin is not initialized. 
+
+\mbox{\Hypertarget{class_lunar_console_plugin_1_1_lunar_console_a4466fffbb7a8099d99e835e5fb36b029}\label{class_lunar_console_plugin_1_1_lunar_console_a4466fffbb7a8099d99e835e5fb36b029}} 
+\index{Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}!Unregister\+Action@{Unregister\+Action}}
+\index{Unregister\+Action@{Unregister\+Action}!Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}}
+\subsubsection{\texorpdfstring{Unregister\+Action()}{UnregisterAction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void Lunar\+Console\+Plugin.\+Lunar\+Console.\+Unregister\+Action (\begin{DoxyParamCaption}\item[{Action}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Un-\/registers a user-\/defined action with a specific callback. Does nothing if platform is not supported or if plugin is not initialized. 
+
+\mbox{\Hypertarget{class_lunar_console_plugin_1_1_lunar_console_a6ae8fe8759e61b25508a43cdadca35c4}\label{class_lunar_console_plugin_1_1_lunar_console_a6ae8fe8759e61b25508a43cdadca35c4}} 
+\index{Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}!Unregister\+Action@{Unregister\+Action}}
+\index{Unregister\+Action@{Unregister\+Action}!Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}}
+\subsubsection{\texorpdfstring{Unregister\+Action()}{UnregisterAction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Lunar\+Console\+Plugin.\+Lunar\+Console.\+Unregister\+Action (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Un-\/registers a user-\/defined action with a specific name. Does nothing if platform is not supported or if plugin is not initialized. 
+
+\mbox{\Hypertarget{class_lunar_console_plugin_1_1_lunar_console_a27c043192646c8a5b79668e2161db4aa}\label{class_lunar_console_plugin_1_1_lunar_console_a27c043192646c8a5b79668e2161db4aa}} 
+\index{Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}!Unregister\+All\+Actions@{Unregister\+All\+Actions}}
+\index{Unregister\+All\+Actions@{Unregister\+All\+Actions}!Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}}
+\subsubsection{\texorpdfstring{Unregister\+All\+Actions()}{UnregisterAllActions()}}
+{\footnotesize\ttfamily static void Lunar\+Console\+Plugin.\+Lunar\+Console.\+Unregister\+All\+Actions (\begin{DoxyParamCaption}\item[{object}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Un-\/registers all user-\/defined actions with a specific target (the object of the class which contains callback methods). Does nothing if platform is not supported or if plugin is not initialized. 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_lunar_console_plugin_1_1_lunar_console_a3ba133206c6a1f45bb1ee19429bcd313}\label{class_lunar_console_plugin_1_1_lunar_console_a3ba133206c6a1f45bb1ee19429bcd313}} 
+\index{Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}!on\+Console\+Closed@{on\+Console\+Closed}}
+\index{on\+Console\+Closed@{on\+Console\+Closed}!Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}}
+\subsubsection{\texorpdfstring{on\+Console\+Closed}{onConsoleClosed}}
+{\footnotesize\ttfamily Action Lunar\+Console\+Plugin.\+Lunar\+Console.\+on\+Console\+Closed\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Callback method to be called when the console is closed. You can un-\/pause your game here. 
+
+\mbox{\Hypertarget{class_lunar_console_plugin_1_1_lunar_console_ad80d6876172ef84b7a2d4a7439c8ebeb}\label{class_lunar_console_plugin_1_1_lunar_console_ad80d6876172ef84b7a2d4a7439c8ebeb}} 
+\index{Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}!on\+Console\+Opened@{on\+Console\+Opened}}
+\index{on\+Console\+Opened@{on\+Console\+Opened}!Lunar\+Console\+Plugin\+::\+Lunar\+Console@{Lunar\+Console\+Plugin\+::\+Lunar\+Console}}
+\subsubsection{\texorpdfstring{on\+Console\+Opened}{onConsoleOpened}}
+{\footnotesize\ttfamily Action Lunar\+Console\+Plugin.\+Lunar\+Console.\+on\+Console\+Opened\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Callback method to be called when the console is opened. You can pause your game here. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/yuanqingyin/\+Project/\+Job/\+Slide\+In\+S\+D\+K/\+Unity\+S\+D\+K/\+Assets/\+Plugins/\+Lunar\+Console/\+Scripts/Lunar\+Console.\+cs\end{DoxyCompactItemize}

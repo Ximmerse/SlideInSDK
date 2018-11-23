@@ -1,0 +1,78 @@
+\hypertarget{namespace_lunar_console_plugin}{}\section{Lunar\+Console\+Plugin Namespace Reference}
+\label{namespace_lunar_console_plugin}\index{Lunar\+Console\+Plugin@{Lunar\+Console\+Plugin}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_lunar_console_plugin_1_1_c_value}{C\+Value}}
+\item 
+class \mbox{\hyperlink{class_lunar_console_plugin_1_1_c_var}{C\+Var}}
+\item 
+class \mbox{\hyperlink{class_lunar_console_plugin_1_1_c_var_changed_delegate_list}{C\+Var\+Changed\+Delegate\+List}}
+\item 
+class \mbox{\hyperlink{class_lunar_console_plugin_1_1_c_var_container_attribute}{C\+Var\+Container\+Attribute}}
+\item 
+class \mbox{\hyperlink{class_lunar_console_plugin_1_1_c_var_list}{C\+Var\+List}}
+\item 
+class \mbox{\hyperlink{class_lunar_console_plugin_1_1_c_var_range_attribute}{C\+Var\+Range\+Attribute}}
+\item 
+struct \mbox{\hyperlink{struct_lunar_console_plugin_1_1_c_var_value_range}{C\+Var\+Value\+Range}}
+\item 
+class \mbox{\hyperlink{class_lunar_console_plugin_1_1_lunar_console}{Lunar\+Console}}
+\item 
+class \mbox{\hyperlink{class_lunar_console_plugin_1_1_lunar_console_settings}{Lunar\+Console\+Settings}}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespace_lunar_console_plugin_acc5d27eea9051942d76a6169f1bcd858}\label{namespace_lunar_console_plugin_acc5d27eea9051942d76a6169f1bcd858}} 
+enum {\bfseries C\+Var\+Type} \{ {\bfseries Boolean}, 
+{\bfseries Integer}, 
+{\bfseries Float}, 
+{\bfseries String}
+ \}
+\item 
+enum \mbox{\hyperlink{namespace_lunar_console_plugin_a7964ca4d001fe88527b3c508f034b34c}{C\+Flags}} \{ \mbox{\hyperlink{namespace_lunar_console_plugin_a7964ca4d001fe88527b3c508f034b34ca6adf97f83acf6453d4a6a4b1070f3754}{C\+Flags.\+None}} = 0, 
+\mbox{\hyperlink{namespace_lunar_console_plugin_a7964ca4d001fe88527b3c508f034b34ca7acdf85c69cc3c5305456a293524386e}{C\+Flags.\+Hidden}} = 1 $<$$<$ 1, 
+\mbox{\hyperlink{namespace_lunar_console_plugin_a7964ca4d001fe88527b3c508f034b34cab8aeb00bb1070f73393bb31ad8fb4b60}{C\+Flags.\+No\+Archive}} = 1 $<$$<$ 2
+ \}
+\item 
+\mbox{\Hypertarget{namespace_lunar_console_plugin_ac1cba1015f4007d05fabdf7d7ee2265b}\label{namespace_lunar_console_plugin_ac1cba1015f4007d05fabdf7d7ee2265b}} 
+enum {\bfseries Gesture} \{ {\bfseries None}, 
+{\bfseries Swipe\+Down}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespace_lunar_console_plugin_a90288a77849906223888f99a062da264}\label{namespace_lunar_console_plugin_a90288a77849906223888f99a062da264}} 
+delegate void {\bfseries C\+Var\+Changed\+Delegate} (\mbox{\hyperlink{class_lunar_console_plugin_1_1_c_var}{C\+Var}} cvar)
+\item 
+\mbox{\Hypertarget{namespace_lunar_console_plugin_a987bddf46fdeb5cb18d6943028416e46}\label{namespace_lunar_console_plugin_a987bddf46fdeb5cb18d6943028416e46}} 
+delegate void {\bfseries Lunar\+Console\+Native\+Message\+Callback} (string message)
+\item 
+\mbox{\Hypertarget{namespace_lunar_console_plugin_a274c4c02e44f4841b0b464d645755bf9}\label{namespace_lunar_console_plugin_a274c4c02e44f4841b0b464d645755bf9}} 
+delegate void {\bfseries Lunar\+Console\+Native\+Message\+Handler} (I\+Dictionary$<$ string, string $>$ data)
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_lunar_console_plugin_a7964ca4d001fe88527b3c508f034b34c}\label{namespace_lunar_console_plugin_a7964ca4d001fe88527b3c508f034b34c}} 
+\index{Lunar\+Console\+Plugin@{Lunar\+Console\+Plugin}!C\+Flags@{C\+Flags}}
+\index{C\+Flags@{C\+Flags}!Lunar\+Console\+Plugin@{Lunar\+Console\+Plugin}}
+\subsubsection{\texorpdfstring{C\+Flags}{CFlags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_lunar_console_plugin_a7964ca4d001fe88527b3c508f034b34c}{Lunar\+Console\+Plugin.\+C\+Flags}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!Lunar\+Console\+Plugin@{Lunar\+Console\+Plugin}}\index{Lunar\+Console\+Plugin@{Lunar\+Console\+Plugin}!None@{None}}}\mbox{\Hypertarget{namespace_lunar_console_plugin_a7964ca4d001fe88527b3c508f034b34ca6adf97f83acf6453d4a6a4b1070f3754}\label{namespace_lunar_console_plugin_a7964ca4d001fe88527b3c508f034b34ca6adf97f83acf6453d4a6a4b1070f3754}} 
+None&No flags (default value) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hidden@{Hidden}!Lunar\+Console\+Plugin@{Lunar\+Console\+Plugin}}\index{Lunar\+Console\+Plugin@{Lunar\+Console\+Plugin}!Hidden@{Hidden}}}\mbox{\Hypertarget{namespace_lunar_console_plugin_a7964ca4d001fe88527b3c508f034b34ca7acdf85c69cc3c5305456a293524386e}\label{namespace_lunar_console_plugin_a7964ca4d001fe88527b3c508f034b34ca7acdf85c69cc3c5305456a293524386e}} 
+Hidden&Won\textquotesingle{}t be listed in UI \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{No\+Archive@{No\+Archive}!Lunar\+Console\+Plugin@{Lunar\+Console\+Plugin}}\index{Lunar\+Console\+Plugin@{Lunar\+Console\+Plugin}!No\+Archive@{No\+Archive}}}\mbox{\Hypertarget{namespace_lunar_console_plugin_a7964ca4d001fe88527b3c508f034b34cab8aeb00bb1070f73393bb31ad8fb4b60}\label{namespace_lunar_console_plugin_a7964ca4d001fe88527b3c508f034b34cab8aeb00bb1070f73393bb31ad8fb4b60}} 
+No\+Archive&Don\textquotesingle{}t save between sessions \\
+\hline
+
+\end{DoxyEnumFields}

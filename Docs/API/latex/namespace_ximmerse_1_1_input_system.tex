@@ -1,0 +1,254 @@
+\hypertarget{namespace_ximmerse_1_1_input_system}{}\section{Ximmerse.\+Input\+System Namespace Reference}
+\label{namespace_ximmerse_1_1_input_system}\index{Ximmerse.\+Input\+System@{Ximmerse.\+Input\+System}}
+
+
+Contains constants and classes about the input device.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_ximmerse_1_1_input_system_1_1_x_device_plugin}{X\+Device\+Plugin}}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_ximmerse_1_1_input_system_a0c8e8c63a915b6a1d6f88ef3c88223a4}{Controller\+Raw\+Axis}} \+: int \{ \newline
+{\bfseries Left\+Trigger}, 
+{\bfseries Right\+Trigger}, 
+{\bfseries Left\+ThumbX}, 
+{\bfseries Left\+ThumbY}, 
+\newline
+{\bfseries Right\+ThumbX}, 
+{\bfseries Right\+ThumbY}, 
+{\bfseries Max}
+ \}
+\begin{DoxyCompactList}\small\item\em Device raw axis definition. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_ximmerse_1_1_input_system_a33519dcdafe0e14b92c47f5bbc89dfe4}\label{namespace_ximmerse_1_1_input_system_a33519dcdafe0e14b92c47f5bbc89dfe4}} 
+enum \mbox{\hyperlink{namespace_ximmerse_1_1_input_system_a33519dcdafe0e14b92c47f5bbc89dfe4}{Controller\+Raw\+Button}} \{ \newline
+{\bfseries Dpad\+Up} = 0x0001, 
+{\bfseries Dpad\+Down} = 0x0002, 
+{\bfseries Dpad\+Left} = 0x0004, 
+{\bfseries Dpad\+Right} = 0x0008, 
+\newline
+{\bfseries Start} = 0x0010, 
+{\bfseries Back} = 0x0020, 
+{\bfseries Left\+Thumb} = 0x0040, 
+{\bfseries Right\+Thumb} = 0x0080, 
+\newline
+{\bfseries Left\+Shoulder} = 0x0100, 
+{\bfseries Right\+Shoulder} = 0x0200, 
+{\bfseries Guide} = 0x0400, 
+{\bfseries A} = 0x1000, 
+\newline
+{\bfseries B} = 0x2000, 
+{\bfseries X} = 0x4000, 
+{\bfseries Y} = 0x8000, 
+{\bfseries Left\+Thumb\+Move} = 0x10000, 
+\newline
+{\bfseries Right\+Thumb\+Move} = 0x20000, 
+{\bfseries Left\+Trigger} = 0x40000, 
+{\bfseries Right\+Trigger} = 0x80000, 
+{\bfseries Left\+Thumb\+Up} = 0x100000, 
+\newline
+{\bfseries Left\+Thumb\+Down} = 0x200000, 
+{\bfseries Left\+Thumb\+Left} = 0x400000, 
+{\bfseries Left\+Thumb\+Right} = 0x800000, 
+{\bfseries Right\+Thumb\+Up} = 0x1000000, 
+\newline
+{\bfseries Right\+Thumb\+Down} = 0x2000000, 
+{\bfseries Right\+Thumb\+Left} = 0x4000000, 
+{\bfseries Right\+Thumb\+Right} = 0x8000000, 
+{\bfseries None} = 0x0, 
+\newline
+{\bfseries Any} = $\sim$\+None
+ \}
+\begin{DoxyCompactList}\small\item\em Device raw button definition. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_ximmerse_1_1_input_system_a44e24f3c450acce9e842c4b4bc9464d2}\label{namespace_ximmerse_1_1_input_system_a44e24f3c450acce9e842c4b4bc9464d2}} 
+enum \mbox{\hyperlink{namespace_ximmerse_1_1_input_system_a44e24f3c450acce9e842c4b4bc9464d2}{Controller\+Axis}} \+: int \{ \newline
+{\bfseries Primary\+Trigger} = Controller\+Raw\+Axis.\+Left\+Trigger, 
+{\bfseries Secondary\+Trigger} = Controller\+Raw\+Axis.\+Right\+Trigger, 
+{\bfseries Primary\+ThumbX} = Controller\+Raw\+Axis.\+Left\+ThumbX, 
+{\bfseries Primary\+ThumbY} = Controller\+Raw\+Axis.\+Left\+ThumbY, 
+\newline
+{\bfseries Secondary\+ThumbX} = Controller\+Raw\+Axis.\+Right\+ThumbX, 
+{\bfseries Secondary\+ThumbY} = Controller\+Raw\+Axis.\+Right\+ThumbY, 
+{\bfseries Max} = Controller\+Raw\+Axis.\+Max
+ \}
+\begin{DoxyCompactList}\small\item\em Controller axis definition. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_ximmerse_1_1_input_system_a7a8cc40f03a0a633525130da50d60efe}\label{namespace_ximmerse_1_1_input_system_a7a8cc40f03a0a633525130da50d60efe}} 
+enum \mbox{\hyperlink{namespace_ximmerse_1_1_input_system_a7a8cc40f03a0a633525130da50d60efe}{Controller\+Button}} \{ \newline
+{\bfseries Dpad\+Up} = Controller\+Raw\+Button.\+Dpad\+Up, 
+{\bfseries Dpad\+Down} = Controller\+Raw\+Button.\+Dpad\+Down, 
+{\bfseries Dpad\+Left} = Controller\+Raw\+Button.\+Dpad\+Left, 
+{\bfseries Dpad\+Right} = Controller\+Raw\+Button.\+Dpad\+Right, 
+\newline
+{\bfseries Start} = Controller\+Raw\+Button.\+Start, 
+{\bfseries Back} = Controller\+Raw\+Button.\+Back, 
+{\bfseries Primary\+Thumb} = Controller\+Raw\+Button.\+Left\+Thumb, 
+{\bfseries Secondary\+Thumb} = Controller\+Raw\+Button.\+Right\+Thumb, 
+\newline
+{\bfseries Primary\+Shoulder} = Controller\+Raw\+Button.\+Left\+Shoulder, 
+{\bfseries Secondary\+Shoulder} = Controller\+Raw\+Button.\+Right\+Shoulder, 
+{\bfseries Guide} = Controller\+Raw\+Button.\+Guide, 
+{\bfseries A} = Controller\+Raw\+Button.\+A, 
+\newline
+{\bfseries B} = Controller\+Raw\+Button.\+B, 
+{\bfseries X} = Controller\+Raw\+Button.\+X, 
+{\bfseries Y} = Controller\+Raw\+Button.\+Y, 
+{\bfseries Primary\+Thumb\+Move} = Controller\+Raw\+Button.\+Left\+Thumb\+Move, 
+\newline
+{\bfseries Secondary\+Thumb\+Move} = Controller\+Raw\+Button.\+Right\+Thumb\+Move, 
+{\bfseries Primary\+Trigger} = Controller\+Raw\+Button.\+Left\+Trigger, 
+{\bfseries Secondary\+Trigger} = Controller\+Raw\+Button.\+Right\+Trigger, 
+{\bfseries Primary\+Thumb\+Up} = Controller\+Raw\+Button.\+Left\+Thumb\+Up, 
+\newline
+{\bfseries Primary\+Thumb\+Down} = Controller\+Raw\+Button.\+Left\+Thumb\+Down, 
+{\bfseries Primary\+Thumb\+Left} = Controller\+Raw\+Button.\+Left\+Thumb\+Left, 
+{\bfseries Primary\+Thumb\+Right} = Controller\+Raw\+Button.\+Left\+Thumb\+Right, 
+{\bfseries Secondary\+Thumb\+Up} = Controller\+Raw\+Button.\+Right\+Thumb\+Up, 
+\newline
+{\bfseries Secondary\+Thumb\+Down} = Controller\+Raw\+Button.\+Right\+Thumb\+Down, 
+{\bfseries Secondary\+Thumb\+Left} = Controller\+Raw\+Button.\+Right\+Thumb\+Left, 
+{\bfseries Secondary\+Thumb\+Right} = Controller\+Raw\+Button.\+Right\+Thumb\+Right, 
+{\bfseries None} = Controller\+Raw\+Button.\+None, 
+\newline
+{\bfseries Any} = Controller\+Raw\+Button.\+Any
+ \}
+\begin{DoxyCompactList}\small\item\em Controller Button definition. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_ximmerse_1_1_input_system_ae83a958497a9f53a5b605720a5bddfb6}{Device\+Connection\+State}} \{ \newline
+\mbox{\hyperlink{namespace_ximmerse_1_1_input_system_ae83a958497a9f53a5b605720a5bddfb6aef70e46fd3bbc21e3e1f0b6815e750c0}{Device\+Connection\+State.\+Disconnected}}, 
+\mbox{\hyperlink{namespace_ximmerse_1_1_input_system_ae83a958497a9f53a5b605720a5bddfb6a495c55c275d09a00aaeb7482365ab300}{Device\+Connection\+State.\+Scanning}}, 
+\mbox{\hyperlink{namespace_ximmerse_1_1_input_system_ae83a958497a9f53a5b605720a5bddfb6ae321c53b354930ba96f0243e652df458}{Device\+Connection\+State.\+Connecting}}, 
+\mbox{\hyperlink{namespace_ximmerse_1_1_input_system_ae83a958497a9f53a5b605720a5bddfb6a2ec0d16e4ca169baedb9b2d50ec5c6d7}{Device\+Connection\+State.\+Connected}}, 
+\newline
+\mbox{\hyperlink{namespace_ximmerse_1_1_input_system_ae83a958497a9f53a5b605720a5bddfb6a902b0d55fddef6f8d651fe1035b7d4bd}{Device\+Connection\+State.\+Error}}
+ \}
+\begin{DoxyCompactList}\small\item\em The connection status of the host to the device. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465a}{Tracking\+Result}} \{ \newline
+\mbox{\hyperlink{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465aa90cec99cb3d475323540596ef1e2f5dc}{Tracking\+Result.\+Not\+Tracked}} = 0, 
+\mbox{\hyperlink{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465aa001701798b6d9e472b609ac20b35b87d}{Tracking\+Result.\+Rotation\+Tracked}} = 1$<$$<$0, 
+\mbox{\hyperlink{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465aab7ddf1ada4f53b9481038b4bf8c6cc56}{Tracking\+Result.\+Position\+Tracked}} = 1$<$$<$1, 
+\mbox{\hyperlink{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465aa03b7e73d85589978f9c3a063b8246508}{Tracking\+Result.\+Pose\+Tracked}} = (Rotation\+Tracked$\vert$\+Position\+Tracked), 
+\newline
+\mbox{\hyperlink{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465aa9240f43bf48a99f91e6648d9cd016b8d}{Tracking\+Result.\+Rotation\+Emulated}} = 1$<$$<$2, 
+\mbox{\hyperlink{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465aaa3348ea1457ed15751227c800ae211a3}{Tracking\+Result.\+Position\+Emulated}} = 1$<$$<$3
+ \}
+\begin{DoxyCompactList}\small\item\em Tracking status. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_ximmerse_1_1_input_system_aeb030df68d97bf26e0c3006ba900c653}\label{namespace_ximmerse_1_1_input_system_aeb030df68d97bf26e0c3006ba900c653}} 
+enum \mbox{\hyperlink{namespace_ximmerse_1_1_input_system_aeb030df68d97bf26e0c3006ba900c653}{Ximmerse\+Button}} \{ \newline
+{\bfseries Touch} = Controller\+Raw\+Button.\+Left\+Thumb\+Move, 
+{\bfseries Click} = Dpad\+Click$\vert$\+Dpad\+Up$\vert$\+Dpad\+Down$\vert$\+Dpad\+Left$\vert$\+Dpad\+Right, 
+{\bfseries App} = Controller\+Raw\+Button.\+Back, 
+{\bfseries Home} = Controller\+Raw\+Button.\+Start, 
+\newline
+{\bfseries Dpad\+Up} = Controller\+Raw\+Button.\+Dpad\+Up, 
+{\bfseries Dpad\+Down} = Controller\+Raw\+Button.\+Dpad\+Down, 
+{\bfseries Dpad\+Left} = Controller\+Raw\+Button.\+Dpad\+Left, 
+{\bfseries Dpad\+Right} = Controller\+Raw\+Button.\+Dpad\+Right, 
+\newline
+{\bfseries Dpad\+Click} = Controller\+Raw\+Button.\+Left\+Thumb, 
+{\bfseries Swipe\+Up} = Controller\+Raw\+Button.\+Left\+Thumb\+Up, 
+{\bfseries Swipe\+Down} = Controller\+Raw\+Button.\+Left\+Thumb\+Down, 
+{\bfseries Swipe\+Left} = Controller\+Raw\+Button.\+Left\+Thumb\+Left, 
+\newline
+{\bfseries Swipe\+Right} = Controller\+Raw\+Button.\+Left\+Thumb\+Right, 
+{\bfseries Slash\+Up} = Controller\+Raw\+Button.\+Right\+Thumb\+Up, 
+{\bfseries Slash\+Down} = Controller\+Raw\+Button.\+Right\+Thumb\+Down, 
+{\bfseries Slash\+Left} = Controller\+Raw\+Button.\+Right\+Thumb\+Left, 
+\newline
+{\bfseries Slash\+Right} = Controller\+Raw\+Button.\+Right\+Thumb\+Right, 
+{\bfseries Trigger} = Controller\+Raw\+Button.\+Left\+Trigger, 
+{\bfseries GripL} = Controller\+Raw\+Button.\+Left\+Shoulder, 
+{\bfseries GripR} = Controller\+Raw\+Button.\+Right\+Shoulder, 
+\newline
+{\bfseries Grip} = Grip\+L$\vert$\+GripR
+ \}
+\begin{DoxyCompactList}\small\item\em Tracking status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains constants and classes about the input device. 
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_ximmerse_1_1_input_system_a0c8e8c63a915b6a1d6f88ef3c88223a4}\label{namespace_ximmerse_1_1_input_system_a0c8e8c63a915b6a1d6f88ef3c88223a4}} 
+\index{Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}!Controller\+Raw\+Axis@{Controller\+Raw\+Axis}}
+\index{Controller\+Raw\+Axis@{Controller\+Raw\+Axis}!Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}}
+\subsubsection{\texorpdfstring{Controller\+Raw\+Axis}{ControllerRawAxis}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_ximmerse_1_1_input_system_a0c8e8c63a915b6a1d6f88ef3c88223a4}{Ximmerse.\+Input\+System.\+Controller\+Raw\+Axis}} \+: int\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Device raw axis definition. 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://msdn.microsoft.com/en-us/library/windows/apps/microsoft.directx_sdk.reference.xinput_gamepad}{\tt https\+://msdn.\+microsoft.\+com/en-\/us/library/windows/apps/microsoft.\+directx\+\_\+sdk.\+reference.\+xinput\+\_\+gamepad} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{namespace_ximmerse_1_1_input_system_ae83a958497a9f53a5b605720a5bddfb6}\label{namespace_ximmerse_1_1_input_system_ae83a958497a9f53a5b605720a5bddfb6}} 
+\index{Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}!Device\+Connection\+State@{Device\+Connection\+State}}
+\index{Device\+Connection\+State@{Device\+Connection\+State}!Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}}
+\subsubsection{\texorpdfstring{Device\+Connection\+State}{DeviceConnectionState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_ximmerse_1_1_input_system_ae83a958497a9f53a5b605720a5bddfb6}{Ximmerse.\+Input\+System.\+Device\+Connection\+State}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The connection status of the host to the device. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Disconnected@{Disconnected}!Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}}\index{Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}!Disconnected@{Disconnected}}}\mbox{\Hypertarget{namespace_ximmerse_1_1_input_system_ae83a958497a9f53a5b605720a5bddfb6aef70e46fd3bbc21e3e1f0b6815e750c0}\label{namespace_ximmerse_1_1_input_system_ae83a958497a9f53a5b605720a5bddfb6aef70e46fd3bbc21e3e1f0b6815e750c0}} 
+Disconnected&Indicates that the device is disconnected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Scanning@{Scanning}!Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}}\index{Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}!Scanning@{Scanning}}}\mbox{\Hypertarget{namespace_ximmerse_1_1_input_system_ae83a958497a9f53a5b605720a5bddfb6a495c55c275d09a00aaeb7482365ab300}\label{namespace_ximmerse_1_1_input_system_ae83a958497a9f53a5b605720a5bddfb6a495c55c275d09a00aaeb7482365ab300}} 
+Scanning&Indicates that the host is scanning for devices. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Connecting@{Connecting}!Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}}\index{Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}!Connecting@{Connecting}}}\mbox{\Hypertarget{namespace_ximmerse_1_1_input_system_ae83a958497a9f53a5b605720a5bddfb6ae321c53b354930ba96f0243e652df458}\label{namespace_ximmerse_1_1_input_system_ae83a958497a9f53a5b605720a5bddfb6ae321c53b354930ba96f0243e652df458}} 
+Connecting&Indicates that the device is connecting. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Connected@{Connected}!Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}}\index{Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}!Connected@{Connected}}}\mbox{\Hypertarget{namespace_ximmerse_1_1_input_system_ae83a958497a9f53a5b605720a5bddfb6a2ec0d16e4ca169baedb9b2d50ec5c6d7}\label{namespace_ximmerse_1_1_input_system_ae83a958497a9f53a5b605720a5bddfb6a2ec0d16e4ca169baedb9b2d50ec5c6d7}} 
+Connected&Indicates that the device is connected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}}\index{Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}!Error@{Error}}}\mbox{\Hypertarget{namespace_ximmerse_1_1_input_system_ae83a958497a9f53a5b605720a5bddfb6a902b0d55fddef6f8d651fe1035b7d4bd}\label{namespace_ximmerse_1_1_input_system_ae83a958497a9f53a5b605720a5bddfb6a902b0d55fddef6f8d651fe1035b7d4bd}} 
+Error&Indicates that an error has occurred. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465a}\label{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465a}} 
+\index{Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}!Tracking\+Result@{Tracking\+Result}}
+\index{Tracking\+Result@{Tracking\+Result}!Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}}
+\subsubsection{\texorpdfstring{Tracking\+Result}{TrackingResult}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465a}{Ximmerse.\+Input\+System.\+Tracking\+Result}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Tracking status. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Not\+Tracked@{Not\+Tracked}!Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}}\index{Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}!Not\+Tracked@{Not\+Tracked}}}\mbox{\Hypertarget{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465aa90cec99cb3d475323540596ef1e2f5dc}\label{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465aa90cec99cb3d475323540596ef1e2f5dc}} 
+Not\+Tracked&Tracking lost. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rotation\+Tracked@{Rotation\+Tracked}!Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}}\index{Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}!Rotation\+Tracked@{Rotation\+Tracked}}}\mbox{\Hypertarget{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465aa001701798b6d9e472b609ac20b35b87d}\label{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465aa001701798b6d9e472b609ac20b35b87d}} 
+Rotation\+Tracked&Only rotation tracking. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Position\+Tracked@{Position\+Tracked}!Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}}\index{Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}!Position\+Tracked@{Position\+Tracked}}}\mbox{\Hypertarget{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465aab7ddf1ada4f53b9481038b4bf8c6cc56}\label{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465aab7ddf1ada4f53b9481038b4bf8c6cc56}} 
+Position\+Tracked&Only position tracking. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Pose\+Tracked@{Pose\+Tracked}!Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}}\index{Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}!Pose\+Tracked@{Pose\+Tracked}}}\mbox{\Hypertarget{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465aa03b7e73d85589978f9c3a063b8246508}\label{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465aa03b7e73d85589978f9c3a063b8246508}} 
+Pose\+Tracked&Contains position and rotation tracking. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rotation\+Emulated@{Rotation\+Emulated}!Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}}\index{Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}!Rotation\+Emulated@{Rotation\+Emulated}}}\mbox{\Hypertarget{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465aa9240f43bf48a99f91e6648d9cd016b8d}\label{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465aa9240f43bf48a99f91e6648d9cd016b8d}} 
+Rotation\+Emulated&Simulated rotation data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Position\+Emulated@{Position\+Emulated}!Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}}\index{Ximmerse\+::\+Input\+System@{Ximmerse\+::\+Input\+System}!Position\+Emulated@{Position\+Emulated}}}\mbox{\Hypertarget{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465aaa3348ea1457ed15751227c800ae211a3}\label{namespace_ximmerse_1_1_input_system_ab4ab70561e1b40e9909cb70ef604465aaa3348ea1457ed15751227c800ae211a3}} 
+Position\+Emulated&Simulated position data. \\
+\hline
+
+\end{DoxyEnumFields}

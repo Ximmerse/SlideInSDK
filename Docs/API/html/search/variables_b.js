@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['rotation',['rotation',['../struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_attr6_dof_info.html#a3d361a8a8a5a16812d7b766573d50e45',1,'Ximmerse.InputSystem.XDevicePlugin.XAttr6DofInfo.rotation()'],['../struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_x_attr_controller_state.html#a1a2b53ae0c6361f5ad38f64938f7a3c7',1,'Ximmerse.InputSystem.XDevicePlugin.XAttrControllerState.rotation()'],['../struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_act_param__6_dof_info.html#ae96f8f61cebcb0d03da65e6edd983d49',1,'Ximmerse.InputSystem.XDevicePlugin.ActParam_6DofInfo.rotation()'],['../struct_ximmerse_1_1_input_system_1_1_x_device_plugin_1_1_act_param___marker_info.html#a25b6e2286a0dc69f8b8d89bac3c18daa',1,'Ximmerse.InputSystem.XDevicePlugin.ActParam_MarkerInfo.rotation()']]]
+];
