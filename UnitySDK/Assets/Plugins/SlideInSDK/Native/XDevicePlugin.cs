@@ -34,7 +34,7 @@ namespace Ximmerse.InputSystem
         public enum XContextTypes{
             kXContextTypeSlideIn, ///< Slide In product
         };
-
+        
         /// /////////////////////////////////////////////////////////////////////
         /// \enum XControllerTypes
         ///  \bref Types defined of Ximmerse Controllers
@@ -52,15 +52,15 @@ namespace Ximmerse.InputSystem
         /// \enum TrackingResult
         /// \brief Tracking status
         [System.Flags]
-        public enum XTrackingStates{
-            kXTrackingSt_NotTracked      =    0,  ///< Tracking lost
-            kXTrackingSt_RotationTracked = 1<<0,  ///< Only rotation tracking
-            kXTrackingSt_PositionTracked = 1<<1,  ///< Only position tracking
-            kXTrackingSt_PoseTracked = (kXTrackingSt_RotationTracked | kXTrackingSt_PositionTracked),  ///< Contains position and rotation tracking
-            kXTrackingSt_RotationEmulated = 1<<2, ///< Simulated rotation data
-            kXTrackingSt_PositionEmulated = 1<<3, ///< Simulated position data
-        };
-
+	    public enum XTrackingStates{
+		    kXTrackingSt_NotTracked      =    0,  ///< Tracking lost
+		    kXTrackingSt_RotationTracked = 1<<0,  ///< Only rotation tracking
+		    kXTrackingSt_PositionTracked = 1<<1,  ///< Only position tracking
+		    kXTrackingSt_PoseTracked = (kXTrackingSt_RotationTracked | kXTrackingSt_PositionTracked),  ///< Contains position and rotation tracking
+		    kXTrackingSt_RotationEmulated = 1<<2, ///< Simulated rotation data
+		    kXTrackingSt_PositionEmulated = 1<<3, ///< Simulated position data
+	    };
+        
         ///////////////////////////////////////////////////////
         /// @enum XControllerButtonMasks
         /// @brief Masks of Controller buttons.
@@ -99,16 +99,27 @@ namespace Ximmerse.InputSystem
             kXControllerButton_ANY = ~kXControllerButton_None,
         };
 
+        
+        //////////////////////////////////////
+        /// @enum XContextStates
+        /// @brief State of Context.
+        public enum XContextStates {
+            kXContextStInited, ///< context state, context enviroment allocted, but not working.
+            kXContextStStarted, ///< context state, devices in context working.
+            kXContextStWillRelease, ///< context state, moment before release.
+        };
+
         ////////////////////////////////////////////////////////
         /// @enum XContextAttributes
         /// @brief Attributes of Context
         public enum XContextAttributes {
             //kXCtxAttr_DeviceVersion,
-            /// <  Get the SDK platform support library version 
+            /// Get the SDK platform support library version 
             kXCtxAttr_Int_SdkVersion,
-            /// < Get the SDK platform support library version 
+            /// Get the SDK platform support library version 
             kXCtxAttr_Str_SdkVersion,
             kXCtxAttr_Int_SDKALGVersion, // int
+            kXCtxAttr_Int_State, ///< State value indicated context working state, 
         };
 
         ////////////////////////////////////////////////////////
@@ -132,7 +143,7 @@ namespace Ximmerse.InputSystem
 
             /// Connection state of Controller, see \ref XConnectionStates
             kXVpuAttr_Int_ConnectionState,
-
+    
             kXVpuAttr_Int_PowerMode,
             /// Battery Level. Invalid if battery mode is external power
             kXVpuAttr_Int_Battery,
@@ -148,7 +159,7 @@ namespace Ximmerse.InputSystem
             kXVpuAttr_Obj_6DofInfo,
             /// 6Dof info of device, Output to variable aguments. Invalid for Unity
             kXVpuAttr_V_6DofInfo,
-
+    
             /// Pressed button bits
             kXVpuAttr_Int_ButtonBits, // int 
 
@@ -166,7 +177,7 @@ namespace Ximmerse.InputSystem
 
             /// VPU cammera tracking object pose info. Output to variable aguments
             kXVpuAttr_V_TrackingInfo,
-
+            
 
         };
 
@@ -315,7 +326,7 @@ namespace Ximmerse.InputSystem
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
             public float[] rotation;
             public UInt64 timestamp;
-
+            public UInt64 recognized_markers_mask;
             public XAttrTrackingInfo(
                 UInt64 timestamp = 0, 
                 int index = 0, 
@@ -328,6 +339,7 @@ namespace Ximmerse.InputSystem
                 this.state = state;
                 this.position = position == null ? new float[3] {0, 0, 0} : position;
                 this.rotation = rotation == null ? new float[4] {0, 0, 0, 0 } : rotation;
+                this.recognized_markers_mask = 0;
             }
         };
 
@@ -336,7 +348,7 @@ namespace Ximmerse.InputSystem
         /// @brief Structure for getting controller state informations.
         [StructLayout(LayoutKind.Sequential)]
         public struct XAttrControllerState {
-
+            
             /// quaternion 
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
             public float[] rotation;
@@ -378,14 +390,14 @@ namespace Ximmerse.InputSystem
             }
         };
 
-
+        
         public enum XAttrTouchPadEvents {
             kAttrTpadEvt_Idle = 0x00,
             kAttrTpadEvt_Press = 0x01,
             kAttrTpadEvt_Release = 0x02,
             kAttrTpadEvt_Move = 0x03,
         };
-
+        
         [StructLayout(LayoutKind.Sequential)]
         public struct XAttrTouchPadState {
             public bool pressed; ///< indicated touchpad is touching.
@@ -398,19 +410,19 @@ namespace Ximmerse.InputSystem
         /// \enum XActions
         /// \brief The parameters of the DoAction method , fill in the action_id
         public enum XActions {
-
+            
             kXAct_UnpairController, ///< The command to unbind a connected controller
             kXAct_UnpairAllControllers,///< The command to unbind all controllers
             kXAct_StartPairingController,///< The command to start the controller pairing 
             kXAct_StopPairingController,///< The command to stop the controller pairing.
 
-            kXAct_ConnectControllerByBindID,    ///< Connect to a paired controller by specifying bind ID.
+            kXAct_ConnectControllerByBindID,	///< Connect to a paired controller by specifying bind ID.
             kXAct_ConnectAllPairedControllers, ///< Connect to All Paired Controllers.
             kXAct_DisconnectControllerByIndex, ///< Disconnect a connected controller by specifying connected index.
             kXAct_DisconnectControllerByBindID, ///< Disconnect a connected controller by specifying bind ID.
             kXAct_DisconnectAllControllers, ///< Disconnect all connected Controllers.
 
-            kXAct_Vibrate,  ///< Set the motor vibration command, the parameter is the structure of ActParam_Vibration
+            kXAct_Vibrate,	///< Set the motor vibration command, the parameter is the structure of ActParam_Vibration
             kXAct_Vibrate_V, ///< Set the motor vibration command with variable parameters , this command is INVALID in Unity.
             kXAct_Sleep, ///< The command to set the device to sleep
             kXAct_Wakeup, ///< The command to set the device to Wakeup
@@ -424,51 +436,51 @@ namespace Ximmerse.InputSystem
             kXAct_ResetMarkerSettings,  ///< Clear the configuration of the Tag tracking algorithm
             kXAct_LoadCameraCalibrationFile, ///< Load camera calibration parameters from the external,used in debugging
             kXAct_SetPositionSmooth, ///< Set the smoothing parameters of the Tag tracking algorithm,set -1 to close the smoothing of the algorithm, the valid range is 0 to 5
-
+            
             kXAct_Max,
 
             kXAct_DeprecatedOffset = 10000,
             ////////////////////////////// Deprecated Actions ////////////////////
-
+            
             /// deprecated
             kXAct_GetInt_CtxDeviceVersion,
 
             /// \deprecated use \ref XContextAttributes.kXCtxAttr_Int_SdkVersion instead.
             /// Get the SDK platform support library version 
             kXAct_GetInt_CtxSdkVersion, 
-
+            
             /// \deprecated use \ref XContextAttributes.kXCtxAttr_Int_SDKALGVersion instead. 
             /// Get the SDK algorithm version and the version number returned is hexadecimal
             kXAct_GetInt_CtxSDKALGVersion, 
-
+            
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Int_ImuFps and \ref XControllerAttributes.kXCAttr_Int_ImuFps instead.
             /// Gets the frame rate of the device
             kXAct_GetInt_FPS,
-
+            
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Int_ErrorCode and \ref XControllerAttributes.kXCAttr_Int_ErrorCode instead,
             /// Get the device error code
             kXAct_GetInt_ErrorCode, 
-
+            
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Int_ConnectionState and \ref XControllerAttributes.kXCAttr_Int_ConnectionState instead,
             /// Gets the device connection status
             kXAct_GetInt_ConnectionState, 
-
+            
             /// \deprecated
             /// Gets the ID of the controller marker. Reserved.
             kXAct_GetInt_BlobID, 
-
+            
             /// \deprecated 
             /// Sets the ID of the controller marker. Reserved.
             kXAct_SetBlogID, 
-
+            
             /// \deprecated use \ref XVpuAttributes.kXCAttr_Int_Battery and \ref XControllerAttributes.kXCAttr_Int_Battery instead,
             /// Acquire the battery capacity of the device
             kXAct_GetInt_Battery,
-
+            
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Int_PowerMode and \ref XControllerAttributes.kXCAttr_Int_PowerMode instead.
             /// Gets the power supply mode of the device
             kXAct_GetInt_BatteryMode, 
-
+            
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Int_BatteryVoltage and \ref XControllerAttributes.kXCAttr_Int_BatteryVoltage instead.
             /// Gets the battery voltage of the device
             kXAct_GetInt_BatteryVoltage, 
@@ -476,15 +488,15 @@ namespace Ximmerse.InputSystem
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Int_BatteryTemperature and \ref XControllerAttributes.kXCAttr_Int_BatteryTemplarature instead.
             /// Gets the battery temperature of the device
             kXAct_GetInt_BatteryTemperature, 
-
+            
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Str_SoftwareRevision and \ref XControllerAttributes.kXCAttr_Str_SoftwareRevision instead.
             /// Gets firmware version and returns a string
             kXAct_GetStr_SoftwareRevision, 
-
+            
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Str_HardwareRevision and \ref XControllerAttributes.kXCAttr_Str_HardwareRevision instead.
             /// Gets hardware version and returns a string
             kXAct_GetStr_HardwareRevision, 
-
+            
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Str_FPGAVersion instead
             /// Gets FPGA version and returns a string
             kXAct_GetStr_FPGAVersion, 
@@ -496,7 +508,7 @@ namespace Ximmerse.InputSystem
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Str_DeviceName and \ref XControllerAttributes.kXCAttr_Str_DeviceName instead.
             /// Gets display name information and returns a string
             kXAct_GetStr_DisplayName,
-
+            
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Str_ALGVersion instead.
             /// Gets the version of the algorithm on the firmware and returns a string
             kXAct_GetStr_ALGVersion, 
@@ -540,14 +552,14 @@ namespace Ximmerse.InputSystem
             /// \deprecated
             /// The command to set the VPU reference time. Reserved
             //kXAct_Set_VPUTime, 
-
+            
             /// \deprecated use \ref  XVpuAttributes.kXVpuAttr_Int_PairedNumber
             kXAct_GetInt_PairedNumber,
             /// \deprecated
             /// Gets the ID list of controllers that have been paired. Reserved
             kXAct_GetPairedList, 
-
-
+            
+             
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Obj_ControllerState and XCAttributes.kXCAttr_Obj_ControllerState instead.
             /// Command to get controller state and the argument is the structure of ActParam_ControllerState
             kXAct_GetControllerState, 
@@ -560,7 +572,7 @@ namespace Ximmerse.InputSystem
             kXAct_GetMarkerInfo_V, 
         };
 
-
+        
         //////////////////////////////////////////////////////////////////////////
         /// \brief Input device handle
         public class XHandle
@@ -580,14 +592,18 @@ namespace Ximmerse.InputSystem
             //{
             //    return a.mNativeHandle != b.mNativeHandle;
             //}
-
+           
             public bool Equals(XHandle a)
             {
                 return mNativeHandle == a.mNativeHandle;
             }
+            //public string ToString()
+            //{
+            //    return "";
+            //}
         }
 
-        #region native 
+#region native 
 
         private const string pluginName = "xdevice"; ///< The name of the platform support library for the device
 
@@ -595,11 +611,11 @@ namespace Ximmerse.InputSystem
         private static extern int xdev_init();
         [DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
         private static extern int xdev_exit();
-
+            
         private delegate void XDevLogDelegate (int level, string tag, string log);
         [DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
         //private static extern int xdev_set_logger(XLogDelegate logger);
-        private static extern int xdev_set_logger(XLogDelegate logger, int log_level);
+            private static extern int xdev_set_logger(XLogDelegate logger, int log_level);
 
         [DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
         private static extern NativeHandle xdev_new_context(int context_type);
@@ -609,7 +625,7 @@ namespace Ximmerse.InputSystem
 
         [DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
         private static extern NativeHandle xdev_get_device_handle(NativeHandle context_handle, string name);
-
+        
         [DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
         private static extern bool xdev_get_bool(NativeHandle handle, int attr_id, bool default_value);
         [DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
@@ -624,9 +640,19 @@ namespace Ximmerse.InputSystem
         [DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
         private static extern int xdev_get_object(NativeHandle handle, int attr_id, System.IntPtr value);
 
-        public delegate void XDevAttributeObserveDelegate(NativeHandle handle, int attr_id, System.IntPtr val, int val_size, System.IntPtr ud);
+        //public delegate void XDevAttributeObserveDelegate(NativeHandle handle, int attr_id, System.IntPtr val, int val_size, System.IntPtr ud);
+        //[DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
+        //private static extern int xdev_observe(NativeHandle handle, int attr_id, XDevAttributeObserveDelegate dlg, IntPtr ud);
+
+        public delegate void XContextStateChangeDelegate(int st, System.IntPtr ud);
+        public delegate void XDeviceConnectStateChangeDelegate(int connect_st, System.IntPtr ud);
+        //public delegate void XDeviceButtonStateChangeDelegate(XButtonEventParam btn_param, System.IntPtr ud);
+        public delegate void XDeviceButtonStateChangeDelegate(int btn_mask, int evt, System.IntPtr ud);
+
         [DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
-        private static extern int xdev_observe(NativeHandle handle, int attr_id, XDevAttributeObserveDelegate dlg, IntPtr ud);
+        private static extern int xdev_register_observer(NativeHandle handle, int attr_id, IntPtr dlg, System.IntPtr ud);
+        [DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
+        private static extern int xdev_unregister_observer(NativeHandle handle, int attr_id, IntPtr dlg);
 
         [DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
         private static extern int xdev_do(NativeHandle handle, int action_id);
@@ -639,28 +665,28 @@ namespace Ximmerse.InputSystem
 
         [DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
         private static extern string xdev_get_name(NativeHandle handle);
-        #endregion native
+#endregion native
 
-        #region Public Properties
+#region Public Properties
 
         /////////////////////////////////////
         /// \brief  Initialization of the platform support library for input devices
         /// \return Return 0 indicates success
         public static int Init()
         {
-            ObserverManager.instance.Init();
-            #if UNITY_ANDROID
+            //ObserverManager.instance.Init();
+#if UNITY_ANDROID
             int ret = -1;
             var clazz = new AndroidJavaClass("com.ximmerse.sdk.XDeviceApi2");
             using(AndroidJavaClass jc=new AndroidJavaClass("com.unity3d.player.UnityPlayer")){
-                using(AndroidJavaObject currentActivity = jc.GetStatic<AndroidJavaObject>("currentActivity")){
+				using(AndroidJavaObject currentActivity = jc.GetStatic<AndroidJavaObject>("currentActivity")){
                     ret = clazz.CallStatic<int>("init",currentActivity);
                 }
             }
             return ret;
-            #else
+#else
             return xdev_init();
-            #endif
+#endif
         }
 
         /////////////////////////////////////
@@ -668,12 +694,13 @@ namespace Ximmerse.InputSystem
         /// \return Return 0 indicates success
         public static int Exit()
         {
-            #if UNITY_ANDROID
+            ObserverDict.Clear();
+#if UNITY_ANDROID
             var clazz = new AndroidJavaClass("com.ximmerse.sdk.XDeviceApi2");
             return clazz.CallStatic<int>("exit");
-            #else
+#else
             return xdev_exit();
-            #endif
+#endif
         }
 
         /////////////////////////////////////
@@ -735,7 +762,7 @@ namespace Ximmerse.InputSystem
             var native_handle = xdev_get_device_handle(context_handle.mNativeHandle, name);
             return native_handle != null ? new XHandle(native_handle, name) : null;
         }
-
+        
         /////////////////////////////////////
         ///
         /// \brief  Gets the Boolean type parameters for the device
@@ -932,125 +959,198 @@ namespace Ximmerse.InputSystem
                 UserData = ud;
             }
         }
-        private class ObserverManager {
-            private static ObserverManager eventManager;
+        //private class ObserverManager {
+        //    private static ObserverManager eventManager;
 
-            private class ObsUnityEvent :UnityEvent<NativeHandle, int, IntPtr> { };
+        //    private class ObsUnityEvent :UnityEvent<NativeHandle, int, IntPtr> { };
 
-            private Dictionary<IntPtr, Dictionary<int, ObsUnityEvent>> ObserserDictionry = null;
+        //    private Dictionary<IntPtr, Dictionary<int, ObsUnityEvent>> ObserserDictionry = null;
 
-            public static ObserverManager instance
-            {
-                get
-                {
-                    if (eventManager == null)
-                    {
-                        //eventManager = FindObjectOfType (typeof (ObserverManager)) as ObserverManager;
-                        eventManager = new ObserverManager();
-                        if (eventManager == null)
-                        {
-                            Debug.LogError ("There needs to be one active EventManger script on a GameObject in your scene.");
-                        }
-                        else
-                        {
-                            eventManager.Init (); 
-                        }
-                    }
+        //    public static ObserverManager instance
+        //    {
+        //        get
+        //        {
+        //            if (eventManager == null)
+        //            {
+        //                //eventManager = FindObjectOfType (typeof (ObserverManager)) as ObserverManager;
+        //                eventManager = new ObserverManager();
+        //                if (eventManager == null)
+        //                {
+        //                    Debug.LogError ("There needs to be one active EventManger script on a GameObject in your scene.");
+        //                }
+        //                else
+        //                {
+        //                    eventManager.Init (); 
+        //                }
+        //            }
 
-                    return eventManager;
-                }
-            }
-            public void Init()
-            {
-                ObserserDictionry = new Dictionary<IntPtr, Dictionary<int, ObsUnityEvent>>();
-            }
-            public void AddObserver(NativeHandle hdl, int attr_id, UnityAction<NativeHandle, int, IntPtr> listener)
-            {
-                ObsUnityEvent thisEvent = null;
-                Dictionary<int, ObsUnityEvent> obs_dic = null;
-                if (instance.ObserserDictionry.TryGetValue (hdl, out obs_dic))
-                {
-                    if (obs_dic.TryGetValue(attr_id, out thisEvent)) {
-                        thisEvent.AddListener (listener);
-                    } else
-                    {
-                        thisEvent = new ObsUnityEvent();
-                        thisEvent.AddListener (listener);
-                        obs_dic.Add(attr_id, thisEvent);
-                    }
-                } 
-                else
-                {
-                    thisEvent = new ObsUnityEvent();
-                    thisEvent.AddListener (listener);
-                    obs_dic = new Dictionary<int, ObsUnityEvent>();
-                    obs_dic.Add(attr_id, thisEvent);
-                    instance.ObserserDictionry.Add (hdl, obs_dic);
-                }
-            }
-            public void RemoveObserver(NativeHandle hdl, int attr_id, UnityAction<NativeHandle, int, IntPtr> listener)
-            {
-                if (eventManager == null) return;
-                ObsUnityEvent thisEvent = null;
-                Dictionary<int, ObsUnityEvent> dict = null;
-                if (instance.ObserserDictionry.TryGetValue (hdl, out dict))
-                {
-                    if (dict.TryGetValue(attr_id, out thisEvent)) {
-                        thisEvent.RemoveListener (listener);
-                    }
-                }
+        //            return eventManager;
+        //        }
+        //    }
+        //    public void Init()
+        //    {
+        //        ObserserDictionry = new Dictionary<IntPtr, Dictionary<int, ObsUnityEvent>>();
+        //    }
+        //    public void AddObserver(NativeHandle hdl, int attr_id, UnityAction<NativeHandle, int, IntPtr> listener)
+        //    {
+        //        ObsUnityEvent thisEvent = null;
+        //        Dictionary<int, ObsUnityEvent> obs_dic = null;
+        //        if (instance.ObserserDictionry.TryGetValue (hdl, out obs_dic))
+        //        {
+        //            if (obs_dic.TryGetValue(attr_id, out thisEvent)) {
+        //                thisEvent.AddListener (listener);
+        //            } else
+        //            {
+        //                thisEvent = new ObsUnityEvent();
+        //                thisEvent.AddListener (listener);
+        //                obs_dic.Add(attr_id, thisEvent);
+        //            }
+        //        } 
+        //        else
+        //        {
+        //            thisEvent = new ObsUnityEvent();
+        //            thisEvent.AddListener (listener);
+        //            obs_dic = new Dictionary<int, ObsUnityEvent>();
+        //            obs_dic.Add(attr_id, thisEvent);
+        //            instance.ObserserDictionry.Add (hdl, obs_dic);
+        //        }
+        //    }
+        //    public void RemoveObserver(NativeHandle hdl, int attr_id, UnityAction<NativeHandle, int, IntPtr> listener)
+        //    {
+        //        if (eventManager == null) return;
+        //        ObsUnityEvent thisEvent = null;
+        //        Dictionary<int, ObsUnityEvent> dict = null;
+        //        if (instance.ObserserDictionry.TryGetValue (hdl, out dict))
+        //        {
+        //            if (dict.TryGetValue(attr_id, out thisEvent)) {
+        //                thisEvent.RemoveListener (listener);
+        //            }
+        //        }
 
-            }
-            public void TriggerEvent (NativeHandle hdl, int attr_id, IntPtr arg)
-            {
-                XDebug.Log("Trigger Event " + attr_id);
-                ObsUnityEvent thisEvent = null;
-                Dictionary<int, ObsUnityEvent> dict = null;
-                if (instance.ObserserDictionry.TryGetValue (hdl, out dict))
-                {
-                    if (dict.TryGetValue(attr_id, out thisEvent)) {
-                        XDebug.Log("Trigger invoke " + attr_id);
-                        thisEvent.Invoke(hdl, attr_id, arg);
-                    }
-                }
-                if (thisEvent == null)
-                {
-                    XDebug.Log("No callback found");
-                }
-            }
-        }
+        //    }
+        //    public void TriggerEvent (NativeHandle hdl, int attr_id, IntPtr arg)
+        //    {
+        //        XDebug.Log("Trigger Event " + attr_id);
+        //        ObsUnityEvent thisEvent = null;
+        //        Dictionary<int, ObsUnityEvent> dict = null;
+        //        if (instance.ObserserDictionry.TryGetValue (hdl, out dict))
+        //        {
+        //            if (dict.TryGetValue(attr_id, out thisEvent)) {
+        //                XDebug.Log("Trigger invoke " + attr_id);
+        //                thisEvent.Invoke(hdl, attr_id, arg);
+        //            }
+        //        }
+        //        if (thisEvent == null)
+        //        {
+        //            XDebug.Log("No callback found");
+        //        }
+        //    }
+        //}
 
-        private static void ObserveDelegate(NativeHandle native_handle, int attr_id, IntPtr val, int val_size, IntPtr ud)
-        {
-            XDebug.Log("ObservDelegate " + attr_id);
-            ObserverManager.instance.TriggerEvent(native_handle, attr_id, val);
-        }
-        public delegate void XAttributeObserveDelegate(NativeHandle native_handle, int attr_id, IntPtr param);
-        public static int Observe<E>(XHandle handle, E attr_id, XAttributeObserveDelegate dlg)
-        {
-            ObserverManager.instance.AddObserver(handle.mNativeHandle, Convert.ToInt32(attr_id), new UnityAction<IntPtr, int, IntPtr>(dlg));
-            return xdev_observe(handle.mNativeHandle, Convert.ToInt32(attr_id), ObserveDelegate, (IntPtr)0);
-            //return xdev_observe(handle.mNativeHandle, Convert.ToInt32(attr_id), dlg, (IntPtr) 0);
-        }
-//        #if UNITY_ANDROID
+        //private static void ObserveDelegate(NativeHandle native_handle, int attr_id, IntPtr val, int val_size, IntPtr ud)
+        //{
+        //    XDebug.Log("ObservDelegate " + attr_id);
+        //    ObserverManager.instance.TriggerEvent(native_handle, attr_id, val);
+        //}
+        //public delegate void XAttributeObserveDelegate(NativeHandle native_handle, int attr_id, IntPtr param);
+        //public static int Observe<E>(XHandle handle, E attr_id, XAttributeObserveDelegate dlg)
+        //{
+        //    ObserverManager.instance.AddObserver(handle.mNativeHandle, Convert.ToInt32(attr_id), new UnityAction<IntPtr, int, IntPtr>(dlg));
+        //    return xdev_observe(handle.mNativeHandle, Convert.ToInt32(attr_id), ObserveDelegate, (IntPtr)0);
+        //    //return xdev_observe(handle.mNativeHandle, Convert.ToInt32(attr_id), dlg, (IntPtr) 0);
+        //}
+//#if UNITY_ANDROID
         public static int CopyAssetsToPath(string dest_directory_path, string name_regex = ".*\\.(json|dat)$")
         {
-            if (Application.platform != RuntimePlatform.Android)
-                throw new UnityException("Error : CopyAssetsToPath is available in Android platform only.");
-            
             int ret = 0;
             using(AndroidJavaClass jc=new AndroidJavaClass("com.unity3d.player.UnityPlayer")){
-                using(AndroidJavaObject currentActivity = jc.GetStatic<AndroidJavaObject>("currentActivity")){
+				using(AndroidJavaObject currentActivity = jc.GetStatic<AndroidJavaObject>("currentActivity")){
                     var clazz = new AndroidJavaClass("com.ximmerse.sdk.XDeviceApi2");
                     ret = clazz.CallStatic<int>("copyAsset2Directory",currentActivity, name_regex, dest_directory_path);
                 }
             }
             return ret;
         }
-//        #endif //
-        #endregion
+//#endif //
+        protected class ObserverParam
+        {
+            public object Observer;
+            public bool IsUdExist;
+            public GCHandle UdGch;
+            public ObserverParam()
+            {
+                Observer = null;
+                IsUdExist = false;
+            }
+            public ObserverParam(object observer, bool isUdExist, GCHandle udGch)
+            {
+                Observer = observer;
+                UdGch = udGch;
+                IsUdExist = isUdExist;
+            }
+        };
+        protected static System.Collections.Generic.Dictionary<string, ObserverParam> ObserverDict = new System.Collections.Generic.Dictionary<string, ObserverParam>();
+        public static int RegisterObserver<E, U>(XHandle handle, E attr_id, System.Delegate observer, U ud)
+        {
+            //GCHandle gch = GCHandle.Alloc(ud);
+            ////GCHandle obs_gch = GCHandle.Alloc(observer);
 
-        #region API Test
+            ////int ret = xdev_register_observer(handle.mNativeHandle, Convert.ToInt32(attr_id), GCHandle.ToIntPtr(obs_gch), GCHandle.ToIntPtr(gch));
+            //int ret = xdev_register_observer(handle.mNativeHandle, Convert.ToInt32(attr_id), Marshal.GetFunctionPointerForDelegate(observer), GCHandle.ToIntPtr(gch));
+            //gch.Free();
+            //if (ret == 0)
+            //{
+            //    var key = "" + handle.mNativeHandle + attr_id + observer;
+            //    ObserverDict.Add(key, observer);
+            //    Console.WriteLine("xim register observer: " + key);
+            //}
+            ////obs_gch.Free();
+            //return ret;
+            bool isUdExist = (ud != null);
+            GCHandle gch = GCHandle.Alloc(ud);
+            
+            var ud_ptr = GCHandle.ToIntPtr(gch);
+            int ret = xdev_register_observer(handle.mNativeHandle, Convert.ToInt32(attr_id), Marshal.GetFunctionPointerForDelegate(observer), ud_ptr);
+            //gch.Free();
+            if (ret == 0)
+            {
+                var key = "" + handle.mNativeHandle + attr_id + observer;
+                if (ObserverDict.ContainsKey(key))
+                {
+                    ObserverParam old_param = ObserverDict[key];
+                    if (old_param.IsUdExist)
+                        old_param.UdGch.Free();
+                }
+                ObserverParam param = new ObserverParam(observer, isUdExist, gch);
+                ObserverDict.Add(key, param);
+                Debug.Log("xim register observer: " + key + ", ud " + ud_ptr);
+            } else {
+                gch.Free();
+            }
+            return ret;
+        }
+        public static int UnregisterObserver<E>(XHandle handle, E attr_id, System.Delegate observer)
+        {
+            ////GCHandle gch = GCHandle.Alloc(observer);
+            //int ret = xdev_unregister_observer(handle.mNativeHandle, Convert.ToInt32(attr_id), Marshal.GetFunctionPointerForDelegate(observer));
+            ////gch.Free();
+            //var key = "" + handle.mNativeHandle + attr_id + observer;
+            //ObserverDict.Remove(key);
+            int ret = xdev_unregister_observer(handle.mNativeHandle, Convert.ToInt32(attr_id), Marshal.GetFunctionPointerForDelegate(observer));
+            //gch.Free();
+            var key = "" + handle.mNativeHandle + attr_id + observer;
+            if (ObserverDict.ContainsKey(key)) {
+                ObserverParam old_param = ObserverDict[key];
+                if (old_param.IsUdExist)
+                    old_param.UdGch.Free();
+                ObserverDict.Remove(key);
+            }
+            Debug.Log("xim unregister observer: " + key);
+            return ret;
+        }
+#endregion
+
+#region API Test
 
         private static void TestLog(string log, bool result)
         {
@@ -1359,7 +1459,7 @@ namespace Ximmerse.InputSystem
 
             // kXAct_GetPairedList, // reserved
 
-            // kXAct_Vibrate,   // See the test demo
+            // kXAct_Vibrate,	// See the test demo
             // kXAct_Vibrate_V, // Invalid for Unity
             // kXAct_Sleep, // See the test demo
             // kXAct_Wakeup, // See the test demo
@@ -1420,7 +1520,7 @@ namespace Ximmerse.InputSystem
 
             // kXAct_Get_MarkerInfo_V, // Invalid in Unity
 
-            // kXAct_ConnectControllerByBindID, ///< Connect to a paired controller by specifying bind ID.
+            // kXAct_ConnectControllerByBindID,	///< Connect to a paired controller by specifying bind ID.
             XDevicePlugin.DoAction(xhmd_hdl, XDevicePlugin.XActions.kXAct_ConnectControllerByBindID, 1);
 
             // kXAct_ConnectAllPairedControllers, ///< Connect to All Paired Controllers.
@@ -1454,30 +1554,31 @@ namespace Ximmerse.InputSystem
                 if (mXHawkAttrDic == null) {
                     lock(lock_xhaw_dict);
                     if (mXHawkAttrDic == null) {
-                        mXHawkAttrDic = new System.Collections.Generic.Dictionary<XActions, XVpuAttributes>();
-                        mXHawkAttrDic.Add(XActions.kXAct_GetInt_FPS, XVpuAttributes.kXVpuAttr_Int_FpgaFps);
-                        mXHawkAttrDic.Add(XActions.kXAct_GetInt_ErrorCode, XVpuAttributes.kXVpuAttr_Int_ErrorCode);
-                        mXHawkAttrDic.Add(XActions.kXAct_GetInt_ConnectionState, XVpuAttributes.kXVpuAttr_Int_ConnectionState);
-                        mXHawkAttrDic.Add(XActions.kXAct_GetInt_Battery, XVpuAttributes.kXVpuAttr_Int_Battery);
-                        mXHawkAttrDic.Add(XActions.kXAct_GetInt_BatteryMode, XVpuAttributes.kXVpuAttr_Int_PowerMode);
-                        mXHawkAttrDic.Add(XActions.kXAct_GetInt_BatteryVoltage, XVpuAttributes.kXVpuAttr_Int_BatteryVoltage);
-                        mXHawkAttrDic.Add(XActions.kXAct_GetInt_BatteryTemperature, XVpuAttributes.kXVpuAttr_Int_BatteryTemperature);
-                        mXHawkAttrDic.Add(XActions.kXAct_GetStr_SoftwareRevision, XVpuAttributes.kXVpuAttr_Str_SoftwareRevision);
-                        mXHawkAttrDic.Add(XActions.kXAct_GetStr_HardwareRevision, XVpuAttributes.kXVpuAttr_Str_HardwareRevision);
-                        mXHawkAttrDic.Add(XActions.kXAct_GetStr_FPGAVersion, XVpuAttributes.kXVpuAttr_Str_FPGAVersion);
-                        mXHawkAttrDic.Add(XActions.kXAct_GetStr_ModelName, XVpuAttributes.kXVpuAttr_Str_ModelName);
-                        mXHawkAttrDic.Add(XActions.kXAct_GetStr_DisplayName, XVpuAttributes.kXVpuAttr_Str_DeviceName);
-                        mXHawkAttrDic.Add(XActions.kXAct_GetStr_ALGVersion, XVpuAttributes.kXVpuAttr_Str_ALGVersion);
-                        mXHawkAttrDic.Add(XActions.kXAct_GetStr_SerialNumber, XVpuAttributes.kXVpuAttr_Str_SerialNumber);
-                        //mXHawkAttrDic.Add(XActions.kXAct_GetStr_ManufacturerName, XVpuAttributes.kXVpuAttr_Int_ErrorCode);
-                        //mXHawkAttrDic.Add(XActions.kXAct_GetStr_FirmwareRevision, XVpuAttributes.kXVpuAttr_StInt_ErrorCode);
-                        mXHawkAttrDic.Add(XActions.kXAct_GetImuInfo, XVpuAttributes.kXVpuAttr_Obj_ImuInfo);
-                        mXHawkAttrDic.Add(XActions.kXAct_Get6DofInfo, XVpuAttributes.kXVpuAttr_Obj_6DofInfo);
-                        mXHawkAttrDic.Add(XActions.kXAct_GetInt_ButtonBits, XVpuAttributes.kXVpuAttr_Int_ButtonBits);
-                        //mXHawkAttrDic.Add(XActions.kXAct_Get_TouchPadState, XVpuAttributes.kXVpuAttr_Int_ErrorCode);
-                        mXHawkAttrDic.Add(XActions.kXAct_GetInt_PairedNumber, XVpuAttributes.kXVpuAttr_Int_PairedNumber);
-                        mXHawkAttrDic.Add(XActions.kXAct_GetControllerState, XVpuAttributes.kXVpuAttr_Obj_ControllerState);
-                        mXHawkAttrDic.Add(XActions.kXAct_GetMarkerInfo, XVpuAttributes.kXVpuAttr_Obj_TrackingInfo);
+                        var dict = new System.Collections.Generic.Dictionary<XActions, XVpuAttributes>();
+                        dict.Add(XActions.kXAct_GetInt_FPS, XVpuAttributes.kXVpuAttr_Int_FpgaFps);
+                        dict.Add(XActions.kXAct_GetInt_ErrorCode, XVpuAttributes.kXVpuAttr_Int_ErrorCode);
+                        dict.Add(XActions.kXAct_GetInt_ConnectionState, XVpuAttributes.kXVpuAttr_Int_ConnectionState);
+                        dict.Add(XActions.kXAct_GetInt_Battery, XVpuAttributes.kXVpuAttr_Int_Battery);
+                        dict.Add(XActions.kXAct_GetInt_BatteryMode, XVpuAttributes.kXVpuAttr_Int_PowerMode);
+                        dict.Add(XActions.kXAct_GetInt_BatteryVoltage, XVpuAttributes.kXVpuAttr_Int_BatteryVoltage);
+                        dict.Add(XActions.kXAct_GetInt_BatteryTemperature, XVpuAttributes.kXVpuAttr_Int_BatteryTemperature);
+                        dict.Add(XActions.kXAct_GetStr_SoftwareRevision, XVpuAttributes.kXVpuAttr_Str_SoftwareRevision);
+                        dict.Add(XActions.kXAct_GetStr_HardwareRevision, XVpuAttributes.kXVpuAttr_Str_HardwareRevision);
+                        dict.Add(XActions.kXAct_GetStr_FPGAVersion, XVpuAttributes.kXVpuAttr_Str_FPGAVersion);
+                        dict.Add(XActions.kXAct_GetStr_ModelName, XVpuAttributes.kXVpuAttr_Str_ModelName);
+                        dict.Add(XActions.kXAct_GetStr_DisplayName, XVpuAttributes.kXVpuAttr_Str_DeviceName);
+                        dict.Add(XActions.kXAct_GetStr_ALGVersion, XVpuAttributes.kXVpuAttr_Str_ALGVersion);
+                        dict.Add(XActions.kXAct_GetStr_SerialNumber, XVpuAttributes.kXVpuAttr_Str_SerialNumber);
+                        //dict.Add(XActions.kXAct_GetStr_ManufacturerName, XVpuAttributes.kXVpuAttr_Int_ErrorCode);
+                        //dict.Add(XActions.kXAct_GetStr_FirmwareRevision, XVpuAttributes.kXVpuAttr_StInt_ErrorCode);
+                        dict.Add(XActions.kXAct_GetImuInfo, XVpuAttributes.kXVpuAttr_Obj_ImuInfo);
+                        dict.Add(XActions.kXAct_Get6DofInfo, XVpuAttributes.kXVpuAttr_Obj_6DofInfo);
+                        dict.Add(XActions.kXAct_GetInt_ButtonBits, XVpuAttributes.kXVpuAttr_Int_ButtonBits);
+                        //dict.Add(XActions.kXAct_Get_TouchPadState, XVpuAttributes.kXVpuAttr_Int_ErrorCode);
+                        dict.Add(XActions.kXAct_GetInt_PairedNumber, XVpuAttributes.kXVpuAttr_Int_PairedNumber);
+                        dict.Add(XActions.kXAct_GetControllerState, XVpuAttributes.kXVpuAttr_Obj_ControllerState);
+                        dict.Add(XActions.kXAct_GetMarkerInfo, XVpuAttributes.kXVpuAttr_Obj_TrackingInfo);
+                        mXHawkAttrDic = dict;
                     }
                 }
                 if (mXHawkAttrDic.ContainsKey(act_id))
@@ -1488,27 +1589,28 @@ namespace Ximmerse.InputSystem
                 {
                     lock(lock_ctrl_dict);
                     if (mXCAttrDic == null) {
-                        mXCAttrDic = new System.Collections.Generic.Dictionary<XActions, XControllerAttributes>();
-
-                        mXCAttrDic.Add(XActions.kXAct_GetInt_FPS, XControllerAttributes.kXCAttr_Int_ImuFps);
-                        mXCAttrDic.Add(XActions.kXAct_GetInt_ErrorCode, XControllerAttributes.kXCAttr_Int_ErrorCode);
-                        mXCAttrDic.Add(XActions.kXAct_GetInt_ConnectionState, XControllerAttributes.kXCAttr_Int_ConnectionState);
-                        mXCAttrDic.Add(XActions.kXAct_GetInt_Battery, XControllerAttributes.kXCAttr_Int_Battery);
-                        mXCAttrDic.Add(XActions.kXAct_GetInt_BatteryMode, XControllerAttributes.kXCAttr_Int_PowerMode);
-                        mXCAttrDic.Add(XActions.kXAct_GetInt_BatteryVoltage, XControllerAttributes.kXCAttr_Int_BatteryVoltage);
-                        mXCAttrDic.Add(XActions.kXAct_GetInt_BatteryTemperature, XControllerAttributes.kXCAttr_Int_BatteryTemperature);
-                        mXCAttrDic.Add(XActions.kXAct_GetStr_SoftwareRevision, XControllerAttributes.kXCAttr_Str_SoftwareRevision);
-                        mXCAttrDic.Add(XActions.kXAct_GetStr_HardwareRevision, XControllerAttributes.kXCAttr_Str_HardwareRevision);
-                        mXCAttrDic.Add(XActions.kXAct_GetStr_ModelName, XControllerAttributes.kXCAttr_Str_ModelName);
-                        mXCAttrDic.Add(XActions.kXAct_GetStr_DisplayName, XControllerAttributes.kXCAttr_Str_DeviceName);
-                        mXCAttrDic.Add(XActions.kXAct_GetStr_SerialNumber, XControllerAttributes.kXCAttr_Str_SerialNumber);
-                        mXCAttrDic.Add(XActions.kXAct_GetStr_ManufacturerName, XControllerAttributes.kXCAttr_Str_ManufacturerName);
-                        mXCAttrDic.Add(XActions.kXAct_GetStr_FirmwareRevision, XControllerAttributes.kXCAttr_Str_FirmwareRevision);
-                        mXCAttrDic.Add(XActions.kXAct_GetImuInfo, XControllerAttributes.kXCAttr_Obj_ImuInfo);
-                        mXCAttrDic.Add(XActions.kXAct_Get6DofInfo, XControllerAttributes.kXCAttr_Obj_6DofInfo);
-                        mXCAttrDic.Add(XActions.kXAct_GetInt_ButtonBits, XControllerAttributes.kXCAttr_Int_ButtonBits);
-                        mXCAttrDic.Add(XActions.kXAct_Get_TouchPadState, XControllerAttributes.kXCAttr_Obj_TouchPadState);
-                        mXCAttrDic.Add(XActions.kXAct_GetControllerState, XControllerAttributes.kXCAttr_Obj_ControllerState);
+                        var dict = new System.Collections.Generic.Dictionary<XActions, XControllerAttributes>();
+                    
+                        dict.Add(XActions.kXAct_GetInt_FPS, XControllerAttributes.kXCAttr_Int_ImuFps);
+                        dict.Add(XActions.kXAct_GetInt_ErrorCode, XControllerAttributes.kXCAttr_Int_ErrorCode);
+                        dict.Add(XActions.kXAct_GetInt_ConnectionState, XControllerAttributes.kXCAttr_Int_ConnectionState);
+                        dict.Add(XActions.kXAct_GetInt_Battery, XControllerAttributes.kXCAttr_Int_Battery);
+                        dict.Add(XActions.kXAct_GetInt_BatteryMode, XControllerAttributes.kXCAttr_Int_PowerMode);
+                        dict.Add(XActions.kXAct_GetInt_BatteryVoltage, XControllerAttributes.kXCAttr_Int_BatteryVoltage);
+                        dict.Add(XActions.kXAct_GetInt_BatteryTemperature, XControllerAttributes.kXCAttr_Int_BatteryTemperature);
+                        dict.Add(XActions.kXAct_GetStr_SoftwareRevision, XControllerAttributes.kXCAttr_Str_SoftwareRevision);
+                        dict.Add(XActions.kXAct_GetStr_HardwareRevision, XControllerAttributes.kXCAttr_Str_HardwareRevision);
+                        dict.Add(XActions.kXAct_GetStr_ModelName, XControllerAttributes.kXCAttr_Str_ModelName);
+                        dict.Add(XActions.kXAct_GetStr_DisplayName, XControllerAttributes.kXCAttr_Str_DeviceName);
+                        dict.Add(XActions.kXAct_GetStr_SerialNumber, XControllerAttributes.kXCAttr_Str_SerialNumber);
+                        dict.Add(XActions.kXAct_GetStr_ManufacturerName, XControllerAttributes.kXCAttr_Str_ManufacturerName);
+                        dict.Add(XActions.kXAct_GetStr_FirmwareRevision, XControllerAttributes.kXCAttr_Str_FirmwareRevision);
+                        dict.Add(XActions.kXAct_GetImuInfo, XControllerAttributes.kXCAttr_Obj_ImuInfo);
+                        dict.Add(XActions.kXAct_Get6DofInfo, XControllerAttributes.kXCAttr_Obj_6DofInfo);
+                        dict.Add(XActions.kXAct_GetInt_ButtonBits, XControllerAttributes.kXCAttr_Int_ButtonBits);
+                        dict.Add(XActions.kXAct_Get_TouchPadState, XControllerAttributes.kXCAttr_Obj_TouchPadState);
+                        dict.Add(XActions.kXAct_GetControllerState, XControllerAttributes.kXCAttr_Obj_ControllerState);
+                        mXCAttrDic = dict;
                     }
                 }
                 if (mXCAttrDic.ContainsKey(act_id))
@@ -1519,10 +1621,11 @@ namespace Ximmerse.InputSystem
                 {
                     lock(lock_ctx_dict);
                     if (mXCtxAttrDic == null) {
-                        mXCtxAttrDic = new System.Collections.Generic.Dictionary<XActions, XContextAttributes>();
+                        var dict = new System.Collections.Generic.Dictionary<XActions, XContextAttributes>();
                         //mXCtxAttrDic.Add(XActions.kXAct_GetInt_CtxDeviceVersion, XContextAttributes.kXVpuAttr_Int_FpgaFps);
-                        mXCtxAttrDic.Add(XActions.kXAct_GetInt_CtxSDKALGVersion, XContextAttributes.kXCtxAttr_Int_SDKALGVersion);
-                        mXCtxAttrDic.Add(XActions.kXAct_GetInt_CtxSdkVersion, XContextAttributes.kXCtxAttr_Int_SdkVersion);
+                        dict.Add(XActions.kXAct_GetInt_CtxSDKALGVersion, XContextAttributes.kXCtxAttr_Int_SDKALGVersion);
+                        dict.Add(XActions.kXAct_GetInt_CtxSdkVersion, XContextAttributes.kXCtxAttr_Int_SdkVersion);
+                        mXCtxAttrDic = dict;
                     }
                 }
                 if (mXCtxAttrDic.ContainsKey(act_id))
@@ -1532,7 +1635,7 @@ namespace Ximmerse.InputSystem
             //XDebug.Log("Convert action " + act_id + "to attr " + ret + ", hdl " + handle.mName);
             return ret;
         }
-
+        
         //public static bool GetBool(XHandle handle, XActions act, bool default_value = false)
         //{
         //    return GetBool(handle, ConvertAction2AttrID(handle, act), default_value);;
@@ -1591,7 +1694,7 @@ namespace Ximmerse.InputSystem
             public float[] gyroscope;   ///< float buffer for getting gyroscope values.
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
             public float[] magnetism; /// < float buffer for getting magnetism values.
-
+                
             public System.UInt64 timestamp; ///< timestamp when data get from VPU
 
             public static ActParam_IMUInfo Obtain()
@@ -1623,7 +1726,7 @@ namespace Ximmerse.InputSystem
             }
         };
 
-
+                
 
         //////////////////////////////////////////////////////////////////
         /// @struct ActParam_TouchpadState
@@ -1661,7 +1764,7 @@ namespace Ximmerse.InputSystem
                 timestamp = 0;
             }
         }
-
+        
         /////////////////////////////////////////////////////////////////////////
         /// \struct ActParam_ControllerState
         /// \brief The structure for returning controller state by calling DoAction with kXAct_GetControllerState
@@ -1677,7 +1780,7 @@ namespace Ximmerse.InputSystem
             public float[] gyroscope;
             public System.UInt64 timestamp;
             public System.UInt32 button_state; /// < bit map indicating button pressed state of controller.
-
+            
             // TouchPad, reserve
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 6)]
             public float[] axes;

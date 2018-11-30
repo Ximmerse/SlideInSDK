@@ -51,7 +51,8 @@ namespace Ximmerse.SlideInSDK
         {
             Vector3 rawPos = Vector3.zero;
             Quaternion rawRot = Quaternion.identity;
-            if (!TagTrackingUtil.GetMarkerState(this.MarkerID, out rawPos, out rawRot))
+            m_SubMarkerMask = 0; 
+            if (!TagTrackingUtil.GetMarkerState(this.MarkerID, out rawPos, out rawRot, out m_SubMarkerMask))
             {
                 return;
             }

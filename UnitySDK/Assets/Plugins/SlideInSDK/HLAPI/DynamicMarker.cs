@@ -41,9 +41,9 @@ namespace Ximmerse.SlideInSDK
             Vector3 rawPos = Vector3.zero;
             //raw rot : the tracked oritentation retrieved from VPU
             Quaternion rawRot = Quaternion.identity;
-
             var markerTrans = this.transform;
-            if (TagTrackingUtil.GetMarkerState(this.MarkerID, out rawPos, out rawRot))
+            m_SubMarkerMask = 0;
+            if (TagTrackingUtil.GetMarkerState(this.MarkerID, out rawPos, out rawRot, out this.m_SubMarkerMask))
             {
                 //Anti-jiggering: markers become invisible when TOooo far:
                 if(this.HasLimitedTrackingDistance && rawPos.magnitude >= MaxTrackingDistance)

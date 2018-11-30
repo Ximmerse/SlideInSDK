@@ -126,20 +126,25 @@ namespace Ximmerse.SlideInSDK
         }
 
         /// <summary>
-        /// Gets marker tracking state, if marker is not tracked, return false. If tracked, out tracked raw position + rotation.
+        /// Gets marker tracking state, if marker is not tracked, return false. 
+        /// If tracked, out tracked raw position + rotation.
+        /// SubMarkerMask : the bitmask of sub markers. Each submark takes 1 bit.
         /// </summary>
-        /// <returns><c>true</c> if is marker tracked the specified markerID; otherwise, <c>false</c>.</returns>
+        /// <returns><c>true</c>, if marker state was gotten, <c>false</c> otherwise.</returns>
         /// <param name="markerID">Marker I.</param>
-        internal static bool GetMarkerState (int markerID, out Vector3 rawPos, out Quaternion rawRotation)
+        /// <param name="rawPos">Raw position.</param>
+        /// <param name="rawRotation">Raw rotation.</param>
+        /// <param name="SubMarkerMask">Sub marker mask.</param>
+        internal static bool GetMarkerState (int markerID, out Vector3 rawPos, out Quaternion rawRotation, out ulong SubMarkerMask)
         {
             if(IsSupported)
             {
                 XDevicePlugin.XAttrTrackingInfo marker_info = new XDevicePlugin.XAttrTrackingInfo(0, markerID);
                 XDevicePlugin.GetObject(DevicerHandle.HmdHandle, XDevicePlugin.XVpuAttributes.kXVpuAttr_Obj_TrackingInfo, ref marker_info);
-
-//                XDevicePlugin.DoAction(DevicerHandle.HmdHandle, XDevicePlugin.XActions.kXAct_GetMarkerInfo, ref marker_info);
+                //                XDevicePlugin.DoAction(DevicerHandle.HmdHandle, XDevicePlugin.XActions.kXAct_GetMarkerInfo, ref marker_info);
                 rawPos = Vector3.zero;
                 rawRotation = Quaternion.identity;
+                SubMarkerMask = 0;
                 if(marker_info.state == (int)TrackingResult.PoseTracked)
                 {
                     var XYZIndex = RawPositionindex;
@@ -151,13 +156,15 @@ namespace Ximmerse.SlideInSDK
                         marker_info.position[XYZIndex.x] * XYZMul.x,
                         marker_info.position[XYZIndex.y] * XYZMul.y,
                         marker_info.position[XYZIndex.z] * XYZMul.z);
-                    
+
                     rawRotation = MarkerPosePreTilt * new Quaternion(
                         marker_info.rotation[QIndex.x] * QMul.x, 
                         marker_info.rotation[QIndex.y] * QMul.y, 
                         marker_info.rotation[QIndex.z] * QMul.z, 
                         marker_info.rotation[QIndex.w] * QMul.w)
-                      * MarkerPosePostTilt;
+                        * MarkerPosePostTilt;
+
+                    SubMarkerMask = marker_info.recognized_markers_mask;
                     return true;
                 }
                 else 
@@ -169,6 +176,7 @@ namespace Ximmerse.SlideInSDK
             {
                 rawPos = Vector3.zero;
                 rawRotation = Quaternion.identity;
+                SubMarkerMask = 0;
                 return false;
             }
         }

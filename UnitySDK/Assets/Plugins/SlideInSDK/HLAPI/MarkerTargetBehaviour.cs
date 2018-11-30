@@ -466,6 +466,25 @@ namespace Ximmerse.SlideInSDK
         }
 
         /// <summary>
+        /// The sub marker mask, when zero means no sub-markers are tracked.
+        /// Then GT zero, loops on each byte to acquire sub marker's existence.
+        /// </summary>
+        protected ulong m_SubMarkerMask;
+
+        /// <summary>
+        /// Gets the sub marker mask.
+        /// </summary>
+        /// <value>The sub marker mask.</value>
+        public ulong SubMarkerMask
+        {
+            get
+            {
+                return m_SubMarkerMask;
+            }
+        }
+
+
+        /// <summary>
         /// Rotation prediction
         /// </summary>
         [SerializeField, Tooltip("Rotation predicition turn on or off.")]

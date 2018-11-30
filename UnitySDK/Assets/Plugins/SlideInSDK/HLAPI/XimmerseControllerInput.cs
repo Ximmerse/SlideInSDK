@@ -340,7 +340,10 @@ namespace Ximmerse.SlideInSDK
 
 
             //Add LLAPI event listener:
-            XDevicePlugin.Observe(ctrlHandle, XDevicePlugin.XControllerAttributes.kXCAttr_Int_ConnectionState, AttributeObserveDelegate);
+            XDevicePlugin.RegisterObserver(ctrlHandle, 
+                XDevicePlugin.XControllerAttributes.kXCAttr_Int_ConnectionState,
+                new XDevicePlugin.XDeviceConnectStateChangeDelegate(LLAPIConnectionStateChange), 
+                ctrlHandle);
 
 
             if (sAllButtons == null)
@@ -360,15 +363,17 @@ namespace Ximmerse.SlideInSDK
 
         }
 
-        void AttributeObserveDelegate(System.IntPtr handle, int attr_id, System.IntPtr arg)
+        void LLAPIConnectionStateChange(int connect_st, System.IntPtr ud)
         {
-            switch ((XDevicePlugin.XControllerAttributes)attr_id)
-            {
-                case XDevicePlugin.XControllerAttributes.kXCAttr_Int_ConnectionState:
-                    m_state = (DeviceConnectionState)System.Runtime.InteropServices.Marshal.ReadInt32(arg);
-                    Debug.LogFormat("Connection state : {0}", m_state);
-                    break;
-            }
+//            switch ((XDevicePlugin.XControllerAttributes)attr_id)
+//            {
+//                case XDevicePlugin.XControllerAttributes.kXCAttr_Int_ConnectionState:
+//                    m_state = (DeviceConnectionState)System.Runtime.InteropServices.Marshal.ReadInt32(arg);
+//                    Debug.LogFormat("Connection state : {0}", m_state);
+//                    break;
+//            }
+            m_state = (DeviceConnectionState)connect_st;
+            Debug.LogFormat("Connection state : {0}", m_state);
         }
 
         public bool IsConnected ()
