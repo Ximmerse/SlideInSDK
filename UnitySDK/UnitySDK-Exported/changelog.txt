@@ -1,0 +1,6 @@
+v1.0 - initial release 
+
+
+v1.1 - 
+1. Bugfix : PrimaryTrigger not recognized
+2. New feature : sub marker mask , see scene : Dynamic Marker _ Cube for more detail.
