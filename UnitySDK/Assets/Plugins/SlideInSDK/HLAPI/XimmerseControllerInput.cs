@@ -403,10 +403,19 @@ namespace Ximmerse.SlideInSDK
 
         internal bool CheckKey (ControllerButton Button)
         {
-            XDevicePlugin.XAttrControllerState state = new XDevicePlugin.XAttrControllerState();
-            XDevicePlugin.GetObject(this.ctrlHandle, XDevicePlugin.XControllerAttributes.kXCAttr_Obj_ControllerState, ref state);
-            bool isKeyDown = (state.button_state & (uint)Button) != 0;
-            return isKeyDown;
+            if (Button == ControllerButton.PrimaryTrigger)
+            {
+                int keyState = XDevicePlugin.GetInt(this.ctrlHandle, XDevicePlugin.XControllerAttributes.kXCAttr_Int_Trigger, 0);
+                bool isKeyDown = keyState != 0;
+                return isKeyDown;
+            }
+            else
+            {
+                XDevicePlugin.XAttrControllerState state = new XDevicePlugin.XAttrControllerState();
+                XDevicePlugin.GetObject(this.ctrlHandle, XDevicePlugin.XControllerAttributes.kXCAttr_Obj_ControllerState, ref state);
+                bool isKeyDown = (state.button_state & (uint)Button) != 0;
+                return isKeyDown;
+            }
         }
 
 
