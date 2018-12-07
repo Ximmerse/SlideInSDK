@@ -14,6 +14,8 @@ namespace Ximmerse
 
         public Button btnStartPairing, btnUnpairAll, btnTestVibrate;
 
+        public Button btnReload;
+
         public Dropdown controllerList;
 
         ControllerButton[] buttons = null;
@@ -68,6 +70,13 @@ namespace Ximmerse
                     () =>
                     {
                         XimmerseControllerInput.Vibrate (1000, 0.5f);
+                    }));
+
+            btnReload.onClick.AddListener (
+                new UnityEngine.Events.UnityAction(
+                    () =>
+                    {
+                        UnityEngine.SceneManagement.SceneManager.LoadScene (0);
                     }));
         }
 
