@@ -13,6 +13,7 @@ namespace Ximmerse.SlideInSDK
     {
         static bool isInitialized = false;
         static Controller controller01 = null, controller02 = null;
+        static float[] emptyRaw = new float[4];
 
         /// <summary>
         /// The time threshold for button tap.
@@ -161,6 +162,146 @@ namespace Ximmerse.SlideInSDK
         }
 
         /// <summary>
+        /// Gets the input controller rotation.
+        /// Passing controller index = -1 to return the first connected controller's rotation.
+        /// If you want to target specific controller index, passing 0 for controller 01, passing 1 for controller 02.
+        /// </summary>
+        /// <returns>The input rotation.</returns>
+        /// <param name="ControllerIndex">Controller index.</param>
+        public static Quaternion GetInputRotation(int ControllerIndex = -1)
+        {
+            if (ControllerIndex == -1)
+            {
+                if (controller01.IsConnected())
+                    return controller01.Rotation;
+                else if (controller02.IsConnected())
+                    return controller02.Rotation;
+
+                return Quaternion.identity;
+            }
+            else if (ControllerIndex == 0)
+            {
+                return controller01.IsConnected() ? controller01.Rotation : Quaternion.identity;
+            }
+            else if (ControllerIndex == 1)
+            {
+                return controller02.IsConnected() ? controller02.Rotation : Quaternion.identity;
+            }
+            return Quaternion.identity;
+        }
+
+
+        /// <summary>
+        /// Returns a 4 length array represents raw rotation elements.
+        /// </summary>
+        /// <returns>The raw rotation.</returns>
+        /// <param name="ControllerIndex">Controller index.</param>
+        public static float[] GetRawRotation (int ControllerIndex = -1)
+        {
+            if (ControllerIndex == -1)
+            {
+                if (controller01.IsConnected())
+                    return controller01.RawRotation;
+                else if (controller02.IsConnected())
+                    return controller02.RawRotation;
+
+                return emptyRaw;
+            }
+            else if (ControllerIndex == 0)
+            {
+                return controller01.IsConnected() ? controller01.RawRotation : emptyRaw;
+            }
+            else if (ControllerIndex == 1)
+            {
+                return controller02.IsConnected() ? controller02.RawRotation : emptyRaw;
+            }
+            return emptyRaw;
+        }
+
+        /// <summary>
+        /// Gets the input controller gyroscope.
+        /// Passing controller index = -1 to return the first connected controller's gyroscope.
+        /// If you want to target specific controller index, passing 0 for controller 01, passing 1 for controller 02.
+        /// </summary>
+        /// <returns>The input rotation.</returns>
+        /// <param name="ControllerIndex">Controller index.</param>
+        public static Vector3 GetInputGyroscope(int ControllerIndex = -1)
+        {
+            if (ControllerIndex == -1)
+            {
+                if (controller01.IsConnected())
+                    return controller01.Gyroscope;
+                else if (controller02.IsConnected())
+                    return controller02.Gyroscope;
+
+                return Vector3.zero;
+            }
+            else if (ControllerIndex == 0)
+            {
+                return controller01.IsConnected() ? controller01.Gyroscope : Vector3.zero;
+            }
+            else if (ControllerIndex == 1)
+            {
+                return controller02.IsConnected() ? controller02.Gyroscope : Vector3.zero;
+            }
+            return Vector3.zero;
+        }
+        /// <summary>
+        /// Gets the input controller acceleration.
+        /// Passing controller index = -1 to return the first connected controller's acceleration.
+        /// If you want to target specific controller index, passing 0 for controller 01, passing 1 for controller 02.
+        /// </summary>
+        /// <returns>The input rotation.</returns>
+        /// <param name="ControllerIndex">Controller index.</param>
+        public static Vector3 GetInputAcceleration(int ControllerIndex = -1)
+        {
+            if (ControllerIndex == -1)
+            {
+                if (controller01.IsConnected())
+                    return controller01.Acceleration;
+                else if (controller02.IsConnected())
+                    return controller02.Acceleration;
+
+                return Vector3.zero;
+            }
+            else if (ControllerIndex == 0)
+            {
+                return controller01.IsConnected() ? controller01.Acceleration : Vector3.zero;
+            }
+            else if (ControllerIndex == 1)
+            {
+                return controller02.IsConnected() ? controller02.Acceleration : Vector3.zero;
+            }
+            return Vector3.zero;
+        }
+
+        /// <summary>
+        /// Recenter the controller IMU rotation
+        /// </summary>
+        /// <param name="ControllerIndex">Controller index.</param>
+        public static void RecenterControllerIMURotation (float yaw = 0, int ControllerIndex=  -1)
+        {
+            if (ControllerIndex == -1)
+            {
+                if (controller01.IsConnected())
+                    controller01.RecenterControllerRotation(yaw);
+
+                if (controller02.IsConnected())
+                    controller02.RecenterControllerRotation(yaw);
+            }
+            else if (ControllerIndex == 0)
+            {
+                if (controller01.IsConnected())
+                    controller01.RecenterControllerRotation(yaw);
+            }
+            else if (ControllerIndex == 1)
+            {
+                if (controller02.IsConnected())
+                    controller02.RecenterControllerRotation(yaw);
+            }
+        }
+
+        /// <summary>
         /// Check if the button is currently pressing down. 
         /// Passing controller index = -1 means both controller 01 or 02 can trigger a key down result.
         /// If you want to target specific controller index, passing 0 for controller 01, passing 1 for controller 02.
@@ -287,194 +428,4 @@ namespace Ximmerse.SlideInSDK
     }
 
 
-    /// <summary>
-    /// Wrapper controller for LLAPI controller logic
-    /// </summary>
-    internal class Controller 
-    {
-        public enum ControllerIndex
-        {
-            Controller01 = 0, Controller02 = 1
-        }
-
-        int indexInt;
-
-        public int Index
-        {
-            get
-            {
-                return indexInt;
-            }
-        }
-
-        static ControllerButton[] sAllButtons = null;
-
-        Ximmerse.InputSystem.XDevicePlugin.XHandle ctrlHandle;
-
-        DeviceConnectionState m_state;
-
-        internal struct ButtonState 
-        {
-            public bool isDown;//for key down frame == true
-            public bool isUp;//for key up frame == true
-            public float DownTime;//record key down time
-            public bool isTap;//for key up frame and (up - down) time <= tap threshold time
-        }
-
-        Dictionary<ControllerButton, ButtonState> buttonStates = new Dictionary<ControllerButton, ButtonState>();
-
-        public Controller (ControllerIndex Index)
-        {
-            if (Index == ControllerIndex.Controller01)
-            {
-                ctrlHandle = DevicerHandle.Controller01;
-                indexInt = 0;
-            }
-            else
-            {
-                ctrlHandle = DevicerHandle.Controller02;
-                indexInt = 1;
-            }
-
-            m_state = (DeviceConnectionState)XDevicePlugin.GetInt(this.ctrlHandle, XDevicePlugin.XVpuAttributes.kXVpuAttr_Int_ConnectionState, (int) DeviceConnectionState.Disconnected);
-
-
-            //Add LLAPI event listener:
-            XDevicePlugin.RegisterObserver(ctrlHandle, 
-                XDevicePlugin.XControllerAttributes.kXCAttr_Int_ConnectionState,
-                new XDevicePlugin.XDeviceConnectStateChangeDelegate(LLAPIConnectionStateChange), 
-                ctrlHandle);
-
-
-            if (sAllButtons == null)
-            {
-                var controllerButtons = System.Enum.GetValues(typeof(ControllerButton));
-                sAllButtons = new ControllerButton[controllerButtons.Length];
-                for (int i = 0; i < controllerButtons.Length; i++)
-                {
-                    sAllButtons[i] = (ControllerButton)controllerButtons.GetValue(i);
-                }
-            }
-
-            foreach (var button in sAllButtons)
-            {
-                buttonStates.Add(button, new ButtonState());
-            }
-
-        }
-
-        void LLAPIConnectionStateChange(int connect_st, System.IntPtr ud)
-        {
-//            switch ((XDevicePlugin.XControllerAttributes)attr_id)
-//            {
-//                case XDevicePlugin.XControllerAttributes.kXCAttr_Int_ConnectionState:
-//                    m_state = (DeviceConnectionState)System.Runtime.InteropServices.Marshal.ReadInt32(arg);
-//                    Debug.LogFormat("Connection state : {0}", m_state);
-//                    break;
-//            }
-            m_state = (DeviceConnectionState)connect_st;
-            Debug.LogFormat("Connection state : {0}", m_state);
-        }
-
-        public bool IsConnected ()
-        {
-            return m_state == DeviceConnectionState.Connected;
-        }
-
-        public DeviceConnectionState GetState ()
-        {
-            return m_state;
-        }
-
-        public void Disconnect ()
-        {
-            XimmerseControllerInput.Disconnect(this.indexInt);
-        }
-
-        public void Unpair ()
-        {
-            XimmerseControllerInput.Unpair(this.indexInt);
-        }
-
-        public ButtonState GetButtonState (ControllerButton Button)
-        {
-            return buttonStates[Button];
-        }
-
-        internal bool CheckKey (ControllerButton Button)
-        {
-            if (Button == ControllerButton.PrimaryTrigger)
-            {
-                int keyState = XDevicePlugin.GetInt(this.ctrlHandle, XDevicePlugin.XControllerAttributes.kXCAttr_Int_Trigger, 0);
-                bool isKeyDown = keyState != 0;
-                return isKeyDown;
-            }
-            else
-            {
-                XDevicePlugin.XAttrControllerState state = new XDevicePlugin.XAttrControllerState();
-                XDevicePlugin.GetObject(this.ctrlHandle, XDevicePlugin.XControllerAttributes.kXCAttr_Obj_ControllerState, ref state);
-                bool isKeyDown = (state.button_state & (uint)Button) != 0;
-                return isKeyDown;
-            }
-        }
-
-
-        /// <summary>
-        /// Vibrate the controller of index with specified strength, duration.
-        /// </summary>
-        /// <param name="strength">Strength.</param>
-        /// <param name="duration">Duration.</param>
-        /// <param name="ControllerIndex">Controller index.</param>
-        public void Vibrate(int strength, float duration)
-        {
-            XDevicePlugin.ActParam_VibrateArgs arg = new XDevicePlugin.ActParam_VibrateArgs( strength, (int)(duration * 1000));
-            XDevicePlugin.DoAction(this.ctrlHandle, XDevicePlugin.XActions.kXAct_Vibrate, arg);
-        }
-
-        /// <summary>
-        /// Update this controller.
-        /// </summary>
-        public void Update ()
-        {
-            if (this.IsConnected() == false)
-                return;
-            
-            for (int i = 0; i < sAllButtons.Length; i++)
-            {
-                var btn = sAllButtons[i];
-                var btnState = buttonStates[btn];
-                bool isBtnDown = CheckKey(btn);//is button currently pressing down at this frame.
-
-                //Key down frame:
-                if (btnState.isDown == false && isBtnDown)
-                {
-                    btnState.isDown = true;
-                    btnState.isUp = false;
-                    btnState.DownTime = Time.time;
-                    buttonStates[btn] = btnState;//update button state
-                }
-                //Key up frame:
-                else if (btnState.isDown == true && isBtnDown == false)
-                {
-                    btnState.isDown = false;
-                    btnState.isUp = true;
-                    if ((Time.time - btnState.DownTime) <= XimmerseControllerInput.TapTimeThreshold)
-                    {
-                        btnState.isTap = true;
-                    }
-                    buttonStates[btn] = btnState;//update button state
-                }
-                //earse key tap | key up:
-                else if ((btnState.isTap == true && isBtnDown == false) 
-                    || (btnState.isUp == true && isBtnDown == false))
-                {
-                    btnState.isDown = false;
-                    btnState.isTap = false;
-                    btnState.isUp = false;
-                    buttonStates[btn] = btnState;//update button state
-                }
-            }
-        }
-
-    }
 }

@@ -19,8 +19,6 @@ namespace Ximmerse.SlideInSDK
             });
 
             ARCamera arCamera = ARCameraObject.GetComponent<ARCamera>();
-            arCamera.GetType().GetMethod("InitARCamera_Editor", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).Invoke(arCamera, null); 
-
             Selection.activeTransform = ARCameraObject.transform;
             EditorGUIUtility.PingObject(ARCameraObject);
         }
