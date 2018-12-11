@@ -105,6 +105,7 @@ namespace Ximmerse.SlideInSDK
                 DevicerHandle.HmdHandle = XDevicePlugin.GetDeviceHandle(DevicerHandle.SlideInContext, "XHawk-0");
                 TagTrackingUtil.ApplyDefaultConfig();
                 isInitialized = true;
+                Debug.LogFormat("Slide in HLAPI initialized successfully. HLAPI version : {0}", HLAPIVersion.Version);
             }
             else if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer)
             {
@@ -118,6 +119,7 @@ namespace Ximmerse.SlideInSDK
                 Debug.LogFormat("VPU Context: {0}, Hmd handle:{1}", DevicerHandle.SlideInContext.mNativeHandle.ToInt32(), DevicerHandle.HmdHandle.mNativeHandle.ToInt32());
                 TagTrackingUtil.ApplyDefaultConfig();
                 isInitialized = true;
+                Debug.LogFormat("Slide in HLAPI initialized successfully. HLAPI version : {0}", HLAPIVersion.Version);
             }
             else
             {
