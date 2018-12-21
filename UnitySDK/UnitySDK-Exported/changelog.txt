@@ -4,3 +4,9 @@ v1.0 - initial release
 v1.1 - 
 1. Bugfix : PrimaryTrigger not recognized
 2. New feature : sub marker mask , see scene : Dynamic Marker _ Cube for more detail.
+
+v1.2 -
+Expose input controller rotation interface.
+
+v1.2.1 -
+Bugfix low level algorithm library to improve tracking quality.
