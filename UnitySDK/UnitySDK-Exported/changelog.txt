@@ -10,3 +10,7 @@ Expose input controller rotation interface.
 
 v1.2.1 -
 Bugfix low level algorithm library to improve tracking quality.
+
+v2.0 
+- Update Algorithm version to 147
+- Supports hot plug-in and plug-out VPU.
