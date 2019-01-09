@@ -5,13 +5,13 @@ using Ximmerse.InputSystem;
 using XDevicePlugin = Ximmerse.InputSystem.XDevicePlugin;
 using TrackingResult = Ximmerse.InputSystem.TrackingResult;
 using Vector4Int = PolyEngine.pVector4Int;
-
+using System.Runtime.InteropServices;
 
 namespace Ximmerse.SlideInSDK
 {
-   /// <summary>
-   /// Tag tracking HLAPI util class.
-   /// </summary>
+    /// <summary>
+    /// Tag tracking HLAPI util class.
+    /// </summary>
     public static class TagTrackingUtil 
     {
         /// <summary>
@@ -28,7 +28,7 @@ namespace Ximmerse.SlideInSDK
             RawRotationIndex = TrackingConfig.RawRotationIndex;
             RawRotationFieldMultiplier = TrackingConfig.RawRotationFieldMultiplier;
 
-//            Debug.LogFormat ("TrackingConfig -  MarkerPosePreTilt:{0}, MarkerPosePostTilt:{1}, RawRotationFieldMultiplier:{2}", MarkerPosePreTilt, MarkerPosePostTilt, RawRotationFieldMultiplier);
+            //            Debug.LogFormat ("TrackingConfig -  MarkerPosePreTilt:{0}, MarkerPosePostTilt:{1}, RawRotationFieldMultiplier:{2}", MarkerPosePreTilt, MarkerPosePostTilt, RawRotationFieldMultiplier);
         }
 
         #region Marker Tracking Utils
@@ -85,10 +85,43 @@ namespace Ximmerse.SlideInSDK
 
         static bool isInitialized = false;
 
+        static bool isVPUConnected = false;
+
+        /// <summary>
+        /// Gets a value indicating is VPU connected.
+        /// </summary>
+        /// <value><c>true</c> if is VPU connected; otherwise, <c>false</c>.</value>
+        public static bool IsVPUConnected
+        {
+            get
+            {
+                return isVPUConnected;
+            }
+        }
+
+        /// <summary>
+        /// Event callback on vpu connection state is changed.
+        /// </summary>
+        public static event System.Action<bool> OnVPUConnectionStateIsChanged;
+
+        public static bool IsInitialized
+        {
+            get
+            {
+                return isInitialized;
+            }
+        }
+
+        public static void SetAlgSmoothLevel (int level)
+        {
+            XDevicePlugin.DoAction(DevicerHandle.HmdHandle,
+                XDevicePlugin.XActions.kXAct_SetPositionSmooth, level);
+        }
+
         /// <summary>
         /// Initializes the device module.
         /// </summary>
-        public static void InitializeDeviceModule ()
+        public static void InitializeDeviceModule (bool isFirst = true)
         {
             if (isInitialized)
                 return;
@@ -100,12 +133,25 @@ namespace Ximmerse.SlideInSDK
                     {
                         Debug.LogFormat("level:{0} ,tag:{1}, log:{2}", level, _tag, log);
                     });
-                XDevicePlugin.CopyAssetsToPath(kConfigFileDirectory);
+
+                if (isFirst)
+                {
+                    XDevicePlugin.CopyAssetsToPath(kConfigFileDirectory);
+                }
                 DevicerHandle.SlideInContext = XDevicePlugin.NewContext(XDevicePlugin.XContextTypes.kXContextTypeSlideIn);/// 创建SlideIn设备上下文
                 DevicerHandle.HmdHandle = XDevicePlugin.GetDeviceHandle(DevicerHandle.SlideInContext, "XHawk-0");
-                TagTrackingUtil.ApplyDefaultConfig();
+                if (isFirst)
+                {
+                    TagTrackingUtil.ApplyDefaultConfig();
+                }
+
+                DeviceConnectionState vpuConn = (DeviceConnectionState)XDevicePlugin.GetInt(DevicerHandle.HmdHandle, XDevicePlugin.XVpuAttributes.kXVpuAttr_Int_ConnectionState, 0);
+                isVPUConnected = vpuConn == DeviceConnectionState.Connected;
+                XDevicePlugin.RegisterObserver(DevicerHandle.HmdHandle, XDevicePlugin.XVpuAttributes.kXVpuAttr_Int_ConnectionState, new XDevicePlugin.XDeviceConnectStateChangeDelegate(OnVPUConnectionStateChanged), DevicerHandle.HmdHandle);
                 isInitialized = true;
-                Debug.LogFormat("Slide in HLAPI initialized successfully. HLAPI version : {0}", HLAPIVersion.Version);
+
+                Debug.LogFormat("Slide in HLAPI initialized successfully. HLAPI version : {0}, Algorithm version: {1}", HLAPIVersion.Version, HLAPIVersion.AlgVersion);
+                Debug.LogFormat("VPU device state {0} ", vpuConn);
             }
             else if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer)
             {
@@ -118,12 +164,48 @@ namespace Ximmerse.SlideInSDK
                 DevicerHandle.HmdHandle = XDevicePlugin.GetDeviceHandle(DevicerHandle.SlideInContext, "XHawk-0");
                 Debug.LogFormat("VPU Context: {0}, Hmd handle:{1}", DevicerHandle.SlideInContext.mNativeHandle.ToInt32(), DevicerHandle.HmdHandle.mNativeHandle.ToInt32());
                 TagTrackingUtil.ApplyDefaultConfig();
+
+
+                var vpuConn = (DeviceConnectionState)XDevicePlugin.GetInt(DevicerHandle.HmdHandle, XDevicePlugin.XVpuAttributes.kXVpuAttr_Int_ConnectionState, 0);
+                isVPUConnected = vpuConn == DeviceConnectionState.Connected;
+                XDevicePlugin.RegisterObserver(DevicerHandle.HmdHandle, XDevicePlugin.XVpuAttributes.kXVpuAttr_Int_ConnectionState, new XDevicePlugin.XDeviceConnectStateChangeDelegate(OnVPUConnectionStateChanged), DevicerHandle.HmdHandle);
                 isInitialized = true;
-                Debug.LogFormat("Slide in HLAPI initialized successfully. HLAPI version : {0}", HLAPIVersion.Version);
+
+                Debug.LogFormat("Slide in HLAPI initialized successfully. HLAPI version : {0}, Algorithm version: {1}", HLAPIVersion.Version, HLAPIVersion.AlgVersion);
+                Debug.LogFormat("VPU device state {0} ", vpuConn);
             }
             else
             {
                 Debug.LogWarningFormat("Tracking Library not available for current platform : {0}. Currently we supports Android/Windows platform.", Application.platform);
+            }
+        }
+
+        /// <summary>
+        /// Raises the device connect state change event.
+        /// </summary>
+        /// <param name="connect_st">Connect st.</param>
+        /// <param name="ud">Ud.</param>
+        private static void OnVPUConnectionStateChanged(int connect_st, System.IntPtr ud)
+        {
+            DeviceConnectionState connState = (DeviceConnectionState)connect_st;
+            Debug.Log("Device connect state change, " + connState);
+
+            isVPUConnected = connState == DeviceConnectionState.Connected;
+            if (OnVPUConnectionStateIsChanged != null)
+                OnVPUConnectionStateIsChanged(isVPUConnected);
+        }
+
+        /// <summary>
+        /// De-initialize the module.
+        /// </summary>
+        public static void DeInitializeModule ()
+        {
+            if (isInitialized)
+            {
+                isInitialized = false;
+                XDevicePlugin.ReleaseContext(DevicerHandle.HmdHandle);
+                XDevicePlugin.SetLogger(null);
+                XDevicePlugin.Exit();
             }
         }
 
@@ -219,7 +301,7 @@ namespace Ximmerse.SlideInSDK
                 case UnityEngine.XR.XRNode.TrackingReference:
                     return TagTracker.TrackingAnchor;
 
-                    default:
+                default:
                     Debug.LogErrorFormat("Unknown node: {0}", node.ToString());
                     return null;
             }
@@ -227,5 +309,5 @@ namespace Ximmerse.SlideInSDK
 
         #endregion
     }
-    
+
 }

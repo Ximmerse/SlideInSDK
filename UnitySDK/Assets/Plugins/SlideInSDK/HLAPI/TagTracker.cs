@@ -9,6 +9,8 @@ namespace Ximmerse.SlideInSDK
 {
     public class TagTracker : MonoBehaviour
     {
+        public bool DeinitializedModuleOnQuit = true;
+
         static TagTracker singleton;
 
         public static TagTracker Singleton
@@ -171,7 +173,7 @@ namespace Ximmerse.SlideInSDK
             m_TrackingAnchor.transform.SetParent(this.transform, false);
             OnTrackingAnchorConfigDirty();
 
-            TagTrackingUtil.InitializeDeviceModule();
+            TagTrackingUtil.InitializeDeviceModule(isFirst: true);
 
             Debug.LogFormat("Tag tracking module init done, tracking anchor: {0}-{1}-{2} ", m_TrackingAnchorPosition, m_TrackingAnchorTilt, m_TrackingAnchorScale);
         }
@@ -192,12 +194,32 @@ namespace Ximmerse.SlideInSDK
                 {
                     //Load json:
                     string jsonPath = Path.Combine(TagTrackingUtil.kConfigFileDirectory, jsonItem.jsonName);
+                    
                     int loadResult = XDevicePlugin.DoAction(DevicerHandle.HmdHandle, XDevicePlugin.XActions.kXAct_LoadMarkerSettingFile, jsonPath);  
                     Debug.LogFormat("Load json: {0} result : {1}", jsonPath, loadResult);
                 }
             } 
             m_CurrentTrackingProfile = profile;
 
+        }
+
+        public void LoadMultiMarkerTrackingProfile (params MarkerTrackingProfile[] profiles)
+        {
+            if (TagTrackingUtil.IsSupported)
+            {
+                XDevicePlugin.DoAction(DevicerHandle.HmdHandle, XDevicePlugin.XActions.kXAct_ResetMarkerSettings); ///清除配置
+                foreach (var profile in profiles)
+                {
+                    foreach (var jsonItem in profile.trackingItems)
+                    {
+                        //Load json:
+                        string jsonPath = Path.Combine(TagTrackingUtil.kConfigFileDirectory, jsonItem.jsonName);
+                        int loadResult = XDevicePlugin.DoAction(DevicerHandle.HmdHandle, XDevicePlugin.XActions.kXAct_LoadMarkerSettingFile, jsonPath);  
+                        Debug.LogFormat("Load json: {0} result : {1}", jsonPath, loadResult);
+                    }
+                }
+            } 
+            m_CurrentTrackingProfile = profiles[0];
         }
 
 
@@ -215,6 +237,5 @@ namespace Ximmerse.SlideInSDK
 
             TagTrackingUtil.ApplyDefaultConfig();
         }
-
     }
 }

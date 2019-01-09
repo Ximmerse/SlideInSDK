@@ -34,7 +34,7 @@ namespace Ximmerse.InputSystem
         public enum XContextTypes{
             kXContextTypeSlideIn, ///< Slide In product
         };
-        
+
         /// /////////////////////////////////////////////////////////////////////
         /// \enum XControllerTypes
         ///  \bref Types defined of Ximmerse Controllers
@@ -52,15 +52,15 @@ namespace Ximmerse.InputSystem
         /// \enum TrackingResult
         /// \brief Tracking status
         [System.Flags]
-	    public enum XTrackingStates{
-		    kXTrackingSt_NotTracked      =    0,  ///< Tracking lost
-		    kXTrackingSt_RotationTracked = 1<<0,  ///< Only rotation tracking
-		    kXTrackingSt_PositionTracked = 1<<1,  ///< Only position tracking
-		    kXTrackingSt_PoseTracked = (kXTrackingSt_RotationTracked | kXTrackingSt_PositionTracked),  ///< Contains position and rotation tracking
-		    kXTrackingSt_RotationEmulated = 1<<2, ///< Simulated rotation data
-		    kXTrackingSt_PositionEmulated = 1<<3, ///< Simulated position data
-	    };
-        
+        public enum XTrackingStates{
+            kXTrackingSt_NotTracked      =    0,  ///< Tracking lost
+            kXTrackingSt_RotationTracked = 1<<0,  ///< Only rotation tracking
+            kXTrackingSt_PositionTracked = 1<<1,  ///< Only position tracking
+            kXTrackingSt_PoseTracked = (kXTrackingSt_RotationTracked | kXTrackingSt_PositionTracked),  ///< Contains position and rotation tracking
+            kXTrackingSt_RotationEmulated = 1<<2, ///< Simulated rotation data
+            kXTrackingSt_PositionEmulated = 1<<3, ///< Simulated position data
+        };
+
         ///////////////////////////////////////////////////////
         /// @enum XControllerButtonMasks
         /// @brief Masks of Controller buttons.
@@ -99,7 +99,7 @@ namespace Ximmerse.InputSystem
             kXControllerButton_ANY = ~kXControllerButton_None,
         };
 
-        
+
         //////////////////////////////////////
         /// @enum XContextStates
         /// @brief State of Context.
@@ -143,7 +143,7 @@ namespace Ximmerse.InputSystem
 
             /// Connection state of Controller, see \ref XConnectionStates
             kXVpuAttr_Int_ConnectionState,
-    
+
             kXVpuAttr_Int_PowerMode,
             /// Battery Level. Invalid if battery mode is external power
             kXVpuAttr_Int_Battery,
@@ -159,7 +159,7 @@ namespace Ximmerse.InputSystem
             kXVpuAttr_Obj_6DofInfo,
             /// 6Dof info of device, Output to variable aguments. Invalid for Unity
             kXVpuAttr_V_6DofInfo,
-    
+
             /// Pressed button bits
             kXVpuAttr_Int_ButtonBits, // int 
 
@@ -177,7 +177,7 @@ namespace Ximmerse.InputSystem
 
             /// VPU cammera tracking object pose info. Output to variable aguments
             kXVpuAttr_V_TrackingInfo,
-            
+
 
         };
 
@@ -231,6 +231,14 @@ namespace Ximmerse.InputSystem
 
             /// Device infos, imu, 6dof, buttons ... see \ref XAttrControllerState
             kXCAttr_Obj_ControllerState, 
+
+
+            /// Get Controller device type, see \ref XControllerTypes.
+            kXCAttr_Int_Type,
+            /// Get Controller device address (MAC address with little endian format)
+            kXCAttr_Obj_Address,
+            /// Get Controller device address, return hex string with big endian.
+            kXCAttr_Str_Address, 
 
         };
 
@@ -348,7 +356,7 @@ namespace Ximmerse.InputSystem
         /// @brief Structure for getting controller state informations.
         [StructLayout(LayoutKind.Sequential)]
         public struct XAttrControllerState {
-            
+
             /// quaternion 
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
             public float[] rotation;
@@ -390,14 +398,14 @@ namespace Ximmerse.InputSystem
             }
         };
 
-        
+
         public enum XAttrTouchPadEvents {
             kAttrTpadEvt_Idle = 0x00,
             kAttrTpadEvt_Press = 0x01,
             kAttrTpadEvt_Release = 0x02,
             kAttrTpadEvt_Move = 0x03,
         };
-        
+
         [StructLayout(LayoutKind.Sequential)]
         public struct XAttrTouchPadState {
             public bool pressed; ///< indicated touchpad is touching.
@@ -410,24 +418,24 @@ namespace Ximmerse.InputSystem
         /// \enum XActions
         /// \brief The parameters of the DoAction method , fill in the action_id
         public enum XActions {
-            
+
             kXAct_UnpairController, ///< The command to unbind a connected controller
             kXAct_UnpairAllControllers,///< The command to unbind all controllers
             kXAct_StartPairingController,///< The command to start the controller pairing 
             kXAct_StopPairingController,///< The command to stop the controller pairing.
 
-            kXAct_ConnectControllerByBindID,	///< Connect to a paired controller by specifying bind ID.
+            kXAct_ConnectControllerByBindID,    ///< Connect to a paired controller by specifying bind ID.
             kXAct_ConnectAllPairedControllers, ///< Connect to All Paired Controllers.
             kXAct_DisconnectControllerByIndex, ///< Disconnect a connected controller by specifying connected index.
             kXAct_DisconnectControllerByBindID, ///< Disconnect a connected controller by specifying bind ID.
             kXAct_DisconnectAllControllers, ///< Disconnect all connected Controllers.
 
-            kXAct_Vibrate,	///< Set the motor vibration command, the parameter is the structure of ActParam_Vibration
+            kXAct_Vibrate,  ///< Set the motor vibration command, the parameter is the structure of ActParam_Vibration
             kXAct_Vibrate_V, ///< Set the motor vibration command with variable parameters , this command is INVALID in Unity.
             kXAct_Sleep, ///< The command to set the device to sleep
             kXAct_Wakeup, ///< The command to set the device to Wakeup
 
-            kXAct_ConnectControllerByMacAddr, ///< Connect to controller by specified MAC address, parameter is a MAC address string with hex format.
+            kXAct_ConnectControllerByMacAddr, ///< Connect to controller by specified MAC address, parameter is a MAC address string with hex format(Little Endian).
 
             kXAct_CustomBegin,///< The separator of the current enum definition
 
@@ -436,51 +444,56 @@ namespace Ximmerse.InputSystem
             kXAct_ResetMarkerSettings,  ///< Clear the configuration of the Tag tracking algorithm
             kXAct_LoadCameraCalibrationFile, ///< Load camera calibration parameters from the external,used in debugging
             kXAct_SetPositionSmooth, ///< Set the smoothing parameters of the Tag tracking algorithm,set -1 to close the smoothing of the algorithm, the valid range is 0 to 5
-            
+
+            kXAct_SetFpgaMaxFps, ///< Change FPGA FPS max value.
+
+
+            kXAct_ConnectControllerByMacAddrHex, ///< Connect to controller by specified MAC address, parameter is a MAC address string with hex format(Big Endian).
+
             kXAct_Max,
 
             kXAct_DeprecatedOffset = 10000,
             ////////////////////////////// Deprecated Actions ////////////////////
-            
+
             /// deprecated
             kXAct_GetInt_CtxDeviceVersion,
 
             /// \deprecated use \ref XContextAttributes.kXCtxAttr_Int_SdkVersion instead.
             /// Get the SDK platform support library version 
             kXAct_GetInt_CtxSdkVersion, 
-            
+
             /// \deprecated use \ref XContextAttributes.kXCtxAttr_Int_SDKALGVersion instead. 
             /// Get the SDK algorithm version and the version number returned is hexadecimal
             kXAct_GetInt_CtxSDKALGVersion, 
-            
+
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Int_ImuFps and \ref XControllerAttributes.kXCAttr_Int_ImuFps instead.
             /// Gets the frame rate of the device
             kXAct_GetInt_FPS,
-            
+
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Int_ErrorCode and \ref XControllerAttributes.kXCAttr_Int_ErrorCode instead,
             /// Get the device error code
             kXAct_GetInt_ErrorCode, 
-            
+
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Int_ConnectionState and \ref XControllerAttributes.kXCAttr_Int_ConnectionState instead,
             /// Gets the device connection status
             kXAct_GetInt_ConnectionState, 
-            
+
             /// \deprecated
             /// Gets the ID of the controller marker. Reserved.
             kXAct_GetInt_BlobID, 
-            
+
             /// \deprecated 
             /// Sets the ID of the controller marker. Reserved.
             kXAct_SetBlogID, 
-            
+
             /// \deprecated use \ref XVpuAttributes.kXCAttr_Int_Battery and \ref XControllerAttributes.kXCAttr_Int_Battery instead,
             /// Acquire the battery capacity of the device
             kXAct_GetInt_Battery,
-            
+
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Int_PowerMode and \ref XControllerAttributes.kXCAttr_Int_PowerMode instead.
             /// Gets the power supply mode of the device
             kXAct_GetInt_BatteryMode, 
-            
+
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Int_BatteryVoltage and \ref XControllerAttributes.kXCAttr_Int_BatteryVoltage instead.
             /// Gets the battery voltage of the device
             kXAct_GetInt_BatteryVoltage, 
@@ -488,15 +501,15 @@ namespace Ximmerse.InputSystem
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Int_BatteryTemperature and \ref XControllerAttributes.kXCAttr_Int_BatteryTemplarature instead.
             /// Gets the battery temperature of the device
             kXAct_GetInt_BatteryTemperature, 
-            
+
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Str_SoftwareRevision and \ref XControllerAttributes.kXCAttr_Str_SoftwareRevision instead.
             /// Gets firmware version and returns a string
             kXAct_GetStr_SoftwareRevision, 
-            
+
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Str_HardwareRevision and \ref XControllerAttributes.kXCAttr_Str_HardwareRevision instead.
             /// Gets hardware version and returns a string
             kXAct_GetStr_HardwareRevision, 
-            
+
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Str_FPGAVersion instead
             /// Gets FPGA version and returns a string
             kXAct_GetStr_FPGAVersion, 
@@ -508,7 +521,7 @@ namespace Ximmerse.InputSystem
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Str_DeviceName and \ref XControllerAttributes.kXCAttr_Str_DeviceName instead.
             /// Gets display name information and returns a string
             kXAct_GetStr_DisplayName,
-            
+
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Str_ALGVersion instead.
             /// Gets the version of the algorithm on the firmware and returns a string
             kXAct_GetStr_ALGVersion, 
@@ -552,14 +565,14 @@ namespace Ximmerse.InputSystem
             /// \deprecated
             /// The command to set the VPU reference time. Reserved
             //kXAct_Set_VPUTime, 
-            
+
             /// \deprecated use \ref  XVpuAttributes.kXVpuAttr_Int_PairedNumber
             kXAct_GetInt_PairedNumber,
             /// \deprecated
             /// Gets the ID list of controllers that have been paired. Reserved
             kXAct_GetPairedList, 
-            
-             
+
+
             /// \deprecated use \ref XVpuAttributes.kXVpuAttr_Obj_ControllerState and XCAttributes.kXCAttr_Obj_ControllerState instead.
             /// Command to get controller state and the argument is the structure of ActParam_ControllerState
             kXAct_GetControllerState, 
@@ -572,7 +585,7 @@ namespace Ximmerse.InputSystem
             kXAct_GetMarkerInfo_V, 
         };
 
-        
+
         //////////////////////////////////////////////////////////////////////////
         /// \brief Input device handle
         public class XHandle
@@ -592,7 +605,7 @@ namespace Ximmerse.InputSystem
             //{
             //    return a.mNativeHandle != b.mNativeHandle;
             //}
-           
+
             public bool Equals(XHandle a)
             {
                 return mNativeHandle == a.mNativeHandle;
@@ -603,7 +616,7 @@ namespace Ximmerse.InputSystem
             //}
         }
 
-#region native 
+        #region native 
 
         private const string pluginName = "xdevice"; ///< The name of the platform support library for the device
 
@@ -611,11 +624,11 @@ namespace Ximmerse.InputSystem
         private static extern int xdev_init();
         [DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
         private static extern int xdev_exit();
-            
+
         private delegate void XDevLogDelegate (int level, string tag, string log);
         [DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
         //private static extern int xdev_set_logger(XLogDelegate logger);
-            private static extern int xdev_set_logger(XLogDelegate logger, int log_level);
+        private static extern int xdev_set_logger(XLogDelegate logger, int log_level);
 
         [DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
         private static extern NativeHandle xdev_new_context(int context_type);
@@ -625,7 +638,7 @@ namespace Ximmerse.InputSystem
 
         [DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
         private static extern NativeHandle xdev_get_device_handle(NativeHandle context_handle, string name);
-        
+
         [DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
         private static extern bool xdev_get_bool(NativeHandle handle, int attr_id, bool default_value);
         [DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
@@ -639,6 +652,8 @@ namespace Ximmerse.InputSystem
 
         [DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
         private static extern int xdev_get_object(NativeHandle handle, int attr_id, System.IntPtr value);
+        [DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
+        private static extern int xdev_get_object(NativeHandle handle, int attr_id, byte[] value);
 
         //public delegate void XDevAttributeObserveDelegate(NativeHandle handle, int attr_id, System.IntPtr val, int val_size, System.IntPtr ud);
         //[DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
@@ -665,45 +680,48 @@ namespace Ximmerse.InputSystem
 
         [DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
         private static extern string xdev_get_name(NativeHandle handle);
-#endregion native
+        #endregion native
 
-#region Public Properties
+        #region Public Properties
 
         /////////////////////////////////////
+        /// \fn public static int Init()
         /// \brief  Initialization of the platform support library for input devices
         /// \return Return 0 indicates success
         public static int Init()
         {
             //ObserverManager.instance.Init();
-#if UNITY_ANDROID
+            #if UNITY_ANDROID
             int ret = -1;
             var clazz = new AndroidJavaClass("com.ximmerse.sdk.XDeviceApi2");
             using(AndroidJavaClass jc=new AndroidJavaClass("com.unity3d.player.UnityPlayer")){
-				using(AndroidJavaObject currentActivity = jc.GetStatic<AndroidJavaObject>("currentActivity")){
+                using(AndroidJavaObject currentActivity = jc.GetStatic<AndroidJavaObject>("currentActivity")){
                     ret = clazz.CallStatic<int>("init",currentActivity);
                 }
             }
             return ret;
-#else
+            #else
             return xdev_init();
-#endif
+            #endif
         }
 
         /////////////////////////////////////
+        /// \fn public static int Exit()
         /// \brief  Exit the platform support library for the input device
         /// \return Return 0 indicates success
         public static int Exit()
         {
             ObserverDict.Clear();
-#if UNITY_ANDROID
+            #if UNITY_ANDROID
             var clazz = new AndroidJavaClass("com.ximmerse.sdk.XDeviceApi2");
             return clazz.CallStatic<int>("exit");
-#else
+            #else
             return xdev_exit();
-#endif
+            #endif
         }
 
         /////////////////////////////////////
+        /// \fn public static XHandle NewContext(XContextTypes context_type)
         /// \brief  Create the device context
         ///    \param [in] context_type device type
         /// \return Return the XHandle of device
@@ -713,6 +731,7 @@ namespace Ximmerse.InputSystem
         }
 
         /////////////////////////////////////
+        /// \fn public static int ReleaseContext(XHandle context_handle)
         /// \brief  Destroy the device context
         ///    \param [in] context_handle The device handle
         /// \return Return 0 indicates success
@@ -730,9 +749,13 @@ namespace Ximmerse.InputSystem
         /// \return no return value
         public delegate void XLogDelegate(int level, string tag, string log);
 
-
+        //////////////////////////////////////
+        /// \var static XLogDelegate sLogDelegate
+        /// \brief Persistence of logger object.
         static XLogDelegate sLogDelegate = null;
+
         /////////////////////////////////////
+        /// \fn public static void SetLogger(XLogDelegate logger, XLogLevels lv = XLogLevels.kXLogLevel_Debug)
         /// \brief  Set up the print listener of XLogDelegate
         ///    \param [in] logger The parameter of XLogDelegate type 
         /// \return no return value
@@ -743,6 +766,7 @@ namespace Ximmerse.InputSystem
         }
 
         ////////////////////////////////////////
+        /// \fn public static string GetName(XHandle handle)
         /// \brief Get Name of the provided handle
         /// \param [in] handle
         /// \return return the name.
@@ -752,7 +776,7 @@ namespace Ximmerse.InputSystem
         }
 
         /////////////////////////////////////
-        ///
+        /// \fn public static XHandle GetDeviceHandle(XHandle context_handle, string name)
         /// \brief  Gets the device handle through the device name
         ///    \param [in] context_handle The device handle
         ///    \param [in] name device name
@@ -762,12 +786,12 @@ namespace Ximmerse.InputSystem
             var native_handle = xdev_get_device_handle(context_handle.mNativeHandle, name);
             return native_handle != null ? new XHandle(native_handle, name) : null;
         }
-        
+
         /////////////////////////////////////
-        ///
+        /// \fn public static bool GetBool<E>(XHandle handle, E attr_id, bool default_value = false)
         /// \brief  Gets the Boolean type parameters for the device
         ///    \param [in] handle The device handle
-        ///    \param [in] attr_id The attribute name,defined in the XDeviceConstants file, its name is XActions.kXAct_GetBool_xxxx
+        ///    \param [in] attr_id The attribute name, difference type with difference device, see \ref XVpuAttributes, \ref XControllerAttributes, \ref XContextAttributes.
         ///    \param [in] default_value Get failure returns a default value
         /// \return Returns the value of the Boolean property if it is valid for handle, otherwise return default_value .
         public static bool GetBool<E>(XHandle handle, E attr_id, bool default_value = false)
@@ -785,10 +809,10 @@ namespace Ximmerse.InputSystem
         }
 
         /////////////////////////////////////
-        ///
+        /// \fn public static int GetInt<E>(XHandle handle, E attr_id, int default_value = 0)
         /// \brief  Gets the Int type parameters for the device
         ///    \param [in] handle The device handle
-        ///    \param [in] attr_id The attribute name,defined in the XDeviceConstants file, its name is XActions.kXAct_GetInt_xxxx
+        ///    \param [in] attr_id The attribute name, difference type with difference device, see \ref XVpuAttributes, \ref XControllerAttributes, \ref XContextAttributes.
         ///    \param [in] default_value Get failure returns a default value
         /// \return Returns the value of the Int property if it is valid for handle, otherwise return default_value .
         public static int GetInt<E>(XHandle handle, E attr_id, int default_value = 0)
@@ -806,10 +830,10 @@ namespace Ximmerse.InputSystem
         }
 
         /////////////////////////////////////
-        ///
+        /// \fn public static float GetFloat<E>(XHandle handle, E attr_id, float default_value)
         /// \brief  Gets the Float type parameters for the device
         ///    \param [in] handle The device handle
-        ///    \param [in] attr_id The attribute name,defined in the XDeviceConstants file, its name is XActions.kXAct_GetFloat_xxxx
+        ///    \param [in] attr_id The attribute name, difference type with difference device, see \ref XVpuAttributes, \ref XControllerAttributes, \ref XContextAttributes.
         ///    \param [in] default_value Get failure returns a default value
         /// \return Returns the value of the Float property if it is valid for handle, otherwise return default_value .
         public static float GetFloat<E>(XHandle handle, E attr_id, float default_value)
@@ -828,10 +852,10 @@ namespace Ximmerse.InputSystem
 
 
         /////////////////////////////////////
-        ///
+        /// \fn public static string GetString<E>(XHandle handle, E attr_id, string default_value)
         /// \brief  Gets the String type parameters for the device
         ///    \param [in] handle The device handle
-        ///    \param [in] attr_id The attribute name,defined in the XDeviceConstants file, its name is XActions.kXAct_GetStr_xxxx
+        ///    \param [in] attr_id The attribute name, difference type with difference device, see \ref XVpuAttributes, \ref XControllerAttributes, \ref XContextAttributes.
         ///    \param [in] default_value Get failure returns a default value
         /// \return Returns the value of the string property if it is valid for handle, otherwise return default_value .
         public static string GetString<E>(XHandle handle, E attr_id, string default_value)
@@ -850,6 +874,14 @@ namespace Ximmerse.InputSystem
                 return Marshal.PtrToStringAnsi(native_ret);
             return default_value;
         }
+
+        /////////////////////////////////////
+        /// \fn public static int GetObject<E, T>(XHandle handle, E attr_id, ref T arg)
+        /// \brief Get Object type attribute
+        ///     \param [in] handle
+        ///     \param [in] attr_id The attribute name, difference type with difference device, see \ref XVpuAttributes, \ref XControllerAttributes, \ref XContextAttributes.
+        ///     \param [out] arg
+        ///  \return Return Object type attribute.
         public static int GetObject<E, T>(XHandle handle, E attr_id, ref T arg)
         {
             /// \todo: implete GetObject
@@ -861,8 +893,20 @@ namespace Ximmerse.InputSystem
             return ret;
         }
 
+        public static int GetObject<E>(XHandle handle, E attr_id, byte[] arg)
+        {
+            //System.IntPtr ptr = Marshal.AllocHGlobal(arg.Length);
+            ////Marshal.StructureToPtr(arg, ptr, false);
+            //int ret = xdev_get_object(handle.mNativeHandle, Convert.ToInt32(attr_id), ptr);
+            ////arg = (byte)Marshal.PtrToStructure(ptr, typeof(T));
+            //Marshal.;
+            //Marshal.FreeHGlobal(ptr);
+            //return ret;
+            return xdev_get_object(handle.mNativeHandle, Convert.ToInt32(attr_id), arg);
+        }
+
         /////////////////////////////////////
-        ///
+        /// \fn public static int DoAction(XHandle handle, XActions action_id)
         /// \brief  function is used to control input device
         ///    \param [in] handle Handle to the device,
         ///    \param [in] action_id Command name,please see the enum of XActions
@@ -873,7 +917,7 @@ namespace Ximmerse.InputSystem
         }
 
         /////////////////////////////////////
-        ///
+        /// \fn public static int DoAction(XHandle handle, XActions action_id, string args)
         /// \brief  function is used to control input device
         ///    \param [in] handle Handle to the device,
         ///    \param [in] action_id Command name,please see the enum of XActions
@@ -886,7 +930,7 @@ namespace Ximmerse.InputSystem
         }
 
         /////////////////////////////////////
-        ///
+        /// \fn public static int DoAction(XHandle handle, XActions action_id, int args)
         /// \brief  function is used to control input device
         ///    \param [in] handle Handle to the device,
         ///    \param [in] action_id Command name,please see the enum of XActions
@@ -898,7 +942,7 @@ namespace Ximmerse.InputSystem
         }
 
         /////////////////////////////////////
-        ///
+        /// \fn public static int DoAction<T>(XHandle handle, XActions action_id, ref T arg)
         /// \brief  function is used to control input device
         ///    \param [in] handle Handle to the device,
         ///    \param [in] action_id Command name,please see the enum of XActions
@@ -927,7 +971,7 @@ namespace Ximmerse.InputSystem
         }
 
         /////////////////////////////////////
-        ///
+        /// \fn public static int DoAction<T>(XHandle handle, XActions action_id, T arg)
         /// \brief  function is used to control input device
         ///    \param [in] handle Handle to the device,
         ///    \param [in] action_id Command name,please see the enum of XActions
@@ -1059,19 +1103,32 @@ namespace Ximmerse.InputSystem
         //    return xdev_observe(handle.mNativeHandle, Convert.ToInt32(attr_id), ObserveDelegate, (IntPtr)0);
         //    //return xdev_observe(handle.mNativeHandle, Convert.ToInt32(attr_id), dlg, (IntPtr) 0);
         //}
-//#if UNITY_ANDROID
+//        #if UNITY_ANDROID
+        ////////////////////////////////////////////////
+        /// \fn public static int CopyAssetsToPath(string dest_directory_path, string name_regex = ".*\\.(json|dat)$")
+        /// \brief Copy calibration config files to destination folder from assets. This method only valid on android devices.
+        ///     \param [in] dest_directory_path Dest folder path.
+        ///     \param [in] name_regex Regex string to match file which need to be copy.
+        /// \return Return 0 for sucess, otherwise failure.
         public static int CopyAssetsToPath(string dest_directory_path, string name_regex = ".*\\.(json|dat)$")
         {
-            int ret = 0;
-            using(AndroidJavaClass jc=new AndroidJavaClass("com.unity3d.player.UnityPlayer")){
-				using(AndroidJavaObject currentActivity = jc.GetStatic<AndroidJavaObject>("currentActivity")){
-                    var clazz = new AndroidJavaClass("com.ximmerse.sdk.XDeviceApi2");
-                    ret = clazz.CallStatic<int>("copyAsset2Directory",currentActivity, name_regex, dest_directory_path);
+            if (Application.platform == RuntimePlatform.Android)
+            {
+                int ret = 0;
+                using (AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+                {
+                    using (AndroidJavaObject currentActivity = jc.GetStatic<AndroidJavaObject>("currentActivity"))
+                    {
+                        var clazz = new AndroidJavaClass("com.ximmerse.sdk.XDeviceApi2");
+                        ret = clazz.CallStatic<int>("copyAsset2Directory", currentActivity, name_regex, dest_directory_path);
+                    }
                 }
+                return ret;
             }
-            return ret;
+            else
+                return 0;
         }
-//#endif //
+//        #endif //
         protected class ObserverParam
         {
             public object Observer;
@@ -1090,6 +1147,15 @@ namespace Ximmerse.InputSystem
             }
         };
         protected static System.Collections.Generic.Dictionary<string, ObserverParam> ObserverDict = new System.Collections.Generic.Dictionary<string, ObserverParam>();
+
+        //////////////////////////////////////////////////
+        /// \fn public static int RegisterObserver<E, U>(XHandle handle, E attr_id, System.Delegate observer, U ud)
+        /// \brief Register an observer to listen attribute change.
+        ///     \param [in] handle Handle to the device,
+        ///     \param [in] attr_id The attribute name, difference type with difference device, see \ref XVpuAttributes, \ref XControllerAttributes, \ref XContextAttributes.
+        ///     \param [in] observer Callback delegate.
+        ///     \param [in] ud User data object as a parameter of callback delegate.
+        /// \return Return 0 for success, otherwise failure.
         public static int RegisterObserver<E, U>(XHandle handle, E attr_id, System.Delegate observer, U ud)
         {
             //GCHandle gch = GCHandle.Alloc(ud);
@@ -1108,7 +1174,7 @@ namespace Ximmerse.InputSystem
             //return ret;
             bool isUdExist = (ud != null);
             GCHandle gch = GCHandle.Alloc(ud);
-            
+
             var ud_ptr = GCHandle.ToIntPtr(gch);
             int ret = xdev_register_observer(handle.mNativeHandle, Convert.ToInt32(attr_id), Marshal.GetFunctionPointerForDelegate(observer), ud_ptr);
             //gch.Free();
@@ -1129,6 +1195,14 @@ namespace Ximmerse.InputSystem
             }
             return ret;
         }
+
+        //////////////////////////////////////////////
+        /// \fn public static int UnregisterObserver<E>(XHandle handle, E attr_id, System.Delegate observer)
+        /// \brief Unregister attribute change observer.
+        ///     \param [in] handle Handle to the device,
+        ///     \param [in] attr_id The attribute name, difference type with difference device, see \ref XVpuAttributes, \ref XControllerAttributes, \ref XContextAttributes.
+        ///     \param [in] observer Observer Delegate to unregister.
+        /// \return Return 0 success, otherwise failure.
         public static int UnregisterObserver<E>(XHandle handle, E attr_id, System.Delegate observer)
         {
             ////GCHandle gch = GCHandle.Alloc(observer);
@@ -1148,9 +1222,9 @@ namespace Ximmerse.InputSystem
             Debug.Log("xim unregister observer: " + key);
             return ret;
         }
-#endregion
+        #endregion
 
-#region API Test
+        #region API Test
 
         private static void TestLog(string log, bool result)
         {
@@ -1459,7 +1533,7 @@ namespace Ximmerse.InputSystem
 
             // kXAct_GetPairedList, // reserved
 
-            // kXAct_Vibrate,	// See the test demo
+            // kXAct_Vibrate,   // See the test demo
             // kXAct_Vibrate_V, // Invalid for Unity
             // kXAct_Sleep, // See the test demo
             // kXAct_Wakeup, // See the test demo
@@ -1520,7 +1594,7 @@ namespace Ximmerse.InputSystem
 
             // kXAct_Get_MarkerInfo_V, // Invalid in Unity
 
-            // kXAct_ConnectControllerByBindID,	///< Connect to a paired controller by specifying bind ID.
+            // kXAct_ConnectControllerByBindID, ///< Connect to a paired controller by specifying bind ID.
             XDevicePlugin.DoAction(xhmd_hdl, XDevicePlugin.XActions.kXAct_ConnectControllerByBindID, 1);
 
             // kXAct_ConnectAllPairedControllers, ///< Connect to All Paired Controllers.
@@ -1540,9 +1614,9 @@ namespace Ximmerse.InputSystem
         #endregion
 
         #region Deprecated
-        private static System.Collections.Generic.Dictionary<XActions, XVpuAttributes> mXHawkAttrDic = null;
-        private static System.Collections.Generic.Dictionary<XActions, XControllerAttributes> mXCAttrDic = null;
-        private static System.Collections.Generic.Dictionary<XActions, XContextAttributes> mXCtxAttrDic = null;
+        private static Dictionary<XActions, XVpuAttributes> mXHawkAttrDic = null;
+        private static Dictionary<XActions, XControllerAttributes> mXCAttrDic = null;
+        private static Dictionary<XActions, XContextAttributes> mXCtxAttrDic = null;
         private static object lock_xhaw_dict = new object();
         private static object lock_ctrl_dict = new object();
         private static object lock_ctx_dict = new object();
@@ -1554,7 +1628,7 @@ namespace Ximmerse.InputSystem
                 if (mXHawkAttrDic == null) {
                     lock(lock_xhaw_dict);
                     if (mXHawkAttrDic == null) {
-                        var dict = new System.Collections.Generic.Dictionary<XActions, XVpuAttributes>();
+                        var dict = new Dictionary<XActions, XVpuAttributes>();
                         dict.Add(XActions.kXAct_GetInt_FPS, XVpuAttributes.kXVpuAttr_Int_FpgaFps);
                         dict.Add(XActions.kXAct_GetInt_ErrorCode, XVpuAttributes.kXVpuAttr_Int_ErrorCode);
                         dict.Add(XActions.kXAct_GetInt_ConnectionState, XVpuAttributes.kXVpuAttr_Int_ConnectionState);
@@ -1589,8 +1663,8 @@ namespace Ximmerse.InputSystem
                 {
                     lock(lock_ctrl_dict);
                     if (mXCAttrDic == null) {
-                        var dict = new System.Collections.Generic.Dictionary<XActions, XControllerAttributes>();
-                    
+                        var dict = new Dictionary<XActions, XControllerAttributes>();
+
                         dict.Add(XActions.kXAct_GetInt_FPS, XControllerAttributes.kXCAttr_Int_ImuFps);
                         dict.Add(XActions.kXAct_GetInt_ErrorCode, XControllerAttributes.kXCAttr_Int_ErrorCode);
                         dict.Add(XActions.kXAct_GetInt_ConnectionState, XControllerAttributes.kXCAttr_Int_ConnectionState);
@@ -1621,7 +1695,7 @@ namespace Ximmerse.InputSystem
                 {
                     lock(lock_ctx_dict);
                     if (mXCtxAttrDic == null) {
-                        var dict = new System.Collections.Generic.Dictionary<XActions, XContextAttributes>();
+                        var dict = new Dictionary<XActions, XContextAttributes>();
                         //mXCtxAttrDic.Add(XActions.kXAct_GetInt_CtxDeviceVersion, XContextAttributes.kXVpuAttr_Int_FpgaFps);
                         dict.Add(XActions.kXAct_GetInt_CtxSDKALGVersion, XContextAttributes.kXCtxAttr_Int_SDKALGVersion);
                         dict.Add(XActions.kXAct_GetInt_CtxSdkVersion, XContextAttributes.kXCtxAttr_Int_SdkVersion);
@@ -1635,7 +1709,7 @@ namespace Ximmerse.InputSystem
             //XDebug.Log("Convert action " + act_id + "to attr " + ret + ", hdl " + handle.mName);
             return ret;
         }
-        
+
         //public static bool GetBool(XHandle handle, XActions act, bool default_value = false)
         //{
         //    return GetBool(handle, ConvertAction2AttrID(handle, act), default_value);;
@@ -1694,7 +1768,7 @@ namespace Ximmerse.InputSystem
             public float[] gyroscope;   ///< float buffer for getting gyroscope values.
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
             public float[] magnetism; /// < float buffer for getting magnetism values.
-                
+
             public System.UInt64 timestamp; ///< timestamp when data get from VPU
 
             public static ActParam_IMUInfo Obtain()
@@ -1726,11 +1800,11 @@ namespace Ximmerse.InputSystem
             }
         };
 
-                
 
         //////////////////////////////////////////////////////////////////
         /// @struct ActParam_TouchpadState
         /// @brief Touchpad State structure for \ref kXAct_Get_TouchPadState
+        /// \deprecated Use \ref XAttrTouchPadState
         [StructLayout(LayoutKind.Sequential)]
         public struct ActParam_TouchpadState
         {
@@ -1755,6 +1829,8 @@ namespace Ximmerse.InputSystem
 
             public System.UInt64 timestamp; ///< timestamp when data get from VPU
 
+            public UInt64 recognized_markers_mask;
+
             public ActParam_MarkerInfo(int _index)
             {
                 index = _index;
@@ -1762,9 +1838,10 @@ namespace Ximmerse.InputSystem
                 position = new float[3];
                 rotation = new float[4];
                 timestamp = 0;
+                recognized_markers_mask = 0;
             }
         }
-        
+
         /////////////////////////////////////////////////////////////////////////
         /// \struct ActParam_ControllerState
         /// \brief The structure for returning controller state by calling DoAction with kXAct_GetControllerState
@@ -1780,7 +1857,7 @@ namespace Ximmerse.InputSystem
             public float[] gyroscope;
             public System.UInt64 timestamp;
             public System.UInt32 button_state; /// < bit map indicating button pressed state of controller.
-            
+
             // TouchPad, reserve
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 6)]
             public float[] axes;

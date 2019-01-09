@@ -12,6 +12,11 @@ namespace Ximmerse.SlideInSDK
         /// <summary>
         /// The version.
         /// </summary>
-        public const string Version = "1.3"; 
+        public const string Version = "2.0"; 
+
+        /// <summary>
+        /// Tag tracking algorithm version.
+        /// </summary>
+        public const string AlgVersion = "147";
     }
 }
