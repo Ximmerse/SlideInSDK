@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.45120913, g: 0.5009485, b: 0.57365525, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -238,6 +238,8 @@ GameObject:
   - component: {fileID: 40176529}
   - component: {fileID: 40176528}
   - component: {fileID: 40176527}
+  - component: {fileID: 40176532}
+  - component: {fileID: 40176531}
   m_Layer: 0
   m_Name: Dynamic Marker Target (12)
   m_TagString: Untagged
@@ -258,6 +260,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 427959737}
   uiText: {fileID: 0}
+  uiText_SubMarkers: {fileID: 0}
+  PrintSubMarkerExistence: 0
   visiblityRoot: {fileID: 0}
 --- !u!114 &40176528
 MonoBehaviour:
@@ -358,8 +362,35 @@ Transform:
   m_Children:
   - {fileID: 1155448841}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &40176531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 40176526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1669971245, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequireDevelopmentBuild: 1
+  syncMode: 0
+  m_SyncTransform: {fileID: 0}
+--- !u!114 &40176532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 40176526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -669384355, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SyncGameObjectActiveness: 1
+  m_ObjHash: -1
 --- !u!1 &78328564
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,6 +402,8 @@ GameObject:
   - component: {fileID: 78328567}
   - component: {fileID: 78328566}
   - component: {fileID: 78328565}
+  - component: {fileID: 78328570}
+  - component: {fileID: 78328569}
   m_Layer: 0
   m_Name: Dynamic Marker Target (15)
   m_TagString: Untagged
@@ -391,6 +424,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 146766958}
   uiText: {fileID: 0}
+  uiText_SubMarkers: {fileID: 0}
+  PrintSubMarkerExistence: 0
   visiblityRoot: {fileID: 0}
 --- !u!114 &78328566
 MonoBehaviour:
@@ -491,8 +526,35 @@ Transform:
   m_Children:
   - {fileID: 1588856926}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &78328569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 78328564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1669971245, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequireDevelopmentBuild: 1
+  syncMode: 0
+  m_SyncTransform: {fileID: 0}
+--- !u!114 &78328570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 78328564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -669384355, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SyncGameObjectActiveness: 1
+  m_ObjHash: -1
 --- !u!1 &92323148
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,6 +566,8 @@ GameObject:
   - component: {fileID: 92323151}
   - component: {fileID: 92323150}
   - component: {fileID: 92323149}
+  - component: {fileID: 92323154}
+  - component: {fileID: 92323153}
   m_Layer: 0
   m_Name: Dynamic Marker Target (8)
   m_TagString: Untagged
@@ -524,6 +588,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 1721473927}
   uiText: {fileID: 0}
+  uiText_SubMarkers: {fileID: 0}
+  PrintSubMarkerExistence: 0
   visiblityRoot: {fileID: 0}
 --- !u!114 &92323150
 MonoBehaviour:
@@ -624,8 +690,35 @@ Transform:
   m_Children:
   - {fileID: 239948445}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &92323153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 92323148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1669971245, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequireDevelopmentBuild: 1
+  syncMode: 0
+  m_SyncTransform: {fileID: 0}
+--- !u!114 &92323154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 92323148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -669384355, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SyncGameObjectActiveness: 1
+  m_ObjHash: -1
 --- !u!1 &97901472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,6 +1163,8 @@ GameObject:
   - component: {fileID: 188896652}
   - component: {fileID: 188896651}
   - component: {fileID: 188896650}
+  - component: {fileID: 188896655}
+  - component: {fileID: 188896654}
   m_Layer: 0
   m_Name: Dynamic Marker Target (6)
   m_TagString: Untagged
@@ -1090,6 +1185,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 494652345}
   uiText: {fileID: 0}
+  uiText_SubMarkers: {fileID: 0}
+  PrintSubMarkerExistence: 0
   visiblityRoot: {fileID: 0}
 --- !u!114 &188896651
 MonoBehaviour:
@@ -1190,8 +1287,35 @@ Transform:
   m_Children:
   - {fileID: 1586759984}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &188896654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 188896649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1669971245, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequireDevelopmentBuild: 1
+  syncMode: 0
+  m_SyncTransform: {fileID: 0}
+--- !u!114 &188896655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 188896649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -669384355, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SyncGameObjectActiveness: 1
+  m_ObjHash: -1
 --- !u!1 &200990567
 GameObject:
   m_ObjectHideFlags: 0
@@ -2342,6 +2466,8 @@ GameObject:
   - component: {fileID: 657160221}
   - component: {fileID: 657160220}
   - component: {fileID: 657160219}
+  - component: {fileID: 657160224}
+  - component: {fileID: 657160223}
   m_Layer: 0
   m_Name: Dynamic Marker Target (14)
   m_TagString: Untagged
@@ -2362,6 +2488,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 2060112538}
   uiText: {fileID: 0}
+  uiText_SubMarkers: {fileID: 0}
+  PrintSubMarkerExistence: 0
   visiblityRoot: {fileID: 0}
 --- !u!114 &657160220
 MonoBehaviour:
@@ -2462,8 +2590,35 @@ Transform:
   m_Children:
   - {fileID: 166036922}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &657160223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 657160218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1669971245, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequireDevelopmentBuild: 1
+  syncMode: 0
+  m_SyncTransform: {fileID: 0}
+--- !u!114 &657160224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 657160218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -669384355, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SyncGameObjectActiveness: 1
+  m_ObjHash: -1
 --- !u!1 &669107802
 GameObject:
   m_ObjectHideFlags: 0
@@ -2475,6 +2630,8 @@ GameObject:
   - component: {fileID: 669107805}
   - component: {fileID: 669107804}
   - component: {fileID: 669107803}
+  - component: {fileID: 669107808}
+  - component: {fileID: 669107807}
   m_Layer: 0
   m_Name: Dynamic Marker Target (11)
   m_TagString: Untagged
@@ -2495,6 +2652,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 225607764}
   uiText: {fileID: 0}
+  uiText_SubMarkers: {fileID: 0}
+  PrintSubMarkerExistence: 0
   visiblityRoot: {fileID: 0}
 --- !u!114 &669107804
 MonoBehaviour:
@@ -2595,8 +2754,35 @@ Transform:
   m_Children:
   - {fileID: 97901473}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &669107807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 669107802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1669971245, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequireDevelopmentBuild: 1
+  syncMode: 0
+  m_SyncTransform: {fileID: 0}
+--- !u!114 &669107808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 669107802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -669384355, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SyncGameObjectActiveness: 1
+  m_ObjHash: -1
 --- !u!1 &701798327
 GameObject:
   m_ObjectHideFlags: 0
@@ -2764,6 +2950,8 @@ GameObject:
   - component: {fileID: 738848311}
   - component: {fileID: 738848310}
   - component: {fileID: 738848309}
+  - component: {fileID: 738848314}
+  - component: {fileID: 738848313}
   m_Layer: 0
   m_Name: Dynamic Marker Target (9)
   m_TagString: Untagged
@@ -2784,6 +2972,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 1474820899}
   uiText: {fileID: 0}
+  uiText_SubMarkers: {fileID: 0}
+  PrintSubMarkerExistence: 0
   visiblityRoot: {fileID: 0}
 --- !u!114 &738848310
 MonoBehaviour:
@@ -2884,8 +3074,35 @@ Transform:
   m_Children:
   - {fileID: 1393626602}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &738848313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 738848308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1669971245, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequireDevelopmentBuild: 1
+  syncMode: 0
+  m_SyncTransform: {fileID: 0}
+--- !u!114 &738848314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 738848308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -669384355, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SyncGameObjectActiveness: 1
+  m_ObjHash: -1
 --- !u!1 &769200893
 GameObject:
   m_ObjectHideFlags: 0
@@ -3136,6 +3353,8 @@ GameObject:
   - component: {fileID: 934909333}
   - component: {fileID: 934909332}
   - component: {fileID: 934909331}
+  - component: {fileID: 934909336}
+  - component: {fileID: 934909335}
   m_Layer: 0
   m_Name: Dynamic Marker Target (10)
   m_TagString: Untagged
@@ -3156,6 +3375,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 507729450}
   uiText: {fileID: 0}
+  uiText_SubMarkers: {fileID: 0}
+  PrintSubMarkerExistence: 0
   visiblityRoot: {fileID: 0}
 --- !u!114 &934909332
 MonoBehaviour:
@@ -3256,8 +3477,35 @@ Transform:
   m_Children:
   - {fileID: 120208811}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &934909335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 934909330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1669971245, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequireDevelopmentBuild: 1
+  syncMode: 0
+  m_SyncTransform: {fileID: 0}
+--- !u!114 &934909336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 934909330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -669384355, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SyncGameObjectActiveness: 1
+  m_ObjHash: -1
 --- !u!1 &945668127
 GameObject:
   m_ObjectHideFlags: 0
@@ -3343,6 +3591,120 @@ Transform:
   m_Father: {fileID: 772468125}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &988770588 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 183544, guid: 6d0acc00cc82d436b9d11446d2ddfef6, type: 2}
+  m_PrefabInternal: {fileID: 1452075337}
+--- !u!114 &988770589 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11484734, guid: 6d0acc00cc82d436b9d11446d2ddfef6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1452075337}
+  m_Script: {fileID: 11500000, guid: 086be258345234a029dca36e7ef25dc1, type: 3}
+--- !u!114 &988770590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 988770588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 620367013, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rotate: 0
+  Pan: 0
+  Zoom: 0
+  m_FilterUIEvent: 1
+  m_LongPressTime: 1
+  m_DontTriggerTapWhenDoubleTap: 1
+  m_DoubleTapTime: 0.5
+  onPointerDown:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onPointerDownPosition:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PolyEngine.InputSystem.PETouchInputEventTrigger+ScreenPositionEvent,
+      PolyEnginePlugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  onPointerStay:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onPointerStayScreenPosition:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PolyEngine.InputSystem.PETouchInputEventTrigger+ScreenPositionEvent,
+      PolyEnginePlugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  onPointerLongStay:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onPointerLongStayScreenPosition:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PolyEngine.InputSystem.PETouchInputEventTrigger+ScreenPositionEvent,
+      PolyEnginePlugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  onPointerEnd:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onPointerEndScreenPosition:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PolyEngine.InputSystem.PETouchInputEventTrigger+ScreenPositionEvent,
+      PolyEnginePlugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  onTap:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onTapPosition:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PolyEngine.InputSystem.PETouchInputEventTrigger+ScreenPositionEvent,
+      PolyEnginePlugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  onDoubleTap:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 988770589}
+        m_MethodName: SendMessage
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ShowConsole
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDoubleTapPosition:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PolyEngine.InputSystem.PETouchInputEventTrigger+ScreenPositionEvent,
+      PolyEnginePlugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  onRotateEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PolyEngine.InputSystem.PETouchInputEventTrigger+RotateEvent, PolyEnginePlugins,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  onZoomEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PolyEngine.InputSystem.PETouchInputEventTrigger+ZoomEvent, PolyEnginePlugins,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  onPanEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PolyEngine.InputSystem.PETouchInputEventTrigger+PanEvent, PolyEnginePlugins,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &1019712273
 GameObject:
   m_ObjectHideFlags: 0
@@ -3528,6 +3890,8 @@ GameObject:
   - component: {fileID: 1214710857}
   - component: {fileID: 1214710856}
   - component: {fileID: 1214710855}
+  - component: {fileID: 1214710860}
+  - component: {fileID: 1214710859}
   m_Layer: 0
   m_Name: Dynamic Marker Target (5)
   m_TagString: Untagged
@@ -3548,6 +3912,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 1360068319}
   uiText: {fileID: 0}
+  uiText_SubMarkers: {fileID: 0}
+  PrintSubMarkerExistence: 0
   visiblityRoot: {fileID: 0}
 --- !u!114 &1214710856
 MonoBehaviour:
@@ -3648,8 +4014,35 @@ Transform:
   m_Children:
   - {fileID: 309709136}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1214710859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1214710854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1669971245, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequireDevelopmentBuild: 1
+  syncMode: 0
+  m_SyncTransform: {fileID: 0}
+--- !u!114 &1214710860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1214710854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -669384355, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SyncGameObjectActiveness: 1
+  m_ObjHash: -1
 --- !u!1 &1255399675
 GameObject:
   m_ObjectHideFlags: 0
@@ -3737,6 +4130,170 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1255399675}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1298417096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1298417100}
+  - component: {fileID: 1298417099}
+  - component: {fileID: 1298417098}
+  - component: {fileID: 1298417097}
+  - component: {fileID: 1298417102}
+  - component: {fileID: 1298417101}
+  m_Layer: 0
+  m_Name: Dynamic Marker Target (0)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1298417097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1298417096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e41f97ee826ff448fb34441bcf60a01f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMesh: {fileID: 1673742420}
+  uiText: {fileID: 0}
+  uiText_SubMarkers: {fileID: 0}
+  PrintSubMarkerExistence: 0
+  visiblityRoot: {fileID: 0}
+--- !u!114 &1298417098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1298417096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e657096a08b4ee89a40a3cfe2c519f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HasLimitedTrackingDistance: 0
+  m_MaxTrackingDistance: Infinity
+  m_SmoothMarkerPosition: 0
+  m_SmoothPositionMethod: 0
+  m_PositionSmoothLerp: 0.1
+  m_PositionalSmoothVelocity: 0.1
+  m_SmoothPosition_LerpByDistance:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_SmoothPosition_VelocityByDistance:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_ApplyAlgorithmRotation: 1
+  m_SmoothMarkerRotation: 0
+  m_SmoothRotationMethod: 1
+  m_SmoothRotationLerpRate: 0
+  m_SmoothRotationAnglarSpeed: 0
+  m_SmoothRotation_LerpByDistance:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_SmoothRotation_AngularByDistance:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_PositionPrediction: 0
+  m_SmoothPositionPrediction: 0
+  m_SmoothPositionPredicitonSpeed: 0
+  m_RotationPrediciton: 0
+  m_RotationPredictionDelayFrame: 0
+--- !u!114 &1298417099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1298417096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b736c2015354f4f5cb783a497be19f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MarkerID: 0
+--- !u!4 &1298417100
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1298417096}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2116693205}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1298417101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1298417096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1669971245, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequireDevelopmentBuild: 1
+  syncMode: 0
+  m_SyncTransform: {fileID: 0}
+--- !u!114 &1298417102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1298417096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -669384355, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SyncGameObjectActiveness: 1
+  m_ObjHash: -1
 --- !u!1 &1360068318
 GameObject:
   m_ObjectHideFlags: 0
@@ -3920,6 +4477,8 @@ GameObject:
   - component: {fileID: 1432905980}
   - component: {fileID: 1432905979}
   - component: {fileID: 1432905978}
+  - component: {fileID: 1432905983}
+  - component: {fileID: 1432905982}
   m_Layer: 0
   m_Name: Dynamic Marker Target (7)
   m_TagString: Untagged
@@ -3940,6 +4499,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 1434637766}
   uiText: {fileID: 0}
+  uiText_SubMarkers: {fileID: 0}
+  PrintSubMarkerExistence: 0
   visiblityRoot: {fileID: 0}
 --- !u!114 &1432905979
 MonoBehaviour:
@@ -4040,8 +4601,35 @@ Transform:
   m_Children:
   - {fileID: 1878991705}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1432905982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1432905977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1669971245, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequireDevelopmentBuild: 1
+  syncMode: 0
+  m_SyncTransform: {fileID: 0}
+--- !u!114 &1432905983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1432905977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -669384355, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SyncGameObjectActiveness: 1
+  m_ObjHash: -1
 --- !u!1 &1434637765
 GameObject:
   m_ObjectHideFlags: 0
@@ -4164,7 +4752,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 406632, guid: 6d0acc00cc82d436b9d11446d2ddfef6, type: 2}
       propertyPath: m_RootOrder
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d0acc00cc82d436b9d11446d2ddfef6, type: 2}
@@ -4352,6 +4940,8 @@ GameObject:
   - component: {fileID: 1508647057}
   - component: {fileID: 1508647056}
   - component: {fileID: 1508647055}
+  - component: {fileID: 1508647060}
+  - component: {fileID: 1508647059}
   m_Layer: 0
   m_Name: Dynamic Marker Target (1)
   m_TagString: Untagged
@@ -4372,6 +4962,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 1725394166}
   uiText: {fileID: 0}
+  uiText_SubMarkers: {fileID: 0}
+  PrintSubMarkerExistence: 0
   visiblityRoot: {fileID: 0}
 --- !u!114 &1508647056
 MonoBehaviour:
@@ -4472,8 +5064,35 @@ Transform:
   m_Children:
   - {fileID: 1462459409}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1508647059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1508647054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1669971245, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequireDevelopmentBuild: 1
+  syncMode: 0
+  m_SyncTransform: {fileID: 0}
+--- !u!114 &1508647060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1508647054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -669384355, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SyncGameObjectActiveness: 1
+  m_ObjHash: -1
 --- !u!1 &1554650698
 GameObject:
   m_ObjectHideFlags: 0
@@ -4485,6 +5104,8 @@ GameObject:
   - component: {fileID: 1554650701}
   - component: {fileID: 1554650700}
   - component: {fileID: 1554650699}
+  - component: {fileID: 1554650704}
+  - component: {fileID: 1554650703}
   m_Layer: 0
   m_Name: Dynamic Marker Target (16)
   m_TagString: Untagged
@@ -4505,6 +5126,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 945668128}
   uiText: {fileID: 0}
+  uiText_SubMarkers: {fileID: 0}
+  PrintSubMarkerExistence: 0
   visiblityRoot: {fileID: 0}
 --- !u!114 &1554650700
 MonoBehaviour:
@@ -4605,8 +5228,35 @@ Transform:
   m_Children:
   - {fileID: 772468125}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1554650703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1554650698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1669971245, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequireDevelopmentBuild: 1
+  syncMode: 0
+  m_SyncTransform: {fileID: 0}
+--- !u!114 &1554650704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1554650698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -669384355, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SyncGameObjectActiveness: 1
+  m_ObjHash: -1
 --- !u!1 &1586759983
 GameObject:
   m_ObjectHideFlags: 0
@@ -4866,6 +5516,91 @@ Transform:
   m_Father: {fileID: 176423401}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1673742419
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1673742422}
+  - component: {fileID: 1673742421}
+  - component: {fileID: 1673742420}
+  m_Layer: 0
+  m_Name: New Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!102 &1673742420
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1673742419}
+  m_Text: 
+  m_OffsetZ: 0
+  m_CharacterSize: 0.05
+  m_LineSpacing: 1
+  m_Anchor: 4
+  m_Alignment: 1
+  m_TabSize: 4
+  m_FontSize: 30
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294943554
+--- !u!23 &1673742421
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1673742419}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!4 &1673742422
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1673742419}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2116693205}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1721473926
 GameObject:
   m_ObjectHideFlags: 0
@@ -5047,6 +5782,8 @@ GameObject:
   - component: {fileID: 1817605986}
   - component: {fileID: 1817605985}
   - component: {fileID: 1817605984}
+  - component: {fileID: 1817605989}
+  - component: {fileID: 1817605988}
   m_Layer: 0
   m_Name: Dynamic Marker Target (4)
   m_TagString: Untagged
@@ -5067,6 +5804,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 476253096}
   uiText: {fileID: 0}
+  uiText_SubMarkers: {fileID: 0}
+  PrintSubMarkerExistence: 0
   visiblityRoot: {fileID: 0}
 --- !u!114 &1817605985
 MonoBehaviour:
@@ -5167,8 +5906,35 @@ Transform:
   m_Children:
   - {fileID: 1255399676}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1817605988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1817605983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1669971245, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequireDevelopmentBuild: 1
+  syncMode: 0
+  m_SyncTransform: {fileID: 0}
+--- !u!114 &1817605989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1817605983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -669384355, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SyncGameObjectActiveness: 1
+  m_ObjHash: -1
 --- !u!1 &1825552982
 GameObject:
   m_ObjectHideFlags: 0
@@ -5477,6 +6243,8 @@ GameObject:
   - component: {fileID: 1993369442}
   - component: {fileID: 1993369441}
   - component: {fileID: 1993369440}
+  - component: {fileID: 1993369445}
+  - component: {fileID: 1993369444}
   m_Layer: 0
   m_Name: Dynamic Marker Target (3)
   m_TagString: Untagged
@@ -5497,6 +6265,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 702745174}
   uiText: {fileID: 0}
+  uiText_SubMarkers: {fileID: 0}
+  PrintSubMarkerExistence: 0
   visiblityRoot: {fileID: 0}
 --- !u!114 &1993369441
 MonoBehaviour:
@@ -5597,8 +6367,35 @@ Transform:
   m_Children:
   - {fileID: 769200894}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1993369444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1993369439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1669971245, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequireDevelopmentBuild: 1
+  syncMode: 0
+  m_SyncTransform: {fileID: 0}
+--- !u!114 &1993369445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1993369439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -669384355, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SyncGameObjectActiveness: 1
+  m_ObjHash: 1711830661
 --- !u!1 &2003665464
 GameObject:
   m_ObjectHideFlags: 0
@@ -5610,6 +6407,8 @@ GameObject:
   - component: {fileID: 2003665467}
   - component: {fileID: 2003665466}
   - component: {fileID: 2003665465}
+  - component: {fileID: 2003665470}
+  - component: {fileID: 2003665469}
   m_Layer: 0
   m_Name: Dynamic Marker Target (13)
   m_TagString: Untagged
@@ -5630,6 +6429,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 200990568}
   uiText: {fileID: 0}
+  uiText_SubMarkers: {fileID: 0}
+  PrintSubMarkerExistence: 0
   visiblityRoot: {fileID: 0}
 --- !u!114 &2003665466
 MonoBehaviour:
@@ -5730,8 +6531,35 @@ Transform:
   m_Children:
   - {fileID: 654871196}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2003665469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2003665464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1669971245, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequireDevelopmentBuild: 1
+  syncMode: 0
+  m_SyncTransform: {fileID: 0}
+--- !u!114 &2003665470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2003665464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -669384355, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SyncGameObjectActiveness: 1
+  m_ObjHash: -1
 --- !u!1 &2027481989
 GameObject:
   m_ObjectHideFlags: 0
@@ -5743,6 +6571,8 @@ GameObject:
   - component: {fileID: 2027481992}
   - component: {fileID: 2027481991}
   - component: {fileID: 2027481990}
+  - component: {fileID: 2027481995}
+  - component: {fileID: 2027481994}
   m_Layer: 0
   m_Name: Dynamic Marker Target (2)
   m_TagString: Untagged
@@ -5763,6 +6593,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 231182687}
   uiText: {fileID: 0}
+  uiText_SubMarkers: {fileID: 0}
+  PrintSubMarkerExistence: 0
   visiblityRoot: {fileID: 0}
 --- !u!114 &2027481991
 MonoBehaviour:
@@ -5863,8 +6695,35 @@ Transform:
   m_Children:
   - {fileID: 1019712274}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2027481994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2027481989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1669971245, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequireDevelopmentBuild: 1
+  syncMode: 0
+  m_SyncTransform: {fileID: 0}
+--- !u!114 &2027481995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2027481989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -669384355, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SyncGameObjectActiveness: 1
+  m_ObjHash: -1
 --- !u!1 &2044968462
 GameObject:
   m_ObjectHideFlags: 0
@@ -5876,6 +6735,8 @@ GameObject:
   - component: {fileID: 2044968465}
   - component: {fileID: 2044968464}
   - component: {fileID: 2044968463}
+  - component: {fileID: 2044968468}
+  - component: {fileID: 2044968467}
   m_Layer: 0
   m_Name: Dynamic Marker Target (17)
   m_TagString: Untagged
@@ -5896,6 +6757,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 1633608692}
   uiText: {fileID: 0}
+  uiText_SubMarkers: {fileID: 0}
+  PrintSubMarkerExistence: 0
   visiblityRoot: {fileID: 0}
 --- !u!114 &2044968464
 MonoBehaviour:
@@ -5996,8 +6859,35 @@ Transform:
   m_Children:
   - {fileID: 176423401}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2044968467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2044968462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1669971245, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequireDevelopmentBuild: 1
+  syncMode: 0
+  m_SyncTransform: {fileID: 0}
+--- !u!114 &2044968468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2044968462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -669384355, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SyncGameObjectActiveness: 1
+  m_ObjHash: -1
 --- !u!1 &2060112537
 GameObject:
   m_ObjectHideFlags: 0
@@ -6083,3 +6973,90 @@ Transform:
   m_Father: {fileID: 166036922}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2116693204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2116693205}
+  - component: {fileID: 2116693208}
+  - component: {fileID: 2116693207}
+  - component: {fileID: 2116693206}
+  m_Layer: 0
+  m_Name: Quad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2116693205
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2116693204}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
+  m_Children:
+  - {fileID: 1673742422}
+  m_Father: {fileID: 1298417100}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &2116693206
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2116693204}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 24137ccd2bda94c60aae956f087517ed, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!64 &2116693207
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2116693204}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &2116693208
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2116693204}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}

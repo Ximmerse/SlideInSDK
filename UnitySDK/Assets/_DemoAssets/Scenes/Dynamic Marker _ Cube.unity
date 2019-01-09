@@ -222,6 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7993a64ff03847c9896379afcbfe34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeinitializedModuleOnQuit: 1
   m_TrackingAnchorPosition: {x: 0, y: 0, z: 0}
   m_TrackingAnchorTilt: {x: 0, y: 0, z: 0}
   m_TrackingAnchorScale: {x: 0, y: 0, z: 0}
@@ -1623,7 +1624,7 @@ GameObject:
   - component: {fileID: 1508647060}
   - component: {fileID: 1508647059}
   m_Layer: 0
-  m_Name: Dynamic Marker Target (41)
+  m_Name: Dynamic Marker Target (80)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1731,7 +1732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b736c2015354f4f5cb783a497be19f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MarkerID: 41
+  m_MarkerID: 80
 --- !u!4 &1508647058
 Transform:
   m_ObjectHideFlags: 0
@@ -2665,6 +2666,114 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d0acc00cc82d436b9d11446d2ddfef6, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2118893139 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 183544, guid: 6d0acc00cc82d436b9d11446d2ddfef6, type: 2}
+  m_PrefabInternal: {fileID: 2118893138}
+--- !u!114 &2118893140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2118893139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 620367013, guid: 279cd4a3da6cf482b8b9d5cf4c568d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rotate: 0
+  Pan: 0
+  Zoom: 0
+  m_FilterUIEvent: 1
+  m_LongPressTime: 1
+  m_DontTriggerTapWhenDoubleTap: 1
+  m_DoubleTapTime: 0.5
+  onPointerDown:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onPointerDownPosition:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PolyEngine.InputSystem.PETouchInputEventTrigger+ScreenPositionEvent,
+      PolyEnginePlugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  onPointerStay:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onPointerStayScreenPosition:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PolyEngine.InputSystem.PETouchInputEventTrigger+ScreenPositionEvent,
+      PolyEnginePlugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  onPointerLongStay:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onPointerLongStayScreenPosition:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PolyEngine.InputSystem.PETouchInputEventTrigger+ScreenPositionEvent,
+      PolyEnginePlugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  onPointerEnd:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onPointerEndScreenPosition:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PolyEngine.InputSystem.PETouchInputEventTrigger+ScreenPositionEvent,
+      PolyEnginePlugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  onTap:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onTapPosition:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PolyEngine.InputSystem.PETouchInputEventTrigger+ScreenPositionEvent,
+      PolyEnginePlugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  onDoubleTap:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2118893140}
+        m_MethodName: SendMessage
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ShowConsole
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDoubleTapPosition:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PolyEngine.InputSystem.PETouchInputEventTrigger+ScreenPositionEvent,
+      PolyEnginePlugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  onRotateEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PolyEngine.InputSystem.PETouchInputEventTrigger+RotateEvent, PolyEnginePlugins,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  onZoomEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PolyEngine.InputSystem.PETouchInputEventTrigger+ZoomEvent, PolyEnginePlugins,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  onPanEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PolyEngine.InputSystem.PETouchInputEventTrigger+PanEvent, PolyEnginePlugins,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &2137499329
 GameObject:
   m_ObjectHideFlags: 0

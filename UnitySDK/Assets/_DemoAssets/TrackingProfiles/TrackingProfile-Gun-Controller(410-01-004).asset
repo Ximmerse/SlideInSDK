@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6191073b77354feb980282f6d8cdba0, type: 3}
-  m_Name: TrackingProfile-Cube
+  m_Name: TrackingProfile-Gun-Controller(410-01-004)
   m_EditorClassIdentifier: 
-  Description: Trakcing profile for cube
+  Description: Trakcing profile for gun controller 410-01-004
   items:
   - trackingType: 3
-    JSONConfig: {fileID: 102900000, guid: 746a5f2ba98794c40a106a96be2d0d96, type: 3}
-    jsonName: CUBE-410-01-007.json
+    JSONConfig: {fileID: 102900000, guid: 37ee45dde6cb647a2bccea7414e74d5e, type: 3}
+    jsonName: GUN-410-01-004.json

@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6191073b77354feb980282f6d8cdba0, type: 3}
-  m_Name: TrackingProfile-Smaller Marker-40mm
+  m_Name: TrackingProfile-Benchmarker-100mm-35
   m_EditorClassIdentifier: 
-  Description: Trakcing profile for small markers
+  Description: Trakcing profile for cube
   items:
-  - trackingType: 2
-    JSONConfig: {fileID: 102900000, guid: 05177723ae17d464192ef717b013f530, type: 3}
-    jsonName: cards_definition_single.json
+  - trackingType: 3
+    JSONConfig: {fileID: 102900000, guid: d89145ad4f3bb2f45a5290f825970ecb, type: 3}
+    jsonName: cards_definition_map_B_refine_100mm.json

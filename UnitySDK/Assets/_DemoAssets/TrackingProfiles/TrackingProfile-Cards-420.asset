@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6191073b77354feb980282f6d8cdba0, type: 3}
-  m_Name: TrackingProfile-Cube
+  m_Name: TrackingProfile-Cards-420
   m_EditorClassIdentifier: 
-  Description: Trakcing profile for cube
+  Description: Trakcing profile for small markers(420)
   items:
-  - trackingType: 3
-    JSONConfig: {fileID: 102900000, guid: 746a5f2ba98794c40a106a96be2d0d96, type: 3}
-    jsonName: CUBE-410-01-007.json
+  - trackingType: 2
+    JSONConfig: {fileID: 102900000, guid: e36c3809bf3ef4f318af3e9ecdb033d3, type: 3}
+    jsonName: CARD-410.json

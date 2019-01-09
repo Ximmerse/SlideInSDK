@@ -13,10 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   presets:
   - PresetName: Preset Name
-    BuildName: Controller Manager
+    BuildName: Dynamic FOV
     Version: 1.0
-    BuildAppID: com.ximmerse.controllermanager
-    AppIcon: {fileID: 2800000, guid: 30ea8f33f18764d94b159d051b4bc031, type: 3}
+    BuildAppID: com.ximmerse.dynamicFov
+    AppIcon: {fileID: 2800000, guid: a0fec97ad50134f72bb210ef2425758f, type: 3}
     OutputPath: 
     pathType: 0
     colorSpace: 0
@@ -54,11 +54,11 @@ MonoBehaviour:
     - Name: PreprocessorsFoldout
       Value: 1
     - Name: BatchFoldout
-      Value: 1
+      Value: 0
     - Name: OtherFoldout
       Value: 1
     ints: []
-    MainScene: {fileID: 102900000, guid: e95b3bfe35d6d4f48a652a7f9ad6a260, type: 3}
+    MainScene: {fileID: 102900000, guid: a585d9a111e6a489686b29dd757b3c62, type: 3}
     ExtraScenes: []
   - PresetName: Tag Tracking
     BuildName: Card Tracking
@@ -410,4 +410,74 @@ MonoBehaviour:
       Value: 1
     MainScene: {fileID: 102900000, guid: 468cfcc0d74384a84bba31a0a148b599, type: 3}
     ExtraScenes: []
-  m_CurrentPresetID: 5
+  - PresetName: Gun Handle
+    BuildName: 'Gun Handler '
+    Version: 
+    BuildAppID: com.ximmerse.gunhandlerdemo
+    AppIcon: {fileID: 2800000, guid: e0ce051540ea84953a6f09d60d6285e5, type: 3}
+    OutputPath: 
+    pathType: 0
+    colorSpace: 0
+    qualityLevel: 3
+    strings:
+    - Name: XRPlatforms
+      Value: None;cardboard
+    - Name: DevDefine
+      Value: 
+    - Name: UniversalBatchPath
+      Value: 
+    - Name: UniDefine
+      Value: 
+    bools:
+    - Name: XREnabled
+      Value: 1
+    - Name: Dev
+      Value: 0
+    - Name: Batch
+      Value: 0
+    - Name: UniBatch
+      Value: 0
+    - Name: UseEditorScenes
+      Value: 0
+    - Name: PresetsFoldout
+      Value: 1
+    - Name: InformationFoldout
+      Value: 1
+    - Name: ScenesFoldout
+      Value: 1
+    - Name: PlatformsFoldout
+      Value: 1
+    - Name: SettingsFoldout
+      Value: 1
+    - Name: PreprocessorsFoldout
+      Value: 1
+    - Name: BatchFoldout
+      Value: 0
+    - Name: OtherFoldout
+      Value: 1
+    - Name: EditorUserBuildSettings.connectProfiler
+      Value: 0
+    - Name: EditorUserBuildSettings.allowDebugging
+      Value: 0
+    - Name: EditorUserBuildSettings.buildScriptsOnly
+      Value: 0
+    - Name: EditorUserBuildSettings.enableHeadlessMode
+      Value: 0
+    - Name: EditorUserBuildSettings.exportAsGoogleAndroidProject
+      Value: 0
+    - Name: EditorUserBuildSettings.wsaGenerateReferenceProjects
+      Value: 0
+    ints:
+    - Name: EditorUserBuildSettings.iOSBuildConfigType
+      Value: 1
+    - Name: EditorUserBuildSettings.androidBuildSubtarget
+      Value: 0
+    - Name: EditorUserBuildSettings.androidBuildSystem
+      Value: 0
+    - Name: EditorUserBuildSettings.wsaSubtarget
+      Value: 0
+    - Name: EditorUserBuildSettings.wsaUWPBuildType
+      Value: 1
+    MainScene: {fileID: 102900000, guid: 2e0d66531732a4108a59dffdd7f9b444, type: 3}
+    ExtraScenes: []
+  m_CurrentPresetID: 6
