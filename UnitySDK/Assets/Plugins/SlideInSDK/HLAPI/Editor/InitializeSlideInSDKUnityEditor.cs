@@ -10,6 +10,7 @@ namespace Ximmerse.SlideInSDK
     /// </summary>
     public static class InitializeSlideInSDKUnityEditor
     {
+        [UnityEditor.InitializeOnLoadMethod]
         [MenuItem ("Tools/Slide in/Initialize SDK")]
         public static void InitializeSdk ()
         {
