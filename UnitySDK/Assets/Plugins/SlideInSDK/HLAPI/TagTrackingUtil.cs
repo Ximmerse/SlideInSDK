@@ -74,7 +74,7 @@ namespace Ximmerse.SlideInSDK
             {
                 if(Application.platform == RuntimePlatform.Android)
                 {
-                    return "/sdcard/slidein/data";
+                    return Application.persistentDataPath;
                 }
                 else 
                 {
