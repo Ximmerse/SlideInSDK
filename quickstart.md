@@ -16,7 +16,7 @@
 ### 软件需求
 
 - Android SDK
-- Unity 2017.4.17 f1 / Unity 2018.3.x （其他版本可能会遇到头部旋转不正确的情况，请自己测试）
+- Unity 2017.4.17 f1 / Unity 2018.2.20 f1 / Unity 2018.3.x （其他版本可能会遇到头部旋转不正确的情况，请自行测试）
 - [Vysor](https://www.vysor.io) (**可选项**， 用于远程操作Android设备，提升开发效率)
 
 
@@ -25,7 +25,7 @@
 
 ### 获取SDK
 
-你可以选择将Slide-In SDK 仓库整个Clone 下来至本地：
+1. 你可以选择将Slide-In SDK 仓库整个Clone 下来至本地：
 
 ```bash
 $ git clone git@github.com:Ximmerse/SlideInSDK.git
@@ -33,9 +33,17 @@ $ git clone git@github.com:Ximmerse/SlideInSDK.git
 
 
 
-### 安装SDK
+2. 你也可以选择进入[https://github.com/Ximmerse/SlideInSDK/releases](https://github.com/Ximmerse/SlideInSDK/releases) 选择最新版本进行下载。
 
-将项目仓库中的[`./UnitySDK/Assets/`](https://github.com/Ximmerse/SlideInSDK/tree/master/UnitySDK/Assets/) 内所有文件复制至一个空白项目中的`Assets/Plugins/`文件夹中即可。
+   - **Slide-InSDK.unitypackage** 是纯粹SDK 安装包。
+
+   - **Slide-InSDK-WithSamples.unitypackage** 是带有Sample 的SDK 安装包。
+
+   - **PEPlugins-2018.3.x.unitypackage** 是使用2018.3.x 版本Unity 时，所需要覆盖的PE Plugins 安装包。
+
+     
+
+     将下载完成的SDK unitypackage 安装至目标工程即可完成安装。
 
 
 
