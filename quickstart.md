@@ -15,8 +15,14 @@
 
 ### 软件需求
 
-- Android SDK
-- Unity 2017.4.17 f1 / Unity 2018.2.20 f1 / Unity 2018.3.x （其他版本可能会遇到头部旋转不正确的情况，请自行测试）
+- [Android Developer Tools](https://developer.android.com/studio/)
+
+  系统必须已经安装Android 的开发套件，并且保证平台版本在24 以上（支持Cardboard）。
+
+- [Unity 3D Engine](https://unity3d.com/cn/get-unity/download/archive)
+
+  测试版本: 2017.4.17 f1 / Unity 2018.2.20 f1 / Unity 2018.3.x（其他版本可能会遇到头部旋转不正确的情况，请自行测试）
+
 - [Vysor](https://www.vysor.io) (**可选项**， 用于远程操作Android设备，提升开发效率)
 
 
