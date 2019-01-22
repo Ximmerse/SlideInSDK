@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6191073b77354feb980282f6d8cdba0, type: 3}
+  m_Name: TrackingProfile-Controller-05-B
+  m_EditorClassIdentifier: 
+  Description: Trakcing profile for small markers
+  items:
+  - trackingType: 3
+    JSONConfig: {fileID: 102900000, guid: a19d0fc7745994e2cae1505583bbca2b, type: 3}
+    jsonName: cards_definition_controller_05_B_40mm.json

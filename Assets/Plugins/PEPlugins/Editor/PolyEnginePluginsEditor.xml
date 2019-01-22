@@ -1,0 +1,3652 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PolyEnginePluginsEditor</name>
+    </assembly>
+    <members>
+        <member name="T:PolyEngineEditor.PropertySection">
+             <summary>
+             Property section.
+             对 属性做分组.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.PropertySection.PushProperty(System.String,UnityEditor.SerializedProperty)">
+             <summary>
+             Pushs the property.
+             </summary>
+             <param name="sectionKey">Section key.</param>
+             <param name="property">Property.</param>
+            </member>
+        <member name="M:PolyEngineEditor.PropertySection.EditFold(System.String)">
+             <summary>
+             Edits the fold.
+             </summary>
+             <returns><c>true</c>, if fold was edited, <c>false</c> otherwise.</returns>
+             <param name="sectionKey">Section key.</param>
+            </member>
+        <member name="M:PolyEngineEditor.PropertySection.Clear">
+             <summary>
+             Clear this instance.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.PropertySection.AllSections">
+             <summary>
+             Gets all sections.
+             </summary>
+             <value>All sections.</value>
+            </member>
+        <member name="M:PolyEngineEditor.PropertySection.GetProperties(System.String)">
+             <summary>
+             Gets the properties.
+             </summary>
+             <returns>The properties.</returns>
+             <param name="section">Section.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReinforcedInspector.FindTargetProperties">
+             <summary>
+             预先寻找SeraializeProperty并且存储起来
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReinforcedInspector.FindContextMenus">
+             <summary>
+             寻找Context Menu （向下兼容 Inspect Function）
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReinforcedInspector.DrawComponentDescription">
+             <summary>
+             只有有ComponentDescription的Attribute就进行绘画
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReinforcedInspector.DrawSpecialProperties(UnityEditor.SerializedProperty)">
+             <summary>
+             1. 画出ReorderableList的SerializeProperty
+             2. 画出TableList的SerializeProperty
+             3. 画出Editalbe的SerializeProperty
+             </summary>
+             <param name="property"></param>
+            </member>
+        <member name="M:PolyEngineEditor.ReinforcedInspector.DrawPropertiesAll">
+             <summary>
+             画出所有 SerializeProperty （ 包括特殊定义的 ）
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReinforcedInspector.ValidateAppendNestedAssetsInProjectView(UnityEditor.MenuCommand)">
+             <summary>
+             Append asset to a unity asset object.
+             </summary>
+             <returns><c>true</c>, if delete nested assets in project view was validated, <c>false</c> otherwise.</returns>
+             <param name="menuCommand">Menu command.</param>
+            </member>
+        <member name="T:PolyEngineEditor.TransformContext.ApplyRotationEditorWindow">
+             <summary>
+             Apply rotation editor window.
+             </summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomatorPresetData.presets">
+             <summary>
+             The presets.
+             </summary>
+            </member>
+        <member name="P:PolyEngine.BA.BuildAutomatorPresetData.CurrentPresetID">
+             <summary>
+             Gets or sets the current preset ID.
+             </summary>
+             <value>The current preset I.</value>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomatorPresetData.GetPreset(System.String)">
+             <summary>
+             Gets the preset by name
+             </summary>
+             <returns>The preset.</returns>
+             <param name="PresetName">Preset name.</param>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomatorPresetData.CreatePreset(System.String)">
+             <summary>
+             Creates a new preset.
+             </summary>
+             <returns>The preset.</returns>
+             <param name="PresetName">Preset name.</param>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomatorPresetData.DeletePreset(System.String)">
+             <summary>
+             Deletes the preset.
+             </summary>
+             <param name="PresetName">Preset name.</param>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomatorPresetData.GetAllPresetNames">
+             <summary>
+             Gets all preset names.
+             </summary>
+             <returns>The all preset names.</returns>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomatorPresetData.ModifyCurrentPresetName(System.String)">
+             <summary>
+             Modify current preset's name
+             </summary>
+             <param name="presetName">Preset name.</param>
+            </member>
+        <member name="T:PolyEngineEditor.RenameAssetContext">
+             <summary>
+             Rename Asset context.
+             </summary>
+            </member>
+        <member name="M:ReorderableDrawer.GetHeaderHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+             <summary>
+             Override to define the array header height
+             </summary>
+             <param name="property"></param>
+             <param name="label"></param>
+             <returns>The header height</returns>
+            </member>
+        <member name="M:ReorderableDrawer.DrawHeader(UnityEngine.Rect,UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+             <summary>
+             Override to draw the array header
+             </summary>
+             <param name="property"></param>
+             <param name="label"></param>
+             <returns></returns>
+            </member>
+        <member name="M:ReorderableDrawer.GetElementHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+             <summary>
+             Override to define an array element height
+             </summary>
+             <param name="property"></param>
+             <param name="label"></param>
+             <returns>The element height</returns>
+            </member>
+        <member name="M:ReorderableDrawer.DrawElement(UnityEngine.Rect,UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+             <summary>
+             Override to draw an array element
+             </summary>
+             <param name="property"></param>
+             <param name="label"></param>
+             <returns></returns>
+            </member>
+        <member name="T:PolyEngine.BA.PathType">
+             <summary>Whether to use absolute or relative paths in all of the settings.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.PathType.Relative">
+             <summary>Paths will be relative to root folder.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.PathType.Absolute">
+             <summary>Paths will be absolute.</summary>
+            </member>
+        <member name="T:PolyEngine.BA.StringExtenstion">
+             <summary>Various extensions to the string class.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.StringExtenstion.Truncate(System.String,System.Int32)">
+             <summary> Shortens a string to the desired number of characters.</summary>
+             <param name="Text">The string to shorten.</param>
+             <param name="MaxLength">The maximum number of characters the shortened string may contain.</param>
+             <returns>The truncated string.</returns>
+            </member>
+        <member name="T:PolyEngine.BA.ListExtension">
+             <summary>Extends the List class.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.ListExtension.Pop``1(System.Collections.Generic.List{``0},System.Int32)">
+             <summary>Removes and returns an element from the list.</summary>
+             <param name="Index">The index of the desired element.</param>
+             <returns>The element at the specified index.</returns>
+            </member>
+        <member name="M:PolyEngine.BA.ListExtension.PopAll``1(System.Collections.Generic.List{``0},System.Func{``0,System.Boolean})">
+             <summary>Removes and returns all of the elements from the list meeting a specific criteria.</summary>
+             <param name="PopCriteria">The lambda expression for which elements to remove.</param>
+             <returns>The list of removed elements.</returns>
+            </member>
+        <member name="T:PolyEngine.BA.PathHandling">
+             <summary>Extended functionality for path handling.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.PathHandling.Combine(System.String,System.String)">
+             <summary>Combines two paths before formatting and processing them.</summary>
+             <param name="Path1">The first part of the path.</param>
+             <param name="Path2">The second part of the path.</param>
+             <returns>The processed path.</returns>
+            </member>
+        <member name="M:PolyEngine.BA.PathHandling.DivergenceIndex(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+             <summary>Determines the index where the 2 Lists diverge.</summary>
+             <param name="StringArray1">The first list.</param>
+             <param name="StringArray2">The second list.</param>
+             <returns>The index of the first value that is not the same between them, -1 if the two lists are identical.</returns>
+            </member>
+        <member name="M:PolyEngine.BA.PathHandling.MakeRelative(System.String,System.String)">
+             <summary>Converts an absolute path into a relative path.</summary>
+             <param name="RootPath">The root path that will be used as the reference path.</param>
+             <param name="TargetPath">The absolute path that will be converted into a relative path.</param>
+             <returns>A relative path from RootPath to TargetPath.</returns>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.ReorderableListStyles">
+             <summary>
+             Styles for the <see cref="T:PolyEngineEditor.ReorderableList.ReorderableListControl" />.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListStyles.Title">
+             <summary>
+             Gets style for title header.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListStyles.Container">
+             <summary>
+             Gets style for the background of list control.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListStyles.Container2">
+             <summary>
+             Gets an alternative style for the background of list control.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListStyles.FooterButton">
+             <summary>
+             Gets style for footer button.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListStyles.FooterButton2">
+             <summary>
+             Gets an alternative style for footer button.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListStyles.ItemButton">
+             <summary>
+             Gets style for remove item button.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListStyles.SelectedItem">
+             <summary>
+             Gets style for the background of a selected item.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListStyles.HorizontalLineColor">
+             <summary>
+             Gets color for the horizontal lines that appear between list items.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListStyles.SelectionBackgroundColor">
+             <summary>
+             Gets color of background for a selected list item.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.NullableValueTypeDrawer`1.CustomDrawPropertyEditing(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+             <summary>
+             Children property drawer class should override this method, if needs to draw custom property , and MUST returns true.
+             For non-overrided methods that returns false, a default property drawer is implemented.
+             </summary>
+             <returns><c>true</c>, if draw property editing was customed, <c>false</c> otherwise.</returns>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.GenericListAdaptor`1">
+             <summary>
+             Reorderable list adaptor for generic list.
+             </summary>
+             <remarks>
+             <para>This adaptor can be subclassed to add special logic to item height calculation.
+             You may want to implement a custom adaptor class where specialised functionality
+             is needed.</para>
+             <para>List elements which implement the <see cref="T:System.ICloneable" /> interface are
+             cloned using that interface upon duplication; otherwise the item value or reference is
+             simply copied.</para>
+             </remarks>
+             <typeparam name="T">Type of list element.</typeparam>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.GenericListAdaptor`1.FixedItemHeight">
+             <summary>
+             Fixed height of each list item.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.GenericListAdaptor`1.List">
+             <summary>
+             Gets the underlying list data structure.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.GenericListAdaptor`1.Item(System.Int32)">
+             <summary>
+             Gets element from list.
+             </summary>
+             <param name="index">Zero-based index of element.</param>
+             <returns>
+             The element.
+             </returns>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.GenericListAdaptor`1.#ctor(System.Collections.Generic.IList{`0},PolyEngineEditor.ReorderableList.ReorderableListControl.ItemDrawer{`0},System.Single,System.Boolean)">
+             <summary>
+             Initializes a new instance of <see cref="T:PolyEngineEditor.ReorderableList.GenericListAdaptor`1" />.
+             </summary>
+             <param name="list">The list which can be reordered.</param>
+             <param name="itemDrawer">Callback to draw list item.</param>
+             <param name="itemHeight">Height of list item in pixels.</param>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.GenericListAdaptor`1.Count">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.GenericListAdaptor`1.CanDrag(System.Int32)">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.GenericListAdaptor`1.CanRemove(System.Int32)">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.GenericListAdaptor`1.Add">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.GenericListAdaptor`1.Insert(System.Int32)">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.GenericListAdaptor`1.Duplicate(System.Int32)">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.GenericListAdaptor`1.Remove(System.Int32)">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.GenericListAdaptor`1.Move(System.Int32,System.Int32)">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.GenericListAdaptor`1.Clear">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.GenericListAdaptor`1.BeginGUI">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.GenericListAdaptor`1.EndGUI">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.GenericListAdaptor`1.DrawItemBackground(UnityEngine.Rect,System.Int32)">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.GenericListAdaptor`1.DrawItem(UnityEngine.Rect,System.Int32)">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.GenericListAdaptor`1.GetItemHeight(System.Int32)">
+             <inheritdoc />
+            </member>
+        <member name="T:PolyEngineEditor.AssetSpyWindow">
+             <summary>
+             Asset spy editor window.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.AssetSpyWindow.IsGameObjectValidate(UnityEngine.GameObject)">
+             <summary>
+             Determines if is game object validate the specified gameObject.
+             </summary>
+             <returns><c>true</c> if is game object validate the specified gameObject; otherwise, <c>false</c>.</returns>
+             <param name="gameObject">Game object.</param>
+            </member>
+        <member name="M:QuickMakeBodyCollider.quickMakeBodyCollider(UnityEditor.MenuCommand)">
+             <summary>
+             自动化创建 Default Unity Ragdoll 
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.Internal.GUIHelper">
+             <summary>
+             Utility functions to assist with GUIs.
+             </summary>
+             <exclude />
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.Internal.GUIHelper.VisibleRect">
+             <summary>
+             Gets visible rectangle within GUI.
+             </summary>
+             <remarks>
+             <para>VisibleRect = TopmostRect + scrollViewOffsets</para>
+             </remarks>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.Internal.GUIHelper.FocusTextInControl">
+             <summary>
+             Focus control and text editor where applicable.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.Internal.GUIHelper.DrawTexture(UnityEngine.Rect,UnityEngine.Texture2D)">
+             <summary>
+             Draw texture using <see cref="T:UnityEngine.GUIStyle" /> to workaround bug in Unity where
+             <see cref="M:UnityEngine.GUI.DrawTexture(UnityEngine.Rect,UnityEngine.Texture)" /> flickers when embedded inside a property drawer.
+             </summary>
+             <param name="position">Position of which to draw texture in space of GUI.</param>
+             <param name="texture">Texture.</param>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.Internal.ReorderableListTexture">
+             <exclude />
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.Internal.ReorderableListResources">
+             <summary>
+             Resources to assist with reorderable list control.
+             </summary>
+             <exclude />
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.Internal.ReorderableListResources.s_LightSkin">
+             <summary>
+             Resource assets for light skin.
+             </summary>
+             <remarks>
+             <para>Resource assets are PNG images which have been encoded using a base-64
+             string so that actual asset files are not necessary.</para>
+             </remarks>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.Internal.ReorderableListResources.s_DarkSkin">
+             <summary>
+             Resource assets for dark skin.
+             </summary>
+             <remarks>
+             <para>Resource assets are PNG images which have been encoded using a base-64
+             string so that actual asset files are not necessary.</para>
+             </remarks>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.Internal.ReorderableListResources.GetTexture(PolyEngineEditor.ReorderableList.Internal.ReorderableListTexture)">
+             <summary>
+             Gets light or dark version of the specified texture.
+             </summary>
+             <param name="name"></param>
+             <returns></returns>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.Internal.ReorderableListResources.GenerateSpecialTextures">
+             <summary>
+             Generate special textures.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.Internal.ReorderableListResources.CreatePixelTexture(System.String,UnityEngine.Color)">
+             <summary>
+             Create 1x1 pixel texture of specified color.
+             </summary>
+             <param name="name">Name for texture object.</param>
+             <param name="color">Pixel color.</param>
+             <returns>
+             The new <c>Texture2D</c> instance.
+             </returns>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.Internal.ReorderableListResources.LoadResourceAssets">
+             <summary>
+             Read textures from base-64 encoded strings. Automatically selects assets based
+             upon whether the light or dark (pro) skin is active.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.Internal.ReorderableListResources.GetImageSize(System.Byte[],System.Int32@,System.Int32@)">
+             <summary>
+             Read width and height if PNG file in pixels.
+             </summary>
+             <param name="imageData">PNG image data.</param>
+             <param name="width">Width of image in pixels.</param>
+             <param name="height">Height of image in pixels.</param>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.IElementAdder`1">
+             <summary>
+             Interface for an object which adds elements to a context object of the type
+             <typeparamref name="TContext" />.
+             </summary>
+             <typeparam name="TContext">Type of the context object that elements can be added to.</typeparam>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.IElementAdder`1.Object">
+             <summary>
+             Gets the context object.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IElementAdder`1.CanAddElement(System.Type)">
+             <summary>
+             Determines whether a new element of the specified <paramref name="type" /> can
+             be added to the associated context object.
+             </summary>
+             <param name="type">Type of element to add.</param>
+             <returns>
+             A value of <c>true</c> if an element of the specified type can be added;
+             otherwise, a value of <c>false</c>.
+             </returns>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IElementAdder`1.AddElement(System.Type)">
+             <summary>
+             Adds an element of the specified <paramref name="type" /> to the associated
+             context object.
+             </summary>
+             <param name="type">Type of element to add.</param>
+             <returns>
+             The new element.
+             </returns>
+            </member>
+        <member name="M:PolyEngineEditor.MonoScriptContext.EncapsulateEditorClass">
+             <summary>
+             自动把一个MonoScript 的文本封装为 #if UNITY_EDITOR ... #endif 
+             </summary>
+             <param name="c">C.</param>
+            </member>
+        <member name="M:PolyEngineEditor.MonoScriptContext.EncapsulateAllSelectedEditorClass">
+             <summary>
+             自动把一个目录下的全部 MonoScript 文本封装为 #if UNITY_EDITOR ... #endif 
+             </summary>
+             <param name="c">C.</param>
+            </member>
+        <member name="M:PolyEngineEditor.MonoScriptContext.IsMonoscriptEncapsulateByEditorMarco(UnityEditor.MonoScript)">
+             <summary>
+             Check if the monoScript is wrapped by #if UNITY_EDITOR ... #endif  marco
+             </summary>
+             <returns><c>true</c> if is monoscript encapsulate by editor marco the specified monoScript; otherwise, <c>false</c>.</returns>
+             <param name="monoScript">Mono script.</param>
+            </member>
+        <member name="F:UnityEngine.AssetBundles.AssetBundleInspectTab.m_loadedAssetBundles">
+             <summary>
+             Collection of loaded asset bundle records indexed by bundle name
+             </summary>
+            </member>
+        <member name="M:UnityEngine.AssetBundles.AssetBundleInspectTab.GetLoadedBundleRecordByName(System.String)">
+             <summary>
+             Returns the record for a loaded asset bundle by name if it exists in our container.
+             </summary>
+             <returns>Asset bundle record instance if loaded, otherwise null.</returns>
+             <param name="bundleName">Name of the loaded asset bundle, excluding the variant extension</param>
+            </member>
+        <member name="M:UnityEngine.AssetBundles.AssetBundleInspectTab.LoadBundle(System.String)">
+             <summary>
+             Returns the bundle at the specified path, loading it if necessary.
+             Unloads previously loaded bundles if necessary when dealing with variants.
+             </summary>
+             <returns>Returns the loaded bundle, null if it could not be loaded.</returns>
+             <param name="path">Path of bundle to get</param>
+            </member>
+        <member name="M:UnityEngine.AssetBundles.AssetBundleInspectTab.UnloadBundle(System.String)">
+             <summary>
+             Unloads the bundle with the given name.
+             </summary>
+             <param name="bundleName">Name of the bundle to unload without variant extension</param>
+            </member>
+        <member name="T:PolyEngine.BA.BuildAutomator">
+             <summary>
+             The Editor Window that manages all the build settings, Platforms and paths and ultimately controls the build pipeline.
+             </summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.PlatformIcons">
+             <summary>Textures for Platform icons.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.Banner">
+             <summary>Banner to be displayed on the window.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.FolderIcon">
+             <summary>Icon for file browser buttons.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.BAIcon">
+             <summary>Build Automator Icon.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.colorSpace">
+             <summary>
+             The color space.
+             </summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.BuildAppIcon">
+             <summary>
+             The build app icon.
+             </summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.BuildVersion">
+             <summary>
+             The build version.
+             </summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.PresetsFoldout">
+             <summary>Expands the BA Presets sub-menu.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.InformationFoldout">
+             <summary>Expands the Build Information sub-menu.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.ScenesFoldout">
+             <summary>Expands the Scenes sub-menu.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.PlatformsFoldout">
+             <summary>Expands the Build Targets sub-menu.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.SettingsFoldout">
+             <summary>Expands the Build Settings sub-menu.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.PreprocessorsFoldout">
+             <summary>Expands the Scripting Define Symbols sub-menu.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.BatchFoldout">
+             <summary>Expands the Batch Scripts sub-menu.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.OtherFoldout">
+             <summary>Expands the Other Settings sub-menu.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.FolderStyle">
+             <summary>GUIStyle for file picker buttons.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.BoldFoldout">
+             <summary>The GUIStyle for the foldouts.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.PlatformStateStyles">
+             <summary>The GUIStyles for the different PlatformStates</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.ScrollPos">
+             <summary>Scrollbar position.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.CreateStyles">
+             <summary>Creates all the custom GUIStyles necessary.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.DisplayBAPresets">
+             <summary>Displays the BA Prsets sub-menu to the window.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.NewPresetPopup">
+             <summary>Displays a popup window for creating new presets.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.DisplayLoggingSettings">
+             <summary>Displays the Logging sub menu.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.DisplayMainSettings">
+             <summary>Displays the Build Information sub-menu to the window.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.DisplayScenesSettings">
+             <summary>Displays the scene selection system.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.DisplayPlatformSettings">
+             <summary>Displays each Platform and allows the user to select which ones to enable.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.DisplayBuildSettings">
+             <summary>Displays all exposed build settings.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.DisplaySharedBuildSettings">
+             <summary>Displays build settings shared between many Platforms.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.DisplayLinuxSettings">
+             <summary>Displays build settings for Linux.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.DisplayXcodeSettings">
+             <summary>Displays build settings for iOS/tvOS.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.DisplayAndroidSettings">
+             <summary>Displays build settings for Android.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.DisplayWSASettings">
+             <summary>Displays build settings for WSA/UWP.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.DisplayWebGLSettings">
+             <summary>Displays build settings for WebGL.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.DisplayFBSettings">
+             <summary>Displays build settings for Facebook.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.DisplayPreprocessorsSettings">
+             <summary>Displays sub-menu for Scripting Define Symbols.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.DisplayBatchSettings">
+             <summary>Displays sub-menu for Batch Scripts.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.DisplayOtherSettings">
+             <summary>Displays sub-menu for Other Settings.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.DisplayBuildButton">
+             <summary>Main button to initiate build sequence.</summary>
+             <returns>If the button was pressed and settings were succesfully validated.</returns>
+            </member>
+        <member name="T:PolyEngine.BA.BuildAutomator.PresetPopup">
+             <summary>Popwindow that creates new presets for a Build Automator.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.PresetPopup.ParentBA">
+             <summary>The Build Automator window that this popup window belongs to.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.PresetPopup.PresetName">
+             <summary>The name of the preset to be created.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.PresetPopup.Errors">
+             <summary>Any errors that were encountered whilst creating the preset.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.PresetPopup.SuccessMessage">
+             <summary>Message to indicate successful preset creation.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.PresetPopup.ErrorStyle">
+             <summary>GUIStyle for error messages.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.PresetPopup.SuccessStyle">
+             <summary>GUIStyle for success messages.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.PresetPopup.#ctor(PolyEngine.BA.BuildAutomator,PolyEngine.BA.BuildAutomator.PresetPopup.PopupMode)">
+             <summary>Constructs a new popup window for creating presets.</summary>
+             <param name="ParentBA">The Build Automator window that this popup window belongs to.</param>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.PresetPopup.CreateStyles">
+             <summary>Creates the custom editor styles.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.PresetPopup.CreatePreset(System.String)">
+             <summary>Creates a new preset.</summary>
+             <param name="DesiredName">The desired name of the preset.</param>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.PresetPopup.ModifyPreset(System.String)">
+             <summary>Creates a new preset.</summary>
+             <param name="DesiredName">The desired name of the preset.</param>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.OptimisedOrder">
+             <summary>The optimal order to perform the builds in.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.BuildName">
+             <summary>The name of the project/builds.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.BuildAppID">
+             <summary>
+             The build app ID
+             </summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.ScriptPath">
+             
+             <summary>Path to the BuildAutomator directory.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.RootPath">
+             <summary>The path to the root directory of the current project.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.OutputPath">
+             <summary>The (relative/absolute) output path for the builds specified by the user.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.BuildPath">
+             <summary>The absolute path that all builds will be built to.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.Platforms">
+             <summary>All the possible Platforms Build Automator supports.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.MainScene">
+             <summary>The main scene or scene 0.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.Scenes">
+             <summary>The paths to the scenes that will be packaged into the builds.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.ExtraSceneList">
+             <summary>All extra Scenes added by the user.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.ExtraSceneCount">
+             <summary>The number of extra scenes to include in addition to scene 0.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.UseEditorScenes">
+             <summary>If the EditorBuildSettings' scenes should be used instead of BA's.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.Dev">
+             <summary>Enables development builds.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.Batch">
+             <summary>Run batch scripts after each build.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.UniBatch">
+             <summary>Runs a universal batch script, which will run at the end of the entire build pipeline.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.UniversalBatchPath">
+             <summary>Path to the universal batch script.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.DevDefine">
+             <summary>The scripting define symbols that will be used for development builds.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.UniDefine">
+             <summary>The scripting define symbols that will be used for all Platforms.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.AvailablePresets">
+             <summary>All available user presets.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.CurrentPresetID">
+             <summary>The currently selected preset.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.Jobs">
+             <summary>Total number of jobs in the build pipeline.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.CurrentJobNumber">
+             <summary>Current job number.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.Progress">
+             <summary>Progress of build pipeline.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.CurrentJob">
+             <summary>The current job name.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.JobLabel">
+             <summary>Label of current job to display in editor.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.Building">
+             <summary>If Build Automator is currently building.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.DesiredPathType">
+             <summary>Current PathType</summary>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomator.CurrentPlatform">
+             <summary>Active Platform.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.OnEnable">
+             <summary>Active Platform before initiating the build sequence.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.LoadData(System.Boolean)">
+             <summary>Loads the Build Automator configuration data.</summary>
+             <param name="Directory">The EditorPrefs data to load.</param>
+             <param name="LoadPresets">If preset data should be loaded.</param>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.SaveData(System.Boolean)">
+             <summary>Saves the Build Automator configuration data.</summary>
+             <param name="Directory">The EditorPrefs data to save to.</param>
+             <param name="SavePresets">If preset data should be saved.</param>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.CreateNewPreset(System.String)">
+             <summary>Creates a new preset.</summary>
+             <param name="DesiredName">The desired preset of the new preset.</param>
+             <returns>Any errors encountered during the preset creation.</returns>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.LoadPreset(System.Int32)">
+             <summary>Loads the selected preset.</summary>
+             <param name="PresetID">The ID of the preset to load.</param>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.SavePreset(System.Int32)">
+             <summary>Saves the selected preset.</summary>
+             <param name="PresetID">The ID of the preset to save.</param>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.DeletePreset(System.String)">
+             <summary>Deletes the selected preset.</summary>
+             <param name="PresetID">The ID of the preset to delete.</param>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.RemoveScene(System.Int32)">
+             <summary>Removes an extra scene at the specified index.</summary>
+             <param name="Index">The index of the scene to be removed.</param>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.AddCurrentScene">
+             <summary>Adds the current scene to the list of extra scenes.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.AddAllScenes">
+             <summary>Adds all available scense to the list of extra scenes.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.ImportEditorScenes">
+             <summary>Imports the scene list from the editor's built in Build Settings window.</summary>
+             <returns>If the import was successful.</returns>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.PrepareScenes">
+             <summary>Prepares scenes for build sequence.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.GetActivePlatform">
+             <summary>Finds the currently active Platform.</summary>
+             <returns>The active Platform.</returns>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.UpdateProgress(System.String)">
+             <summary>Updates the progress bar with the current details.</summary>
+             <param name="Job">The current job in progress.</param>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.OptimiseBuildOrder(System.Collections.Generic.List{PolyEngine.BA.Platform},PolyEngine.BA.Platform)">
+             <summary>Optimises the build order.</summary>
+             <returns>A list of the same Platforms in an optimised order.</returns>
+             <param name="PlatformList">Platform list.</param>
+             <param name="CurrentPlatform">Current Platform.</param>
+            </member>
+        <member name="M:PolyEngine.BA.BuildAutomator.PerformBuilds">
+             <summary>Begins building to each selected Platform.</summary>
+            </member>
+        <member name="T:UnityEngine.AssetBundles.AssetBundleRecord">
+             <summary>
+             This class maintains a record of a loaded asset bundle, allowing us
+             to associate the full path of an asset bundle with the actual bundle,
+             so that we can:
+             
+             1. distinguish between bundle variants, which, when loaded
+             resolve to the same name. 
+             
+             2. Differentiate between the same asset bundles built for different platforms.
+             
+             ex:
+            
+             Two asset bundle variants:
+             
+             - variant one: mycylinder.one
+             - variant two: mycylinder.two
+             
+             Will Resolve to "mycylinder" when loaded.
+             
+             Likewise, 
+             
+             - iOS: AssetBundles/iOS/myBundle
+             - Android: AssetBundle/Android/myBundle
+             
+             Will both resolve to "mybundle" when loaded.
+             
+             </summary>
+            </member>
+        <member name="P:UnityEngine.AssetBundles.AssetBundleRecord.path">
+             <summary>
+             Full path of the asset bundle.
+             </summary>
+            </member>
+        <member name="P:UnityEngine.AssetBundles.AssetBundleRecord.bundle">
+             <summary>
+             Reference to the loaded asset bundle associated with the path.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.ReorderableListGUI">
+             <summary>
+             Utility class for drawing reorderable lists.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListGUI.DefaultItemHeight">
+             <summary>
+             Default list item height is 18 pixels.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListGUI.IndexOfChangedItem">
+             <summary>
+             Gets or sets the zero-based index of the last item that was changed. A value of -1
+             indicates that no item was changed by list.
+             </summary>
+             <remarks>
+             <para>This property should not be set when items are added or removed.</para>
+             </remarks>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListGUI.CurrentListControlID">
+             <summary>
+             Gets the control ID of the list that is currently being drawn.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListGUI.CurrentListPosition">
+             <summary>
+             Gets the position of the list control that is currently being drawn.
+             </summary>
+             <remarks>
+             <para>The value of this property should be ignored for <see cref="F:UnityEngine.EventType.Layout" />
+             type events when using reorderable list controls with automatic layout.</para>
+             </remarks>
+             <see cref="P:PolyEngineEditor.ReorderableList.ReorderableListGUI.CurrentItemTotalPosition" />
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListGUI.CurrentItemIndex">
+             <summary>
+             Gets the zero-based index of the list item that is currently being drawn;
+             or a value of -1 if no item is currently being drawn.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListGUI.CurrentItemTotalPosition">
+             <summary>
+             Gets the total position of the list item that is currently being drawn.
+             </summary>
+             <remarks>
+             <para>The value of this property should be ignored for <see cref="F:UnityEngine.EventType.Layout" />
+             type events when using reorderable list controls with automatic layout.</para>
+             </remarks>
+             <see cref="P:PolyEngineEditor.ReorderableList.ReorderableListGUI.CurrentItemIndex" />
+             <see cref="P:PolyEngineEditor.ReorderableList.ReorderableListGUI.CurrentListPosition" />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListGUI.DefaultItemDrawer``1(UnityEngine.Rect,``0)">
+             <summary>
+             Default list item drawer implementation.
+             </summary>
+             <remarks>
+             <para>Always presents the label "Item drawer not implemented.".</para>
+             </remarks>
+             <param name="position">Position to draw list item control(s).</param>
+             <param name="item">Value of list item.</param>
+             <returns>
+             Unmodified value of list item.
+             </returns>
+             <typeparam name="T">Type of list item.</typeparam>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListGUI.TextFieldItemDrawer(UnityEngine.Rect,System.String)">
+             <summary>
+             Draws text field allowing list items to be edited.
+             </summary>
+             <remarks>
+             <para>Null values are automatically changed to empty strings since null
+             values cannot be edited using a text field.</para>
+             <para>Value of <c>GUI.changed</c> is set to <c>true</c> if value of item
+             is modified.</para>
+             </remarks>
+             <param name="position">Position to draw list item control(s).</param>
+             <param name="item">Value of list item.</param>
+             <returns>
+             Modified value of list item.
+             </returns>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListGUI.DefaultListControl">
+             <summary>
+             Gets the default list control implementation.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListGUI.Title(UnityEngine.GUIContent)">
+             <summary>
+             Draw title control for list field.
+             </summary>
+             <remarks>
+             <para>When needed, should be shown immediately before list field.</para>
+             </remarks>
+             <example>
+             <code language="csharp"><![CDATA[
+             ReorderableListGUI.Title(titleContent);
+             ReorderableListGUI.ListField(list, DynamicListGU.TextFieldItemDrawer);
+             ]]></code>
+             </example>
+             <param name="title">Content for title control.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListGUI.Title(UnityEngine.GUIContent,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+             <summary>
+             Draw title control for list field.
+             </summary>
+             <remarks>
+             <para>When needed, should be shown immediately before list field.</para>
+             </remarks>
+             <example>
+             <code language="csharp"><![CDATA[
+             ReorderableListGUI.Title(titleContent);
+             ReorderableListGUI.ListField(list, DynamicListGU.TextFieldItemDrawer);
+             ]]></code>
+             </example>
+             <param name="title">Content for title control.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListGUI.Title(System.String)">
+             <summary>
+             Draw title control for list field.
+             </summary>
+             <remarks>
+             <para>When needed, should be shown immediately before list field.</para>
+             </remarks>
+             <example>
+             <code language="csharp"><![CDATA[
+             ReorderableListGUI.Title("Your Title");
+             ReorderableListGUI.ListField(list, DynamicListGU.TextFieldItemDrawer);
+             ]]></code>
+             </example>
+             <param name="title">Text for title control.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListGUI.Title(UnityEngine.Rect,UnityEngine.GUIContent)">
+             <summary>
+             Draw title control for list field with absolute positioning.
+             </summary>
+             <param name="position">Position of control.</param>
+             <param name="title">Content for title control.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListGUI.Title(UnityEngine.Rect,UnityEngine.GUIContent,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+             <summary>
+             Draw title control for list field with absolute positioning.
+             </summary>
+             <param name="position">Position of control.</param>
+             <param name="title">Content for title control.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListGUI.DoListField``1(System.Collections.Generic.IList{``0},PolyEngineEditor.ReorderableList.ReorderableListControl.ItemDrawer{``0},PolyEngineEditor.ReorderableList.ReorderableListControl.DrawEmpty,System.Single,PolyEngineEditor.ReorderableList.ReorderableListFlags)">
+             <summary>
+             Draw list field control.
+             </summary>
+             <param name="list">The list which can be reordered.</param>
+             <param name="drawItem">Callback to draw list item.</param>
+             <param name="drawEmpty">Callback to draw custom content for empty list (optional).</param>
+             <param name="itemHeight">Height of a single list item.</param>
+             <param name="flags">Optional flags to pass into list field.</param>
+             <typeparam name="T">Type of list item.</typeparam>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListGUI.ListField``1(System.Collections.Generic.IList{``0},PolyEngineEditor.ReorderableList.ReorderableListControl.ItemDrawer{``0},PolyEngineEditor.ReorderableList.ReorderableListControl.DrawEmpty,PolyEngineEditor.ReorderableList.ReorderableListFlags)">
+             <inheritdoc cref="DoListField{T}(IList{T}, ReorderableListControl.ItemDrawer{T}, ReorderableListControl.DrawEmpty, float, ReorderableListFlags)" />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListGUI.ListField``1(System.Collections.Generic.IList{``0},PolyEngineEditor.ReorderableList.ReorderableListControl.ItemDrawer{``0},PolyEngineEditor.ReorderableList.ReorderableListControl.DrawEmpty)">
+             <inheritdoc cref="DoListField{T}(IList{T}, ReorderableListControl.ItemDrawer{T}, ReorderableListControl.DrawEmpty, float, ReorderableListFlags)" />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListGUI.CalculateListFieldHeight(System.Int32,System.Single,PolyEngineEditor.ReorderableList.ReorderableListFlags)">
+             <summary>
+             Calculate height of list field for absolute positioning.
+             </summary>
+             <param name="itemCount">Count of items in list.</param>
+             <param name="itemHeight">Fixed height of list item.</param>
+             <param name="flags">Optional flags to pass into list field.</param>
+             <returns>
+             Required list height in pixels.
+             </returns>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListGUI.DoListField(UnityEditor.SerializedProperty,System.Single,PolyEngineEditor.ReorderableList.ReorderableListControl.DrawEmpty,PolyEngineEditor.ReorderableList.ReorderableListFlags,System.Boolean)">
+             <summary>
+             Draw list field control for serializable property array.
+             </summary>
+             <param name="arrayProperty">Serializable property.</param>
+             <param name="fixedItemHeight">Use fixed height for items rather than <see cref="M:UnityEditor.EditorGUI.GetPropertyHeight(UnityEditor.SerializedProperty)" />.</param>
+             <param name="drawEmpty">Callback to draw custom content for empty list (optional).</param>
+             <param name="flags">Optional flags to pass into list field.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListGUI.ListField(UnityEditor.SerializedProperty,System.Single,PolyEngineEditor.ReorderableList.ReorderableListControl.DrawEmpty,PolyEngineEditor.ReorderableList.ReorderableListFlags,System.Boolean)">
+             <summary>
+             Draw list field control for serializable property array.
+             </summary>
+             <param name="arrayProperty"></param>
+             <param name="fixedItemHeight"></param>
+             <param name="drawEmpty"></param>
+             <param name="flags"></param>
+             <param name="showChildren"></param>
+             <returns></returns>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListGUI.DoListField(UnityEditor.SerializedProperty,PolyEngineEditor.ReorderableList.ReorderableListControl.DrawEmpty,PolyEngineEditor.ReorderableList.ReorderableListFlags,System.Boolean)">
+             <summary>
+             Draw list field control for serializable property array.
+             </summary>
+             <param name="arrayProperty">Serializable property.</param>
+             <param name="fixedItemHeight">Use fixed height for items rather than <see cref="M:UnityEditor.EditorGUI.GetPropertyHeight(UnityEditor.SerializedProperty)" />.</param>
+             <param name="drawEmpty">Callback to draw custom content for empty list (optional).</param>
+             <param name="flags">Optional flags to pass into list field.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListGUI.ListField(UnityEditor.SerializedProperty,PolyEngineEditor.ReorderableList.ReorderableListControl.DrawEmpty,PolyEngineEditor.ReorderableList.ReorderableListFlags,System.Boolean)">
+             <summary>
+             Draw list field control for serializable property array.
+             </summary>
+             <param name="arrayProperty"></param>
+             <param name="fixedItemHeight"></param>
+             <param name="drawEmpty"></param>
+             <param name="flags"></param>
+             <param name="showChildren"></param>
+             <returns></returns>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListGUI.DoListField(PolyEngineEditor.ReorderableList.IReorderableListAdaptor,PolyEngineEditor.ReorderableList.ReorderableListControl.DrawEmpty,PolyEngineEditor.ReorderableList.ReorderableListFlags)">
+             <summary>
+             Draw list field control for adapted collection.
+             </summary>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <param name="drawEmpty">Callback to draw custom content for empty list (optional).</param>
+             <param name="flags">Optional flags to pass into list field.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListGUI.ListField(PolyEngineEditor.ReorderableList.IReorderableListAdaptor,PolyEngineEditor.ReorderableList.ReorderableListControl.DrawEmpty)">
+             <inheritdoc cref="DoListField(IReorderableListAdaptor, ReorderableListControl.DrawEmpty, ReorderableListFlags)" />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListGUI.ListField(PolyEngineEditor.ReorderableList.IReorderableListAdaptor,PolyEngineEditor.ReorderableList.ReorderableListFlags)">
+             <inheritdoc cref="DoListField(IReorderableListAdaptor, ReorderableListControl.DrawEmpty, ReorderableListFlags)" />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListGUI.ListField(PolyEngineEditor.ReorderableList.IReorderableListAdaptor)">
+             <inheritdoc cref="DoListField(IReorderableListAdaptor, ReorderableListControl.DrawEmpty, ReorderableListFlags)" />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListGUI.CalculateListFieldHeight(PolyEngineEditor.ReorderableList.IReorderableListAdaptor,PolyEngineEditor.ReorderableList.ReorderableListFlags)">
+             <summary>
+             Calculate height of list field for adapted collection.
+             </summary>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <param name="flags">Optional flags to pass into list field.</param>
+             <returns>
+             Required list height in pixels.
+             </returns>
+            </member>
+        <member name="T:PolyEngineEditor.BillboardCreator">
+             <summary>
+             Billboard mesh creator window.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.IReorderableListAdaptor">
+             <summary>
+             Adaptor allowing reorderable list control to interface with list data.
+             </summary>
+             <see cref="T:PolyEngineEditor.ReorderableList.IReorderableListDropTarget" />
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.IReorderableListAdaptor.Count">
+             <summary>
+             Gets count of elements in list.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.IReorderableListAdaptor.ShowChildren">
+             <summary>
+             Show the children of array.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IReorderableListAdaptor.CanDrag(System.Int32)">
+             <summary>
+             Determines whether an item can be reordered by dragging mouse.
+             </summary>
+             <remarks>
+             <para>This should be a light-weight method since it will be used to determine
+             whether grab handle should be included for each item in a reorderable list.</para>
+             <para>Please note that returning a value of <c>false</c> does not prevent movement
+             on list item since other draggable items can be moved around it.</para>
+             </remarks>
+             <param name="index">Zero-based index for list element.</param>
+             <returns>
+             A value of <c>true</c> if item can be dragged; otherwise <c>false</c>.
+             </returns>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IReorderableListAdaptor.CanRemove(System.Int32)">
+             <summary>
+             Determines whether an item can be removed from list.
+             </summary>
+             <remarks>
+             <para>This should be a light-weight method since it will be used to determine
+             whether remove button should be included for each item in list.</para>
+             <para>This is redundant when <see cref="F:PolyEngineEditor.ReorderableList.ReorderableListFlags.HideRemoveButtons" />
+             is specified.</para>
+             </remarks>
+             <param name="index">Zero-based index for list element.</param>
+             <returns>
+             A value of <c>true</c> if item can be removed; otherwise <c>false</c>.
+             </returns>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IReorderableListAdaptor.Add">
+             <summary>
+             Add new element at end of list.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IReorderableListAdaptor.Insert(System.Int32)">
+             <summary>
+             Insert new element at specified index.
+             </summary>
+             <param name="index">Zero-based index for list element.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IReorderableListAdaptor.Duplicate(System.Int32)">
+             <summary>
+             Duplicate existing element.
+             </summary>
+             <remarks>
+             <para>Consider using the <see cref="T:System.ICloneable" /> interface to
+             duplicate list elements where appropriate.</para>
+             </remarks>
+             <param name="index">Zero-based index of list element.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IReorderableListAdaptor.Remove(System.Int32)">
+             <summary>
+             Remove element at specified index.
+             </summary>
+             <param name="index">Zero-based index of list element.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IReorderableListAdaptor.Move(System.Int32,System.Int32)">
+             <summary>
+             Move element from source index to destination index.
+             </summary>
+             <param name="sourceIndex">Zero-based index of source element.</param>
+             <param name="destIndex">Zero-based index of destination element.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IReorderableListAdaptor.Clear">
+             <summary>
+             Clear all elements from list.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IReorderableListAdaptor.BeginGUI">
+             <summary>
+             Occurs before any list items are drawn.
+             </summary>
+             <remarks>
+             <para>This method is only used to handle GUI repaint events.</para>
+             </remarks>
+             <see cref="M:PolyEngineEditor.ReorderableList.IReorderableListAdaptor.EndGUI" />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IReorderableListAdaptor.EndGUI">
+             <summary>
+             Occurs after all list items have been drawn.
+             </summary>
+             <remarks>
+             <para>This method is only used to handle GUI repaint events.</para>
+             </remarks>
+             <see cref="M:PolyEngineEditor.ReorderableList.IReorderableListAdaptor.BeginGUI" />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IReorderableListAdaptor.DrawItemBackground(UnityEngine.Rect,System.Int32)">
+             <summary>
+             Draws background of a list item.
+             </summary>
+             <remarks>
+             <para>This method is only used to handle GUI repaint events.</para>
+             <para>Background of list item spans a slightly larger area than the main
+             interface that is drawn by <see cref="M:PolyEngineEditor.ReorderableList.IReorderableListAdaptor.DrawItem(UnityEngine.Rect,System.Int32)" /> since it is
+             drawn behind the grab handle.</para>
+             </remarks>
+             <param name="position">Total position of list element in GUI.</param>
+             <param name="index">Zero-based index of array element.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IReorderableListAdaptor.DrawItem(UnityEngine.Rect,System.Int32)">
+             <summary>
+             Draws main interface for a list item.
+             </summary>
+             <remarks>
+             <para>This method is used to handle all GUI events.</para>
+             </remarks>
+             <param name="position">Position in GUI.</param>
+             <param name="index">Zero-based index of array element.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IReorderableListAdaptor.GetItemHeight(System.Int32)">
+             <summary>
+             Gets height of list item in pixels.
+             </summary>
+             <param name="index">Zero-based index of array element.</param>
+             <returns>
+             Measurement in pixels.
+             </returns>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.IReorderableListDropTarget">
+             <summary>
+             Can be implemented along with <see cref="T:PolyEngineEditor.ReorderableList.IReorderableListAdaptor" /> when drop
+             insertion or ordering is desired.
+             </summary>
+             <remarks>
+             <para>This type of "drop" functionality can occur when the "drag" phase of the
+             drag and drop operation was initiated elsewhere. For example, a custom
+             <see cref="T:PolyEngineEditor.ReorderableList.IReorderableListAdaptor" /> could insert entirely new items by
+             dragging and dropping from the Unity "Project" window.</para>
+             </remarks>
+             <see cref="T:PolyEngineEditor.ReorderableList.IReorderableListAdaptor" />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IReorderableListDropTarget.CanDropInsert(System.Int32)">
+             <summary>
+             Determines whether an item is being dragged and that it can be inserted
+             or moved by dropping somewhere into the reorderable list control.
+             </summary>
+             <remarks>
+             <para>This method is always called whilst drawing an editor GUI.</para>
+             </remarks>
+             <param name="insertionIndex">Zero-based index of insertion.</param>
+             <returns>
+             A value of <c>true</c> if item can be dropped; otherwise <c>false</c>.
+             </returns>
+             <see cref="T:UnityEditor.DragAndDrop" />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IReorderableListDropTarget.ProcessDropInsertion(System.Int32)">
+             <summary>
+             Processes the current drop insertion operation when <see cref="M:PolyEngineEditor.ReorderableList.IReorderableListDropTarget.CanDropInsert(System.Int32)" />
+             returns a value of <c>true</c> to process, accept or cancel.
+             </summary>
+             <remarks>
+             <para>This method is always called whilst drawing an editor GUI.</para>
+             <para>This method is only called when <see cref="M:PolyEngineEditor.ReorderableList.IReorderableListDropTarget.CanDropInsert(System.Int32)" />
+             returns a value of <c>true</c>.</para>
+             </remarks>
+             <param name="insertionIndex">Zero-based index of insertion.</param>
+             <see cref="P:PolyEngineEditor.ReorderableList.ReorderableListGUI.CurrentListControlID" />
+             <see cref="T:UnityEditor.DragAndDrop" />
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.ReorderableListFlags">
+             <summary>
+             Additional flags which can be passed into reorderable list field.
+             </summary>
+             <example>
+             <para>Multiple flags can be specified if desired:</para>
+             <code language="csharp"><![CDATA[
+             var flags = ReorderableListFlags.HideAddButton | ReorderableListFlags.HideRemoveButtons;
+             ReorderableListGUI.ListField(list, flags);
+             ]]></code>
+             </example>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListFlags.DisableReordering">
+             <summary>
+             Hide grab handles and disable reordering of list items.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListFlags.HideAddButton">
+             <summary>
+             Hide add button at base of control.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListFlags.HideRemoveButtons">
+             <summary>
+             Hide remove buttons from list items.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListFlags.DisableContextMenu">
+             <summary>
+             Do not display context menu upon right-clicking grab handle.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListFlags.DisableDuplicateCommand">
+             <summary>
+             Hide "Duplicate" option from context menu.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListFlags.DisableAutoFocus">
+             <summary>
+             Do not automatically focus first control of newly added items.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListFlags.ShowIndices">
+             <summary>
+             Show zero-based index of array elements.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListFlags.DisableClipping">
+             <exclude />
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListFlags.DisableAutoScroll">
+             <summary>
+             Do not attempt to automatically scroll when list is inside a scroll view and
+             the mouse pointer is dragged outside of the visible portion of the list.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListFlags.ShowSizeField">
+             <summary>
+             Show "Size" field at base of list control.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.ElementAdderMeta">
+             <summary>
+             Provides meta information which is useful when creating new implementations of
+             the <see cref="T:PolyEngineEditor.ReorderableList.IElementAdderMenuBuilder`1" /> interface.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ElementAdderMeta.GetMenuCommandTypes``1(System.Type)">
+             <summary>
+             Gets an array of the <see cref="T:PolyEngineEditor.ReorderableList.IElementAdderMenuCommand`1" /> types
+             that are associated with the specified <paramref name="contractType" />.
+             </summary>
+             <typeparam name="TContext">Type of the context object that elements can be added to.</typeparam>
+             <param name="contractType">Contract type of addable elements.</param>
+             <returns>
+             An array containing zero or more <see cref="T:System.Type" />.
+             </returns>
+             <exception cref="T:System.ArgumentNullException">
+             If <paramref name="contractType" /> is <c>null</c>.
+             </exception>
+             <seealso cref="M:PolyEngineEditor.ReorderableList.ElementAdderMeta.GetMenuCommands``1(System.Type)" />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ElementAdderMeta.GetMenuCommands``1(System.Type)">
+             <summary>
+             Gets an array of <see cref="T:PolyEngineEditor.ReorderableList.IElementAdderMenuCommand`1" /> instances
+             that are associated with the specified <paramref name="contractType" />.
+             </summary>
+             <typeparam name="TContext">Type of the context object that elements can be added to.</typeparam>
+             <param name="contractType">Contract type of addable elements.</param>
+             <returns>
+             An array containing zero or more <see cref="T:PolyEngineEditor.ReorderableList.IElementAdderMenuCommand`1" /> instances.
+             </returns>
+             <exception cref="T:System.ArgumentNullException">
+             If <paramref name="contractType" /> is <c>null</c>.
+             </exception>
+             <seealso cref="M:PolyEngineEditor.ReorderableList.ElementAdderMeta.GetMenuCommandTypes``1(System.Type)" />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ElementAdderMeta.GetConcreteElementTypes(System.Type,System.Func{System.Type,System.Boolean}[])">
+             <summary>
+             Gets a filtered array of the concrete element types that implement the
+             specified <paramref name="contractType" />.
+             </summary>
+             <remarks>
+             <para>A type is excluded from the resulting array when one or more of the
+             specified <paramref name="filters" /> returns a value of <c>false</c>.</para>
+             </remarks>
+             <param name="contractType">Contract type of addable elements.</param>
+             <param name="filters">An array of zero or more filters.</param>
+             <returns>
+             An array of zero or more concrete element types.
+             </returns>
+             <exception cref="T:System.ArgumentNullException">
+             If <paramref name="contractType" /> is <c>null</c>.
+             </exception>
+             <seealso cref="M:PolyEngineEditor.ReorderableList.ElementAdderMeta.GetConcreteElementTypes(System.Type)" />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ElementAdderMeta.GetConcreteElementTypes(System.Type)">
+             <summary>
+             Gets an array of all the concrete element types that implement the specified
+             <paramref name="contractType" />.
+             </summary>
+             <param name="contractType">Contract type of addable elements.</param>
+             <returns>
+             An array of zero or more concrete element types.
+             </returns>
+             <exception cref="T:System.ArgumentNullException">
+             If <paramref name="contractType" /> is <c>null</c>.
+             </exception>
+             <seealso cref="M:PolyEngineEditor.ReorderableList.ElementAdderMeta.GetConcreteElementTypes(System.Type,System.Func{System.Type,System.Boolean}[])" />
+            </member>
+        <member name="T:IsolationWindow">
+             <summary>
+             Isolation window is used to hide specified gameobject in scene. It's useful when you want to make a clear view on specific game object.
+             </summary>
+            </member>
+        <member name="M:IsolationWindow.IsolateGameObject(UnityEngine.GameObject[])">
+             <summary>
+             Hide all MeshRender except the isolateSceneObject.
+             </summary>
+            </member>
+        <member name="M:IsolationWindow.ExitIsolation">
+             <summary>
+             Restore the other scene object's mesh render status.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.Vector2Int16Drawer">
+             <summary>
+             Vector2 short drawer.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.SceneListDropDownAttributeDrawer">
+             <summary>
+             Scene list drop down attribute drawer.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.PEUtilityEditorWindow">
+             <summary>
+             Utility window.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.PEUtilityEditorWindow.UtlityWindowMode.OneTextInput">
+             <summary>
+             Only one text input and a button
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.PEUtilityEditorWindow.UtlityWindowMode.TwoTextInput">
+             <summary>
+             Two text input and a button
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.PEUtilityEditorWindow.UtlityWindowMode.Custom">
+             <summary>
+             custom window layout and callback
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.PEUtilityEditorWindow.ShowUtilityWindow(System.String,System.Action{System.String},System.String,System.String,System.String)">
+             <summary>
+             Shows the utility window in mode: one text input.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.PEUtilityEditorWindow.ShowUtilityWindow(System.String,System.String,System.Action{System.String,System.String},System.String,System.String,System.String,System.String)">
+             <summary>
+             Shows the utility window in mode: two text input
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.PEUtilityEditorWindow.ShowUtilityWindow(System.Action{UnityEditor.EditorWindow},System.String)">
+             <summary>
+             Shows the utility window in custom draw layout mode.
+             </summary>
+             <param name="layoutFunction">Layout function.</param>
+             <param name="ApplyCallback">Apply callback.</param>
+             <param name="title">Title.</param>
+            </member>
+        <member name="M:PolyEngineEditor.PENetworkBehaviourInspector.FindTargetProperties">
+             <summary>
+             预先寻找SeraializeProperty并且存储起来
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.PENetworkBehaviourInspector.FindContextMenus">
+             <summary>
+             寻找Context Menu （向下兼容 Inspect Function）
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.PENetworkBehaviourInspector.DrawComponentDescription">
+             <summary>
+             只有有ComponentDescription的Attribute就进行绘画
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.PENetworkBehaviourInspector.DrawSpecialProperties(UnityEditor.SerializedProperty)">
+             <summary>
+             1. 画出ReorderableList的SerializeProperty
+             2. 画出TableList的SerializeProperty
+             3. 画出Editalbe的SerializeProperty
+             </summary>
+             <param name="property"></param>
+            </member>
+        <member name="M:PolyEngineEditor.PENetworkBehaviourInspector.DrawPropertiesAll">
+             <summary>
+             画出所有 SerializeProperty （ 包括特殊定义的 ）
+             </summary>
+            </member>
+        <member name="T:PolyEngine.BA.Platform">
+             <summary>Object to hold all of the settings and information for each Platform.</summary>
+            </member>
+        <member name="T:PolyEngine.BA.Platform.PlatformState">
+             <summary>The state of the Platform.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.Platform.PlatformState.None">
+             <summary>No special state.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.Platform.PlatformState.Queued">
+             <summary>Queued for build.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.Platform.PlatformState.Unsuccessful">
+             <summary>Unsuccessfully built to.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.Platform.PlatformState.Successful">
+             <summary>Successfully built to.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.Platform.PlatformState.Active">
+             <summary>Currently active Platform.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.Platform.Name">
+             <summary>The name of the Platform.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.Platform.Enabled">
+             <summary>If this Platform will be built when Build Automator runs.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.Platform.BatchEnabled">
+             <summary>If this Platform will run a batch script when Build Automator runs.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.Platform.BatchPath">
+             <summary>The path to this Platform's batch script.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.Platform.ScriptingDefine">
+             <summary>Any scripting define symbols to associate with this Platform.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.Platform.FullDefineSymbols">
+             <summary>The full list of scripting define symbols to use with this Platform.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.Platform.Extension">
+             <summary>The extension for the file/folder name to use for this Platform's builds.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.Platform.Folder">
+             <summary>The subfolder to place this Platform's builds in.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.Platform.BuildMessage">
+             <summary>The displayed message whilst this Platform is building.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.Platform.BuildPath">
+             <summary>The path that this Platform will build its files to.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.Platform.Icon">
+             <summary>The icon to display alongside this Platform.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.Platform.TargetPlatform">
+             <summary>The BuildTarget associated with this Platform.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.Platform.TargetGroup">
+             <summary>The BuildTargetGroup associated with this Platform.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.Platform.Development">
+             <summary>Whether this Platform will build development builds or not.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.Platform.CurrentState">
+             <summary>Current PlatformState of this Platform.</summary>
+            </member>
+        <member name="F:PolyEngine.BA.Platform.IsActive">
+             <summary>If this is the active Platform.</summary>
+            </member>
+        <member name="M:PolyEngine.BA.Platform.#ctor(System.String,System.String,System.String,UnityEditor.BuildTarget,UnityEditor.BuildTargetGroup)">
+             <summary>The constructor for a Platform object, which will contain all the details required to represent a build target.</summary>
+             <param name="PlatformName">The name of the Platform to be displayed in the editor.</param>
+             <param name="PlatformExt">The extension to add onto the file or folder name for builds generated in this Platform.</param>
+             <param name="Message">The message to display to the editor whilst this Platform is generating a build.</param>
+             <param name="PlatformType">The specific BuildTarget that corresponds to the desired Platform.</param>
+             <param name="PlatformGroup">The BuildTargetGroup that the desired Platform belongs to.</param>
+            </member>
+        <member name="M:PolyEngine.BA.Platform.#ctor(System.String,System.String,System.String,UnityEditor.BuildTarget,UnityEditor.BuildTargetGroup,System.String)">
+             <summary>The constructor for a Platform object, which will contain all the details required to represent a build target.</summary>
+             <param name="PlatformName">The name of the Platform to be displayed in the editor.</param>
+             <param name="PlatformExt">The extension to add onto the file or folder name for builds generated in this Platform.</param>
+             <param name="Message">The message to display to the editor whilst this Platform is generating a build.</param>
+             <param name="PlatformType">The specific BuildTarget that corresponds to the desired Platform.</param>
+             <param name="PlatformGroup">The BuildTargetGroup that the desired Platform belongs to.</param>
+             <param name="FolderName">(Optional) The folder name for this Platform if subfolders are enabled.</param>
+            </member>
+        <member name="M:PolyEngine.BA.Platform.#ctor(System.String,System.String,System.String,UnityEditor.BuildTarget,UnityEditor.BuildTargetGroup,UnityEngine.Texture)">
+             <summary>The constructor for a Platform object, which will contain all the details required to represent a build target.</summary>
+             <param name="PlatformName">The name of the Platform to be displayed in the editor.</param>
+             <param name="PlatformExt">The extension to add onto the file or folder name for builds generated in this Platform.</param>
+             <param name="Message">The message to display to the editor whilst this Platform is generating a build.</param>
+             <param name="PlatformType">The specific BuildTarget that corresponds to the desired Platform.</param>
+             <param name="PlatformGroup">The BuildTargetGroup that the desired Platform belongs to.</param>
+             <param name="PlatformIcon">(Optional) The icon associated with the Platform.</param>
+            </member>
+        <member name="M:PolyEngine.BA.Platform.#ctor(System.String,System.String,System.String,UnityEditor.BuildTarget,UnityEditor.BuildTargetGroup,System.String,UnityEngine.Texture)">
+             <summary>The constructor for a Platform object, which will contain all the details required to represent a build target.</summary>
+             <param name="PlatformName">The name of the Platform to be displayed in the editor.</param>
+             <param name="PlatformExt">The extension to add onto the file or folder name for builds generated in this Platform.</param>
+             <param name="Message">The message to display to the editor whilst this Platform is generating a build.</param>
+             <param name="PlatformType">The specific BuildTarget that corresponds to the desired Platform.</param>
+             <param name="PlatformGroup">The BuildTargetGroup that the desired Platform belongs to.</param>
+             <param name="FolderName">(Optional) The folder name for this Platform if Subfolders are enabled.</param>
+             <param name="PlatformIcon">(Optional) The icon associated with the Platform.</param>
+            </member>
+        <member name="M:PolyEngine.BA.Platform.UpdateBuildPath(PolyEngine.BA.BuildAutomator)">
+             <summary>Generates the output path for this Platform.</summary>
+             <param name="Controller">The BuildAutomator class in control.</param>
+             <returns>Completed absolute build path.</returns>
+            </member>
+        <member name="M:PolyEngine.BA.Platform.UpdateScriptingDefines(PolyEngine.BA.BuildAutomator)">
+             <summary>Generates the full string of scripting define symbols for this Platform.</summary>
+             <param name="Controller">The BuildAutomator class in control.</param>
+             <returns>Full string of scripting define symbols for this Platform.</returns>
+            </member>
+        <member name="M:PolyEngine.BA.Platform.SwitchToPlatform">
+             <summary>Attempts to switch to this Platform.</summary>
+             <returns>If the switch was successful.</returns>
+            </member>
+        <member name="M:PolyEngine.BA.Platform.SwitchToPlatform(PolyEngine.BA.Platform)">
+             <summary>Attempts to switch to this Platform.</summary>
+             <param name="OldPlatform">The currently active Platform.</param>
+             <returns>If the switch was successful.</returns>
+            </member>
+        <member name="M:PolyEngine.BA.Platform.BuildToPlatform(PolyEngine.BA.BuildAutomator)">
+             <summary>Begins the build to the current Platform.</summary>
+             <param name="Controller">The BuildAutomator class in control.</param>
+             <returns>If the build was successful.</returns>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor">
+             <summary>
+             Reorderable list adaptor for serialized array property.
+             </summary>
+             <remarks>
+             <para>This adaptor can be subclassed to add special logic to item height calculation.
+             You may want to implement a custom adaptor class where specialised functionality
+             is needed.</para>
+             <para>List elements are <b>not</b> cloned using the <see cref="T:System.ICloneable" />
+             interface when using a <see cref="T:UnityEditor.SerializedProperty" /> to
+             manipulate lists.</para>
+             </remarks>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor.FixedItemHeight">
+             <summary>
+             Fixed height of each list item.
+             </summary>
+             <remarks>
+             <para>Non-zero value overrides property drawer height calculation
+             which is more efficient.</para>
+             </remarks>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor.Item(System.Int32)">
+             <summary>
+             Gets element from list.
+             </summary>
+             <param name="index">Zero-based index of element.</param>
+             <returns>
+             Serialized property wrapper for array element.
+             </returns>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor.arrayProperty">
+             <summary>
+             Gets the underlying serialized array property.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor.#ctor(UnityEditor.SerializedProperty,System.Single,System.Boolean)">
+             <summary>
+             Initializes a new instance of <see cref="T:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor" />.
+             </summary>
+             <param name="arrayProperty">Serialized property for entire array.</param>
+             <param name="fixedItemHeight">Non-zero height overrides property drawer height calculation.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor.#ctor(UnityEditor.SerializedProperty,System.Boolean)">
+             <summary>
+             Initializes a new instance of <see cref="T:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor" />.
+             </summary>
+             <param name="arrayProperty">Serialized property for entire array.</param>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor.Count">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor.CanDrag(System.Int32)">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor.CanRemove(System.Int32)">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor.Add">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor.Insert(System.Int32)">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor.Duplicate(System.Int32)">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor.Remove(System.Int32)">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor.Move(System.Int32,System.Int32)">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor.Clear">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor.BeginGUI">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor.EndGUI">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor.DrawItemBackground(UnityEngine.Rect,System.Int32)">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor.DrawItem(UnityEngine.Rect,System.Int32)">
+             <inheritdoc />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor.GetItemHeight(System.Int32)">
+             <inheritdoc />
+            </member>
+        <member name="F:ProDrawCall.OptimizableObject.oldObject">
+            
+            *******************************************</member>
+        <member name="F:ProDrawCall.OptimizableObject.integrityLog">
+            
+            ********************************************</member>
+        <member name="T:PolyEngineEditor.SerializableHashListDrawer">
+             <summary>
+             Serializable hash list drawer.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.SerializableHashListDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+             <summary>
+             Gets the height of the property.
+             </summary>
+             <returns>The property height.</returns>
+             <param name="property">Property.</param>
+             <param name="label">Label.</param>
+            </member>
+        <member name="P:PolyEngineEditor.SerializableHashListDrawer.serializableHashList">
+             <summary>
+             Gets the serializable hash list object refer to the currently drawing one.
+             </summary>
+             <value>The this dictionary.</value>
+            </member>
+        <member name="P:PolyEngineEditor.SerializableHashListDrawer.serializedObject">
+             <summary>
+             Gets the serialized object.
+             </summary>
+             <value>The serialized object.</value>
+            </member>
+        <member name="M:PolyEngineEditor.SerializableHashListDrawer.DrawExistingElement(UnityEditor.SerializedProperty,System.Int32,UnityEngine.Rect)">
+             <summary>
+             Draws the existing element.
+             </summary>
+             <param name="element">Element.</param>
+            </member>
+        <member name="M:PolyEngineEditor.SerializableHashListDrawer.DrawAddingElementLayout(UnityEngine.Rect,System.Object@)">
+             <summary>
+             Draws the adding element layout.
+             </summary>
+             <param name="drawArea">Draw area.</param>
+             <param name="newObjRef">New object reference.</param>
+            </member>
+        <member name="M:PolyEngine.UnityNetworking.EditorRuntimeRpc.GetParameters">
+             <summary>
+             Gets all of the parameters.
+             </summary>
+             <returns>The parameters.</returns>
+            </member>
+        <member name="T:PolyEngineEditor.Vector4IntDrawer">
+             <summary>
+             Vector4 int drawer.
+             </summary>
+            </member>
+        <member name="M:QuickDisplayMeshInfo.PrintMeshInfo(UnityEngine.Mesh)">
+             <summary>
+             Prints the mesh info to console.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.ExportObjWindow">
+             <summary>
+             Export object window.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ExportObjWindow.meshFilters">
+             <summary>
+             The mesh filters to be exported.
+             </summary>
+            </member>
+        <member name="T:SmartUGUITools">
+             <summary>
+             Smart uGUI tools.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.IElementAdderMenuBuilder`1">
+             <summary>
+             Interface for building an <see cref="T:PolyEngineEditor.ReorderableList.IElementAdderMenu" />.
+             </summary>
+             <typeparam name="TContext">Type of the context object that elements can be added to.</typeparam>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IElementAdderMenuBuilder`1.SetContractType(System.Type)">
+             <summary>
+             Sets contract type of the elements that can be included in the <see cref="T:PolyEngineEditor.ReorderableList.IElementAdderMenu" />.
+             Only non-abstract class types that are assignable from the <paramref name="contractType" />
+             will be included in the built menu.
+             </summary>
+             <param name="contractType">Contract type of addable elements.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IElementAdderMenuBuilder`1.SetElementAdder(PolyEngineEditor.ReorderableList.IElementAdder{`0})">
+             <summary>
+             Set the <see cref="T:PolyEngineEditor.ReorderableList.IElementAdder`1" /> implementation which is used
+             when adding new elements to the context object.
+             </summary>
+             <remarks>
+             <para>Specify a value of <c>null</c> for <paramref name="elementAdder" /> to
+             prevent the selection of any types.</para>
+             </remarks>
+             <param name="elementAdder">Element adder.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IElementAdderMenuBuilder`1.SetTypeDisplayNameFormatter(System.Func{System.Type,System.String})">
+             <summary>
+             Set the function that formats the display of type names in the user interface.
+             </summary>
+             <remarks>
+             <para>Specify a value of <c>null</c> for <paramref name="formatter" /> to
+             assume the default formatting function.</para>
+             </remarks>
+             <param name="formatter">Function that formats display name of type; or <c>null</c>.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IElementAdderMenuBuilder`1.AddTypeFilter(System.Func{System.Type,System.Boolean})">
+             <summary>
+             Adds a filter function which determines whether types can be included or
+             whether they need to be excluded.
+             </summary>
+             <remarks>
+             <para>If a filter function returns a value of <c>false</c> then that type
+             will not be included in the menu interface.</para>
+             </remarks>
+             <param name="typeFilter">Filter function.</param>
+             <exception cref="T:System.ArgumentNullException">
+             If <paramref name="typeFilter" /> is <c>null</c>.
+             </exception>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IElementAdderMenuBuilder`1.AddCustomCommand(PolyEngineEditor.ReorderableList.IElementAdderMenuCommand{`0})">
+             <summary>
+             Adds a custom command to the menu.
+             </summary>
+             <param name="command">The custom command.</param>
+             <exception cref="T:System.ArgumentNullException">
+             If <paramref name="command" /> is <c>null</c>.
+             </exception>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IElementAdderMenuBuilder`1.GetMenu">
+             <summary>
+             Builds and returns a new <see cref="T:PolyEngineEditor.ReorderableList.IElementAdderMenu" /> instance.
+             </summary>
+             <returns>
+             A new <see cref="T:PolyEngineEditor.ReorderableList.IElementAdderMenu" /> instance each time the method is invoked.
+             </returns>
+            </member>
+        <member name="T:PolyEngineEditor.AnimatorOverrideControllerContextMenu">
+             <summary>
+             Animator override controller context menu.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.AnimatorOverrideControllerContextMenu.GetOverrideClip(UnityEngine.AnimationClip,UnityEngine.AnimatorOverrideController,UnityEngine.AnimationClip@)">
+             <summary>
+             Gets the override clip.
+             </summary>
+             <returns><c>true</c>, if override clip was gotten, <c>false</c> otherwise.</returns>
+             <param name="srcClip">Source clip.</param>
+             <param name="overridedCtrl">Overrided ctrl.</param>
+             <param name="replaceClip">Replace clip.</param>
+            </member>
+        <member name="T:PolyEngineEditor.PETexturePreview">
+             <summary>
+             PE teture2D preview.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.InvokeMethod.target">
+             <summary>
+             The target.
+             调用目标 。
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.InvokeMethod.method">
+             <summary>
+             方法反射引用
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.InvokeMethod.isFoldout">
+             <summary>
+             记录是否正在展开编辑
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.InvokeMethod.methodParameters">
+             <summary>
+             The method parameters.
+             记录方法参数 Vs 参数值的缓存记录表。
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.InvokeMethod.GetParameterValue``1(System.Reflection.ParameterInfo)">
+             <summary>
+             Gets the parameter value.
+             </summary>
+             <returns>The parameter value.</returns>
+             <param name="parameter">Parameter.</param>
+             <typeparam name="T">The 1st type parameter.</typeparam>
+            </member>
+        <member name="M:PolyEngineEditor.InvokeMethod.GetParameterValue(System.Reflection.ParameterInfo)">
+             <summary>
+             Gets the parameter value.
+             </summary>
+             <returns>The parameter value.</returns>
+             <param name="parameter">Parameter.</param>
+             <typeparam name="T">The 1st type parameter.</typeparam>
+            </member>
+        <member name="M:PolyEngineEditor.InvokeMethod.SetParameterValue``1(System.Reflection.ParameterInfo,``0)">
+             <summary>
+             Sets the parameter value.
+             </summary>
+             <param name="parameter">Parameter.</param>
+             <param name="value">Value.</param>
+             <typeparam name="T">The 1st type parameter.</typeparam>
+            </member>
+        <member name="M:PolyEngineEditor.InvokeMethod.HasParameterValue(System.Reflection.ParameterInfo)">
+             <summary>
+             Determines whether this instance has parameter value the specified parameter.
+             </summary>
+             <returns><c>true</c> if this instance has parameter value the specified parameter; otherwise, <c>false</c>.</returns>
+             <param name="parameter">Parameter.</param>
+            </member>
+        <member name="M:PolyEngineEditor.InvokeMethod.SetParameterValue(System.Reflection.ParameterInfo,System.Object)">
+             <summary>
+             Sets the parameter value.
+             </summary>
+             <param name="parameter">Parameter.</param>
+             <param name="value">Value.</param>
+             <typeparam name="T">The 1st type parameter.</typeparam>
+            </member>
+        <member name="M:PolyEngineEditor.InvokeMethod.GetAllParameterValues">
+             <summary>
+             Gets all parameter value.
+             </summary>
+             <returns>The all parameter value.</returns>
+            </member>
+        <member name="M:PolyEngineEditor.PEEditorUtility.GetVericalEditorRect(UnityEngine.Rect,System.Int32)">
+             <summary>
+             Gets the verical editor rect.
+             </summary>
+             <returns>The verical editor rect.</returns>
+             <param name="originalPosition">Original position.</param>
+             <param name="Line">Line.</param>
+            </member>
+        <member name="M:PolyEngineEditor.PEEditorUtility.HasAttribute``1(System.Reflection.MemberInfo)">
+             <summary>
+             判断 member info 是否有自定义属性标签
+             </summary>
+             <returns><c>true</c> if has attribute the specified memeberInfo; otherwise, <c>false</c>.</returns>
+             <param name="memeberInfo">Memeber info.</param>
+             <typeparam name="T">The 1st type parameter.</typeparam>
+            </member>
+        <member name="M:PolyEngineEditor.PEEditorUtility.GetAllInspectiveMethods(System.Object)">
+             <summary>
+             获取 type 的所有 InspectFunction 方法.
+             </summary>
+             <returns>The all inspective methods.</returns>
+             <param name="type">Type.</param>
+            </member>
+        <member name="M:PolyEngineEditor.PEEditorUtility.GetAllSerializableField(System.Type)">
+             <summary>
+             获取 target 下面的所有可序列化的字段。
+             </summary>
+             <returns>The all inspective methods.</returns>
+             <param name="type">Type.</param>
+            </member>
+        <member name="M:PolyEngineEditor.PEEditorUtility.NextEditorLine(UnityEngine.Rect)">
+             <summary>
+             Get the next line of the current rect.
+             Useful in editor GUI scripting.
+             </summary>
+             <returns>The line.</returns>
+             <param name="r">The red component.</param>
+            </member>
+        <member name="M:PolyEngineEditor.PEEditorUtility.EditorSplitCell(UnityEngine.Rect,System.Int32,System.Int32,System.Int32,System.Int32)">
+             <summary>
+             Given a rect, split into cells
+             </summary>
+             <returns>The cell.</returns>
+             <param name="r">The red component.</param>
+             <param name="gridCount">Grid count.</param>
+             <param name="index">Index.</param>
+             <param name="span">Span.</param>
+            </member>
+        <member name="M:PolyEngineEditor.PEEditorUtility.GetDebugString(System.Object)">
+             <summary>
+             Gets the debug string that contains all property of anyObject.
+             </summary>
+             <returns>The debug string.</returns>
+             <param name="anyObject">Any object.</param>
+            </member>
+        <member name="M:PolyEngineEditor.PEEditorUtility.GetDebugString(System.Type)">
+             <summary>
+             Gets the debug string that contains all property of anyObject.
+             </summary>
+             <returns>The debug string.</returns>
+             <param name="anyObject">Any object.</param>
+            </member>
+        <member name="M:PolyEngineEditor.PEEditorUtility.GetDebugString(System.Array)">
+             <summary>
+             Gets the debug string that contains all property of anyObject.
+             </summary>
+             <returns>The debug string.</returns>
+             <param name="anyObject">Any object.</param>
+            </member>
+        <member name="M:PolyEngineEditor.PEEditorUtility.GetSelectedFolder">
+             <summary>
+             Get selection folder in project view
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.PEEditorUtility.GetAllStates(UnityEngine.Animator)">
+             <summary>
+             Gets all states from the animator.
+             </summary>
+             <returns>The all states.</returns>
+             <param name="animator">Animator.</param>
+            </member>
+        <member name="M:PolyEngineEditor.PEEditorUtility.GetStateLayer(UnityEngine.Animator,System.Int32)">
+             <summary>
+             Gets the layer of the state hash.
+             </summary>
+             <returns>The state layer.</returns>
+             <param name="animator">Animator.</param>
+            </member>
+        <member name="M:PolyEngineEditor.PEEditorUtility.Vector4IntField(UnityEngine.Rect,PolyEngine.pVector4Int)">
+             <summary>
+             Edits the vector4int field with rectangle.
+             </summary>
+             <returns>The vector4 field.</returns>
+             <param name="rect">Rect.</param>
+             <param name="vector4Int">Vector4 int.</param>
+            </member>
+        <member name="M:PolyEngineEditor.PEEditorUtility.Vector4IntField(UnityEngine.Rect,UnityEditor.SerializedProperty)">
+             <summary>
+             Edits the vector4int field with rectangle.
+             </summary>
+             <returns>The vector4 field.</returns>
+             <param name="rect">Rect.</param>
+             <param name="vector4Int">Vector4 int.</param>
+            </member>
+        <member name="E:PolyEngineEditor.SerializedDictionaryDrawer.OnAddElement">
+             <summary>
+             Callback when add element to the serializable dictionary.
+             first parameter = key, second parameter = valeu.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.SerializedDictionaryDrawer.DrawForTargetUsage">
+             <summary>
+             Draw for target usage.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.SerializedDictionaryDrawer.serializableDictionary">
+             <summary>
+             Gets the dictionary object refer to the currently drawing one.
+             </summary>
+             <value>The this dictionary.</value>
+            </member>
+        <member name="P:PolyEngineEditor.SerializedDictionaryDrawer.serializedObject">
+             <summary>
+             Gets the serialized object.
+             </summary>
+             <value>The serialized object.</value>
+            </member>
+        <member name="M:PolyEngineEditor.SerializedDictionaryDrawer.DrawAddElementLayout(UnityEngine.Rect,System.Object@,System.Type,PolyEngineEditor.SerializedDictionaryDrawer.DrawForTargetUsage)">
+             <summary>
+             Draws the layout for adding element.
+             </summary>
+             <param name="position">Position.</param>
+             <param name="obj">Object.</param>
+             <param name="dataType">Data type.</param>
+             <param name="usage">Usage.</param>
+            </member>
+        <member name="M:PolyEngineEditor.SerializedDictionaryDrawer.DrawEditKeyLayout(UnityEditor.SerializedProperty,System.Int32,UnityEngine.Rect)">
+             <summary>
+             Draws editor layout for editing key at index.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.SerializedDictionaryDrawer.DrawEditValueLayout(UnityEditor.SerializedProperty,System.Int32,UnityEngine.Rect)">
+             <summary>
+             Draws editor layout for editing value at index.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.HierarchyContextMenu_Scene">
+             <summary>
+             Hierarchy context menu : save scene
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.NullableeSingleValuDrawer">
+             <summary>
+             Nullable single value drawer.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.NullableIntValueDrawer">
+             <summary>
+             Nullable int value drawer.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.NullableUIntValueDrawer">
+             <summary>
+             Nullable uint value drawer.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.NullableBooleanValueDrawer">
+             <summary>
+             Nullable bool value drawer.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.NullableByteValueDrawer">
+             <summary>
+             Nullable byte value drawer.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.NullableSByteValueDrawer">
+             <summary>
+             Nullable sbyte value drawer.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.NullableShortValueDrawer">
+             <summary>
+             Nullable short value drawer.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.NullableUshortValueDrawer">
+             <summary>
+             Nullable ushort value drawer.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.NullableQuaternionValueDrawer">
+             <summary>
+             Nullable quaternion value drawer.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.NullableVector2ValueDrawer">
+             <summary>
+             Nullable vector2 value drawer.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.NullableVector2IntValueDrawer">
+             <summary>
+             Nullable vector2int value drawer.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.NullableVector3ValueDrawer">
+             <summary>
+             Nullable vector3 value drawer.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.NullableVector3IntValueDrawer">
+             <summary>
+             Nullable vector3int value drawer.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.NullableVector4ValueDrawer">
+             <summary>
+             Nullable vector4 value drawer.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.NullableVector4IntDrawer">
+             <summary>
+             Nullable vector4 value drawer.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.PEAnimatorPreview">
+             <summary>
+             PE Animator preview.
+             </summary>
+            </member>
+        <member name="M:SerializedPropExtension.ParentPath(UnityEditor.SerializedProperty)">
+             <summary>
+             Returns the path to the parent of a SerializedProperty
+             </summary>
+             <param name="prop"></param>
+             <returns></returns>
+            </member>
+        <member name="M:SerializedPropExtension.GetParentProp(UnityEditor.SerializedProperty)">
+             <summary>
+             Returns the parent of a SerializedProperty, as another SerializedProperty
+             </summary>
+             <param name="prop"></param>
+             <returns></returns>
+            </member>
+        <member name="M:SerializedPropExtension.ExpandHierarchy(UnityEditor.SerializedProperty,System.Boolean)">
+             <summary>
+             Set isExpanded of the SerializedProperty and propogate the change up the hierarchy
+             </summary>
+             <param name="prop"></param>
+             <param name="expand">isExpanded value</param>
+            </member>
+        <member name="M:SerializedPropExtension.GetValue``1(UnityEditor.SerializedProperty)">
+             <summary>
+             Use reflection to get the actual data instance of a SerializedProperty
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="prop"></param>
+             <returns></returns>
+            </member>
+        <member name="M:SerializedPropExtension.GetParent``1(UnityEditor.SerializedProperty)">
+             <summary>
+             Uses reflection to get the actual data instance of the parent of a SerializedProperty
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="prop"></param>
+             <returns></returns>
+            </member>
+        <member name="M:SerializedPropExtension.HasAttribute``1(UnityEditor.SerializedProperty)">
+             <summary>
+             Use reflection to check if SerializedProperty has a given attribute
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="prop"></param>
+             <returns></returns>
+            </member>
+        <member name="M:SerializedPropExtension.GetAttributes``1(UnityEditor.SerializedProperty)">
+             <summary>
+             Use reflection to get the attributes of the SerializedProperty
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="prop"></param>
+             <returns></returns>
+            </member>
+        <member name="M:SerializedPropExtension.FindAllDirectProperties(UnityEditor.SerializedObject)">
+             <summary>
+             Finds all direct properties.
+             搜索所有最上级的 Property 。
+             </summary>
+             <returns>The all direct properties.</returns>
+             <param name="obj">Object.</param>
+             <param name="enterChildren">If set to <c>true</c> enter children.</param>
+            </member>
+        <member name="M:SerializedPropExtension.FindPropsOfType``1(UnityEditor.SerializedObject,System.Boolean)">
+             <summary>
+             Find properties in the serialized object of the given type.
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="obj"></param>
+             <param name="enterChildren"></param>
+             <returns></returns>
+            </member>
+        <member name="F:PolyEngine.BA.BuildAutomatorPreset.MainScene">
+             <summary>
+             The main scene : first scene in the build list. Loaded by default when app is started.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.ElementAdderMenuCommandAttribute">
+             <summary>
+             Annotate <see cref="T:PolyEngineEditor.ReorderableList.IElementAdderMenuCommand`1" /> implementations with a
+             <see cref="T:PolyEngineEditor.ReorderableList.ElementAdderMenuCommandAttribute" /> to associate it with the contract
+             type of addable elements.
+             </summary>
+             <example>
+             <para>The following source code demonstrates how to add a helper menu command to
+             the add element menu of a shopping list:</para>
+             <code language="csharp"><![CDATA[
+             [ElementAdderMenuCommand(typeof(ShoppingItem))]
+             public class AddFavoriteShoppingItemsCommand : IElementAdderMenuCommand<ShoppingList> {
+                 public AddFavoriteShoppingItemsCommand() {
+                     Content = new GUIContent("Add Favorite Items");
+                 }
+            
+                 public GUIContent Content { get; private set; }
+            
+                 public bool CanExecute(IElementAdder<ShoppingList> elementAdder) {
+                     return true;
+                 }
+                 public void Execute(IElementAdder<ShoppingList> elementAdder) {
+                     // TODO: Add favorite items to the shopping list!
+                 }
+             }
+             ]]></code>
+             <code language="unityscript"><![CDATA[
+             @ElementAdderMenuCommand(ShoppingItem)
+             class AddFavoriteShoppingItemsCommand extends IElementAdderMenuCommand.<ShoppingList> {
+                 var _content:GUIContent = new GUIContent('Add Favorite Items');
+            
+                 function get Content():GUIContent { return _content; }
+            
+                 function CanExecute(elementAdder:IElementAdder.<ShoppingList>):boolean {
+                     return true;
+                 }
+                 function Execute(elementAdder:IElementAdder.<ShoppingList>) {
+                     // TODO: Add favorite items to the shopping list!
+                 }
+             }
+             ]]></code>
+             </example>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ElementAdderMenuCommandAttribute.#ctor(System.Type)">
+             <summary>
+             Initializes a new instance of the <see cref="T:PolyEngineEditor.ReorderableList.ElementAdderMenuCommandAttribute" /> class.
+             </summary>
+             <param name="contractType">Contract type of addable elements.</param>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ElementAdderMenuCommandAttribute.ContractType">
+             <summary>
+             Gets the contract type of addable elements.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.AssetDatabaseExt.GetSceneAsset(System.String,UnityEditor.SceneAsset@)">
+             <summary>
+             Gets the scene asset. 
+             return the path
+             </summary>
+             <returns>The scene asset.</returns>
+             <param name="sceneName">Scene name.</param>
+            </member>
+        <member name="M:PolyEngineEditor.AssetDatabaseExt.GetAssets``1(System.String)">
+             <summary>
+             Gets the assets from database by label.
+             </summary>
+             <returns>The assets.</returns>
+             <typeparam name="T">The 1st type parameter.</typeparam>
+            </member>
+        <member name="M:PolyEngineEditor.AssetDatabaseExt.GetAsset``1(System.String)">
+             <summary>
+             Gets the first asset from database by label.
+             </summary>
+             <returns>The assets.</returns>
+             <typeparam name="T">The 1st type parameter.</typeparam>
+            </member>
+        <member name="M:PolyEngineEditor.AssetDatabaseExt.GetAssets``1(System.String,System.String)">
+             <summary>
+             Gets the assets from database by name and label.
+             </summary>
+             <returns>The assets.</returns>
+             <typeparam name="T">The 1st type parameter.</typeparam>
+            </member>
+        <member name="M:PolyEngineEditor.AssetDatabaseExt.GetAssetsInFolder``1(System.String[])">
+             <summary>
+             Gets all of the target assets in folder.
+             </summary>
+             <returns>The assets in folder.</returns>
+             <param name="folder">Folder.</param>
+            </member>
+        <member name="M:PolyEngineEditor.PEAnimatorInvokersPreview.DrawComplexTypeObjectEditor(System.Object)">
+             <summary>
+             Draws the complex type object editor.
+             </summary>
+             <param name="obj">Object.</param>
+            </member>
+        <member name="M:PolyEngineEditor.EditorObjExporter.MeshToString(UnityEngine.MeshFilter,System.Collections.Generic.Dictionary{System.String,PolyEngineEditor.ObjMaterial})">
+             <summary>
+             Convert a MeshFilter's mesh to string.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.EditorObjExporter.MeshesToFile(UnityEngine.MeshFilter[],System.String,System.String,System.Boolean)">
+             <summary>
+             将多个mesh以独立object的格式，写入到一个obj文件中。
+             </summary>
+             <param name="mf">Mf.</param>
+             <param name="folder">Folder.</param>
+             <param name="filename">Filename.</param>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.Internal.SerializedPropertyUtility">
+             <summary>
+             Utility functionality for <see cref="T:PolyEngineEditor.ReorderableList.SerializedPropertyAdaptor" /> implementations.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.Internal.SerializedPropertyUtility.ResetValue(UnityEditor.SerializedProperty)">
+             <summary>
+             Reset the value of a property.
+             </summary>
+             <param name="property">Serialized property for a serialized property.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.Internal.SerializedPropertyUtility.CopyPropertyValue(UnityEditor.SerializedProperty,UnityEditor.SerializedProperty)">
+             <summary>
+             Copies value of <paramref name="sourceProperty" /> into <pararef name="destProperty" />.
+             </summary>
+             <param name="destProperty">Destination property.</param>
+             <param name="sourceProperty">Source property.</param>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.ElementAdderMenuBuilder">
+             <summary>
+             Factory methods that create <see cref="T:PolyEngineEditor.ReorderableList.IElementAdderMenuBuilder`1" />
+             instances that can then be used to build element adder menus.
+             </summary>
+             <example>
+             <para>The following example demonstrates how to build and display a menu which
+             allows the user to add elements to a given context object upon clicking a button:</para>
+             <code language="csharp"><![CDATA[
+             public class ShoppingListElementAdder : IElementAdder<ShoppingList> {
+                 public ShoppingListElementAdder(ShoppingList shoppingList) {
+                     Object = shoppingList;
+                 }
+            
+                 public ShoppingList Object { get; private set; }
+            
+                 public bool CanAddElement(Type type) {
+                     return true;
+                 }
+                 public object AddElement(Type type) {
+                     var instance = Activator.CreateInstance(type);
+                     shoppingList.Add((ShoppingItem)instance);
+                     return instance;
+                 }
+             }
+             
+             private void DrawAddMenuButton(ShoppingList shoppingList) {
+                 var content = new GUIContent("Add Menu");
+                 Rect position = GUILayoutUtility.GetRect(content, GUI.skin.button);
+                 if (GUI.Button(position, content)) {
+                     var builder = ElementAdderMenuBuilder.For<ShoppingList>(ShoppingItem);
+                     builder.SetElementAdder(new ShoppingListElementAdder(shoppingList));
+                     var menu = builder.GetMenu();
+                     menu.DropDown(buttonPosition);
+                 }
+             }
+             ]]></code>
+             <code language="unityscript"><![CDATA[
+             public class ShoppingListElementAdder extends IElementAdder.<ShoppingList> {
+                 var _object:ShoppingList;
+            
+                 function ShoppingListElementAdder(shoppingList:ShoppingList) {
+                     Object = shoppingList;
+                 }
+            
+                 function get Object():ShoppingList { return _object; }
+            
+                 function CanAddElement(type:Type):boolean {
+                     return true;
+                 }
+                 function AddElement(type:Type):System.Object {
+                     var instance = Activator.CreateInstance(type);
+                     shoppingList.Add((ShoppingItem)instance);
+                     return instance;
+                 }
+             }
+             
+             function DrawAddMenuButton(shoppingList:ShoppingList) {
+                 var content = new GUIContent('Add Menu');
+                 var position = GUILayoutUtility.GetRect(content, GUI.skin.button);
+                 if (GUI.Button(position, content)) {
+                     var builder = ElementAdderMenuBuilder.For.<ShoppingList>(ShoppingItem);
+                     builder.SetElementAdder(new ShoppingListElementAdder(shoppingList));
+                     var menu = builder.GetMenu();
+                     menu.DropDown(buttonPosition);
+                 }
+             }
+             ]]></code>
+             </example>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ElementAdderMenuBuilder.For``1">
+             <summary>
+             Gets a <see cref="T:PolyEngineEditor.ReorderableList.IElementAdderMenuBuilder`1" /> to build an element
+             adder menu for a context object of the type <typeparamref name="TContext" />.
+             </summary>
+             <typeparam name="TContext">Type of the context object that elements can be added to.</typeparam>
+             <returns>
+             A new <see cref="T:PolyEngineEditor.ReorderableList.IElementAdderMenuBuilder`1" /> instance.
+             </returns>
+             <seealso cref="M:PolyEngineEditor.ReorderableList.IElementAdderMenuBuilder`1.SetContractType(System.Type)" />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ElementAdderMenuBuilder.For``1(System.Type)">
+             <summary>
+             Gets a <see cref="T:PolyEngineEditor.ReorderableList.IElementAdderMenuBuilder`1" /> to build an element
+             adder menu for a context object of the type <typeparamref name="TContext" />.
+             </summary>
+             <typeparam name="TContext">Type of the context object that elements can be added to.</typeparam>
+             <param name="contractType">Contract type of addable elements.</param>
+             <returns>
+             A new <see cref="T:PolyEngineEditor.ReorderableList.IElementAdderMenuBuilder`1" /> instance.
+             </returns>
+             <seealso cref="M:PolyEngineEditor.ReorderableList.IElementAdderMenuBuilder`1.SetContractType(System.Type)" />
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.IElementAdderMenu">
+             <summary>
+             Interface for a menu interface.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.IElementAdderMenu.IsEmpty">
+             <summary>
+             Gets a value indicating whether the menu contains any items.
+             </summary>
+             <value>
+             <c>true</c> if the menu contains one or more items; otherwise, <c>false</c>.
+             </value>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IElementAdderMenu.DropDown(UnityEngine.Rect)">
+             <summary>
+             Displays the drop-down menu inside an editor GUI.
+             </summary>
+             <remarks>
+             <para>This method should only be used during <b>OnGUI</b> and <b>OnSceneGUI</b>
+             events; for instance, inside an editor window, a custom inspector or scene view.</para>
+             </remarks>
+             <param name="position">Position of menu button in the GUI.</param>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.IElementAdderMenuCommand`1">
+             <summary>
+             Interface for a menu command that can be included in an <see cref="T:PolyEngineEditor.ReorderableList.IElementAdderMenu" />
+             either by annotating an implementation of the <see cref="T:PolyEngineEditor.ReorderableList.IElementAdderMenuCommand`1" />
+             interface with <see cref="T:PolyEngineEditor.ReorderableList.ElementAdderMenuCommandAttribute" /> or directly by
+             calling <see cref="M:PolyEngineEditor.ReorderableList.IElementAdderMenuBuilder`1.AddCustomCommand(PolyEngineEditor.ReorderableList.IElementAdderMenuCommand{`0})" />.
+             </summary>
+             <typeparam name="TContext">Type of the context object that elements can be added to.</typeparam>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.IElementAdderMenuCommand`1.Content">
+             <summary>
+             Gets the content of the menu command.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IElementAdderMenuCommand`1.CanExecute(PolyEngineEditor.ReorderableList.IElementAdder{`0})">
+             <summary>
+             Determines whether the command can be executed.
+             </summary>
+             <param name="elementAdder">The associated element adder provides access to
+             the <typeparamref name="TContext" /> instance.</param>
+             <returns>
+             A value of <c>true</c> if the command can execute; otherwise, <c>false</c>.
+             </returns>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.IElementAdderMenuCommand`1.Execute(PolyEngineEditor.ReorderableList.IElementAdder{`0})">
+             <summary>
+             Executes the command.
+             </summary>
+             <param name="elementAdder">The associated element adder provides access to
+             the <typeparamref name="TContext" /> instance.</param>
+            </member>
+        <member name="T:PolyEngineEditor.EditorHumanoidAnimationRecorder">
+             <summary>
+             Humanoid animation recorder works in unity editor.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.EditorHumanoidAnimationRecorder.targetTotalTime">
+             <summary>
+             Gets or sets the target total time of animation recording.
+             </summary>
+             <value>The target total time.</value>
+            </member>
+        <member name="P:PolyEngineEditor.EditorHumanoidAnimationRecorder.TargetAnimatorStateHash">
+             <summary>
+             Gets the target animator state hash.
+             </summary>
+             <value>The target animator state hash.</value>
+            </member>
+        <member name="P:PolyEngineEditor.EditorHumanoidAnimationRecorder.HasTargetTime">
+             <summary>
+             If recorder has a target time.
+             </summary>
+             <value><c>true</c> if this instance has target total time; otherwise, <c>false</c>.</value>
+            </member>
+        <member name="F:PolyEngineEditor.EditorHumanoidAnimationRecorder.recordedBones">
+             <summary>
+             The recorded bones transform.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.EditorHumanoidAnimationRecorder.m_Root">
+             <summary>
+             The root transform of animation gameObject.
+             </summary>
+            </member>
+        <member name="T:PolyEngineEditor.HumanoidAnimationRecorderEditorWindow">
+             <summary>
+             Humanoid animation recorder editor window.
+             This is the GUI interface for animation recording.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.HumanoidAnimationRecorderEditorWindow.StartRecordingMode.AfterEnterState">
+             <summary>
+             Automatically start recording after enter state.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.HumanoidAnimationRecorderEditorWindow.StartRecording">
+             <summary>
+             Starts the recording.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.HumanoidAnimationRecorderEditorWindow.EndRecording">
+             <summary>
+             Ends the recording.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.HumanoidAnimationRecorderEditorWindow.GetRecordedAnimation">
+             <summary>
+             Gets the recorded animation.
+             </summary>
+             <returns>The recorded animation.</returns>
+            </member>
+        <member name="M:PolyEngineEditor.HumanoidAnimationRecorderEditorWindow.SetStopRecordingMode(System.Single)">
+             <summary>
+             Sets the recorder total recording time.
+             </summary>
+             <param name="hasMaxTime">If set to <c>true</c> has max time.</param>
+             <param name="time">Time.</param>
+            </member>
+        <member name="M:PolyEngineEditor.HumanoidAnimationRecorderEditorWindow.SetStopRecordingModeIsManualMode">
+             <summary>
+             Sets the stop recording mode to be manual mode.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.HumanoidAnimationRecorderEditorWindow.SetStopRecordingMode(System.Int32)">
+             <summary>
+             Sets the recording process stops automatically after exit state.
+             </summary>
+             <param name="exitAfterState">Exit after state.</param>
+            </member>
+        <member name="M:PolyEngineEditor.HumanoidAnimationRecorderEditorWindow.SetTargetFrameRate(System.Int32)">
+             <summary>
+             Sets the target frame rate.
+             </summary>
+             <param name="FrameRate">Frame rate.</param>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.AddMenuClickedEventArgs">
+             <summary>
+             Arguments which are passed to <see cref="T:PolyEngineEditor.ReorderableList.AddMenuClickedEventHandler" />.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.AddMenuClickedEventArgs.Adaptor">
+             <summary>
+             Gets adaptor to reorderable list container.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.AddMenuClickedEventArgs.ButtonPosition">
+             <summary>
+             Gets position of the add menu button.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.AddMenuClickedEventArgs.#ctor(PolyEngineEditor.ReorderableList.IReorderableListAdaptor,UnityEngine.Rect)">
+             <summary>
+             Initializes a new instance of <see cref="T:PolyEngineEditor.ReorderableList.ItemMovedEventArgs" />.
+             </summary>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <param name="buttonPosition">Position of the add menu button.</param>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.AddMenuClickedEventHandler">
+             <summary>
+             An event handler which is invoked when the "Add Menu" button is clicked.
+             </summary>
+             <param name="sender">Object which raised event.</param>
+             <param name="args">Event arguments.</param>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.ItemInsertedEventArgs">
+             <summary>
+             Arguments which are passed to <see cref="T:PolyEngineEditor.ReorderableList.ItemInsertedEventHandler" />.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ItemInsertedEventArgs.Adaptor">
+             <summary>
+             Gets adaptor to reorderable list container which contains element.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ItemInsertedEventArgs.ItemIndex">
+             <summary>
+             Gets zero-based index of item which was inserted.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ItemInsertedEventArgs.WasDuplicated">
+             <summary>
+             Indicates if inserted item was duplicated from another item.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ItemInsertedEventArgs.#ctor(PolyEngineEditor.ReorderableList.IReorderableListAdaptor,System.Int32,System.Boolean)">
+             <summary>
+             Initializes a new instance of <see cref="T:PolyEngineEditor.ReorderableList.ItemInsertedEventArgs" />.
+             </summary>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <param name="itemIndex">Zero-based index of item.</param>
+             <param name="wasDuplicated">Indicates if inserted item was duplicated from another item.</param>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.ItemInsertedEventHandler">
+             <summary>
+             An event handler which is invoked after new list item is inserted.
+             </summary>
+             <param name="sender">Object which raised event.</param>
+             <param name="args">Event arguments.</param>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.ItemRemovingEventArgs">
+             <summary>
+             Arguments which are passed to <see cref="T:PolyEngineEditor.ReorderableList.ItemRemovingEventHandler" />.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ItemRemovingEventArgs.Adaptor">
+             <summary>
+             Gets adaptor to reorderable list container which contains element.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ItemRemovingEventArgs.ItemIndex">
+             <summary>
+             Gets zero-based index of item which is being removed.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ItemRemovingEventArgs.#ctor(PolyEngineEditor.ReorderableList.IReorderableListAdaptor,System.Int32)">
+             <summary>
+             Initializes a new instance of <see cref="T:PolyEngineEditor.ReorderableList.ItemRemovingEventArgs" />.
+             </summary>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <param name="itemIndex">Zero-based index of item.</param>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.ItemRemovingEventHandler">
+             <summary>
+             An event handler which is invoked before a list item is removed.
+             </summary>
+             <remarks>
+             <para>Item removal can be cancelled by setting <see cref="P:System.ComponentModel.CancelEventArgs.Cancel" />
+             to <c>true</c>.</para>
+             </remarks>
+             <param name="sender">Object which raised event.</param>
+             <param name="args">Event arguments.</param>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.ItemMovingEventArgs">
+             <summary>
+             Arguments which are passed to <see cref="T:PolyEngineEditor.ReorderableList.ItemMovingEventHandler" />.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ItemMovingEventArgs.Adaptor">
+             <summary>
+             Gets adaptor to reorderable list container which contains element.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ItemMovingEventArgs.ItemIndex">
+             <summary>
+             Gets current zero-based index of item which is going to be moved.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ItemMovingEventArgs.DestinationItemIndex">
+             <summary>
+             Gets the new candidate zero-based index for the item.
+             </summary>
+             <seealso cref="P:PolyEngineEditor.ReorderableList.ItemMovingEventArgs.NewItemIndex" />
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ItemMovingEventArgs.NewItemIndex">
+             <summary>
+             Gets zero-based index of item <strong>after</strong> it has been moved.
+             </summary>
+             <seealso cref="P:PolyEngineEditor.ReorderableList.ItemMovingEventArgs.DestinationItemIndex" />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ItemMovingEventArgs.#ctor(PolyEngineEditor.ReorderableList.IReorderableListAdaptor,System.Int32,System.Int32)">
+             <summary>
+             Initializes a new instance of <see cref="T:PolyEngineEditor.ReorderableList.ItemMovingEventArgs" />.
+             </summary>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <param name="itemIndex">Zero-based index of item.</param>
+             <param name="destinationItemIndex">Xero-based index of item destination.</param>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.ItemMovingEventHandler">
+             <summary>
+             An event handler which is invoked before a list item is moved.
+             </summary>
+             <remarks>
+             <para>Moving of item can be cancelled by setting <see cref="P:System.ComponentModel.CancelEventArgs.Cancel" />
+             to <c>true</c>.</para>
+             </remarks>
+             <param name="sender">Object which raised event.</param>
+             <param name="args">Event arguments.</param>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.ItemMovedEventArgs">
+             <summary>
+             Arguments which are passed to <see cref="T:PolyEngineEditor.ReorderableList.ItemMovedEventHandler" />.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ItemMovedEventArgs.Adaptor">
+             <summary>
+             Gets adaptor to reorderable list container which contains element.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ItemMovedEventArgs.OldItemIndex">
+             <summary>
+             Gets old zero-based index of the item which was moved.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ItemMovedEventArgs.NewItemIndex">
+             <summary>
+             Gets new zero-based index of the item which was moved.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ItemMovedEventArgs.#ctor(PolyEngineEditor.ReorderableList.IReorderableListAdaptor,System.Int32,System.Int32)">
+             <summary>
+             Initializes a new instance of <see cref="T:PolyEngineEditor.ReorderableList.ItemMovedEventArgs" />.
+             </summary>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <param name="oldItemIndex">Old zero-based index of item.</param>
+             <param name="newItemIndex">New zero-based index of item.</param>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.ItemMovedEventHandler">
+             <summary>
+             An event handler which is invoked after a list item is moved.
+             </summary>
+             <param name="sender">Object which raised event.</param>
+             <param name="args">Event arguments.</param>
+            </member>
+        <member name="T:PolyEngineEditor.PECameraPreview">
+             <summary>
+             PE camera preview.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.PECameraPreview.GetCameraProjectionMatrixViewPortInfo(System.Single@,System.Single@,System.Single@,System.Single@,System.Single@,System.Single@)">
+             <summary>
+             Gets the camera projection matrix view port info.
+             </summary>
+             <param name="nearViewPortW">Near view port w.</param>
+             <param name="nearViewPortH">Near view port h.</param>
+             <param name="farViewPortW">Far view port w.</param>
+             <param name="farViewPortH">Far view port h.</param>
+             <param name="hFov">H fov.</param>
+             <param name="vFov">V fov.</param>
+            </member>
+        <member name="M:PolyEngineEditor.PECameraPreview.GetCameraProjectionMatrixViewPortInfo(System.Single@,System.Single@,System.Single@,System.Single@)">
+             <summary>
+             Gets the camera projection matrix view port info.
+             </summary>
+             <param name="nearViewPortW">Near view port w.</param>
+             <param name="nearViewPortH">Near view port h.</param>
+             <param name="hFov">H fov.</param>
+             <param name="vFov">V fov.</param>
+            </member>
+        <member name="T:AssetBundleListAttributeDrawer">
+             <summary>
+             Asset Bundle Name 下拉菜单drawer
+             </summary>
+            </member>
+        <member name="M:ProDrawCall.Tuple`2.#ctor(`0,`1)">
+             <summary>
+             Create a new tuple value
+             </summary>
+             <param name="item1">First element of the tuple</param>
+             <param name="second">Second element of the tuple</param>
+            </member>
+        <member name="M:PolyEngineEditor.EncodeToPNG.EncodeSingle(UnityEngine.Texture2D,System.Boolean,System.Boolean)">
+             <summary>
+             Encode a single texture2d to png/jpeg, if deleteOld = true, override the original texture file, otherwise create a new one.
+             </summary>
+             <param name="texture">Texture.</param>
+             <param name="deleteOld">If set to <c>true</c> delete old.</param>
+             <param name="isJPG">If set to <c>true</c> is jpg.</param>
+            </member>
+        <member name="M:PolyEngineEditor.MeshFilterContext.Val_MenuItem_CenterizeMeshPivot(UnityEditor.MenuCommand)">
+             <summary>
+             Validate: Menu item for centerizing the mesh pivot to it's geometry center.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.MeshFilterContext.menuItem_CenterizeMeshPivot(UnityEditor.MenuCommand)">
+             <summary>
+             Menu item for centerizing the mesh pivot to it's geometry center.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.MeshFilterContext.TransformAndSaveMeshToAssetFile(UnityEditor.MenuCommand)">
+             <summary>
+             Transform the mesh's vertice base on selected transform spaec and then save.
+             </summary>
+             <param name="command">Command.</param>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.ReorderableListControl">
+             <summary>
+             Base class for custom reorderable list control.
+             </summary>
+            </member>
+        <!--FIXME: Invalid documentation markup was found for member T:PolyEngineEditor.ReorderableList.ReorderableListControl.ItemDrawer`1-->
+        <member name="T:PolyEngineEditor.ReorderableList.ReorderableListControl.DrawEmpty">
+             <summary>
+             Invoked to draw content for empty list.
+             </summary>
+             <remarks>
+             <para>Callback should make use of <c>GUILayout</c> to present controls.</para>
+             </remarks>
+             <example>
+             <para>The following listing displays a label for empty list control:</para>
+             <code language="csharp"><![CDATA[
+             using Rotorz.ReorderableList;
+             using System.Collections.Generic;
+             using UnityEditor;
+             using UnityEngine;
+             
+             public class ExampleWindow : EditorWindow {
+                 private List<string> _list;
+             
+                 private void OnEnable() {
+                     _list = new List<string>();
+                 }
+                 private void OnGUI() {
+                     ReorderableListGUI.ListField(_list, ReorderableListGUI.TextFieldItemDrawer, DrawEmptyMessage);
+                 }
+             
+                 private string DrawEmptyMessage() {
+                     GUILayout.Label("List is empty!", EditorStyles.miniLabel);
+                 }
+             }
+             ]]></code>
+             </example>
+            </member>
+        <member name="T:PolyEngineEditor.ReorderableList.ReorderableListControl.DrawEmptyAbsolute">
+             <summary>
+             Invoked to draw content for empty list with absolute positioning.
+             </summary>
+             <param name="position">Position of empty content.</param>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl.AnchorBackgroundColor">
+             <summary>
+             Background color of anchor list item.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl.TargetBackgroundColor">
+             <summary>
+             Background color of target slot when dragging list item.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl.s_RightAlignedLabelStyle">
+             <summary>
+             Style for right-aligned label for element number prefix.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.DrawControlFromState(PolyEngineEditor.ReorderableList.IReorderableListAdaptor,PolyEngineEditor.ReorderableList.ReorderableListControl.DrawEmpty,PolyEngineEditor.ReorderableList.ReorderableListFlags)">
+             <summary>
+             Generate and draw control from state object.
+             </summary>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <param name="drawEmpty">Delegate for drawing empty list.</param>
+             <param name="flags">Optional flags to pass into list field.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.DrawControlFromState(UnityEngine.Rect,PolyEngineEditor.ReorderableList.IReorderableListAdaptor,PolyEngineEditor.ReorderableList.ReorderableListControl.DrawEmptyAbsolute,PolyEngineEditor.ReorderableList.ReorderableListFlags)">
+             <summary>
+             Generate and draw control from state object.
+             </summary>
+             <param name="position">Position of control.</param>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <param name="drawEmpty">Delegate for drawing empty list.</param>
+             <param name="flags">Optional flags to pass into list field.</param>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl.s_AnchorMouseOffset">
+             <summary>
+             Position of mouse upon anchoring item for drag.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl.s_AnchorIndex">
+             <summary>
+             Zero-based index of anchored list item.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl.s_TargetIndex">
+             <summary>
+             Zero-based index of target list item for reordering.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl.s_AutoFocusControlID">
+             <summary>
+             Unique ID of list control which should be automatically focused. A value
+             of zero indicates that no control is to be focused.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl.s_AutoFocusIndex">
+             <summary>
+             Zero-based index of item which should be focused.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl.s_CurrentListStack">
+             <summary>
+             Represents the current stack of nested reorderable list control positions.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl.s_CurrentItemStack">
+             <summary>
+             Represents the current stack of nested reorderable list items.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListControl.CurrentListControlID">
+             <summary>
+             Gets the control ID of the list that is currently being drawn.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListControl.CurrentListPosition">
+             <summary>
+             Gets the position of the list control that is currently being drawn.
+             </summary>
+             <remarks>
+             <para>The value of this property should be ignored for <see cref="F:UnityEngine.EventType.Layout" />
+             type events when using reorderable list controls with automatic layout.</para>
+             </remarks>
+             <see cref="P:PolyEngineEditor.ReorderableList.ReorderableListControl.CurrentItemTotalPosition" />
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListControl.CurrentItemIndex">
+             <summary>
+             Gets the zero-based index of the list item that is currently being drawn;
+             or a value of -1 if no item is currently being drawn.
+             </summary>
+             <remarks>
+             <para>Use <see cref="P:PolyEngineEditor.ReorderableList.ReorderableListGUI.CurrentItemIndex" /> instead.</para>
+             </remarks>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListControl.CurrentItemTotalPosition">
+             <summary>
+             Gets the total position of the list item that is currently being drawn.
+             </summary>
+             <remarks>
+             <para>The value of this property should be ignored for <see cref="F:UnityEngine.EventType.Layout" />
+             type events when using reorderable list controls with automatic layout.</para>
+             </remarks>
+             <see cref="P:PolyEngineEditor.ReorderableList.ReorderableListControl.CurrentItemIndex" />
+             <see cref="P:PolyEngineEditor.ReorderableList.ReorderableListControl.CurrentListPosition" />
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListControl.Flags">
+             <summary>
+             Gets or sets flags which affect behavior of control.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListControl.HasFooterControls">
+             <summary>
+             Gets a value indicating whether any footer controls are shown.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListControl.HasSizeField">
+             <summary>
+             Gets a value indicating whether the size field is shown.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListControl.HasAddButton">
+             <summary>
+             Gets a value indicating whether add button is shown.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListControl.HasAddMenuButton">
+             <summary>
+             Gets a value indicating whether add menu button is shown.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListControl.HasRemoveButtons">
+             <summary>
+             Gets a value indicating whether remove buttons are shown.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListControl.VerticalSpacing">
+             <summary>
+             Gets or sets the vertical spacing below the reorderable list control.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListControl.ContainerStyle">
+             <summary>
+             Gets or sets style used to draw background of list control.
+             </summary>
+             <seealso cref="P:PolyEngineEditor.ReorderableList.ReorderableListStyles.Container" />
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListControl.FooterButtonStyle">
+             <summary>
+             Gets or sets style used to draw footer buttons.
+             </summary>
+             <seealso cref="P:PolyEngineEditor.ReorderableList.ReorderableListStyles.FooterButton" />
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListControl.ItemButtonStyle">
+             <summary>
+             Gets or sets style used to draw list item buttons (like the remove button).
+             </summary>
+             <seealso cref="P:PolyEngineEditor.ReorderableList.ReorderableListStyles.ItemButton" />
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListControl.HorizontalLineColor">
+             <summary>
+             Gets or sets the color of the horizontal lines that appear between list items.
+             </summary>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListControl.HorizontalLineAtStart">
+             <summary>
+             Gets or sets a boolean value indicating whether a horizontal line should be
+             shown above the first list item at the start of the list control.
+             </summary>
+             <remarks>
+             <para>Horizontal line is not drawn for an empty list regardless of the value
+             of this property.</para>
+             </remarks>
+            </member>
+        <member name="P:PolyEngineEditor.ReorderableList.ReorderableListControl.HorizontalLineAtEnd">
+             <summary>
+             Gets or sets a boolean value indicating whether a horizontal line should be
+             shown below the last list item at the end of the list control.
+             </summary>
+             <remarks>
+             <para>Horizontal line is not drawn for an empty list regardless of the value
+             of this property.</para>
+             </remarks>
+            </member>
+        <member name="E:PolyEngineEditor.ReorderableList.ReorderableListControl.AddMenuClicked">
+             <summary>
+             Occurs when add menu button is clicked.
+             </summary>
+             <remarks>
+             <para>Add menu button is only shown when there is at least one subscriber to this event.</para>
+             </remarks>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.OnAddMenuClicked(PolyEngineEditor.ReorderableList.AddMenuClickedEventArgs)">
+             <summary>
+             Raises event when add menu button is clicked.
+             </summary>
+             <param name="args">Event arguments.</param>
+            </member>
+        <member name="E:PolyEngineEditor.ReorderableList.ReorderableListControl.ItemInserted">
+             <summary>
+             Occurs after list item is inserted or duplicated.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.OnItemInserted(PolyEngineEditor.ReorderableList.ItemInsertedEventArgs)">
+             <summary>
+             Raises event after list item is inserted or duplicated.
+             </summary>
+             <param name="args">Event arguments.</param>
+            </member>
+        <member name="E:PolyEngineEditor.ReorderableList.ReorderableListControl.ItemRemoving">
+             <summary>
+             Occurs before list item is removed and allowing for remove operation to be cancelled.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.OnItemRemoving(PolyEngineEditor.ReorderableList.ItemRemovingEventArgs)">
+             <summary>
+             Raises event before list item is removed and provides oppertunity to cancel.
+             </summary>
+             <param name="args">Event arguments.</param>
+            </member>
+        <member name="E:PolyEngineEditor.ReorderableList.ReorderableListControl.ItemMoving">
+             <summary>
+             Occurs immediately before list item is moved allowing for move operation to be cancelled.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.OnItemMoving(PolyEngineEditor.ReorderableList.ItemMovingEventArgs)">
+             <summary>
+             Raises event immediately before list item is moved and provides oppertunity to cancel.
+             </summary>
+             <param name="args">Event arguments.</param>
+            </member>
+        <member name="E:PolyEngineEditor.ReorderableList.ReorderableListControl.ItemMoved">
+             <summary>
+             Occurs after list item has been moved.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.OnItemMoved(PolyEngineEditor.ReorderableList.ItemMovedEventArgs)">
+             <summary>
+             Raises event after list item has been moved.
+             </summary>
+             <param name="args">Event arguments.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.#ctor">
+             <summary>
+             Initializes a new instance of <see cref="T:PolyEngineEditor.ReorderableList.ReorderableListControl" />.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.#ctor(PolyEngineEditor.ReorderableList.ReorderableListFlags)">
+             <summary>
+             Initializes a new instance of <see cref="T:PolyEngineEditor.ReorderableList.ReorderableListControl" />.
+             </summary>
+             <param name="flags">Optional flags which affect behavior of control.</param>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl._controlID">
+             <summary>
+             Unique Id of control.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl._visibleRect">
+             <summary>
+             Visible rectangle of control.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl._indexLabelWidth">
+             <summary>
+             Width of index label in pixels (zero indicates no label).
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl._tracking">
+             <summary>
+             Indicates whether item is currently being dragged within control.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl._allowReordering">
+             <summary>
+             Indicates if reordering is allowed.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl._allowDropInsertion">
+             <summary>
+             A boolean value indicating whether drop insertion is allowed.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl._insertionIndex">
+             <summary>
+             Zero-based index for drop insertion when applicable; othewise, a value of -1.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl._insertionPosition">
+             <summary>
+             Position of drop insertion on Y-axis in GUI space.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl._newSizeInput">
+             <summary>
+             New size input value.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.PrepareState(System.Int32,PolyEngineEditor.ReorderableList.IReorderableListAdaptor)">
+             <summary>
+             Prepare initial state for list control.
+             </summary>
+             <param name="controlID">Unique ID of list control.</param>
+             <param name="adaptor">Reorderable list adaptor.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.AutoFocusItem(System.Int32,System.Int32)">
+             <summary>
+             Indicate that first control of list item should be automatically focused
+             if possible.
+             </summary>
+             <param name="controlID">Unique ID of list control.</param>
+             <param name="itemIndex">Zero-based index of list item.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.DoRemoveButton(UnityEngine.Rect,System.Boolean)">
+             <summary>
+             Draw remove button.
+             </summary>
+             <param name="position">Position of button.</param>
+             <param name="visible">Indicates if control is visible within GUI.</param>
+             <returns>
+             A value of <c>true</c> if clicked; otherwise <c>false</c>.
+             </returns>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.BeginTrackingReorderDrag(System.Int32,System.Int32)">
+             <summary>
+             Begin tracking drag and drop within list.
+             </summary>
+             <param name="controlID">Unique ID of list control.</param>
+             <param name="itemIndex">Zero-based index of item which is going to be dragged.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.StopTrackingReorderDrag">
+             <summary>
+             Stop tracking drag and drop.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.IsTrackingControl(System.Int32)">
+             <summary>
+             Gets a value indicating whether item in current list is currently being tracked.
+             </summary>
+             <param name="controlID">Unique ID of list control.</param>
+             <returns>
+             A value of <c>true</c> if item is being tracked; otherwise <c>false</c>.
+             </returns>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.AcceptReorderDrag(PolyEngineEditor.ReorderableList.IReorderableListAdaptor)">
+             <summary>
+             Accept reordering.
+             </summary>
+             <param name="adaptor">Reorderable list adaptor.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.DrawListContainerAndItems(UnityEngine.Rect,PolyEngineEditor.ReorderableList.IReorderableListAdaptor)">
+             <summary>
+             Draw list container and items.
+             </summary>
+             <param name="position">Position of list control in GUI.</param>
+             <param name="adaptor">Reorderable list adaptor.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.DrawDropIndicator(UnityEngine.Rect)">
+             <summary>
+             Draws drop insertion indicator.
+             </summary>
+             <remarks>
+             <para>This method is only ever called during repaint events.</para>
+             </remarks>
+             <param name="position">Position if the drop indicator.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.CheckForAutoFocusControl">
+             <summary>
+             Checks to see if list control needs to be automatically focused.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.DrawFooterControls(UnityEngine.Rect,PolyEngineEditor.ReorderableList.IReorderableListAdaptor)">
+             <summary>
+             Draw additional controls below list control and highlight drop target.
+             </summary>
+             <param name="position">Position of list control in GUI.</param>
+             <param name="adaptor">Reorderable list adaptor.</param>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl.s_ContainerHeightCache">
+             <summary>
+             Cache of container heights mapped by control ID.
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.DrawLayoutListField(PolyEngineEditor.ReorderableList.IReorderableListAdaptor,System.Single)">
+             <summary>
+             Do layout version of list field.
+             </summary>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <param name="padding">Padding in pixels.</param>
+             <returns>
+             Position of list container area in GUI (excludes footer area).
+             </returns>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.DrawLayoutEmptyList(PolyEngineEditor.ReorderableList.IReorderableListAdaptor,PolyEngineEditor.ReorderableList.ReorderableListControl.DrawEmpty)">
+             <summary>
+             Draw content for empty list (layout version).
+             </summary>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <param name="drawEmpty">Callback to draw empty content.</param>
+             <returns>
+             Position of list container area in GUI (excludes footer area).
+             </returns>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.DrawEmptyListControl(UnityEngine.Rect,PolyEngineEditor.ReorderableList.ReorderableListControl.DrawEmptyAbsolute)">
+             <summary>
+             Draw content for empty list (layout version).
+             </summary>
+             <param name="position">Position of list control in GUI.</param>
+             <param name="drawEmpty">Callback to draw empty content.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.FixStyles">
+             <summary>
+             Correct if for some reason one or more styles are missing!
+             </summary>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.Draw(System.Int32,PolyEngineEditor.ReorderableList.IReorderableListAdaptor,PolyEngineEditor.ReorderableList.ReorderableListControl.DrawEmpty)">
+             <summary>
+             Draw layout version of list control.
+             </summary>
+             <param name="controlID">Unique ID of list control.</param>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <param name="drawEmpty">Delegate for drawing empty list.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.Draw(PolyEngineEditor.ReorderableList.IReorderableListAdaptor,PolyEngineEditor.ReorderableList.ReorderableListControl.DrawEmpty)">
+             <inheritdoc cref="Draw(int, IReorderableListAdaptor, DrawEmpty)" />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.Draw(PolyEngineEditor.ReorderableList.IReorderableListAdaptor)">
+             <inheritdoc cref="Draw(int, IReorderableListAdaptor, DrawEmpty)" />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.Draw(UnityEngine.Rect,System.Int32,PolyEngineEditor.ReorderableList.IReorderableListAdaptor,PolyEngineEditor.ReorderableList.ReorderableListControl.DrawEmptyAbsolute)">
+             <summary>
+             Draw list control with absolute positioning.
+             </summary>
+             <param name="position">Position of list control in GUI.</param>
+             <param name="controlID">Unique ID of list control.</param>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <param name="drawEmpty">Delegate for drawing empty list.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.Draw(UnityEngine.Rect,PolyEngineEditor.ReorderableList.IReorderableListAdaptor,PolyEngineEditor.ReorderableList.ReorderableListControl.DrawEmptyAbsolute)">
+             <summary>
+             Draw list control with absolute positioning.
+             </summary>
+             <param name="position">Position of list control in GUI.</param>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <param name="drawEmpty">Delegate for drawing empty list.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.Draw(UnityEngine.Rect,PolyEngineEditor.ReorderableList.IReorderableListAdaptor)">
+             <inheritdoc cref="Draw(Rect, IReorderableListAdaptor, DrawEmptyAbsolute)" />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.DrawSizeField(UnityEngine.Rect,UnityEngine.GUIContent,PolyEngineEditor.ReorderableList.IReorderableListAdaptor)">
+             <summary>
+             Draw list size field with absolute positioning and a custom prefix label.
+             </summary>
+             <remarks>
+             <para>Specify a value of <c>GUIContent.none</c> for argument <paramref name="label" />
+             to omit prefix label from the drawn control.</para>
+             </remarks>
+             <param name="position">Position of list control in GUI.</param>
+             <param name="label">Prefix label for the control.</param>
+             <param name="adaptor">Reorderable list adaptor.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.DrawSizeField(UnityEngine.Rect,System.String,PolyEngineEditor.ReorderableList.IReorderableListAdaptor)">
+             <summary>
+             Draw list size field with absolute positioning and a custom prefix label.
+             </summary>
+             <param name="position">Position of list control in GUI.</param>
+             <param name="label">Prefix label for the control.</param>
+             <param name="adaptor">Reorderable list adaptor.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.DrawSizeField(UnityEngine.Rect,PolyEngineEditor.ReorderableList.IReorderableListAdaptor)">
+             <summary>
+             Draw list size field with absolute positioning with the default prefix label.
+             </summary>
+             <param name="position">Position of list control in GUI.</param>
+             <param name="adaptor">Reorderable list adaptor.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.DrawSizeField(UnityEngine.GUIContent,PolyEngineEditor.ReorderableList.IReorderableListAdaptor)">
+             <summary>
+             Draw list size field with automatic layout and a custom prefix label.
+             </summary>
+             <remarks>
+             <para>Specify a value of <c>GUIContent.none</c> for argument <paramref name="label" />
+             to omit prefix label from the drawn control.</para>
+             </remarks>
+             <param name="label">Prefix label for the control.</param>
+             <param name="adaptor">Reorderable list adaptor.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.DrawSizeField(System.String,PolyEngineEditor.ReorderableList.IReorderableListAdaptor)">
+             <summary>
+             Draw list size field with automatic layout and a custom prefix label.
+             </summary>
+             <param name="label">Prefix label for the control.</param>
+             <param name="adaptor">Reorderable list adaptor.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.DrawSizeField(PolyEngineEditor.ReorderableList.IReorderableListAdaptor)">
+             <summary>
+             Draw list size field with automatic layout and the default prefix label.
+             </summary>
+             <param name="adaptor">Reorderable list adaptor.</param>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl.CommandMoveToTop">
+             <summary>
+             Content for "Move to Top" command.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl.CommandMoveToBottom">
+             <summary>
+             Content for "Move to Bottom" command.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl.CommandInsertAbove">
+             <summary>
+             Content for "Insert Above" command.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl.CommandInsertBelow">
+             <summary>
+             Content for "Insert Below" command.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl.CommandDuplicate">
+             <summary>
+             Content for "Duplicate" command.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl.CommandRemove">
+             <summary>
+             Content for "Remove" command.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl.CommandClearAll">
+             <summary>
+             Content for "Clear All" command.
+             </summary>
+            </member>
+        <member name="F:PolyEngineEditor.ReorderableList.ReorderableListControl.DefaultContextHandler">
+             <summary>
+             Default functionality to handle context command.
+             </summary>
+             <example>
+             <para>Can be used when adding custom items to the context menu:</para>
+             <code language="csharp"><![CDATA[
+             protected override void AddItemsToMenu(GenericMenu menu, int itemIndex, IReorderableListAdaptor adaptor) {
+                 var specialCommand = new GUIContent("Special Command");
+                 menu.AddItem(specialCommand, false, defaultContextHandler, specialCommand);
+             }
+             ]]></code>
+             <code language="unityscript"><![CDATA[
+             function AddItemsToMenu(menu:GenericMenu, itemIndex:int, list:IReorderableListAdaptor) {
+                 var specialCommand = new GUIContent('Special Command');
+                 menu.AddItem(specialCommand, false, defaultContextHandler, specialCommand);
+             }
+             ]]></code>
+             </example>
+             <seealso cref="M:PolyEngineEditor.ReorderableList.ReorderableListControl.AddItemsToMenu(UnityEditor.GenericMenu,System.Int32,PolyEngineEditor.ReorderableList.IReorderableListAdaptor)" />
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.AddItemsToMenu(UnityEditor.GenericMenu,System.Int32,PolyEngineEditor.ReorderableList.IReorderableListAdaptor)">
+             <summary>
+             Invoked to generate context menu for list item.
+             </summary>
+             <param name="menu">Menu which can be populated.</param>
+             <param name="itemIndex">Zero-based index of item which was right-clicked.</param>
+             <param name="adaptor">Reorderable list adaptor.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.HandleCommand(System.String,System.Int32,PolyEngineEditor.ReorderableList.IReorderableListAdaptor)">
+             <summary>
+             Invoked to handle context command.
+             </summary>
+             <remarks>
+             <para>It is important to set the value of <c>GUI.changed</c> to <c>true</c> if any
+             changes are made by command handler.</para>
+             <para>Default command handling functionality can be inherited:</para>
+             <code language="csharp"><![CDATA[
+             protected override bool HandleCommand(string commandName, int itemIndex, IReorderableListAdaptor adaptor) {
+                 if (base.HandleCommand(itemIndex, adaptor))
+                     return true;
+                 
+                 // Place custom command handling code here...
+                 switch (commandName) {
+                     case "Your Command":
+                         return true;
+                 }
+             
+                 return false;
+             }
+             ]]></code>
+             <code language="unityscript"><![CDATA[
+             function HandleCommand(commandName:String, itemIndex:int, adaptor:IReorderableListAdaptor):boolean {
+                 if (base.HandleCommand(itemIndex, adaptor))
+                     return true;
+                 
+                 // Place custom command handling code here...
+                 switch (commandName) {
+                     case 'Your Command':
+                         return true;
+                 }
+             
+                 return false;
+             }
+             ]]></code>
+             </remarks>
+             <param name="commandName">Name of command. This is the text shown in the context menu.</param>
+             <param name="itemIndex">Zero-based index of item which was right-clicked.</param>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <returns>
+             A value of <c>true</c> if command was known; otherwise <c>false</c>.
+             </returns>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.DoCommand(System.String,System.Int32,PolyEngineEditor.ReorderableList.IReorderableListAdaptor)">
+             <summary>
+             Call to manually perform command.
+             </summary>
+             <remarks>
+             <para>Warning message is logged to console if attempted to execute unknown command.</para>
+             </remarks>
+             <param name="commandName">Name of command. This is the text shown in the context menu.</param>
+             <param name="itemIndex">Zero-based index of item which was right-clicked.</param>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <returns>
+             A value of <c>true</c> if command was known; otherwise <c>false</c>.
+             </returns>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.DoCommand(UnityEngine.GUIContent,System.Int32,PolyEngineEditor.ReorderableList.IReorderableListAdaptor)">
+             <summary>
+             Call to manually perform command.
+             </summary>
+             <remarks>
+             <para>Warning message is logged to console if attempted to execute unknown command.</para>
+             </remarks>
+             <param name="command">Content representing command.</param>
+             <param name="itemIndex">Zero-based index of item which was right-clicked.</param>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <returns>
+             A value of <c>true</c> if command was known; otherwise <c>false</c>.
+             </returns>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.CalculateListHeight(PolyEngineEditor.ReorderableList.IReorderableListAdaptor)">
+             <summary>
+             Calculate height of list control in pixels.
+             </summary>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <returns>
+             Required list height in pixels.
+             </returns>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.CalculateListHeight(System.Int32,System.Single)">
+             <summary>
+             Calculate height of list control in pixels.
+             </summary>
+             <param name="itemCount">Count of items in list.</param>
+             <param name="itemHeight">Fixed height of list item.</param>
+             <returns>
+             Required list height in pixels.
+             </returns>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.MoveItem(PolyEngineEditor.ReorderableList.IReorderableListAdaptor,System.Int32,System.Int32)">
+             <summary>
+             Move item from source index to destination index.
+             </summary>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <param name="sourceIndex">Zero-based index of source item.</param>
+             <param name="destIndex">Zero-based index of destination index.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.AddItem(PolyEngineEditor.ReorderableList.IReorderableListAdaptor)">
+             <summary>
+             Add item at end of list and raises the event <see cref="E:PolyEngineEditor.ReorderableList.ReorderableListControl.ItemInserted" />.
+             </summary>
+             <param name="adaptor">Reorderable list adaptor.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.InsertItem(PolyEngineEditor.ReorderableList.IReorderableListAdaptor,System.Int32)">
+             <summary>
+             Insert item at specified index and raises the event <see cref="E:PolyEngineEditor.ReorderableList.ReorderableListControl.ItemInserted" />.
+             </summary>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <param name="itemIndex">Zero-based index of item.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.DuplicateItem(PolyEngineEditor.ReorderableList.IReorderableListAdaptor,System.Int32)">
+             <summary>
+             Duplicate specified item and raises the event <see cref="E:PolyEngineEditor.ReorderableList.ReorderableListControl.ItemInserted" />.
+             </summary>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <param name="itemIndex">Zero-based index of item.</param>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.RemoveItem(PolyEngineEditor.ReorderableList.IReorderableListAdaptor,System.Int32)">
+             <summary>
+             Remove specified item.
+             </summary>
+             <remarks>
+             <para>The event <see cref="E:PolyEngineEditor.ReorderableList.ReorderableListControl.ItemRemoving" /> is raised prior to removing item
+             and allows removal to be cancelled.</para>
+             </remarks>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <param name="itemIndex">Zero-based index of item.</param>
+             <returns>
+             Returns a value of <c>false</c> if operation was cancelled.
+             </returns>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.ClearAll(PolyEngineEditor.ReorderableList.IReorderableListAdaptor)">
+             <summary>
+             Remove all items from list.
+             </summary>
+             <remarks>
+             <para>The event <see cref="E:PolyEngineEditor.ReorderableList.ReorderableListControl.ItemRemoving" /> is raised for each item prior to
+             clearing array and allows entire operation to be cancelled.</para>
+             </remarks>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <returns>
+             Returns a value of <c>false</c> if operation was cancelled.
+             </returns>
+            </member>
+        <member name="M:PolyEngineEditor.ReorderableList.ReorderableListControl.ResizeList(PolyEngineEditor.ReorderableList.IReorderableListAdaptor,System.Int32)">
+             <summary>
+             Set count of items in list by adding or removing items.
+             </summary>
+             <param name="adaptor">Reorderable list adaptor.</param>
+             <param name="newCount">New count of items.</param>
+             <returns>
+             Returns a value of <c>false</c> if operation was cancelled.
+             </returns>
+            </member>
+    </members>
+</doc>

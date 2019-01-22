@@ -1,0 +1,10 @@
+{
+    "CARD_GROUP":
+    {
+        "CalibFile": "PAD-410-01-002.dat",
+        "ModeType": "CONTROLLER",
+        "GroupID": 68,
+        "Markers": [1,2,4],
+        "MarkersSize": [0.0501, 0.0501, 0.0501]        
+    }
+}

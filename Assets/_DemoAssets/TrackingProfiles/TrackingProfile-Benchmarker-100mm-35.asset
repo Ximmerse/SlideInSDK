@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6191073b77354feb980282f6d8cdba0, type: 3}
+  m_Name: TrackingProfile-Benchmarker-100mm-35
+  m_EditorClassIdentifier: 
+  Description: Trakcing profile for cube
+  items:
+  - trackingType: 3
+    JSONConfig: {fileID: 102900000, guid: d89145ad4f3bb2f45a5290f825970ecb, type: 3}
+    jsonName: cards_definition_map_B_refine_100mm.json
