@@ -39,8 +39,7 @@ $ git clone git@github.com:Ximmerse/SlideInSDK.git
    - **Slide-InSDK-WithSamples.unitypackage** 是带有Sample 的SDK 安装包。
    - **PEPlugins-2018.3.x.unitypackage** 是使用2018.3.x 版本Unity 时，所需要覆盖的PE Plugins 安装包。
 
-!> 将下载完成的SDK unitypackage 安装至目标工程即可完成安装。
-   
+> 将下载完成的SDK unitypackage 安装至目标工程即可完成安装。
 
 ### 目录说明
 
