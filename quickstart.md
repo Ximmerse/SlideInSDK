@@ -19,6 +19,8 @@
 
   系统必须已经安装Android 的开发套件，并且保证平台版本在24 以上（支持Cardboard）。
 
+  安装最新的Android Studio 之后，会自动安装最新的Android Developer Tools 的一系列工具。
+
 - [Unity 3D Engine](https://unity3d.com/cn/get-unity/download/archive)
 
   测试版本: 2017.4.17 f1 / Unity 2018.2.20 f1 / Unity 2018.3.x（其他版本可能会遇到头部旋转不正确的情况，请自行测试）
@@ -45,7 +47,17 @@ $ git clone git@github.com:Ximmerse/SlideInSDK.git
    - **Slide-InSDK-WithSamples.unitypackage** 是带有Sample 的SDK 安装包。
    - **PEPlugins-2018.3.x.unitypackage** 是使用2018.3.x 版本Unity 时，所需要覆盖的PE Plugins 安装包。
 
-> 将下载完成的SDK unitypackage 安装至目标工程即可完成安装。
+> 如果需要纯粹的SDK 请下载安装**Slide-InSDK.unitypackage**。
+>
+> 如果需要带有示例代码的SDK，请下载安装**Slide-InSDK-WithSamples.unitypackage**。
+
+3. 打开指定版本的Unity3D Editor，新建一个Project。
+
+> 将下载完成的SDK unitypackage 拖拽入Unity 的Project 中，根据提示导入安装即可。
+
+!> 如果安装SDK 的Unity 版本是2018.3.x，则需要额外下载**PEPlugins-2018.3.x.unitypackage** 并且覆盖原有SDK 中的PE Plugins 部分。
+
+
 
 ### 目录说明
 
@@ -79,9 +91,21 @@ $ git clone git@github.com:Ximmerse/SlideInSDK.git
 
 安装完SDK后，我们需要对进行一些设置以确保SDK正常运行。
 
-首先在`PlayerSettings`中的`Resolution and Presentation`我们需要将手机的默认旋转方向设置成为横向右向。
+点击`File/Build Settigns` 进入Build Settings 面板。
+
+![](https://ximmerse-1253940012.cos.ap-guangzhou.myqcloud.com/slide-in-sdk/sample-file-build-settings.png)
+
+然后点击Player Settings 按钮进入Player Settings 面板。
+
+![](https://ximmerse-1253940012.cos.ap-guangzhou.myqcloud.com/slide-in-sdk/sample-build-settings-player-settings.png)
+
+首先在Player Settings 中的`Resolution and Presentation`我们需要将手机的默认旋转方向设置成为横向右向。
 
 ![](https://ximmerse-1253940012.cos.ap-guangzhou.myqcloud.com/slide-in-sdk/device-orientation.png)
+
+接着确保Android 的Minimum API Level 在24 或以上。
+
+![](https://ximmerse-1253940012.cos.ap-guangzhou.myqcloud.com/slide-in-sdk/sample-android-minimum-api-level.png)
 
 然后在`XR Settings`中按照下图中的设置，一次增加`None`和`Cardboard`选项。
 
@@ -105,8 +129,6 @@ Bench Marker的使用示例说明场景。
 
 
 
-
-
 ## 使用实例
 
 > `PEPlugins`中拥有了BuildManager工具辅助快速打包，在快速开始的示例中，我们将会使用预设的`BuildPreset`。
@@ -121,7 +143,7 @@ Bench Marker的使用示例说明场景。
 
 加载完Preset后，工具会帮我们设置好所有的配置。
 
-这时候我们可以进入`Player Settings`进行打包。
+这时候我们可以回到Build Settings进行打包。
 
 ![](https://ximmerse-1253940012.cos.ap-guangzhou.myqcloud.com/slide-in-sdk/build-project.png)
 
