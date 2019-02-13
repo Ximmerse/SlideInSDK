@@ -38,6 +38,8 @@
 
 ### Bench Marker
 
+`Bench Marker` 可以理解为传统意义上的地面，用于代表坐标系的原点。
+
 `Bench Marker` 所建立相对坐标系是基于与AR摄像机的相对姿态变换而来的，因此`Bench Marker`本身的姿态会对这个坐标系产生影响。
 
 我们以`Bench Marker Match Scale Content`这个Demo场景为例子说应一下实际使用情况：
