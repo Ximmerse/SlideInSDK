@@ -1,36 +1,37 @@
-# 常见问题集
-
-本章节将列举在开发过程中遇到的常见问题以及解决方法。
+# Fequently Asked Questions
 
 
 
-## 为什么打出来的apk安装上之后没有分屏（两个屏幕）显示？
 
-这个问题有两个可能成因：
+## Why my application doesn't do stereo rendering?
 
-1. 这是因为在`Player Settings`中没有正确设置`XR Settings`，而到时没有使用`Stereo Camera`。设置中必须按照图中设置，先设置`None`然后`Cardboard`选项。
+There could be 2 causes for this issue：
+
+1. `Player Settings` doesn't have correct `XR Settings`. Please config your XR settings as shown below.
 
 ![](https://ximmerse-1253940012.cos.ap-guangzhou.myqcloud.com/slide-in-sdk/xr-settings.png)
 
-2. 因为玩家场景中的AR Camera的显示模式是`Single/Mono`的渲染模式，将其重新设置为`Stereo`即可。
+2. The ARCamera component needs to be set to `Stereo".
 
    ![](https://ximmerse-1253940012.cos.ap-guangzhou.myqcloud.com/slide-in-sdk/main-cam-rendering-mode.png)
 
 
 
-## 为什么正常安装apk运行后没有追踪Marker?
+## Why my application doesn't tracker physical marker?
 
-- 首先检查标定文件是否正确，以及线材是否插稳。
+- Please make sure the wire between phone and headset is tightly plugged.
 
-- 如果排除以上两点问题，那么就是因为权限问题，限制了标定文件没有办法载入。
+- Check if the Tracking file is correctly configurated. 
 
-  目前的SDK尚有缺陷，安装sdk后有些机器没有办法自动弹出申请存储权限的请求，需要用户在第一次安装新的apk时，进入应用程序管理界面，手动将`文件存储/读取`权限打开。
+- If above 2 items are cleared, please check application permissions. 
 
-- 同时请保证后台同时只开启一个使用VPU的应用，不同的应用之间会抢占句柄，导致其他应用无法使用。请退出其他应用后再重新打开当前应用。
+  Sometimes, on certain devices, after application installations, the phone doesn't pop up permission dialog. In this case, user needs to turn on the `save/read` permission for this application manually.
+
+- Please make sure there is only one application that requires VPU connection in the system background. If there are multiple ones running at the sametime, the running applications will battle for the connections, causing tracking problems.
 
 
 
-## 为什么蓝牙控制器连接上后过一会儿会自动断开？
+## Why Bluetooth connection between controller and VPU keeps dropping？
 
-- 首先确保蓝牙控制器连接是否成功，控制器连接成功通常会伴随指示灯常亮以及手柄震动两个物理提示。
-- 其次确保控制器一次只与一个VPU 建立配对、连接关系，如果需要连接其他的控制器，请先将其旧的VPU 取消了配对。不然控制器有可能会出现连接一会儿后直接断开的情况。
+- Please make sure the bluetooth controller is connected. Typically, the LED of the controller should stay lit when the controller is connected.
+- Make sure the controller is only connected to only one VPU. If the controller is also connected to other VPU, bluetooth connections can drop frequently.

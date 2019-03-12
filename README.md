@@ -1,82 +1,80 @@
-# 入门  :id=docs
+# Introduction  :id=docs
 
-> Slide-In AR Headset是一款出色、快速响应的AR头戴设备。
 
-本章节将会带领开发者建立对SDK的基本了解以及普及基本概念。
+In this article, we will introduce SDK structure and a few concepts about Slide-In AR system.
 
 
 
 ## Slide-In AR Headset
 
-Slide-In AR Headset（以下简称Slide-In） 是一款由XIMMERSE 研发的AR头戴设备，采用自研的光学结构以及跟踪模组。
+Slide-In AR Headset（aka Slide-In) is developed by XIMMERSE with vision tracking and lens technology,
 
-核心部件由VPU（视觉处理单元）、指定的手机设备（处理数据以及提供图像显示）以及双眼反射透镜（反射并呈现图像内容）所组成。
+The core components are VPU(Vision Processing Unit), phone (used for rendering and content processing) and reflective lens (which shows the contents to user).
 
-Slide-In 的VPU采用高速IR摄像头，可以快速捕捉Marker 的姿态数据，传至手机设备进行处理与叠加视觉效果，并且进行镜片反畸变处理后显示到手机屏幕上以实现用户空间定位、动作捕捉以及识别用户姿态的功能。
+Slide-In VPU unilizes a high speed IR camera, which captures Marker position and rotation data. Then, it sends the data to the phone and the phone will render the contents with inputs from VPU. The phone screen is reflected by the lens and the lense will present the final visuals to the user.
 
-以现实世界中用户的真实感官与全息影像叠加，实现丰富的感官体验与灵活的交互控制的目的。
+With the Slide-In, users are able to interact with real physical objects with virtual overlays on top of the physical objects, enabling a rich interactive experience.
 
 ![](https://ximmerse-1253940012.cos.ap-guangzhou.myqcloud.com/slide-in-sdk/slide-in-ar-headset.png)
 
 
 
-## Slide-In 软件开发套件
+## Slide-In SDK
 
-Slide-In SDK Github地址：[https://github.com/Ximmerse/SlideInSDK](https://github.com/Ximmerse/SlideInSDK)
+Slide-In SDK Github address：[https://github.com/Ximmerse/SlideInSDK](https://github.com/Ximmerse/SlideInSDK)
 
-Slide-In SDK 是专门为Slide-In 头戴设备设计使用的软件开发套件。
+Slide-In SDK is designed for Slide-In AR Headset only.
 
-其中主要内容包含了开发用到的核心套件（底层Tracking Module的驱动以及封装）以及辅助开发的效率工具。
+The SDK contains the APIs, hardware drivers and development tools.
 
-由于Marker能根据不同的数量、不同的姿态形成新的组合，而达到不同的目的，我们需要在Slide-In SDK 中针对硬件情况的配置选项。
+Because markers can be combined in a number of ways for different purpose, we would need to config markers settings in the SDK for a specific setup.
 
 
 
-##  Marker 的硬件类型
+##  Marker/Device Type
 
-!> 每种Marker都会有自己特定的Id标记，上面会有Marker的Id信息以及Marker的类型信息。
+!> Each Marker has its own identifier.
 
-### 单个Marker
+### Single Marker
 
-可独立使用的最小的可识别单位。每个Marker外观约为38mm * 38mm大小的正方形。
+Each Marker is around 38mm * 38mm in size.
 
-### 组合Marker
+### Marker Group
 
-组合Marker是有多个指定Id的Marker按照固定姿态排布所形成的一个整体识别目标。目前分为以下几种样式：
+Marker group can have muitple single markers to achieve different purpose and it can be recognized by Slide-In as a single object. For example:
 
-#### 桌布 (Map)
+#### Map
 
-Map是由指定Id的16个单个Marker按一定规律平铺组成的一个整体识别目标。每个Map的外观约为380mm * 380mm大小的正方形。
+Map has 16 ID'ed single markers. Every map is around 380mm * 380mm in size.
 
-Map的特点如下：
+Map characteristics：
 
-- 更远追踪范围
-- 具有一定的抗遮挡能力
-- 可视角度与普通单Marker一致
+- Further tracking distance
+- Can still be trackable if partially blocked
+- Same view angles as the single markers
 
-#### 魔方 (Cube)
+#### Cube
 
   ![Cube](https://ximmerse-1253940012.cos.ap-guangzhou.myqcloud.com/slide-in-sdk/cube-1.png)
 
-  Cube是由指定Id的18个单Marker按照一定姿态组成的一个整体识别目标。
+  Cube has a total of 18 ID'ed markers.
+  Cube characteristics：
 
-  Cube的特点如下：
+  - slightly further tracking distance
 
-  - 稍远的追踪范围
+  - 360 degree trackable
 
-  - 全角度可视
+  - stable and consistent vision tracking
 
-  - 范围内追踪稳定
-
-#### 枪型 (Gun Handle)
+#### Gun Handle
 
   ![Gun Handle](https://ximmerse-1253940012.cos.ap-guangzhou.myqcloud.com/slide-in-sdk/gun-handle.png)
 
   ![Gun Handle 2](https://ximmerse-1253940012.cos.ap-guangzhou.myqcloud.com/slide-in-sdk/gun-handle-2.png)
 
-  Gun是由指定Id的4个单Marker按照一定姿态组成的一个整体识别目标。
+  Gun has a total of 4 ID'ed markers. 
 
-  Gun的特点如下：
+  Gun handle characteristics：
 
-  - 相对较大的可视角度
-  - 占用比较少的Marker ID数量
+  - relatively larger trackable angles
+  - requires small amount of ID'ed markers
