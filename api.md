@@ -1,105 +1,112 @@
-# API Documentation
+# 接口参考说明
+
+本章节主要以程序开发的角度阐述说明SDK 中脚本、组件的功能。
 
 
 
-## Components
+## 常规组件
+
+介绍在SDK 场景中会出现并且使用的组件。
 
 
 
 ### ARCamera
 
-`AR Camera` is a virtual representation of the AR headset. It takes care of rendering and communicates the orientation of the physical headset to the SDK.
+`AR Camera`组件主要用作于配置代表头显的的渲染显示以及旋转姿态。
 
-- `Head Mode` is used for head rotation data preference. `static` means no head rotation；`RotateLocally` means the ARCamera will update the virtual representation every frame with the IMU data. Defaule value is `RotateLocally`。
-- `Rendering Mode` is used for rendering configuration. `Stereo` means stereoscoptic rendering. `Single` stands for regular 2D screen rendering.
-- `EyeCovergenceMode` is used to setup up stereo rendering convergence position. `Infinity` means that 2 camera's forward are parallel to each other. `Cross Plane` means that the camera forward will cross in front of the cameras.
+- `Head Mode`用于配置头部旋转模式。`static`代表摄像机不更新旋转信息；`RotateLocally`代表摄像机每帧会根据IMU更新旋转头部信息。默认值是`RotateLocally`。
+- `Rendering Mode`用于配置摄像机的渲染显示模式。`Stereo`代表摄像机的渲染会分成两个摄像机渲染成左右两个屏幕的画面。`Single`代表不分屏渲染，只在当前的Camera的位置进行渲染。
+- `EyeCovergenceMode`用于配置在`Stereo`模式下，两个摄像机相交位置。`Infinity`代表两个摄像机的方向是平行的。`Cross Plane`代表两个摄像机会在前方向一定距离处相交。
 
 
 
 ### Tag Tracker
 
-`Tag Tracker` component is used to config Tracking Profiles under camera component so that the camera is able to track marker position data.
+`Tag Tracker`组件主要用于配置该Camera的Tracking Profiles，指明该AR 摄像机能识别追踪的Marker信息。
 
-- `Tracking Profiles`, as mentioned [here](README.md), can be used to track multiple markers or multiple marker groups. Developers can config the hardware based application needs. **Please note that there can't be duplicated marker ID in a single Tracking Profile**.
+- `Tracking Profiles`在[上文](README.md)中我们提到了头戴设备能追踪一个单Marker或多个Marker的组合追踪目标，根据不同的应用场景开发者会使用到不同的硬件，Tracking Profiles就是用于分辨不同硬件追踪目标的数据文件，**在一个Profile中不能包含有相同ID 的Marker**。
 
 
 
 ### Marker Identity
 
-`Marker Identity` is used for managing Marker Target and its Marker/Marker Group ID visibility.
+`Marker Identity`用于管理Marker Target所对应的Marker/Marker Group ID以及本身的能见度。
 
-`Marker ID` needs to be filled with Marker ID or Marker Group ID which can be found in JSON file. 
+`Marker ID ` 这个这段可以填写单Marker 的ID 字段，或是组合Marker的 Marker Group ID 字段。
+
 
 
 ### Bench Marker
 
-`Bench Marker` can be used as a world origin.
+`Bench Marker` 可以理解为传统意义上的地面，用于代表坐标系的原点。
 
-`Bench Marker` is used as a world origin, so it's placement will affect the entire coordination system in the application.
+`Bench Marker` 所建立相对坐标系是基于与AR摄像机的相对姿态变换而来的，因此`Bench Marker`本身的姿态会对这个坐标系产生影响。
 
-We will use `Bench Marker Match Scale Content` demo scene to explain its usage:
+我们以`Bench Marker Match Scale Content`这个Demo场景为例子说应一下实际使用情况：
 
-The marker used in this scene has a physical dimension of 0.38 meter * 0.38 meter. The marker ID is 34.
+该场景中使用的是物理尺寸0.38m * 0.38m的桌布(Map)组合marker，marker id是34。
 
 ![](https://ximmerse-1253940012.cos.ap-guangzhou.myqcloud.com/slide-in-sdk/bechmarker-sample-profile.png)
 
-First of all, let's setup ARCamera (please refer previous tutorial for details) and `Bench Marker`.
+首先在场景中搭建基础的AR摄像头（参考上一小节）以及`Bench Marker`。
 
 ![](https://ximmerse-1253940012.cos.ap-guangzhou.myqcloud.com/slide-in-sdk/benchmarker-sample-inspector.png)
 
-Now, we have a tracking coordination system. Please also make sure `Bench Marker`'s position is set to (0,0,0).
+此时，已经建立了Tracking坐标系，同时坐标系原点也在`Bench Marker`所在的(0,0,0)点。
 
-We will be using a Quad object to represent the `Bench Marker`. Adjust the rotation x to 90 degrees, and then set the scale to (0.38,0.38,0.38). The last step is to drag this Quad object to `Bench Marker` as a child object.
+此时我们创建一个Quad作为`Bench Marker`的硬件指示物，调整x轴旋转为90度，同时赋予它的scale为 0.38x0.38x0.38，并且使其成为`Bench Marker`的子对象。
 
-> By Default, Unity Quad is a 1 meter x 1 meter object. Therefore we set the scale to 0.38 to match the physical object.
+> Quad 为比例为1m的物体，缩放尺寸为 0.38m (硬件实际尺寸) / 1m (Quad实际尺寸) = 0.38m即可。
 
 ![](https://ximmerse-1253940012.cos.ap-guangzhou.myqcloud.com/slide-in-sdk/benchmarker-sample-quad-inspector.png)
 
-Now, let's drag the house asset to the scene. The house asset is around 10 meter x 10 meter, so it will look much larger compared to the marker. 
+此时我们将准备好的素材放置到场景中，这是一个约为10m*10m的房子，可以看到与实际Marker相比是非常大的。
 
 ![](https://ximmerse-1253940012.cos.ap-guangzhou.myqcloud.com/slide-in-sdk/benchmarker-sample-house.png)
 
-Our goal is the show the house on top of the real physical marker when user wears the AR headset. Because we already have `Bench Marker` as the parent object，we only have to adjust the scale of `Bench Marker`.
+我们的目标是希望这个房子能在扫描追踪的时候，比例正确的贴合在marker上，所以我们要将tracking 坐标系进行缩放。而因为有`Bench Marker`的存在，我们缩放的时候直接调整`Bench Marker`的大小就可以了。
 
-Because we have made a virtual representation of the physical marker, we could use it as a scale refference. 
+因为我们之前制作了一个Marker物理尺寸的映射Quad在虚拟场景中，它可以给我们一个很好的缩放参考。
 
 ![](https://ximmerse-1253940012.cos.ap-guangzhou.myqcloud.com/slide-in-sdk/benchmarker-sample-house-scale.png)
 
-Therefore, we will scale up the `Bench Marker` until it covers the entire house.
+因此，我们将`Bench Marker` 物体整体放大，直至映射物理尺寸的Quad指示物刚好能覆盖整个房子为止，接着再细微调节房子的位置，使其完全贴合。
 
 ![](https://ximmerse-1253940012.cos.ap-guangzhou.myqcloud.com/slide-in-sdk/benchmarker-sample-house-ar.png)
 
-Now, we have finished the tracking system setup with `Bench Marker`.
+至此，我们完成了以`Bench Marker` 为基础的Trakcing坐标系的缩放调整。
 
 
 
 ### Dynamic Marker
 
-`Dynamic Marker` is used to capture physical marker orientation and position.
+Dynamic Marker` 是用于追踪指定的Marker并获取其相对的姿态信息。
 
-Comparing to `Bench Marker`, Dynamic doesn't change the world coordination system, but it will change its own Marker Target transforms.
+不同于`Bench Marker` 是处于建立的坐标系的原点，自身的姿态不会发生改变，`Dynamic Marker` 本身的Marker Target会每帧根据追踪的Marker更新自己的姿态信息。
 
-!> Please note that `Dynamic Marker`'s Marker Target's scale is always (1,1,1). If scale change is needed, please only adjust the children object.
+因此如果我们如果需要虚拟视图根据Marker的姿态同步变化，就可以直接将Marker的虚拟视图直接放置到Marker Target下座位Marker Target的子物体。
 
-We will use `Dynamic Marker _ Single Cards` as an example:
+!> 需要注意的是，`Dynamic Marker` 的Marker Target 缩放属性应始终保持1x1x1，如果需要调整虚拟视图与硬件的比例情况，应直接对虚拟视图进行缩放。
 
-First of all, let's take a look at the the Tracking Profile.
+下面我们使用`Dynamic Marker _ Single Cards` 这个场景来进行举例说明：
+
+首先我们在Main Camera 的`Tag Tracker` 上能看到我们当前使用的Tracking Profile是多个单marker的组合
 
 ![](https://ximmerse-1253940012.cos.ap-guangzhou.myqcloud.com/slide-in-sdk/dynamic-sample-cards-profiles.png)
 
-Choose any Marker Target，and set ID to 0.
+选择其中任意一个Marker Target，看到当前marker 的id 是 0。
 
 ![](https://ximmerse-1253940012.cos.ap-guangzhou.myqcloud.com/slide-in-sdk/dynamic-sample-cards-inspector.png)
 
-​	Check the hardware with ID 420-001, and measure its size, which is 0.04 meter * 0.04 meter.
+​	查看硬件id 为420-001的marker卡面，测量其物理尺寸可得0.04m * 0.04m。
 
-​	Create a Quad as the physical marker representation, and place it under Dynamic Marker Target as a child. 
+​	建立一个Quad作为Marker 的虚拟视图，将其放置于Dynamic Marker Target 层级之下，成为Marker Target的子物体。
 
-​	To closely match the virtual image to physical marker, we will need to adjust the virtual object scale.
+​	为了贴合物理尺寸与虚拟视图尺寸，我们需要对虚拟视图进行缩放。
 
-> By Default, Unity Quad is a 1 meter x 1 meter object. Therefore we set the scale to 0.38 to match the physical object.
+> Quad 为比例为1m的物体，缩放尺寸为 0.04m (硬件实际尺寸) / 1m (Quad实际尺寸) = 0.04m即可。
 
 ![](https://ximmerse-1253940012.cos.ap-guangzhou.myqcloud.com/slide-in-sdk/dynamic-sample-marker-scale.png)
 
-Now, we have finished setting up Dynamic Marker.
+至此，Dynamic Marker的缩放已全部完成。
 
