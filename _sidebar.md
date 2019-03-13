@@ -1,4 +1,4 @@
-- 设备入门
+- [设备入门](README.md)
   - [基本概念](README.md)
   - [快速开始](quickstart.md)
   - [进阶指南](advanced.md)
