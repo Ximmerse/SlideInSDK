@@ -44,7 +44,7 @@ namespace Ximmerse.SlideInSDK
             get 
             {
                 //Not suported on iOS | OSX:
-                return Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor;
+                return Application.platform == RuntimePlatform.Android ; //Bgfx : not supported in windows anymore...//|| Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor;
             }
         }
 
