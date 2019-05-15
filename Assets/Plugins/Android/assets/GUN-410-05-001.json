@@ -1,0 +1,10 @@
+{
+    "CARD_GROUP":
+    {
+        "CalibFile": "GUN-410-05-001.dat",
+        "ModeType": "CONTROLLER",
+        "GroupID": 68,
+        "Markers": [0,10,11,23],
+        "MarkersSize": [0.0384348, 0.0384348, 0.0384348, 0.0384348]        
+    }
+}

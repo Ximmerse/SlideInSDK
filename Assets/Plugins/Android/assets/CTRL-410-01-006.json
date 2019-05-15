@@ -1,0 +1,10 @@
+{
+    "CARD_GROUP":
+    {
+        "CalibFile": "CTRL-410-01-006.dat",
+        "ModeType": "CONTROLLER",
+        "GroupID": 69,
+        "Markers": [1,2,22,5],
+        "MarkersSize": [0.0384348, 0.0384348, 0.0384348, 0.0384348]        
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "CARD_GROUP":
+    {
+        "CalibFile": "MAP-410-07-007.dat",
+        "ModeType": "MAP",
+        "GroupID": 96,
+        "Markers": [48, 54, 59, 63],
+        "MarkersSize": [0.1, 0.1, 0.1, 0.1]
+    }
+}
